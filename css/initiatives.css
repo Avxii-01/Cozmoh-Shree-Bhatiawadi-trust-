@@ -1,0 +1,193 @@
+/* ==========================================================================
+   SHREE BHATIAWADI - OUR INITIATIVES SECTION
+   ========================================================================== */
+
+/* ── Section Wrapper ───────────────────────────────────────────────────── */
+.initiatives-section {
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+/* ── Layout ────────────────────────────────────────────────────────────── */
+.initiatives-layout {
+  /* Default layout for mobile/tablet */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(40px, 5vw, 80px);
+}
+
+.initiatives-text {
+  max-width: 600px;
+}
+
+.initiatives-heading {
+  margin-bottom: var(--space-24);
+}
+
+.initiatives-desc {
+  margin-bottom: var(--space-32);
+}
+
+/* ── CTA Link ──────────────────────────────────────────────────────────── */
+.initiatives-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: var(--font-body);
+  font-size: var(--font-eyebrow);
+  font-weight: 700;
+  color: var(--color-primary-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color var(--transition-fast);
+}
+
+.initiatives-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold-hover);
+  transition: width var(--transition-fast) ease-out;
+}
+
+.initiatives-link:hover {
+  color: var(--color-gold-hover);
+}
+
+.initiatives-link:hover::after {
+  width: 100%;
+}
+
+.initiatives-link .arrow {
+  transition: transform var(--transition-fast);
+  font-size: 1.2em;
+}
+
+.initiatives-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ── Right Column (Cards) ──────────────────────────────────────────────── */
+.initiatives-grid {
+  width: 100%;
+  display: grid;
+  /* Default for tablet: 3x2 grid */
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-12);
+}
+
+/* ── Initiative Card ───────────────────────────────────────────────────── */
+.initiative-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-borders);
+  border-radius: var(--radius-card);
+  padding: clamp(24px, 2.5vw, 32px) clamp(12px, 1.2vw, 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--space-24);
+  box-shadow: 0 4px 14px rgba(80, 50, 20, 0.03);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  min-height: clamp(180px, 13vw, 200px);
+}
+
+.initiative-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(80, 50, 20, 0.08);
+  border-color: var(--color-primary-gold);
+}
+
+.initiative-card:focus-visible {
+  outline: 2px solid var(--color-primary-gold);
+  outline-offset: 2px;
+}
+
+.initiative-card__icon {
+  width: clamp(48px, 4vw, 56px);
+  height: clamp(48px, 4vw, 56px);
+  object-fit: contain;
+}
+
+.initiative-card__title {
+  font-family: var(--font-body);
+  font-size: clamp(0.875rem, 1vw, 1rem);
+  font-weight: 600;
+  color: var(--color-heading);
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* ── Responsive Breakpoints ────────────────────────────────────────────── */
+
+/* Desktop (≥1280px): The Requested Refinements */
+@media (min-width: 1280px) {
+  .initiatives-layout {
+    /* Desktop 2-column layout */
+    display: grid;
+    /* Shrink the gap, allow cards to be close to the text */
+    grid-template-columns: minmax(260px, 320px) 1fr;
+    align-items: center;
+    gap: 32px;
+    /* Reduce horizontal gap */
+  }
+
+  .initiatives-text {
+    max-width: none;
+  }
+
+  .initiatives-grid {
+    /* Force 6 columns, allow them to shrink. minmax(0, 1fr) ensures they don't overflow */
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    /* Tighten gap between cards */
+    gap: 12px;
+  }
+
+  .initiative-card {
+    /* Slightly narrower and taller layout */
+    padding: 36px 8px;
+    gap: var(--space-20);
+  }
+
+  .initiative-card__icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Mobile (≤ 768px): 2×3 Grid */
+@media (max-width: 768px) {
+  section.initiatives-section {
+    padding-top: var(--space-32);
+    padding-bottom: var(--space-32);
+  }
+
+  .initiatives-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+
+  .initiative-card {
+    padding: var(--space-24) var(--space-12);
+    gap: var(--space-16);
+  }
+
+  .initiative-card__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .initiative-card__title {
+    font-size: 0.875rem;
+  }
+}

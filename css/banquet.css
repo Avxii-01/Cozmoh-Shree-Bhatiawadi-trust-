@@ -1,0 +1,693 @@
+/* ==========================================================================
+   SHREE BHATIAWADI TRUST — BANQUET HALL SHOWCASE v4.1
+   Featured Content Carousel · Side Previews · Warm Gold Info Overlay
+   ========================================================================== */
+
+/* ── Section Wrapper ───────────────────────────────────────────────────── */
+.section.banquet-section {
+  padding-top: var(--space-section-tight);
+  padding-bottom: 0;
+  background-color: var(--color-bg, #F8F5F1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Section Header Bar ─────────────────────────────────────────────────── */
+.banquet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-40, 40px);
+}
+
+.banquet-header__title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary-gold, #B67A2A);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0;
+}
+
+.banquet-header__link {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: var(--font-body-md, 1rem);
+  font-weight: 600;
+  color: var(--color-heading, #2B2118);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8, 8px);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.banquet-header__link:hover {
+  color: var(--color-primary-gold, #B67A2A);
+  transform: translateX(4px);
+}
+
+/* ── 3-Card Carousel Wrapper ────────────────────────────────────────────── */
+.banquet-carousel {
+  position: relative;
+  width: 100%;
+}
+
+.banquet-carousel__stage {
+  display: flex;
+  align-items: stretch;
+  /* all cards same height */
+  justify-content: center;
+  gap: var(--space-24, 24px);
+  width: 100%;
+  position: relative;
+  /* fixed min-height prevents layout shift during transitions */
+  min-height: 540px;
+}
+
+/* ── Carousel Transition Keyframes ──────────────────────────────────────── */
+
+/* Featured card exits left (next direction) */
+.slide-exit-left {
+  animation: slideExitLeft 400ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Featured card exits right (prev direction) */
+.slide-exit-right {
+  animation: slideExitRight 400ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Preview entering from right (next direction — right preview → center) */
+.slide-enter-from-right {
+  animation: slideEnterFromRight 400ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Preview entering from left (prev direction — left preview → center) */
+.slide-enter-from-left {
+  animation: slideEnterFromLeft 400ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes slideExitLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.94);
+  }
+}
+
+@keyframes slideExitRight {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(40px) scale(0.94);
+  }
+}
+
+@keyframes slideEnterFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideEnterFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* ── Side Preview Cards ───────────────────────────────────────────────── */
+.banquet-card--preview {
+  flex: 0 0 20%;
+  background-color: var(--color-card-bg, #FFFFFF);
+  border: 1px solid var(--color-borders, #E7DDD2);
+  border-radius: var(--radius-card, 16px);
+  /* overflow: visible so the nav button can hang outside the card edge */
+  overflow: visible;
+  box-shadow: var(--shadow-sm);
+  transition: opacity 400ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+  opacity: 0.82;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.banquet-card--preview:hover {
+  opacity: 1;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gold-border);
+}
+
+/* Image wrapper handles clipping (card itself can't use overflow:hidden + have visible buttons) */
+.banquet-card--preview__image-wrap {
+  overflow: hidden;
+  border-radius: var(--radius-card, 16px) var(--radius-card, 16px) 0 0;
+  flex-shrink: 0;
+  line-height: 0;
+  /* remove inline-block gap under img */
+}
+
+.banquet-card--preview__media {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.banquet-card--preview__body {
+  padding: var(--space-20, 20px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8, 8px);
+  flex: 1;
+}
+
+.banquet-card--preview__title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-heading, #2B2118);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.banquet-card--preview__capacity {
+  font-size: var(--font-caption, 0.875rem);
+  color: var(--color-body, #5C534A);
+}
+
+.banquet-card--preview__amenities {
+  font-size: 0.8125rem;
+  color: var(--color-muted, #857C73);
+  flex: 1;
+}
+
+.banquet-card--preview__link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary-gold, #B67A2A);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+}
+
+/* ── Featured Active Hall Card (Center) ─────────────────────────────────── */
+.banquet-card--featured {
+  flex: 0 0 58%;
+  position: relative;
+  border-radius: var(--radius-img, 18px);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: flex-end;
+  /* overlay anchored to bottom */
+  justify-content: flex-end;
+  /* panel floats to the right */
+  /* Fixed height so carousel never resizes */
+  height: 520px;
+  transition: box-shadow 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.banquet-card--featured__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Subtle dark vignette so the panel text is always readable */
+.banquet-card--featured::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(135deg,
+      transparent 30%,
+      rgba(43, 33, 24, 0.25) 100%);
+  pointer-events: none;
+}
+
+/* ── Floating Information Overlay Panel ─────────────────────────────────── */
+/*
+  Warm heritage gold — matches the supplied mockup.
+  ~88% opacity so the image subtly shows through.
+  Positioned bottom-right with generous margins.
+*/
+.banquet-info-overlay {
+  position: relative;
+  z-index: 5;
+  width: 380px;
+  max-width: calc(100% - 48px);
+  margin: 0 var(--space-32, 32px) var(--space-32, 32px) 0;
+
+  /* Warm heritage gold — ~88% opacity */
+  background-color: rgba(182, 122, 42, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  border-radius: var(--radius-card, 16px);
+  padding: var(--space-24, 24px) 28px;
+  color: #FFFFFF;
+
+  /* Subtle gold border */
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 12px 36px rgba(43, 33, 24, 0.28);
+
+  /* Entrance animation on content swap */
+  animation: overlayFadeIn 350ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hall Name */
+.banquet-info-overlay__title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0 0 var(--space-16, 16px);
+  line-height: 1.1;
+}
+
+/* ── Capacity — two equal columns ───────────────────────────────────────── */
+.banquet-info-overlay__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12, 12px) var(--space-16, 16px);
+  margin-bottom: var(--space-16, 16px);
+  padding-bottom: var(--space-16, 16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.banquet-info-overlay__stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Icon row (emoji) */
+.banquet-info-overlay__stat-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+/* Label */
+.banquet-info-overlay__stat-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.2;
+  text-transform: none;
+}
+
+/* Value (e.g. "300+") */
+.banquet-info-overlay__stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.1;
+}
+
+/* ── Amenities Section ──────────────────────────────────────────────────── */
+.banquet-info-overlay__amenities-section {
+  margin-bottom: var(--space-20, 20px);
+}
+
+.banquet-info-overlay__amenities-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-8, 8px);
+}
+
+/* 3-column grid of plain text amenity items separated by subtle dividers */
+.banquet-info-overlay__amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.banquet-info-overlay__amenity-item {
+  font-size: 0.8125rem;
+  color: #FFFFFF;
+  padding: 6px 4px;
+  text-align: left;
+  /* Subtle row dividers */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  /* Column dividers via right border on every non-last column */
+}
+
+/* right-border on items that are NOT in the last column (3rd of 3) */
+.banquet-info-overlay__amenity-item:nth-child(3n+1),
+.banquet-info-overlay__amenity-item:nth-child(3n+2) {
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  padding-right: 8px;
+}
+
+/* Remove bottom border on last row items */
+.banquet-info-overlay__amenity-item:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+/* Padding fix for the 2nd and 3rd column items */
+.banquet-info-overlay__amenity-item:nth-child(3n+2),
+.banquet-info-overlay__amenity-item:nth-child(3n) {
+  padding-left: 8px;
+}
+
+/* ── Action Buttons ─────────────────────────────────────────────────────── */
+.banquet-info-overlay__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16, 16px);
+  flex-wrap: wrap;
+}
+
+/* Primary — white bg, dark text */
+.banquet-info-overlay__btn-primary {
+  background-color: #FFFFFF;
+  color: var(--color-heading, #2B2118);
+  border: none;
+  height: 42px;
+  padding: 0 var(--space-24, 24px);
+  border-radius: var(--radius-btn, 6px);
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.banquet-info-overlay__btn-primary:hover {
+  background-color: #F8F5F1;
+  transform: translateY(-2px);
+}
+
+/* Secondary — text-only with gold arrow */
+.banquet-info-overlay__btn-secondary {
+  color: #FFFFFF;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.banquet-info-overlay__btn-secondary:hover {
+  opacity: 0.85;
+  transform: translateX(3px);
+}
+
+/* Gold arrow accent */
+.banquet-info-overlay__btn-secondary .btn-arrow {
+  color: #FFE0A0;
+  font-size: 1rem;
+}
+
+/* ── Navigation Buttons ───────────────────────────────────────────────── */
+/*
+  On desktop the buttons are reparented into the preview cards by JS.
+  On mobile they live inside the info overlay.
+  'top: 50%' is always relative to whichever parent contains the button.
+*/
+.banquet-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-primary-gold, #B67A2A);
+  color: #FFFFFF;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.4rem;
+  box-shadow: 0 6px 18px rgba(182, 122, 42, 0.35);
+  transition: transform 250ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    background-color 250ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* Prevent the button itself from triggering card hover or click */
+  pointer-events: auto;
+}
+
+.banquet-nav-btn:hover {
+  background-color: var(--color-gold-hover, #9E6823);
+  transform: translateY(-50%) scale(1.08);
+}
+
+/*
+  Desktop: prev button lives inside the LEFT preview card.
+  It sits on the card's LEFT outer edge — half hanging outside.
+  left: -24px = half of 48px button width.
+*/
+.banquet-nav-btn--prev {
+  left: -24px;
+  right: auto;
+}
+
+/*
+  Desktop: next button lives inside the RIGHT preview card.
+  It sits on the card's RIGHT outer edge — half hanging outside.
+  right: -24px = half of 48px button width.
+*/
+.banquet-nav-btn--next {
+  right: -24px;
+  left: auto;
+}
+
+/* ── Pagination Dots ────────────────────────────────────────────────────── */
+.banquet-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8, 8px);
+  margin-top: var(--space-32, 32px);
+}
+
+.banquet-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-borders, #E7DDD2);
+  border: none;
+  cursor: pointer;
+  transition: all 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.banquet-dot--active {
+  width: 28px;
+  border-radius: var(--radius-pill, 9999px);
+  background-color: var(--color-primary-gold, #B67A2A);
+}
+
+/* ── Responsive Breakpoints ─────────────────────────────────────────────── */
+
+/* Laptop (1024px – 1279px) */
+@media (max-width: 1279px) {
+  .banquet-card--featured {
+    flex: 0 0 62%;
+    height: 480px;
+  }
+
+  .banquet-card--preview {
+    flex: 0 0 17%;
+  }
+
+  /* Adjust button overhang — outer edges */
+  .banquet-nav-btn--prev {
+    left: -24px;
+    right: auto;
+  }
+
+  .banquet-nav-btn--next {
+    right: -24px;
+    left: auto;
+  }
+
+  .banquet-info-overlay {
+    width: 340px;
+    margin: 0 var(--space-20, 20px) var(--space-24, 24px) 0;
+    padding: var(--space-20, 20px) var(--space-24, 24px);
+  }
+
+  .banquet-info-overlay__title {
+    font-size: 2rem;
+  }
+
+  .banquet-carousel__stage {
+    min-height: 500px;
+  }
+}
+
+/* Tablet Landscape (768px – 1023px) */
+@media (max-width: 1023px) {
+  .banquet-card--featured {
+    flex: 0 0 82%;
+    height: 440px;
+  }
+
+  .banquet-card--preview {
+    display: none;
+    /* Focus on featured card */
+  }
+
+  .banquet-info-overlay {
+    width: 320px;
+  }
+
+  .banquet-carousel__stage {
+    min-height: 460px;
+  }
+
+  /* Tablet: no preview cards visible — position buttons at sides of the carousel stage */
+  .banquet-nav-btn--prev {
+    left: 16px;
+    right: auto;
+  }
+
+  .banquet-nav-btn--next {
+    right: 16px;
+    left: auto;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .banquet-card--featured {
+    flex: 0 0 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: var(--color-card-bg, #FFFFFF);
+    border: 1px solid var(--color-borders, #E7DDD2);
+    border-radius: var(--radius-card, 16px);
+    /* overflow: visible so nav buttons hanging outside the overlay aren't clipped */
+    overflow: visible;
+  }
+
+  .banquet-card--featured__image {
+    overflow: hidden;
+    border-radius: var(--radius-card, 16px) var(--radius-card, 16px) 0 0;
+  }
+
+  .banquet-card--featured::after {
+    display: none;
+    /* remove vignette on mobile */
+  }
+
+  .banquet-card--featured__image {
+    position: relative;
+    height: 240px;
+    flex-shrink: 0;
+  }
+
+  .banquet-info-overlay {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0 0 var(--radius-card, 16px) var(--radius-card, 16px);
+    background-color: rgba(182, 122, 42, 0.95);
+    backdrop-filter: none;
+    box-shadow: none;
+    animation: none;
+    /* Allow nav buttons to hang outside the overlay on mobile */
+    overflow: visible;
+  }
+
+  .banquet-info-overlay__amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .banquet-info-overlay__amenity-item:nth-child(3n+1),
+  .banquet-info-overlay__amenity-item:nth-child(3n+2) {
+    border-right: none;
+  }
+
+  .banquet-info-overlay__amenity-item:nth-child(2n+1) {
+    border-right: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .banquet-carousel__stage {
+    min-height: unset;
+  }
+
+  /*
+    Mobile: buttons live inside .banquet-info-overlay (reparented by JS).
+    Prev → left side, next → right side.
+    Button is 40px wide so half = 20px overhangs the overlay edge.
+  */
+  .banquet-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    /* Brighter gold so the overhanging half is clearly visible against the page bg */
+    background-color: #C98A30;
+    box-shadow: 0 4px 14px rgba(182, 122, 42, 0.5);
+  }
+
+  .banquet-nav-btn--prev {
+    left: -20px;
+    right: auto;
+  }
+
+  .banquet-nav-btn--next {
+    right: -20px;
+    left: auto;
+  }
+}

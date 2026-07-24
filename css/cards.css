@@ -1,0 +1,299 @@
+/* ==========================================================================
+   SHREE BHATIAWADI - CARD COMPONENTS SYSTEM
+   ========================================================================== */
+
+/* Base Card Style */
+.card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-borders);
+  border-radius: var(--radius-card);
+  padding: var(--space-24);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.card--hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gold-border);
+}
+
+/* --------------------------------------------------------------------------
+   1. BANQUET CARD (As shown in mockup)
+   -------------------------------------------------------------------------- */
+.card--banquet {
+  padding: 0;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-img);
+  border: none;
+}
+
+.card--banquet__image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-img);
+}
+
+.card--banquet__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card--banquet:hover .card--banquet__image {
+  transform: scale(1.03);
+}
+
+/* Dark Warm Overlay Box inside Banquet Card */
+.card--banquet__overlay {
+  position: relative;
+  z-index: 2;
+  margin: var(--space-24);
+  background-color: rgba(61, 43, 31, 0.92);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-card);
+  padding: var(--space-24);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  max-width: 480px;
+}
+
+.card--banquet__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-h3);
+  color: #FFFFFF;
+  margin-bottom: var(--space-12);
+}
+
+.card--banquet__stats {
+  display: flex;
+  gap: var(--space-24);
+  margin-bottom: var(--space-16);
+  padding-bottom: var(--space-16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.card--banquet__stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.card--banquet__stat-label {
+  font-size: var(--font-caption);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card--banquet__stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary-gold);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.card--banquet__amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin-bottom: var(--space-24);
+}
+
+.card--banquet__actions {
+  display: flex;
+  gap: var(--space-12);
+}
+
+/* --------------------------------------------------------------------------
+   2. EVENT CARD (With Date Badge)
+   -------------------------------------------------------------------------- */
+.card--event {
+  display: flex;
+  align-items: center;
+  gap: var(--space-24);
+  padding: var(--space-24);
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-borders);
+  border-radius: var(--radius-card);
+}
+
+.card--event__date-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  height: 72px;
+  background-color: var(--color-section-bg);
+  border: 1px solid var(--color-borders);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.card--event__day {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-primary-gold);
+  line-height: 1;
+}
+
+.card--event__month {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.card--event__content {
+  flex: 1;
+}
+
+.card--event__title {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: var(--space-4);
+}
+
+.card--event__description {
+  font-size: var(--font-caption);
+  color: var(--color-muted);
+  margin-bottom: var(--space-8);
+}
+
+.card--event__location {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--font-caption);
+  color: var(--color-primary-gold);
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   3. INITIATIVE CARD (Icon Focused)
+   -------------------------------------------------------------------------- */
+.card--initiative {
+  text-align: center;
+  padding: var(--space-32) var(--space-24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  background-color: var(--color-section-bg);
+  border: 1px solid var(--color-borders);
+  border-radius: var(--radius-card);
+}
+
+.card--initiative__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-borders);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-gold);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.card--initiative:hover .card--initiative__icon {
+  transform: scale(1.08);
+  border-color: var(--color-primary-gold);
+}
+
+.card--initiative__title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. STATISTIC CARD
+   -------------------------------------------------------------------------- */
+.card--statistic {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-20);
+  padding: var(--space-24);
+  background-color: var(--color-section-bg);
+  border: 1px solid var(--color-borders);
+  border-radius: var(--radius-card);
+}
+
+.card--statistic__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(182, 122, 42, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-gold);
+  flex-shrink: 0;
+}
+
+.card--statistic__number {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  font-weight: 700;
+  color: var(--color-heading);
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+.card--statistic__label {
+  font-weight: 700;
+  color: var(--color-heading);
+  font-size: var(--font-body-md);
+  margin-bottom: var(--space-4);
+}
+
+.card--statistic__sublabel {
+  font-size: var(--font-caption);
+  color: var(--color-muted);
+}
+
+/* --------------------------------------------------------------------------
+   5. IMAGE SHOWCASE CARD
+   -------------------------------------------------------------------------- */
+.card--image {
+  padding: 0;
+  border-radius: var(--radius-img);
+  overflow: hidden;
+}
+
+.card--image__media {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card--image:hover .card--image__media {
+  transform: scale(1.03);
+}
+
+.card--image__body {
+  padding: var(--space-24);
+}

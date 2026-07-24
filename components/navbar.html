@@ -1,0 +1,90 @@
+<!-- ==========================================================================
+     SHREE BHATIAWADI TRUST - REUSABLE GLOBAL NAVIGATION COMPONENT
+     Phase 2 Deliverable (Updated with taj-mahal.png logo)
+     ========================================================================== -->
+<header class="navbar" id="main-navbar">
+  <div class="container navbar__container">
+    
+    <!-- Left Section: Logo & Tagline -->
+    <a href="index.html" class="navbar__logo" aria-label="Shree Bhatiawadi Trust Home">
+      <img src="assets/icons/taj-mahal.png" alt="Shree Bhatiawadi Emblem" class="navbar__logo-emblem">
+      <div class="navbar__logo-text">
+        <span class="navbar__logo-title">SHREE BHATIAWADI TRUST</span>
+        <span class="navbar__logo-subtitle">SERVING WITH DEVOTION</span>
+      </div>
+    </a>
+
+    <!-- Center Section: Navigation Links -->
+    <nav class="navbar__nav" aria-label="Main Navigation">
+      <ul class="navbar__menu">
+        <li class="navbar__item">
+          <a href="index.html" class="navbar__link navbar__link--active" aria-current="page">Home</a>
+        </li>
+        <li class="navbar__item">
+          <a href="about.html" class="navbar__link">About Us</a>
+        </li>
+        <li class="navbar__item">
+          <a href="our-work.html" class="navbar__link">Our Work</a>
+        </li>
+        <li class="navbar__item">
+          <a href="banquet-halls.html" class="navbar__link">Banquet Halls</a>
+        </li>
+        <li class="navbar__item">
+          <a href="cultural-forum.html" class="navbar__link">Cultural Forum</a>
+        </li>
+        <li class="navbar__item">
+          <a href="trustees.html" class="navbar__link">Trustees</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Right Section: Actions & CTA -->
+    <div class="navbar__actions">
+      <a href="banquet-halls.html#booking" class="btn btn--primary navbar__cta">BOOK A VENUE</a>
+      
+      <!-- Mobile Hamburger Toggle Button -->
+      <button class="navbar__toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle Navigation Menu">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Mobile Slide-Down Navigation Panel (768px & below) -->
+  <div class="navbar__mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="navbar__mobile-header">
+      <a href="index.html" class="navbar__logo" aria-label="Shree Bhatiawadi Trust Home">
+        <img src="assets/icons/taj-mahal.png" alt="Shree Bhatiawadi Emblem" class="navbar__logo-emblem">
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-title">SHREE BHATIAWADI TRUST</span>
+          <span class="navbar__logo-subtitle">SERVING WITH DEVOTION</span>
+        </div>
+      </a>
+      <button class="navbar__mobile-close" aria-label="Close navigation menu">✕</button>
+    </div>
+
+    <div class="navbar__mobile-body">
+      <ul class="navbar__mobile-links">
+        <li><a href="index.html" class="navbar__mobile-link navbar__mobile-link--active">Home</a></li>
+        <li><a href="about.html" class="navbar__mobile-link">About Us</a></li>
+        <li><a href="our-work.html" class="navbar__mobile-link">Our Work</a></li>
+        <li><a href="banquet-halls.html" class="navbar__mobile-link">Banquet Halls</a></li>
+        <li><a href="cultural-forum.html" class="navbar__mobile-link">Cultural Forum</a></li>
+        <li><a href="trustees.html" class="navbar__mobile-link">Trustees</a></li>
+      </ul>
+
+      <div class="navbar__mobile-actions">
+        <a href="banquet-halls.html#booking" class="btn btn--primary navbar__mobile-cta">BOOK A VENUE</a>
+        
+        <!-- Social Placeholders -->
+        <div class="navbar__mobile-socials">
+          <a href="#" class="navbar__mobile-social-icon" aria-label="Facebook">f</a>
+          <a href="#" class="navbar__mobile-social-icon" aria-label="Instagram">📷</a>
+          <a href="#" class="navbar__mobile-social-icon" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

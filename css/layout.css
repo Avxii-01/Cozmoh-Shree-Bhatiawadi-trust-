@@ -1,0 +1,143 @@
+/* ==========================================================================
+   SHREE BHATIAWADI - FLUID LAYOUT & GRID SYSTEM
+   Refactored for 92% Viewport Width & 1600px Max-Width Rhythm
+   ========================================================================== */
+
+/* Fluid Global Page Container */
+.container {
+  width: min(92vw, var(--container-max, 1600px));
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 2vw, 32px);
+  padding-right: clamp(16px, 2vw, 32px);
+}
+
+.container--narrow {
+  width: min(92vw, 1000px);
+}
+
+/* Sections */
+.section {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+  position: relative;
+}
+
+.section--alt {
+  background-color: var(--color-section-bg);
+}
+
+.section--dark {
+  background-color: var(--color-dark-card);
+  color: #FFFFFF;
+}
+
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
+.section--dark h4 {
+  color: #FFFFFF;
+}
+
+.section--dark p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.section--dark .eyebrow {
+  color: var(--color-primary-gold);
+}
+
+/* Grid System - Fractional Units */
+.grid {
+  display: grid;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.grid-12 {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* Flexbox Layout Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.gap-12 { gap: var(--space-12); }
+.gap-16 { gap: var(--space-16); }
+.gap-24 { gap: var(--space-24); }
+.gap-32 { gap: var(--space-32); }
+
+/* Section Heading Component */
+.section-heading {
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.section-heading--center {
+  text-align: center;
+}
+
+.section-heading--between {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-24);
+  flex-wrap: wrap;
+}
+
+.section-heading__paragraph {
+  max-width: 680px;
+  margin-top: var(--space-12);
+  margin-bottom: 0;
+}
+
+.section-heading__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-weight: 600;
+  color: var(--color-primary-gold);
+  font-size: var(--font-body-md);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.section-heading__link:hover {
+  color: var(--color-gold-hover);
+  transform: translateX(4px);
+}

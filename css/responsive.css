@@ -1,0 +1,161 @@
+/* ==========================================================================
+   SHREE BHATIAWADI - RESPONSIVE BREAKPOINTS & MEDIA QUERIES
+   Supporting: 1600+, 1440, 1280, 1024, 768, 576, 480, 390, 360, 320
+   ========================================================================== */
+
+/* 1600px+ (Ultra Wide) */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* 1280px to 1439px */
+@media (max-width: 1439px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* 1024px to 1279px (Small Laptops & Tablets Landscape) */
+@media (max-width: 1279px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .grid-12 {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-32);
+  }
+}
+
+/* 992px to 1023px (Tablet Layout) */
+@media (max-width: 991px) {
+  .navbar__nav {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+  /* Mobile Drawer Menu */
+  .navbar__mobile-drawer {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background-color: var(--color-card-bg);
+    padding: var(--space-32);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-20);
+    box-shadow: var(--shadow-lg);
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+    z-index: 999;
+  }
+
+  .navbar__mobile-drawer.active {
+    transform: translateX(0);
+  }
+
+  .navbar__mobile-drawer .navbar__link {
+    font-size: 1.25rem;
+    font-family: var(--font-heading);
+  }
+}
+
+/* 768px (Tablet Portrait & Large Phones) */
+@media (max-width: 768px) {
+  .container {
+    padding-left: var(--space-16);
+    padding-right: var(--space-16);
+  }
+
+  .section {
+    padding-top: var(--space-64);
+    padding-bottom: var(--space-64);
+  }
+
+  .grid-12, .grid-8 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-3, .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading--between {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card--banquet {
+    height: 440px;
+  }
+
+  .card--banquet__overlay {
+    margin: var(--space-16);
+    padding: var(--space-16);
+  }
+
+  .card--event {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* 576px (Phones) */
+@media (max-width: 576px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-32);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: var(--space-16);
+    text-align: center;
+  }
+
+  .card--banquet__actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* 480px / 390px / 360px / 320px (Small Compact Mobile) */
+@media (max-width: 480px) {
+  :root {
+    --header-height: 76px;
+    --button-height: 48px;
+  }
+
+  .navbar__logo-title {
+    font-size: 0.95rem;
+  }
+
+  .card--statistic {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding-left: var(--space-12);
+    padding-right: var(--space-12);
+  }
+}

@@ -1,0 +1,131 @@
+/* ==========================================================================
+   SHREE BHATIAWADI - UTILITY CLASSES & BADGES
+   ========================================================================== */
+
+/* Badges & Amenity Chips */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-12);
+  font-size: var(--font-caption);
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  line-height: 1.4;
+}
+
+.badge--gold {
+  background-color: var(--color-gold-light);
+  color: var(--color-primary-gold);
+  border: 1px solid var(--color-gold-border);
+}
+
+.badge--outline-light {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-4) var(--space-12);
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.chip--light {
+  background-color: var(--color-section-bg);
+  color: var(--color-heading);
+  border: 1px solid var(--color-borders);
+}
+
+/* Icon Utilities */
+.icon-gold {
+  color: var(--color-primary-gold);
+  stroke-width: 2px;
+}
+
+.icon-svg {
+  display: inline-block;
+  vertical-align: middle;
+  stroke-width: 2px;
+  stroke: currentColor;
+  fill: none;
+}
+
+/* Spacing Helpers */
+.mt-8 {
+  margin-top: var(--space-8) !important;
+}
+
+.mt-16 {
+  margin-top: var(--space-16) !important;
+}
+
+.mt-24 {
+  margin-top: var(--space-24) !important;
+}
+
+.mt-32 {
+  margin-top: var(--space-32) !important;
+}
+
+.mt-48 {
+  margin-top: var(--space-48) !important;
+}
+
+.mb-8 {
+  margin-bottom: var(--space-8) !important;
+}
+
+.mb-16 {
+  margin-bottom: var(--space-16) !important;
+}
+
+.mb-24 {
+  margin-bottom: var(--space-24) !important;
+}
+
+.mb-32 {
+  margin-bottom: var(--space-32) !important;
+}
+
+.mb-48 {
+  margin-bottom: var(--space-48) !important;
+}
+
+/* Background Helpers */
+.bg-cream {
+  background-color: var(--color-bg);
+}
+
+.bg-white {
+  background-color: #FFFFFF;
+}
+
+.bg-section {
+  background-color: var(--color-section-bg);
+}
+
+.bg-dark {
+  background-color: var(--color-dark-card);
+}
+
+/* Screen Reader Only — visually hidden but accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

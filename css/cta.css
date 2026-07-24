@@ -1,0 +1,156 @@
+/* ==========================================================================
+   SHREE BHATIAWADI - LEGACY CTA BANNER
+   ========================================================================== */
+
+.cta-section {
+  padding-top: 0;
+  /* Let the previous section's bottom padding act as the gap */
+  padding-bottom: 0;
+  background-color: var(--color-bg);
+}
+
+.legacy-banner {
+  background-color: #74512D;
+  /* Heritage warm brown */
+  border-radius: var(--radius-card);
+  padding: clamp(32px, 4vw, 48px) clamp(24px, 4vw, 56px);
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 4vw, 48px);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  color: #FFFFFF;
+}
+
+/* Optional subtle texture via pseudo-element */
+.legacy-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../assets/logos/tajmahal.png');
+  background-size: 400px;
+  background-repeat: repeat;
+  opacity: 0.02;
+  pointer-events: none;
+}
+
+/* ── Banner Content Layout ─────────────────────────────────────────────── */
+.legacy-banner__icon {
+  width: clamp(80px, 8vw, 120px);
+  height: auto;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+  /* Make the gold icon white */
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+.legacy-banner__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.legacy-banner__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: var(--space-8);
+  line-height: 1.2;
+}
+
+.legacy-banner__desc {
+  font-family: var(--font-body);
+  font-size: var(--font-body-md);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 0;
+  max-width: 600px;
+}
+
+/* ── Banner Actions ────────────────────────────────────────────────────── */
+.legacy-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Override secondary button to look good on brown */
+.legacy-banner .btn--secondary {
+  background-color: transparent;
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+}
+
+.legacy-banner .btn--secondary:hover {
+  border-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.legacy-banner .btn--primary {
+  background-color: #FFFFFF;
+  color: #74512D;
+  border-color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.legacy-banner .btn--primary:hover {
+  background-color: var(--color-bg);
+  color: var(--color-heading);
+}
+
+/* ── Responsive Breakpoints ────────────────────────────────────────────── */
+
+/* Tablet & Smaller Laptops */
+@media (max-width: 1023px) {
+  .legacy-banner {
+    flex-wrap: wrap;
+  }
+
+  .legacy-banner__actions {
+    width: 100%;
+    margin-top: var(--space-16);
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .section.cta-section {
+    padding-top: 0;
+    padding-bottom: var(--space-64);
+  }
+
+  .legacy-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-32) var(--space-24);
+    gap: var(--space-24);
+  }
+
+  .legacy-banner__icon {
+    width: 64px;
+  }
+
+  .legacy-banner__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .legacy-banner__actions .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shree Bhatiawadi Trust - Preserving Heritage. Building Community.</title>
+  <meta name="description"
+    content="Shree Bhatiawadi Trust is dedicated to charitable service, cultural preservation, and creating spaces that bring people together.">
+
+  <!-- Google Fonts: Cormorant Garamond & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Architecture Files -->
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/banquet.css">
+  <link rel="stylesheet" href="css/stats.css">
+  <link rel="stylesheet" href="css/initiatives.css">
+  <link rel="stylesheet" href="css/events.css">
+  <link rel="stylesheet" href="css/cta.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/carousel.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       GLOBAL REUSABLE NAVIGATION COMPONENT (components/navbar.html)
+       ========================================================================== -->
+  <header class="navbar" id="main-navbar">
+    <div class="container navbar__container">
+
+      <!-- Left Section: Logo & Tagline -->
+      <a href="index.html" class="navbar__logo" aria-label="Shree Bhatiawadi Trust Home">
+        <img src="assets/icons/taj-mahal.png" alt="Shree Bhatiawadi Emblem" class="navbar__logo-emblem">
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-title">SHREE BHATIAWADI TRUST</span>
+          <span class="navbar__logo-subtitle">SERVING WITH DEVOTION</span>
+        </div>
+      </a>
+
+      <!-- Center Section: Navigation Links -->
+      <nav class="navbar__nav" aria-label="Main Navigation">
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="index.html" class="navbar__link navbar__link--active" aria-current="page">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="about.html" class="navbar__link">About Us</a>
+          </li>
+          <li class="navbar__item">
+            <a href="our-work.html" class="navbar__link">Our Work</a>
+          </li>
+          <li class="navbar__item">
+            <a href="banquet-halls.html" class="navbar__link">Banquet Halls</a>
+          </li>
+          <li class="navbar__item">
+            <a href="cultural-forum.html" class="navbar__link">Cultural Forum</a>
+          </li>
+          <li class="navbar__item">
+            <a href="trustees.html" class="navbar__link">Trustees</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right Section: Actions & CTA Button -->
+      <div class="navbar__actions">
+        <a href="banquet-halls.html#booking" class="btn btn--primary navbar__cta">BOOK A VENUE</a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button class="navbar__toggle" aria-expanded="false" aria-controls="mobile-menu"
+          aria-label="Toggle Navigation Menu">
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Slide-Down Navigation Panel (1099px & below) -->
+    <div class="navbar__mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="navbar__mobile-header">
+        <a href="index.html" class="navbar__logo" aria-label="Shree Bhatiawadi Trust Home">
+          <img src="assets/icons/taj-mahal.png" alt="Shree Bhatiawadi Emblem" class="navbar__logo-emblem">
+          <div class="navbar__logo-text">
+            <span class="navbar__logo-title">SHREE BHATIAWADI TRUST</span>
+            <span class="navbar__logo-subtitle">SERVING WITH DEVOTION</span>
+          </div>
+        </a>
+        <button class="navbar__mobile-close" aria-label="Close navigation menu">✕</button>
+      </div>
+
+      <div class="navbar__mobile-body">
+        <ul class="navbar__mobile-links">
+          <li><a href="index.html" class="navbar__mobile-link navbar__mobile-link--active">Home</a></li>
+          <li><a href="about.html" class="navbar__mobile-link">About Us</a></li>
+          <li><a href="our-work.html" class="navbar__mobile-link">Our Work</a></li>
+          <li><a href="banquet-halls.html" class="navbar__mobile-link">Banquet Halls</a></li>
+          <li><a href="cultural-forum.html" class="navbar__mobile-link">Cultural Forum</a></li>
+          <li><a href="trustees.html" class="navbar__mobile-link">Trustees</a></li>
+        </ul>
+
+        <div class="navbar__mobile-actions">
+          <a href="banquet-halls.html#booking" class="btn btn--primary navbar__mobile-cta">BOOK A VENUE</a>
+
+          <div class="navbar__mobile-socials">
+            <a href="#" class="navbar__mobile-social-icon" aria-label="Facebook">f</a>
+            <a href="#" class="navbar__mobile-social-icon" aria-label="Instagram">📷</a>
+            <a href="#" class="navbar__mobile-social-icon" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO & BANQUET HALL SHOWCASE SECTIONS
+       ========================================================================== -->
+  <main>
+
+    <!-- PHASE 3 — HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="hero__container">
+
+        <!-- Left Column: Heritage Content (42%) -->
+        <div class="hero__content">
+          <span class="hero__eyebrow reveal-fade-up">SERVING SINCE GENERATIONS</span>
+          <h1 class="hero__title reveal-fade-up">
+            Preserving Heritage.
+            <span class="hero__title-gold">Building Community.</span>
+          </h1>
+          <p class="hero__paragraph reveal-fade-up">
+            Shree Bhatiawadi Trust is dedicated to charitable service, cultural preservation, and creating spaces that
+            bring people together.
+          </p>
+          <div class="hero__actions reveal-fade-up">
+            <a href="our-work.html" class="btn btn--primary">
+              EXPLORE OUR WORK
+              <span class="btn__icon btn__icon--arrow">→</span>
+            </a>
+            <a href="banquet-halls.html" class="btn btn--secondary">VIEW BANQUET HALLS</a>
+          </div>
+        </div>
+
+        <!-- Right Column: Palace Visual with Organic Morning Light Gradient Fade (58%) -->
+        <div class="hero__visual-wrapper">
+          <div class="hero__gradient-overlay" aria-hidden="true"></div>
+          <img src="assets/hero/hero_image.png" alt="Shree Bhatiawadi Heritage Palace Grounds and Gardens"
+            class="hero__image reveal-scale" width="1200" height="800" loading="eager">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PHASE 4 — BANQUET HALL SHOWCASE (DATA-DRIVEN CAROUSEL) -->
+    <section class="section banquet-section" id="banquet-halls">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="banquet-header">
+          <h2 class="banquet-header__title">BANQUET HALLS</h2>
+          <a href="about.html" class="banquet-header__link">
+            Learn About Us
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- Data-Driven Carousel Wrapper -->
+        <div class="banquet-carousel js-banquet-carousel" tabindex="0" aria-label="Banquet Halls Interactive Showcase">
+          <button class="banquet-nav-btn banquet-nav-btn--prev" aria-label="Previous Banquet Hall">‹</button>
+
+          <!-- Stage populated dynamically by js/carousel.js from js/banquet-data.js -->
+          <div class="banquet-carousel__stage"></div>
+
+          <button class="banquet-nav-btn banquet-nav-btn--next" aria-label="Next Banquet Hall">›</button>
+
+          <!-- Dynamic Dots -->
+          <div class="banquet-dots"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PHASE 5 — STATISTICS / TRUST METRICS -->
+    <section class="stats-section" id="trust-metrics" aria-labelledby="stats-heading">
+      <div class="container">
+        <h2 id="stats-heading" class="sr-only">Trust Achievements</h2>
+
+        <div class="stats-container reveal-fade-up">
+          <div class="stats-grid">
+
+            <!-- Stat 1: Years of Service -->
+            <div class="stats-item">
+              <img src="assets/logos/tajmahal.png" alt="Heritage temple icon representing years of service"
+                class="stats-item__icon" width="52" height="52" loading="lazy">
+              <div class="stats-item__content">
+                <span class="stats-item__number" data-target="75+">75+</span>
+                <h3 class="stats-item__title">Years of Service</h3>
+                <p class="stats-item__desc">Serving since generations</p>
+              </div>
+            </div>
+
+            <!-- Stat 2: Lives Touched -->
+            <div class="stats-item">
+              <img src="assets/logos/people.png" alt="Helping hands icon representing lives touched"
+                class="stats-item__icon" width="52" height="52" loading="lazy">
+              <div class="stats-item__content">
+                <span class="stats-item__number" data-target="100K+">100K+</span>
+                <h3 class="stats-item__title">Lives Touched</h3>
+                <p class="stats-item__desc">Through our initiatives</p>
+              </div>
+            </div>
+
+            <!-- Stat 3: Events Hosted -->
+            <div class="stats-item">
+              <img src="assets/logos/calendar.png" alt="Calendar icon representing events hosted"
+                class="stats-item__icon" width="52" height="52" loading="lazy">
+              <div class="stats-item__content">
+                <span class="stats-item__number" data-target="5000+">5000+</span>
+                <h3 class="stats-item__title">Events Hosted</h3>
+                <p class="stats-item__desc">Celebrations &amp; gatherings</p>
+              </div>
+            </div>
+
+            <!-- Stat 4: Community Programs -->
+            <div class="stats-item">
+              <img src="assets/logos/community.png" alt="Heart icon representing community programs"
+                class="stats-item__icon" width="52" height="52" loading="lazy">
+              <div class="stats-item__content">
+                <span class="stats-item__number" data-target="Many">Many</span>
+                <h3 class="stats-item__title">Community Programs</h3>
+                <p class="stats-item__desc">Across multiple domains</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PHASE 6 — OUR INITIATIVES -->
+    <section class="initiatives-section section" id="initiatives" aria-labelledby="initiatives-heading">
+      <div class="container">
+        <div class="initiatives-layout">
+
+          <!-- Left Column (Text) -->
+          <div class="initiatives-text reveal-fade-up">
+            <span class="eyebrow">OUR INITIATIVES</span>
+            <h2 id="initiatives-heading" class="initiatives-heading">
+              Empowering Lives.<br>
+              <span class="text-gold">Enriching Society.</span>
+            </h2>
+            <p class="initiatives-desc">
+              Our initiatives span education, healthcare, cultural preservation, and community development.
+            </p>
+            <a href="our-work.html" class="initiatives-link">
+              EXPLORE OUR INITIATIVES <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <!-- Right Column (Cards) -->
+          <div class="initiatives-grid">
+
+            <!-- Card 1 -->
+            <a href="our-work.html#education" class="initiative-card reveal-fade-up" style="transition-delay: 50ms;">
+              <img src="assets/logos/open-book.png" alt="Education Support Icon" class="initiative-card__icon"
+                width="56" height="56" loading="lazy">
+              <h3 class="initiative-card__title">Education<br>Support</h3>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="our-work.html#healthcare" class="initiative-card reveal-fade-up" style="transition-delay: 100ms;">
+              <img src="assets/logos/healthcare.png" alt="Healthcare Initiatives Icon" class="initiative-card__icon"
+                width="56" height="56" loading="lazy">
+              <h3 class="initiative-card__title">Healthcare<br>Initiatives</h3>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="our-work.html#food" class="initiative-card reveal-fade-up" style="transition-delay: 150ms;">
+              <img src="assets/logos/food-distribution.png" alt="Food Distribution Icon" class="initiative-card__icon"
+                width="56" height="56" loading="lazy">
+              <h3 class="initiative-card__title">Food<br>Distribution</h3>
+            </a>
+
+            <!-- Card 4 -->
+            <a href="our-work.html#skill" class="initiative-card reveal-fade-up" style="transition-delay: 200ms;">
+              <img src="assets/logos/self-improvement.png" alt="Skill Development Icon" class="initiative-card__icon"
+                width="56" height="56" loading="lazy">
+              <h3 class="initiative-card__title">Skill<br>Development</h3>
+            </a>
+
+            <!-- Card 5 -->
+            <a href="our-work.html#cultural" class="initiative-card reveal-fade-up" style="transition-delay: 250ms;">
+              <img src="assets/logos/culutural.png" alt="Cultural Programs Icon" class="initiative-card__icon"
+                width="56" height="56" loading="lazy">
+              <h3 class="initiative-card__title">Cultural<br>Programs</h3>
+            </a>
+
+            <!-- Card 6 -->
+            <a href="our-work.html#senior" class="initiative-card reveal-fade-up" style="transition-delay: 300ms;">
+              <img src="assets/logos/senior_care.png" alt="Senior Care Icon" class="initiative-card__icon" width="56"
+                height="56" loading="lazy">
+              <h3 class="initiative-card__title">Senior<br>Care</h3>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PHASE 7.1 — UPCOMING EVENTS -->
+    <section class="events-section section" id="events" aria-labelledby="events-heading">
+      <!-- Decorative Background -->
+      <!-- Since no subtle mandala was present in assets/images, using a muted inline SVG placeholder that scales -->
+      <svg class="events-bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="90" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5" />
+        <circle cx="90" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5" />
+        <circle cx="90" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5" />
+      </svg>
+
+      <div class="container events-container">
+
+        <header class="events-header reveal-fade-up">
+          <span class="eyebrow" id="events-heading">UPCOMING EVENTS</span>
+          <a href="events.html" class="initiatives-link">
+            VIEW ALL EVENTS <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </header>
+
+        <!-- Events Container (Rendered via JS) -->
+        <div class="events-grid" id="events-grid">
+          <!-- Cards injected dynamically by js/events.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PHASE 7.2 — LEGACY CTA BANNER -->
+    <section class="cta-section section" id="legacy-cta" aria-label="Call to Action">
+      <div class="container">
+
+        <div class="legacy-banner reveal-fade-up">
+          <!-- Left Heritage Logo -->
+          <img src="assets/logos/tajmahal.png" alt="Heritage Logo" class="legacy-banner__icon" loading="lazy"
+            width="100" height="100">
+
+          <!-- Middle Text Content -->
+          <div class="legacy-banner__content">
+            <h2 class="legacy-banner__title">Be a Part of Our Legacy</h2>
+            <p class="legacy-banner__desc">
+              Whether you're booking a venue or supporting our initiatives, your involvement helps us create a stronger
+              community.
+            </p>
+          </div>
+
+          <!-- Right Actions -->
+          <div class="legacy-banner__actions">
+            <a href="contact.html" class="btn btn--secondary">CONTACT US</a>
+            <a href="banquet-halls.html#booking" class="btn btn--primary">
+              BOOK A VENUE
+              <span class="btn__icon btn__icon--arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PHASE 8 — FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid reveal-fade-up">
+
+        <!-- Column 1: Brand -->
+        <div class="footer__brand">
+          <img src="assets/logos/tajmahal.png" alt="Shree Bhatiawadi Trust Heritage Logo" class="footer__logo"
+            width="100" height="auto" loading="lazy">
+          <span class="footer__tagline">Serving with Devotion</span>
+          <p class="footer__description">
+            A legacy of charitable service and cultural preservation, dedicated to uplifting our community.
+          </p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">QUICK LINKS</h4>
+          <ul class="footer__links">
+            <li><a href="about.html" class="footer__link">About Us</a></li>
+            <li><a href="history.html" class="footer__link">History</a></li>
+            <li><a href="our-work.html" class="footer__link">Our Work</a></li>
+            <li><a href="banquet-halls.html" class="footer__link">Banquet Halls</a></li>
+            <li><a href="cultural-forum.html" class="footer__link">Cultural Forum</a></li>
+            <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Support -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">SUPPORT</h4>
+          <ul class="footer__links">
+            <li><a href="donate.html" class="footer__link">Donate</a></li>
+            <li><a href="volunteer.html" class="footer__link">Volunteer</a></li>
+            <li><a href="trustees.html" class="footer__link">Trustee Information</a></li>
+            <li><a href="faqs.html" class="footer__link">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">CONTACT US</h4>
+          <ul class="footer__contact-list">
+            <li>
+              <a href="#" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Bhatiyawadi, Mumbai,<br>Maharashtra, India</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+9102212345678" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+                <span>+91 (022) 1234-5678</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@shreebhatiwadi.org" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>info@shreebhatiwadi.org</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Legal Bar -->
+      <div class="footer__bottom reveal-fade-up" style="transition-delay: 200ms;">
+        <span class="footer__copyright">&copy; 2024 Shree Bhatiyawadi Trust. All rights reserved.</span>
+        <ul class="footer__legal-links">
+          <li><a href="privacy.html" class="footer__legal-link">Privacy Policy</a></li>
+          <li><a href="terms.html" class="footer__legal-link">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Architecture Files -->
+  <script src="js/main.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/banquet-data.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/stats.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/scroll.js"></script>
+
+</body>
+
+</html>

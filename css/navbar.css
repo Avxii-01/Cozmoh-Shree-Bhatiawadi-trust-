@@ -1,0 +1,370 @@
+/* ==========================================================================
+   SHREE BHATIAWADI TRUST - GLOBAL NAVIGATION COMPONENT (CSS)
+   BEM Architecture: .navbar, .navbar__container, .navbar__logo, etc.
+   Refactored for 92% Viewport Container & Early Responsive Switching
+   ========================================================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height, 88px);
+  z-index: 1000;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  transition: background-color 300ms cubic-bezier(.2, .8, .2, 1),
+              border-color 300ms cubic-bezier(.2, .8, .2, 1),
+              box-shadow 300ms cubic-bezier(.2, .8, .2, 1),
+              backdrop-filter 300ms cubic-bezier(.2, .8, .2, 1);
+}
+
+/* Scroll State (> 40-60px scroll) */
+.navbar--scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-divider, #EFE8DF);
+  box-shadow: 0 4px 20px rgba(43, 33, 24, 0.06);
+}
+
+/* Fluid Flexbox Layout Container */
+.navbar__container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(92vw, var(--container-max, 1600px));
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 2vw, 32px);
+  padding-right: clamp(16px, 2vw, 32px);
+}
+
+/* Left Section: Logo Component */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12, 12px);
+  text-decoration: none;
+  color: var(--color-heading, #2B2118);
+  flex-shrink: 0;
+}
+
+.navbar__logo-emblem {
+  max-height: 48px;
+  width: auto;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.navbar__logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__logo-title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-heading, #2B2118);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.navbar__logo-subtitle {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-primary-gold, #B67A2A);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Center Section: Navigation Links */
+.navbar__nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 2.5vw, 44px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__item {
+  position: relative;
+}
+
+.navbar__link {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-heading, #2B2118);
+  text-decoration: none;
+  padding: 8px 0;
+  display: inline-block;
+  position: relative;
+  transition: color 300ms cubic-bezier(.2, .8, .2, 1);
+  letter-spacing: 0.01em;
+}
+
+/* Animated 2px Gold Underline */
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary-gold, #B67A2A);
+  border-radius: 2px;
+  transition: width 300ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.navbar__link:hover {
+  color: var(--color-primary-gold, #B67A2A);
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+.navbar__link--active {
+  color: var(--color-primary-gold, #B67A2A);
+  font-weight: 600;
+}
+
+.navbar__link--active::after {
+  width: 100%;
+}
+
+/* Right Section: Actions & Primary CTA Button */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16, 16px);
+}
+
+.navbar__cta {
+  height: var(--button-height, 52px);
+  padding: 0 28px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: var(--color-primary-gold, #B67A2A);
+  border: 1px solid var(--color-primary-gold, #B67A2A);
+  border-radius: var(--radius-btn, 6px);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 250ms cubic-bezier(.2, .8, .2, 1),
+              background-color 250ms cubic-bezier(.2, .8, .2, 1),
+              box-shadow 250ms cubic-bezier(.2, .8, .2, 1);
+  white-space: nowrap;
+}
+
+.navbar__cta:hover {
+  background-color: var(--color-gold-hover, #9E6823);
+  border-color: var(--color-gold-hover, #9E6823);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(182, 122, 42, 0.28);
+}
+
+/* Mobile Hamburger Toggle Button */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1002;
+}
+
+.navbar__toggle-bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-heading, #2B2118);
+  border-radius: 2px;
+  transition: transform 300ms cubic-bezier(.2, .8, .2, 1),
+              opacity 300ms cubic-bezier(.2, .8, .2, 1),
+              background-color 300ms cubic-bezier(.2, .8, .2, 1);
+}
+
+/* Hamburger to X Transform when open */
+.navbar__toggle--open .navbar__toggle-bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.navbar__toggle--open .navbar__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.navbar__toggle--open .navbar__toggle-bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Fullscreen Slide-Down Mobile Navigation Menu */
+.navbar__mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-card-bg, #FFFFFF);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-24, 24px);
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 300ms cubic-bezier(.2, .8, .2, 1),
+              opacity 300ms cubic-bezier(.2, .8, .2, 1),
+              visibility 300ms cubic-bezier(.2, .8, .2, 1);
+  overflow-y: auto;
+}
+
+.navbar__mobile-menu--active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar__mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-24, 24px);
+  border-bottom: 1px solid var(--color-divider, #EFE8DF);
+}
+
+.navbar__mobile-close {
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--color-heading, #2B2118);
+  cursor: pointer;
+  padding: 8px;
+  line-height: 1;
+}
+
+.navbar__mobile-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: var(--space-32, 32px);
+  padding-bottom: var(--space-32, 32px);
+}
+
+.navbar__mobile-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20, 20px);
+}
+
+.navbar__mobile-link {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-heading, #2B2118);
+  text-decoration: none;
+  transition: color 250ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.navbar__mobile-link:hover,
+.navbar__mobile-link--active {
+  color: var(--color-primary-gold, #B67A2A);
+}
+
+.navbar__mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24, 24px);
+  margin-top: var(--space-32, 32px);
+}
+
+.navbar__mobile-cta {
+  width: 100%;
+  text-align: center;
+}
+
+.navbar__mobile-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-16, 16px);
+}
+
+.navbar__mobile-social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-borders, #E7DDD2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-gold, #B67A2A);
+  text-decoration: none;
+  transition: all 250ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.navbar__mobile-social-icon:hover {
+  background-color: var(--color-primary-gold, #B67A2A);
+  color: #FFFFFF;
+  border-color: var(--color-primary-gold, #B67A2A);
+}
+
+/* ==========================================================================
+   REFINED NAVBAR RESPONSIVE BREAKPOINTS (Phase 3.1 Refactor)
+   ========================================================================== */
+
+/* Laptop Small (1100px to 1279px): Reduce link gap & CTA padding to prevent collision */
+@media (max-width: 1279px) {
+  .navbar__cta {
+    padding: 0 20px;
+    font-size: 0.875rem;
+  }
+}
+
+/* Early Switching Breakpoint (1099px & below): Hide desktop links, show Hamburger Toggle */
+@media (max-width: 1099px) {
+  .navbar__nav {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+}
+
+/* Small Mobile (480px & below) */
+@media (max-width: 480px) {
+  .navbar__logo-title {
+    font-size: 0.95rem;
+  }
+
+  .navbar__logo-subtitle {
+    font-size: 0.625rem;
+  }
+
+  .navbar__cta {
+    display: none; /* Hide top CTA on tiny screens to fit logo & hamburger cleanly */
+  }
+}

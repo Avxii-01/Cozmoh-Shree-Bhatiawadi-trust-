@@ -1,0 +1,235 @@
+/* ==========================================================================
+   SHREE BHATIAWADI TRUST - HERO SECTION REFACTOR (PHASE 3.1)
+   Architecture: Text | (Fade + Image together)
+   1920x1080 Primary Target | Fluid Fractional Grid: 42fr / 58fr
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  height: calc(100svh - var(--header-height, 88px));
+  min-height: 600px;
+  background-color: var(--color-bg, #F8F5F1);
+  display: flex;
+  align-items: center;
+  margin-top: var(--header-height, 88px);
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+/* Two-Column Grid Layout (Desktop: 42fr Left Content, 58fr Right Image Visual) */
+.hero__container {
+  display: grid;
+  grid-template-columns: 42fr 58fr;
+  align-items: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(26px, 4vw, 64px);
+  padding-right: clamp(26px, 4vw, 64px);
+  height: 100%;
+  position: relative;
+}
+
+/* Left Column Content Stack (Z-Index 10 above visual fade overlap) */
+.hero__content {
+  position: relative;
+  z-index: 10;
+  max-width: clamp(480px, 32vw, 540px);
+  padding-right: 0;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary-gold, #B67A2A);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+/* Fluid Typography Scaling */
+.hero__title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.5rem, 4.2vw, 4.25rem);
+  font-weight: 600;
+  line-height: 1.12;
+  color: var(--color-heading, #2B2118);
+  margin-bottom: 20px;
+  letter-spacing: -0.015em;
+}
+
+.hero__title-gold {
+  color: var(--color-primary-gold, #B67A2A);
+  display: block;
+}
+
+.hero__paragraph {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(1rem, 1.15vw, 1.125rem);
+  line-height: 1.7;
+  color: var(--color-body, #5C534A);
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Right Visual Wrapper (Text | Fade + Image together) */
+.hero__visual-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vw;
+  max-width: 1080px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 1;
+  /* Organic morning-light mask on left edge of image */
+  -webkit-mask-image:
+    radial-gradient(ellipse 110% 90% at 85% 50%, #000 45%, rgba(0, 0, 0, 0.85) 70%, rgba(0, 0, 0, 0.2) 90%, transparent 100%),
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.15) 8%, rgba(0, 0, 0, 0.85) 24%, #000 42%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  mask-image:
+    radial-gradient(ellipse 110% 90% at 85% 50%, #000 45%, rgba(0, 0, 0, 0.85) 70%, rgba(0, 0, 0, 0.2) 90%, transparent 100%),
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.15) 8%, rgba(0, 0, 0, 0.85) 24%, #000 42%);
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+  /* Shift right so palace building remains main focal point */
+  transform: scale(1);
+  transition: transform 700ms cubic-bezier(.2, .8, .2, 1),
+    opacity 700ms cubic-bezier(.2, .8, .2, 1);
+}
+
+/* Organic Soft Fade Overlay directly attached to left edge of visual wrapper */
+.hero__gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 0% 50%, var(--color-bg, #F8F5F1) 0%, rgba(248, 245, 241, 0.85) 30%, transparent 70%),
+    linear-gradient(to right,
+      var(--color-bg, #F8F5F1) 0%,
+      rgba(248, 245, 241, 0.95) 12%,
+      rgba(248, 245, 241, 0.5) 35%,
+      rgba(248, 245, 241, 0.1) 65%,
+      transparent 100%);
+}
+
+/* Animation Revealed States */
+.hero__image.reveal-scale {
+  transform: scale(1.03);
+  opacity: 0;
+}
+
+.hero__image.reveal-active {
+  transform: scale(1) !important;
+  opacity: 1 !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE HERO STRATEGY
+   (≥950px: Two-column overlap | <950px: Hide image completely, center text)
+   ========================================================================== */
+
+/* Ultra Wide (1920px+) */
+@media (min-width: 1920px) {
+  .hero__content {
+    max-width: 560px;
+  }
+}
+
+/* Laptop (1280px – 1439px) */
+@media (max-width: 1439px) {
+  .hero__visual-wrapper {
+    width: 58vw;
+  }
+}
+
+/* Laptop Small (1100px – 1279px) */
+@media (max-width: 1279px) {
+  .hero__content {
+    max-width: 460px;
+  }
+
+  .hero__visual-wrapper {
+    width: 56vw;
+  }
+}
+
+/* Tablet Landscape (950px – 1099px) */
+@media (max-width: 1099px) and (min-width: 950px) {
+  .hero__content {
+    max-width: 440px;
+  }
+
+  .hero__visual-wrapper {
+    width: 54vw;
+  }
+}
+
+/* Below 950px Breakpoint: HIDE HERO IMAGE COMPLETELY & CENTER TEXT */
+@media (max-width: 949px) {
+  .hero {
+    height: auto;
+    padding-top: var(--space-64, 64px);
+    padding-bottom: var(--space-64, 64px);
+  }
+
+  .hero__container {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .hero__content {
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .hero__paragraph {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  /* HIDE HERO IMAGE ENTIRELY BELOW 950PX (No vertical stacking) */
+  .hero__visual-wrapper {
+    display: none !important;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+}
