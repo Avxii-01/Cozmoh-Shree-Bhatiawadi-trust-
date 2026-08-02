@@ -35,13 +35,13 @@ window.SBTParticles = (function SBTParticles() {
   var CONFIG = {
     /* Section baseline particle counts (Desktop baseline) */
     counts: {
-      'hero':        80,
-      'cta':         70,
-      'banquet':     55,
-      'initiatives': 50,
-      'events':      50,
-      'stats':       45,
-      'footer':      30,
+      'hero':        50,
+      'banquet':     30,
+      'legacy':      45,
+      'initiatives': 25,
+      'events':      40,
+      'cta':         20,
+      'footer':      20,
     },
 
     /* Responsive scaling factors */
@@ -49,7 +49,7 @@ window.SBTParticles = (function SBTParticles() {
     mobileScale: 0.40,
 
     /* Background classification per section key */
-    darkSections: ['hero', 'stats', 'cta'],
+    darkSections: ['hero', 'legacy', 'events'],
 
     /* Dual Palettes */
     palettes: {
