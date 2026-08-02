@@ -1,87 +1,122 @@
 /* ==========================================================================
-   SHREE BHATIAWADI - GLOBAL DESIGN TOKENS
-   Refactored for 1920x1080 Primary Target & Fluid Responsive Architecture
+   SHREE BHATIAWADI — GLOBAL DESIGN TOKENS (v3 — Royal Heritage Dark Theme)
    ========================================================================== */
 
 :root {
-  /* Color System */
-  --color-primary-gold: #B67A2A;
-  --color-gold-hover: #9E6823;
-  --color-gold-light: rgba(182, 122, 42, 0.1);
-  --color-gold-border: rgba(182, 122, 42, 0.3);
 
-  --color-heading: #2B2118;
-  --color-body: #5C534A;
-  --color-muted: #857C73;
+  /* ── Heritage Palette & Specified Color Variables ───────────────────── */
+  --bg-dark:               #15120F;          /* Requested Main Dark Background */
+  --bg-secondary:          #1D1712;          /* Requested Alt Dark Background  */
+  --card:                  #241B15;          /* Requested Base Dark Card       */
+  --gold:                  #C89A4A;          /* Requested Primary Gold         */
+  --gold-light:            #D9B56C;          /* Requested Light Gold           */
+  --bronze:                #8D6738;          /* Requested Bronze               */
+  --text:                  #F5EFE5;          /* Requested Primary Text         */
+  --text-secondary:        #C9B8A0;          /* Requested Secondary Text       */
+  --border:                rgba(200, 154, 74, 0.18); /* Requested Border     */
 
-  --color-bg: #F8F5F1;
-  --color-section-bg: #FBF9F6;
-  --color-card-bg: #FFFFFF;
-  --color-dark-card: #3D2B1F;
+  --color-bg-primary:      var(--bg-dark);
+  --color-bg-secondary:    var(--bg-secondary);
+  --color-bg-tertiary:     #231913;
+  --color-card-bg:         var(--card);
+  --color-card-elevated:   #2C2119;
+  
+  /* Gold Accents Aliases */
+  --color-primary-gold:    var(--gold);
+  --color-gold-light:      var(--gold-light);
+  --color-gold-hover:      var(--gold-light);
+  --color-gold-deep:       var(--bronze);
+  --color-bronze:          var(--bronze);
+  --color-gold-subtle:     rgba(200, 154, 74, 0.10);
+  --color-gold-border:     var(--border);
+  --color-gold-shimmer:    rgba(217, 181, 108, 0.22);
 
-  --color-borders: #E7DDD2;
-  --color-divider: #EFE8DF;
+  /* Text Colors Aliases */
+  --color-heading:         var(--text);
+  --color-body:            var(--text-secondary);
+  --color-muted:           #98846B;
+  --color-primary-text:    var(--text);
+  --color-secondary-text:  var(--text-secondary);
 
-  --color-shadow: rgba(80, 50, 20, 0.08);
-  --color-shadow-hover: rgba(80, 50, 20, 0.14);
+  /* Aliases for back-compat */
+  --color-bg:              var(--color-bg-primary);
+  --color-parchment:       var(--color-bg-secondary);
+  --color-section-bg:      var(--color-bg-secondary);
+  --color-dark-section:    var(--color-bg-primary);
+  --color-dark-card:       var(--color-card-bg);
+  --color-dark-cta:        #1D1712;
+  --color-dark-footer-bar: #100C09;
+  --color-text-on-dark:    #F5EFE5;
+  --color-muted-on-dark:   #C9B8A0;
+  --color-border-on-dark:  rgba(200, 154, 74, 0.15);
+  --color-border-gold-dark: rgba(200, 154, 74, 0.25);
 
-  /* Typography */
-  --font-heading: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* ── Borders / Dividers ──────────────────────────────────────────────── */
+  --color-borders:         rgba(200, 154, 74, 0.15);
+  --color-divider:         rgba(200, 154, 74, 0.15);
 
-  /* Fluid Typography Scale (using clamp) */
-  --font-h1: clamp(2.75rem, 5vw, 4.5rem);        /* ~44px to 72px */
-  --font-h2: clamp(2.25rem, 3.8vw, 3.375rem);    /* ~36px to 54px */
-  --font-h3: clamp(1.85rem, 2.8vw, 2.625rem);    /* ~30px to 42px */
-  --font-h4: clamp(1.5rem, 2.2vw, 2rem);         /* ~24px to 32px */
-  --font-h5: clamp(1.25rem, 1.8vw, 1.5rem);      /* ~20px to 24px */
-  --font-body-lg: clamp(1.0625rem, 1.2vw, 1.125rem);
-  --font-body-md: 1rem;
-  --font-caption: 0.875rem;
-  --font-eyebrow: 0.875rem;
+  /* ── Shadows ─────────────────────────────────────────────────────────── */
+  --color-shadow:          rgba(0, 0, 0, 0.45);
+  --color-shadow-hover:    rgba(0, 0, 0, 0.65);
+  --shadow-sm:             0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-md:             0 14px 40px rgba(0, 0, 0, 0.45);
+  --shadow-lg:             0 20px 60px rgba(0, 0, 0, 0.55);
+  --shadow-navbar:         0 8px 32px rgba(0, 0, 0, 0.60);
+  --shadow-gold:           0 8px 25px rgba(200, 154, 74, 0.25);
 
-  /* Spacing Scale (Exact tokens) */
-  --space-4: 4px;
-  --space-8: 8px;
-  --space-12: 12px;
-  --space-16: 16px;
-  --space-24: 24px;
-  --space-32: 32px;
-  --space-40: 40px;
-  --space-48: 48px;
-  --space-64: 64px;
-  --space-80: 80px;
-  --space-96: 96px;
+  /* ── Typography ──────────────────────────────────────────────────────── */
+  --font-heading:  'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-body:     'Inter', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Fluid Type Scale */
+  --font-h1:       clamp(2.75rem, 5vw,   4.5rem);     /* 44px → 72px */
+  --font-h2:       clamp(2.25rem, 3.8vw, 3.375rem);   /* 36px → 54px */
+  --font-h3:       clamp(1.85rem, 2.8vw, 2.625rem);   /* 30px → 42px */
+  --font-h4:       clamp(1.5rem,  2.2vw, 2rem);       /* 24px → 32px */
+  --font-h5:       clamp(1.25rem, 1.8vw, 1.5rem);     /* 20px → 24px */
+  --font-body-lg:  clamp(1.0625rem, 1.2vw, 1.125rem);
+  --font-body-md:  1rem;
+  --font-caption:  0.875rem;
+  --font-eyebrow:  0.8125rem;
+
+  /* ── Spacing Scale ───────────────────────────────────────────────────── */
+  --space-4:   4px;
+  --space-6:   6px;
+  --space-8:   8px;
+  --space-12:  12px;
+  --space-16:  16px;
+  --space-20:  20px;
+  --space-24:  24px;
+  --space-32:  32px;
+  --space-40:  40px;
+  --space-48:  48px;
+  --space-64:  64px;
+  --space-80:  80px;
+  --space-96:  96px;
   --space-120: 120px;
   --space-160: 160px;
 
-  /* Section Spacing Variables */
-  --space-section-tight: clamp(48px, 4vw, 64px);
-  --space-section: clamp(64px, 5vw, 80px);
-  --space-section-loose: clamp(80px, 6vw, 96px);
+  /* Section rhythm */
+  --space-section-tight:  clamp(56px,  5vw,  80px);
+  --space-section:        clamp(72px,  6vw,  96px);
+  --space-section-loose:  clamp(88px,  7vw, 112px);
 
-  /* Component Layout Constraints */
-  --canvas-desktop: 1920px;
-  --container-max: 1600px;
-  --header-height: 88px;
-  --button-height: 52px;
+  /* ── Layout Constraints ──────────────────────────────────────────────── */
+  --canvas-desktop:  1920px;
+  --container-max:   1600px;
+  --header-height:   80px;                           /* Refined navbar height (78-84px range) */
+  --button-height:   52px;
 
-  /* Border Radii */
-  --radius-sm: 6px;
-  --radius-btn: 6px;
-  --radius-card: 16px;
-  --radius-img: 18px;
+  /* ── Border Radii ────────────────────────────────────────────────────── */
+  --radius-sm:   8px;
+  --radius-btn:  8px;
+  --radius-card: 20px;                              /* User requested 18-24px rounded cards */
+  --radius-img:  20px;
   --radius-pill: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 2px 8px var(--color-shadow);
-  --shadow-md: 0 8px 24px var(--color-shadow);
-  --shadow-lg: 0 16px 36px var(--color-shadow-hover);
-  --shadow-navbar: 0 4px 20px rgba(43, 33, 24, 0.06);
-
-  /* Transitions & Animation Easing */
-  --ease-heritage: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --transition-fast: 250ms var(--ease-heritage);
-  --transition-normal: 400ms var(--ease-heritage);
-  --transition-slow: 700ms var(--ease-heritage);
+  /* ── Transitions ─────────────────────────────────────────────────────── */
+  --ease-heritage:    cubic-bezier(0.25, 1, 0.35, 1);  /* Slower, ultra-smooth luxury easing */
+  --transition-fast:  350ms var(--ease-heritage);
+  --transition-normal: 500ms var(--ease-heritage);
+  --transition-slow:  900ms var(--ease-heritage);
 }

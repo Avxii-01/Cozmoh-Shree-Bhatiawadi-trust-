@@ -1,193 +1,342 @@
 /* ==========================================================================
-   SHREE BHATIAWADI - OUR INITIATIVES SECTION
+   SHREE BHATIAWADI TRUST — EDITORIAL INITIATIVES GALLERY (css/initiatives.css)
+   Warm background #F5EFE6, handmade paper texture, photography-first masonry gallery
+   with consistent architectural gutters (24px gap), cinematic bottom overlays,
+   gold title underline hover micro-interactions, and responsive layout.
    ========================================================================== */
 
-/* ── Section Wrapper ───────────────────────────────────────────────────── */
+/* ── Outer Section Container ─────────────────────────────────────────── */
 .initiatives-section {
-  padding-top: 0;
-  padding-bottom: 0;
-  background-color: var(--color-bg);
+  position: relative;
+  background-color: #F5EFE6;            /* Warm heritage background */
+  color: #1F1914;
+  padding: 120px 0;
   overflow: hidden;
 }
 
-/* ── Layout ────────────────────────────────────────────────────────────── */
-.initiatives-layout {
-  /* Default layout for mobile/tablet */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: clamp(40px, 5vw, 80px);
+/* Subtle Handmade Paper Texture Overlay (2-3% Opacity) */
+.initiatives-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(rgba(141, 103, 56, 0.05) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(200, 154, 74, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px, 56px 56px;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.initiatives-text {
-  max-width: 600px;
+.initiatives__container {
+  max-width: 1400px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
 }
 
-.initiatives-heading {
-  margin-bottom: var(--space-24);
+/* ── Section Header Block ────────────────────────────────────────────── */
+.initiatives-header {
+  margin-bottom: 56px;
+  max-width: 680px;
+}
+
+.initiatives-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.initiatives-label__icon {
+  color: var(--gold, #C89A4A);
+  font-size: 0.8rem;
+}
+
+.initiatives-label__text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--gold, #C89A4A);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;                /* Standardized 0.18em tracking */
+}
+
+.initiatives-title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.5rem, 3.8vw, 3.75rem);
+  font-weight: 600;                      /* Clean 600 weight, no heavy shadows */
+  line-height: 1.15;
+  margin-bottom: 20px;
+  text-shadow: none;
+}
+
+.initiatives-title__charcoal {
+  color: #241B15;
+  display: block;
+}
+
+.initiatives-title__gold {
+  color: var(--gold, #C89A4A);
+  display: block;
 }
 
 .initiatives-desc {
-  margin-bottom: var(--space-32);
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 1rem;
+  line-height: 1.7;                      /* Warm charcoal, 1.7 line height */
+  color: #5A4F46;
 }
 
-/* ── CTA Link ──────────────────────────────────────────────────────────── */
-.initiatives-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-8);
-  font-family: var(--font-body);
-  font-size: var(--font-eyebrow);
-  font-weight: 700;
-  color: var(--color-primary-gold);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  position: relative;
-  padding-bottom: 4px;
-  transition: color var(--transition-fast);
-}
-
-.initiatives-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: var(--color-gold-hover);
-  transition: width var(--transition-fast) ease-out;
-}
-
-.initiatives-link:hover {
-  color: var(--color-gold-hover);
-}
-
-.initiatives-link:hover::after {
-  width: 100%;
-}
-
-.initiatives-link .arrow {
-  transition: transform var(--transition-fast);
-  font-size: 1.2em;
-}
-
-.initiatives-link:hover .arrow {
-  transform: translateX(4px);
-}
-
-/* ── Right Column (Cards) ──────────────────────────────────────────────── */
-.initiatives-grid {
-  width: 100%;
+/* ── Editorial Masonry Gallery Layout (Consistent 24px Gutters) ───────── */
+.initiatives-masonry {
   display: grid;
-  /* Default for tablet: 3x2 grid */
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-12);
+  grid-template-columns: repeat(12, 1fr); /* 12-column grid system */
+  gap: 24px;                             /* Consistent architectural gutters */
 }
 
-/* ── Initiative Card ───────────────────────────────────────────────────── */
+/* Card 1: Large Landscape Feature (Columns 1-7, Height 460px) */
+.initiative-card--feature {
+  grid-column: span 7;
+  height: 460px;
+}
+
+/* Card 2: Tall Portrait Feature (Columns 8-12, Height 460px) */
+.initiative-card--tall {
+  grid-column: span 5;
+  height: 460px;
+}
+
+/* Card 3: Medium Landscape (Columns 1-5, Height 360px) */
+.initiative-card--medium-left {
+  grid-column: span 5;
+  height: 360px;
+}
+
+/* Card 4: Supporting Card (Columns 6-12, Height 360px) */
+.initiative-card--supporting-right {
+  grid-column: span 7;
+  height: 360px;
+}
+
+/* Card 5: Supporting Card (Columns 1-6, Height 360px) */
+.initiative-card--supporting-left {
+  grid-column: span 6;
+  height: 360px;
+}
+
+/* Card 6: Medium Landscape (Columns 7-12, Height 360px) */
+.initiative-card--medium-right {
+  grid-column: span 6;
+  height: 360px;
+}
+
+/* ── Initiative Card Design (Photography-First) ──────────────────────── */
 .initiative-card {
-  background-color: #FFFFFF;
-  border: 1px solid var(--color-borders);
-  border-radius: var(--radius-card);
-  padding: clamp(24px, 2.5vw, 32px) clamp(12px, 1.2vw, 20px);
+  position: relative;
+  width: 100%;
+  border-radius: 18px;                   /* 18px rounded corners */
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 12px 32px rgba(35, 25, 19, 0.12);
+  transition: transform 400ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
+              box-shadow 400ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1));
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: var(--space-24);
-  box-shadow: 0 4px 14px rgba(80, 50, 20, 0.03);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
-  min-height: clamp(180px, 13vw, 200px);
+  justify-content: flex-end;
+  outline: none;
 }
 
 .initiative-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(80, 50, 20, 0.08);
-  border-color: var(--color-primary-gold);
+  transform: translateY(-6px);           /* Lift 6px on hover */
+  box-shadow: 0 20px 48px rgba(35, 25, 19, 0.24);
 }
 
-.initiative-card:focus-visible {
-  outline: 2px solid var(--color-primary-gold);
-  outline-offset: 2px;
+.initiative-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 600ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
+              filter 400ms var(--ease-heritage);
 }
 
-.initiative-card__icon {
-  width: clamp(48px, 4vw, 56px);
-  height: clamp(48px, 4vw, 56px);
-  object-fit: contain;
+.initiative-card:hover .initiative-card__img {
+  transform: scale(1.04);                /* Scale to 1.04 on hover */
+  filter: brightness(1.06) contrast(1.02);
+}
+
+/* Cinematic Bottom Gradient Overlay */
+.initiative-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(18, 14, 11, 0.92) 0%,
+    rgba(18, 14, 11, 0.55) 50%,
+    transparent 100%
+  );
+  z-index: 2;
+}
+
+/* Overlay Content (Ivory Typography & Gold Accents) */
+.initiative-card__content {
+  position: relative;
+  z-index: 3;
+  padding: 32px 28px;
+  color: #F5EFE5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .initiative-card__title {
-  font-family: var(--font-body);
-  font-size: clamp(0.875rem, 1vw, 1rem);
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.85rem;
   font-weight: 600;
-  color: var(--color-heading);
-  line-height: 1.3;
-  margin: 0;
+  color: #FFFFFF;
+  line-height: 1.15;
+  margin-bottom: 6px;
+  position: relative;
+  display: inline-block;
 }
 
-/* ── Responsive Breakpoints ────────────────────────────────────────────── */
+/* Gold Accent Line Animating Beneath Title on Hover */
+.initiative-card__title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--gold, #C89A4A);
+  border-radius: 1px;
+  transition: width 350ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1));
+}
 
-/* Desktop (≥1280px): The Requested Refinements */
-@media (min-width: 1280px) {
-  .initiatives-layout {
-    /* Desktop 2-column layout */
-    display: grid;
-    /* Shrink the gap, allow cards to be close to the text */
-    grid-template-columns: minmax(260px, 320px) 1fr;
-    align-items: center;
-    gap: 32px;
-    /* Reduce horizontal gap */
+.initiative-card:hover .initiative-card__title::after {
+  width: 100%;
+}
+
+.initiative-card__desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgba(245, 239, 229, 0.85);
+  margin-bottom: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.initiative-card__link {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gold, #C89A4A);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 250ms var(--ease-heritage), transform 250ms var(--ease-heritage);
+}
+
+.initiative-card:hover .initiative-card__link {
+  color: var(--gold-light, #D9B56C);
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   INITIATIVES RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1279px) {
+  .initiatives-section {
+    padding: 90px 0;
   }
-
-  .initiatives-text {
-    max-width: none;
+  .initiative-card--feature,
+  .initiative-card--tall {
+    height: 400px;
   }
-
-  .initiatives-grid {
-    /* Force 6 columns, allow them to shrink. minmax(0, 1fr) ensures they don't overflow */
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    /* Tighten gap between cards */
-    gap: 12px;
-  }
-
-  .initiative-card {
-    /* Slightly narrower and taller layout */
-    padding: 36px 8px;
-    gap: var(--space-20);
-  }
-
-  .initiative-card__icon {
-    width: 48px;
-    height: 48px;
+  .initiative-card--medium-left,
+  .initiative-card--supporting-right,
+  .initiative-card--supporting-left,
+  .initiative-card--medium-right {
+    height: 320px;
   }
 }
 
-/* Mobile (≤ 768px): 2×3 Grid */
-@media (max-width: 768px) {
-  section.initiatives-section {
-    padding-top: var(--space-32);
-    padding-bottom: var(--space-32);
+/* Tablet (769px to 1023px): Balanced Two-Column Grid */
+@media (max-width: 1023px) {
+  .initiatives-section {
+    padding: 72px 0;
   }
 
-  .initiatives-grid {
+  .initiatives__container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .initiatives-masonry {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-8);
+    gap: 20px;
   }
 
-  .initiative-card {
-    padding: var(--space-24) var(--space-12);
-    gap: var(--space-16);
+  .initiative-card--feature,
+  .initiative-card--tall,
+  .initiative-card--medium-left,
+  .initiative-card--supporting-right,
+  .initiative-card--supporting-left,
+  .initiative-card--medium-right {
+    grid-column: span 1;
+    height: 340px;
+  }
+}
+
+/* Mobile (768px & below): Vertical Stack */
+@media (max-width: 768px) {
+  .initiatives-section {
+    padding: 56px 0;
   }
 
-  .initiative-card__icon {
-    width: 44px;
-    height: 44px;
+  .initiatives__container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .initiatives-header {
+    margin-bottom: 36px;
+  }
+
+  .initiatives-masonry {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .initiative-card--feature,
+  .initiative-card--tall,
+  .initiative-card--medium-left,
+  .initiative-card--supporting-right,
+  .initiative-card--supporting-left,
+  .initiative-card--medium-right {
+    grid-column: span 1;
+    height: 300px;
+    border-radius: 14px;
+  }
+
+  .initiative-card__content {
+    padding: 24px 20px;
   }
 
   .initiative-card__title {
-    font-size: 0.875rem;
+    font-size: 1.5rem;
   }
 }

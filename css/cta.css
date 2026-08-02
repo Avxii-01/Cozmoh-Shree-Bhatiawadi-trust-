@@ -1,156 +1,173 @@
 /* ==========================================================================
-   SHREE BHATIAWADI - LEGACY CTA BANNER
+   SHREE BHATIAWADI — LEGACY CTA BANNER  (v2 — Heritage Royal)
+   Deep warm-brown banner · Gold glow · Heritage pattern overlay
    ========================================================================== */
 
+/* ── Section Spacing ─────────────────────────────────────────────────── */
 .cta-section {
-  padding-top: 0;
-  /* Let the previous section's bottom padding act as the gap */
-  padding-bottom: 0;
-  background-color: var(--color-bg);
+  padding-top:    var(--space-section-tight);
+  padding-bottom: var(--space-section-tight);
+  background-color: var(--color-bg-primary);
 }
 
+/* ── Banner Card ─────────────────────────────────────────────────────── */
 .legacy-banner {
-  background-color: #74512D;
-  /* Heritage warm brown */
-  border-radius: var(--radius-card);
-  padding: clamp(32px, 4vw, 48px) clamp(24px, 4vw, 56px);
+  background: linear-gradient(145deg, #241B15 0%, #1D1712 100%);
+  border-radius: 20px;
+  padding: clamp(40px, 4vw, 56px) clamp(32px, 4vw, 64px);
   display: flex;
   align-items: center;
-  gap: clamp(24px, 4vw, 48px);
-  box-shadow: var(--shadow-md);
+  gap: clamp(24px, 4vw, 56px);
   position: relative;
   overflow: hidden;
-  color: #FFFFFF;
+  color: #F5EFE5;
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.55),
+    0  0  80px rgba(200, 154, 74, 0.08) inset;
 }
 
-/* Optional subtle texture via pseudo-element */
-.legacy-banner::before {
+/* Inner gold border highlight */
+.legacy-banner::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('../assets/logos/tajmahal.png');
-  background-size: 400px;
-  background-repeat: repeat;
-  opacity: 0.02;
+  inset: 1px;
+  border-radius: calc(20px - 1px);
+  border: 1px solid rgba(200, 154, 74, 0.2);
   pointer-events: none;
-}
-
-/* ── Banner Content Layout ─────────────────────────────────────────────── */
-.legacy-banner__icon {
-  width: clamp(80px, 8vw, 120px);
-  height: auto;
-  flex-shrink: 0;
-  filter: brightness(0) invert(1);
-  /* Make the gold icon white */
-  opacity: 0.9;
-  position: relative;
   z-index: 1;
 }
 
+/* Heritage architectural SVG pattern overlay */
+.legacy-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z' fill='none' stroke='rgba(200%2C154%2C74%2C0.05)' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+}
+
+/* Warm radial highlight behind the logo icon */
+.legacy-banner__icon-glow {
+  position: absolute;
+  left: clamp(20px, 3vw, 48px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(200, 154, 74, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Icon ────────────────────────────────────────────────────────────── */
+.legacy-banner__icon {
+  width: clamp(72px, 7vw, 110px);
+  height: auto;
+  flex-shrink: 0;
+  filter: brightness(0) saturate(100%) invert(72%) sepia(42%) saturate(600%) hue-rotate(10deg) brightness(105%) drop-shadow(0 0 10px rgba(200, 154, 74, 0.4));
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Text Content ────────────────────────────────────────────────────── */
 .legacy-banner__content {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .legacy-banner__title {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  font-size: clamp(2rem, 2.6vw, 2.75rem);
   font-weight: 600;
-  color: #FFFFFF;
-  margin-bottom: var(--space-8);
-  line-height: 1.2;
+  color: var(--color-primary-text);
+  margin-bottom: var(--space-12);
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+/* Gold accent under title */
+.legacy-banner__title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-primary-gold), transparent);
+  margin-top: 14px;
 }
 
 .legacy-banner__desc {
   font-family: var(--font-body);
   font-size: var(--font-body-md);
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
+  color: var(--color-secondary-text);
+  line-height: 1.65;
   margin-bottom: 0;
-  max-width: 600px;
+  max-width: 520px;
 }
 
-/* ── Banner Actions ────────────────────────────────────────────────────── */
+/* ── Actions ─────────────────────────────────────────────────────────── */
 .legacy-banner__actions {
   display: flex;
   align-items: center;
   gap: var(--space-16);
   flex-shrink: 0;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-/* Override secondary button to look good on brown */
 .legacy-banner .btn--secondary {
   background-color: transparent;
-  color: #FFFFFF;
-  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-primary-gold);
+  border: 1px solid var(--color-primary-gold);
   box-shadow: none;
 }
 
 .legacy-banner .btn--secondary:hover {
-  border-color: #FFFFFF;
-  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-gold-light);
+  background-color: rgba(200, 154, 74, 0.12);
+  color: var(--color-primary-gold);
 }
 
 .legacy-banner .btn--primary {
-  background-color: #FFFFFF;
-  color: #74512D;
-  border-color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-primary-gold);
+  color: #15120F;
+  font-weight: 700;
+  border-color: var(--color-primary-gold);
+  box-shadow: 0 6px 20px rgba(200, 154, 74, 0.25);
 }
 
 .legacy-banner .btn--primary:hover {
-  background-color: var(--color-bg);
-  color: var(--color-heading);
+  background-color: var(--color-gold-light);
+  border-color: var(--color-gold-light);
+  color: #15120F;
+  box-shadow: 0 10px 30px rgba(200, 154, 74, 0.4);
 }
 
-/* ── Responsive Breakpoints ────────────────────────────────────────────── */
-
-/* Tablet & Smaller Laptops */
+/* ── Responsive ──────────────────────────────────────────────────────── */
 @media (max-width: 1023px) {
-  .legacy-banner {
-    flex-wrap: wrap;
-  }
-
-  .legacy-banner__actions {
-    width: 100%;
-    margin-top: var(--space-16);
-  }
+  .legacy-banner { flex-wrap: wrap; }
+  .legacy-banner__actions { width: 100%; margin-top: var(--space-16); }
 }
 
-
-/* Mobile */
 @media (max-width: 768px) {
   .section.cta-section {
-    padding-top: 0;
-    padding-bottom: var(--space-64);
+    padding-top:    var(--space-section-tight);
+    padding-bottom: var(--space-section-tight);
   }
-
   .legacy-banner {
     flex-direction: column;
     align-items: flex-start;
-    padding: var(--space-32) var(--space-24);
+    padding: var(--space-40) var(--space-24);
     gap: var(--space-24);
   }
-
-  .legacy-banner__icon {
-    width: 64px;
-  }
-
-  .legacy-banner__actions {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .legacy-banner__actions .btn {
-    width: 100%;
-  }
+  .legacy-banner__icon { width: 64px; }
+  .legacy-banner__actions { flex-direction: column; width: 100%; }
+  .legacy-banner__actions .btn { width: 100%; text-align: center; justify-content: center; }
 }

@@ -62,6 +62,13 @@ class GlobalNavbarController {
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => this.closeMobileMenu());
     });
+
+    // Close mobile menu when clicking outside the panel
+    document.addEventListener('click', (event) => {
+      if (this.isOpen && this.mobileMenu && !this.mobileMenu.contains(event.target) && !this.toggleBtn.contains(event.target)) {
+        this.closeMobileMenu();
+      }
+    });
   }
 
   toggleMobileMenu() {

@@ -1,0 +1,163 @@
+/* ==========================================================================
+   SHREE BHATIAWADI TRUST — BANQUET SHOWCASE RESPONSIVE (css/banquet-responsive.css)
+   Breakpoints: Desktop (1400px+), Tablet (1023px & below), Mobile (768px & below)
+   ========================================================================== */
+
+/* ── Laptop / Small Desktop (1024px to 1279px) ───────────────────────── */
+@media (max-width: 1279px) {
+  .banquet-section {
+    padding: 80px 0;
+  }
+
+  .banquet__top-grid {
+    grid-template-columns: 40% 60%;
+    gap: 32px;
+  }
+
+  .banquet__selectors-grid {
+    gap: 16px;
+  }
+
+  .banquet-stat-val {
+    font-size: 1.5rem;
+  }
+
+  .banquet-stat-label {
+    font-size: 0.6875rem;
+  }
+}
+
+/* ── Tablet (769px to 1023px) ────────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .banquet-section {
+    padding: 72px 0;
+  }
+
+  .banquet__container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* Stack columns: Featured Image first, then text content below */
+  .banquet__top-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .banquet__right-col {
+    order: 1;                            /* Featured image comes first */
+  }
+
+  .banquet__left-col {
+    order: 2;                            /* Text content comes second */
+    max-width: 100%;
+  }
+
+  .banquet__featured-wrapper {
+    height: 420px;
+  }
+
+  /* Hall cards become 2x2 grid */
+  .banquet__selectors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Statistics panel becomes 3 columns on tablet */
+  .banquet-stats-panel {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .banquet-stat-col:nth-child(3) {
+    border-right: none;
+  }
+
+  .banquet-stat-col:nth-child(4) {
+    border-top: 1px solid rgba(200, 154, 74, 0.18);
+    padding-top: 16px;
+  }
+
+  .banquet-stat-col:nth-child(5) {
+    border-top: 1px solid rgba(200, 154, 74, 0.18);
+    padding-top: 16px;
+    border-right: none;
+  }
+}
+
+/* ── Mobile (768px & below) ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .banquet-section {
+    padding: 56px 0;
+  }
+
+  .banquet__container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Featured Image & Information Card */
+  .banquet__featured-wrapper {
+    height: 280px;
+    border-radius: 18px;
+  }
+
+  /* Floating Info Card becomes static block positioned beneath the image on mobile */
+  .banquet__info-card {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .banquet-info__name {
+    font-size: 1.75rem;
+  }
+
+  /* Hall selector cards become horizontally scrollable row */
+  .banquet__selectors-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 12px;
+    margin-bottom: 40px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .banquet-card-outer {
+    flex: 0 0 240px;
+    scroll-snap-align: start;
+    padding: 6px;
+  }
+
+  .banquet-selector-card {
+    height: 180px;
+  }
+
+  /* Statistics panel becomes 2 columns on mobile */
+  .banquet-stats-panel {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 24px 16px;
+  }
+
+  .banquet-stat-col {
+    border-right: none;
+    border-bottom: 1px solid rgba(200, 154, 74, 0.15);
+    padding-bottom: 12px;
+    padding-top: 8px;
+  }
+
+  .banquet-stat-col:nth-child(2n) {
+    border-right: none;
+  }
+
+  .banquet-stat-col:last-child {
+    border-bottom: none;
+  }
+}

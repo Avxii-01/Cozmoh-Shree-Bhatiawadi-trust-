@@ -1,26 +1,40 @@
 /* ==========================================================================
    SHREE BHATIAWADI - RESPONSIVE BREAKPOINTS & MEDIA QUERIES
-   Supporting: 1600+, 1440, 1280, 1024, 768, 576, 480, 390, 360, 320
+   Supporting: 1920, 1600, 1440, 1280, 1024, 768, 576, 480, 390, 360, 320
    ========================================================================== */
 
-/* 1600px+ (Ultra Wide) */
+/* ── Desktop & Large Screen (1440px - 1920px) ────────────────────────── */
+@media (min-width: 1440px) {
+  .hero__title {
+    font-size: clamp(4.25rem, 4.8vw, 5.5rem); /* 68px - 88px */
+  }
+}
+
 @media (min-width: 1600px) {
   .container {
     max-width: 1400px;
   }
 }
 
-/* 1280px to 1439px */
+/* 1280px to 1439px (Laptop) */
 @media (max-width: 1439px) {
   .container {
     max-width: 1200px;
   }
+
+  .hero__title {
+    font-size: clamp(3.5rem, 4.2vw, 4.25rem);
+  }
 }
 
-/* 1024px to 1279px (Small Laptops & Tablets Landscape) */
+/* 1024px to 1279px (Small Laptops & Tablet Landscape) */
 @media (max-width: 1279px) {
   .container {
     max-width: 960px;
+  }
+
+  .hero__title {
+    font-size: 3.625rem; /* 58px on tablet landscape */
   }
 
   .grid-12 {
@@ -37,45 +51,29 @@
   }
 }
 
-/* 992px to 1023px (Tablet Layout) */
-@media (max-width: 991px) {
-  .navbar__nav {
-    display: none;
+/* 768px to 1023px (Tablet Portrait) */
+@media (max-width: 1023px) {
+  .hero {
+    height: 90vh;
+    min-height: 560px;
   }
 
-  .navbar__toggle {
-    display: flex;
+  .hero__title {
+    font-size: 3.25rem; /* 52px-58px */
   }
 
-  /* Mobile Drawer Menu */
-  .navbar__mobile-drawer {
-    position: fixed;
-    top: var(--header-height);
-    left: 0;
-    width: 100%;
-    height: calc(100vh - var(--header-height));
-    background-color: var(--color-card-bg);
-    padding: var(--space-32);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-20);
-    box-shadow: var(--shadow-lg);
-    transform: translateX(100%);
-    transition: transform var(--transition-normal);
-    z-index: 999;
-  }
-
-  .navbar__mobile-drawer.active {
-    transform: translateX(0);
-  }
-
-  .navbar__mobile-drawer .navbar__link {
-    font-size: 1.25rem;
-    font-family: var(--font-heading);
+  .hero__overlay-gradient {
+    background: linear-gradient(
+      90deg,
+      rgba(15, 12, 9, 0.94) 0%,
+      rgba(15, 12, 9, 0.88) 50%,
+      rgba(15, 12, 9, 0.60) 80%,
+      rgba(15, 12, 9, 0.35) 100%
+    );
   }
 }
 
-/* 768px (Tablet Portrait & Large Phones) */
+/* 768px and below (Tablet Portrait & Large Mobile) */
 @media (max-width: 768px) {
   .container {
     padding-left: var(--space-16);
@@ -85,6 +83,66 @@
   .section {
     padding-top: var(--space-64);
     padding-bottom: var(--space-64);
+  }
+
+  /* Mobile Hero Height & Center Layout */
+  .hero {
+    height: 85vh;
+    min-height: 520px;
+  }
+
+  .hero__container {
+    justify-content: center;
+  }
+
+  .hero__content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__badge {
+    justify-content: center;
+  }
+
+  .hero__badge-divider {
+    display: none;
+  }
+
+  .hero__title {
+    font-size: 2.625rem; /* 42px on Mobile */
+    line-height: 1.15;
+  }
+
+  .hero__paragraph {
+    max-width: 480px;
+    font-size: 0.9375rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__overlay-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 12, 9, 0.95) 0%,
+      rgba(15, 12, 9, 0.88) 60%,
+      rgba(15, 12, 9, 0.70) 100%
+    );
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-12);
+  }
+
+  .btn--hero-primary,
+  .btn--hero-secondary {
+    width: 100%;
+  }
+
+  .hero__ornament-corner {
+    display: none;
   }
 
   .grid-12, .grid-8 {
@@ -131,10 +189,6 @@
   .card--banquet__actions {
     flex-direction: column;
   }
-
-  .btn {
-    width: 100%;
-  }
 }
 
 /* 480px / 390px / 360px / 320px (Small Compact Mobile) */
@@ -144,8 +198,18 @@
     --button-height: 48px;
   }
 
-  .navbar__logo-title {
-    font-size: 0.95rem;
+  .hero {
+    height: 85vh;
+    min-height: 500px;
+  }
+
+  .hero__title {
+    font-size: 2.25rem; /* ~36px for small screens */
+  }
+
+  .hero__badge-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
   }
 
   .card--statistic {
@@ -157,5 +221,9 @@
   .container {
     padding-left: var(--space-12);
     padding-right: var(--space-12);
+  }
+
+  .hero__title {
+    font-size: 2rem; /* 32px for tiny 320px screens */
   }
 }

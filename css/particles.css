@@ -1,0 +1,49 @@
+/* ==========================================================================
+   SHREE BHATIAWADI TRUST — SECTION-BASED REUSABLE PARTICLE LAYERS
+   Per-section canvas overlay sitting above backgrounds and below content
+   ========================================================================== */
+
+/* ── Section Stacking Context Setup ─────────────────────────────────── */
+.hero,
+.banquet-section,
+.stats-section,
+.initiatives-section,
+.events-section,
+.cta-section,
+.footer {
+  position: relative;
+  /* Stacking context for section layers */
+}
+
+/* Ensure background pseudo-elements (::before, ::after) stay at z-index: 0 */
+.hero::before,
+.stats-section::before,
+.events-section::before,
+.legacy-banner::before {
+  z-index: 0;
+}
+
+/* ── Section Particle Canvas ─────────────────────────────────────────── */
+.section-particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Above section backgrounds (0), below container content (2+) */
+  pointer-events: none;
+  display: block;
+}
+
+/* ── Container Content Z-Index Lock ────────────────────────────────── */
+.hero__container,
+.banquet-section .container,
+.stats-section .container,
+.initiatives-section .container,
+.events-section .container,
+.cta-section .container,
+.footer .container,
+.footer__bottom {
+  position: relative;
+  z-index: 2; /* Ensures text, cards, buttons remain strictly ABOVE particles */
+}

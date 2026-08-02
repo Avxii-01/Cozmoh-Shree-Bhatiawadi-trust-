@@ -25,7 +25,9 @@
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/banquet.css">
-  <link rel="stylesheet" href="css/stats.css">
+  <link rel="stylesheet" href="css/banquet-responsive.css">
+  <link rel="stylesheet" href="css/legacy.css">
+  <link rel="stylesheet" href="css/legacy-responsive.css">
   <link rel="stylesheet" href="css/initiatives.css">
   <link rel="stylesheet" href="css/events.css">
   <link rel="stylesheet" href="css/cta.css">
@@ -35,10 +37,57 @@
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/utilities.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <!-- Feature modules -->
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/particles.css">
 
 </head>
 
 <body>
+
+  <!-- ==========================================================================
+       FEATURE 1 — PREMIUM PRELOADER
+       Shown once per session. Dismissed by js/preloader.js.
+       data-preloader hook reserved for future GSAP/scroll integrations.
+       ========================================================================== -->
+  <div id="preloader" role="status" aria-label="Loading Shree Bhatiawadi Trust" data-preloader>
+
+    <!-- Ambient full-screen warm glow -->
+    <div class="preloader__ambient" aria-hidden="true"></div>
+
+    <!-- Radial halo glow expanding behind logo and into hero background -->
+    <div class="preloader__glow" aria-hidden="true"></div>
+
+    <!-- Logo Container with SVG Spark Trace & Gold Fill -->
+    <div class="preloader__logo-container">
+      <svg class="preloader__svg-trace" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true">
+        <!-- Golden stroke outline path drawn by animation -->
+        <path class="preloader__path-trace"
+          d="M50 8 C32 20, 20 34, 20 60 C20 78, 33 90, 50 90 C67 90, 80 78, 80 60 C80 34, 68 20, 50 8 Z M50 25 L65 42 L35 42 Z"
+          stroke="#C89B3C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        <!-- Spark point circle head at tip -->
+        <circle class="preloader__spark" cx="50" cy="8" r="3.5" fill="#FFF3D1" filter="drop-shadow(0 0 6px #C89B3C)" />
+      </svg>
+      <!-- Logo gold fill image overlay -->
+      <div class="preloader__logo-fill">
+        <img src="assets/icons/taj-mahal.png" alt="Shree Bhatiawadi Trust Emblem" class="preloader__logo-img"
+          width="110" height="110" draggable="false">
+      </div>
+    </div>
+
+    <!-- Gold horizontal rule -->
+    <hr class="preloader__rule" aria-hidden="true">
+
+    <!-- Wordmark & Tagline -->
+    <div class="preloader__wordmark">
+      <span class="preloader__name">SHREE BHATIAWADI TRUST</span>
+      <span class="preloader__tagline">SERVING WITH DEVOTION</span>
+    </div>
+
+  </div><!-- /#preloader -->
+
+
 
   <!-- ==========================================================================
        GLOBAL REUSABLE NAVIGATION COMPONENT (components/navbar.html)
@@ -136,199 +185,558 @@
   <main>
 
     <!-- PHASE 3 — HERO SECTION -->
-    <section class="hero" id="hero">
-      <div class="hero__container">
+    <section class="hero" id="hero" data-section="hero">
+      <!-- Full background image wrapper with multi-layer overlays -->
+      <div class="hero__bg-wrapper">
+        <img src="assets/hero/hero_image.png" alt="Shree Bhatiawadi Heritage Palace Grounds and Gardens"
+          class="hero__bg-image" width="1920" height="1080" fetchpriority="high">
+        <!-- Layer 1: Left Dark Gradient (rgba(15,12,9,.88) -> transparent) -->
+        <div class="hero__overlay-gradient" aria-hidden="true"></div>
+        <!-- Layer 2: Top Navbar Soft Overlay -->
+        <div class="hero__overlay-top" aria-hidden="true"></div>
+        <!-- Layer 3: Subtle Vignette -->
+        <div class="hero__overlay-vignette" aria-hidden="true"></div>
+        <!-- Faint Architectural Floral Pattern Overlay -->
+        <div class="hero__pattern-overlay" aria-hidden="true"></div>
+      </div>
 
-        <!-- Left Column: Heritage Content (42%) -->
+      <!-- Canvas for Floating Dust Particles -->
+      <canvas class="section-particle-canvas" data-particle-section="hero" aria-hidden="true"></canvas>
+
+      <div class="hero__container">
+        <!-- Left Content Column (Max Width 540px) -->
         <div class="hero__content">
-          <span class="hero__eyebrow reveal-fade-up">SERVING SINCE GENERATIONS</span>
+          <!-- Badge with Gold Text & Side Gold Line Divider -->
+          <div class="hero__badge reveal-fade-up">
+            <!-- <span class="hero__badge-text">SERVING SINCE GENERATIONS</span> -->
+            <span class="hero__badge-divider" aria-hidden="true"></span>
+          </div>
+
+          <!-- Heading: Preserving Heritage (Ivory) Building Community (Royal Gold) -->
           <h1 class="hero__title reveal-fade-up">
-            Preserving Heritage.
+            <span class="hero__title-ivory">Preserving Heritage.</span>
             <span class="hero__title-gold">Building Community.</span>
           </h1>
+
+          <!-- Paragraph (Max width 520px, max 3 lines) -->
           <p class="hero__paragraph reveal-fade-up">
             Shree Bhatiawadi Trust is dedicated to charitable service, cultural preservation, and creating spaces that
-            bring people together.
+            bring people together in celebration and tradition.
           </p>
+
+          <!-- Action Buttons (Horizontal on Desktop, Stack on Mobile) -->
           <div class="hero__actions reveal-fade-up">
-            <a href="our-work.html" class="btn btn--primary">
+            <a href="our-work.html" class="btn btn--hero-primary">
               EXPLORE OUR WORK
               <span class="btn__icon btn__icon--arrow">→</span>
             </a>
-            <a href="banquet-halls.html" class="btn btn--secondary">VIEW BANQUET HALLS</a>
+            <a href="banquet-halls.html" class="btn btn--hero-secondary">VIEW BANQUET HALLS</a>
+          </div>
+
+          <!-- Animated Scroll Indicator -->
+          <div class="hero__scroll-indicator reveal-fade-up" id="hero-scroll-trigger" role="button" tabindex="0"
+            aria-label="Scroll to explore main content">
+            <div class="hero__mouse">
+              <div class="hero__mouse-wheel"></div>
+            </div>
+            <span class="hero__scroll-label">Scroll to Explore</span>
           </div>
         </div>
+      </div>
 
-        <!-- Right Column: Palace Visual with Organic Morning Light Gradient Fade (58%) -->
-        <div class="hero__visual-wrapper">
-          <div class="hero__gradient-overlay" aria-hidden="true"></div>
-          <img src="assets/hero/hero_image.png" alt="Shree Bhatiawadi Heritage Palace Grounds and Gardens"
-            class="hero__image reveal-scale" width="1200" height="800" loading="eager">
-        </div>
-
+      <!-- Mughal-inspired Corner Ornament (Bottom Right) -->
+      <div class="hero__ornament-corner" aria-hidden="true">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M120 120H80C80 97.9086 97.9086 80 120 80V120Z" fill="url(#ornament-gold)" opacity="0.15" />
+          <path d="M120 120V20C64.7715 20 20 64.7715 20 120H120Z" stroke="url(#ornament-gold-stroke)" stroke-width="1"
+            stroke-dasharray="4 4" opacity="0.3" />
+          <circle cx="100" cy="100" r="4" fill="var(--gold)" opacity="0.4" />
+          <path d="M120 60C86.8629 60 60 86.8629 60 120" stroke="var(--gold)" stroke-width="1.5" opacity="0.35" />
+          <defs>
+            <linearGradient id="ornament-gold" x1="80" y1="80" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#C89A4A" stop-opacity="0.6" />
+              <stop offset="1" stop-color="#D9B56C" stop-opacity="0.1" />
+            </linearGradient>
+            <linearGradient id="ornament-gold-stroke" x1="20" y1="20" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#C89A4A" />
+              <stop offset="1" stop-color="#8D6738" />
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
     </section>
 
-    <!-- PHASE 4 — BANQUET HALL SHOWCASE (DATA-DRIVEN CAROUSEL) -->
-    <section class="section banquet-section" id="banquet-halls">
-      <div class="container">
-
-        <!-- Section Header -->
-        <div class="banquet-header">
-          <h2 class="banquet-header__title">BANQUET HALLS</h2>
-          <a href="about.html" class="banquet-header__link">
-            Learn About Us
-            <span>→</span>
-          </a>
-        </div>
-
-        <!-- Data-Driven Carousel Wrapper -->
-        <div class="banquet-carousel js-banquet-carousel" tabindex="0" aria-label="Banquet Halls Interactive Showcase">
-          <button class="banquet-nav-btn banquet-nav-btn--prev" aria-label="Previous Banquet Hall">‹</button>
-
-          <!-- Stage populated dynamically by js/carousel.js from js/banquet-data.js -->
-          <div class="banquet-carousel__stage"></div>
-
-          <button class="banquet-nav-btn banquet-nav-btn--next" aria-label="Next Banquet Hall">›</button>
-
-          <!-- Dynamic Dots -->
-          <div class="banquet-dots"></div>
-        </div>
-
+    <!-- PHASE 4 — LUXURY HERITAGE BANQUET SHOWCASE SECTION -->
+    <section class="section banquet-section" id="banquet-halls" data-section="banquet">
+      <!-- Indian Heritage Corner Ornaments -->
+      <div class="banquet-corner-ornament banquet-corner-ornament--top-left" aria-hidden="true">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0H40C40 22.0914 22.0914 40 0 40V0Z" fill="var(--gold)" opacity="0.4" />
+          <path d="M0 0V80C44.1828 80 80 44.1828 80 0H0Z" stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 3"
+            opacity="0.35" />
+        </svg>
       </div>
-    </section>
-
-    <!-- PHASE 5 — STATISTICS / TRUST METRICS -->
-    <section class="stats-section" id="trust-metrics" aria-labelledby="stats-heading">
-      <div class="container">
-        <h2 id="stats-heading" class="sr-only">Trust Achievements</h2>
-
-        <div class="stats-container reveal-fade-up">
-          <div class="stats-grid">
-
-            <!-- Stat 1: Years of Service -->
-            <div class="stats-item">
-              <img src="assets/logos/tajmahal.png" alt="Heritage temple icon representing years of service"
-                class="stats-item__icon" width="52" height="52" loading="lazy">
-              <div class="stats-item__content">
-                <span class="stats-item__number" data-target="75+">75+</span>
-                <h3 class="stats-item__title">Years of Service</h3>
-                <p class="stats-item__desc">Serving since generations</p>
-              </div>
-            </div>
-
-            <!-- Stat 2: Lives Touched -->
-            <div class="stats-item">
-              <img src="assets/logos/people.png" alt="Helping hands icon representing lives touched"
-                class="stats-item__icon" width="52" height="52" loading="lazy">
-              <div class="stats-item__content">
-                <span class="stats-item__number" data-target="100K+">100K+</span>
-                <h3 class="stats-item__title">Lives Touched</h3>
-                <p class="stats-item__desc">Through our initiatives</p>
-              </div>
-            </div>
-
-            <!-- Stat 3: Events Hosted -->
-            <div class="stats-item">
-              <img src="assets/logos/calendar.png" alt="Calendar icon representing events hosted"
-                class="stats-item__icon" width="52" height="52" loading="lazy">
-              <div class="stats-item__content">
-                <span class="stats-item__number" data-target="5000+">5000+</span>
-                <h3 class="stats-item__title">Events Hosted</h3>
-                <p class="stats-item__desc">Celebrations &amp; gatherings</p>
-              </div>
-            </div>
-
-            <!-- Stat 4: Community Programs -->
-            <div class="stats-item">
-              <img src="assets/logos/community.png" alt="Heart icon representing community programs"
-                class="stats-item__icon" width="52" height="52" loading="lazy">
-              <div class="stats-item__content">
-                <span class="stats-item__number" data-target="Many">Many</span>
-                <h3 class="stats-item__title">Community Programs</h3>
-                <p class="stats-item__desc">Across multiple domains</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
+      <div class="banquet-corner-ornament banquet-corner-ornament--bottom-right" aria-hidden="true">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0H40C40 22.0914 22.0914 40 0 40V0Z" fill="var(--gold)" opacity="0.4" />
+          <path d="M0 0V80C44.1828 80 80 44.1828 80 0H0Z" stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 3"
+            opacity="0.35" />
+        </svg>
       </div>
-    </section>
 
-    <!-- PHASE 6 — OUR INITIATIVES -->
-    <section class="initiatives-section section" id="initiatives" aria-labelledby="initiatives-heading">
-      <div class="container">
-        <div class="initiatives-layout">
+      <div class="banquet__container">
+        <!-- Top Two-Column Visual Grid -->
+        <div class="banquet__top-grid">
+          <!-- Left Column Content (35%) -->
+          <div class="banquet__left-col">
+            <!-- Section Label -->
+            <div class="banquet__label">
+              <span class="banquet__label-icon">❖</span>
+              <span class="banquet__label-text">OUR BANQUET HALLS</span>
+            </div>
 
-          <!-- Left Column (Text) -->
-          <div class="initiatives-text reveal-fade-up">
-            <span class="eyebrow">OUR INITIATIVES</span>
-            <h2 id="initiatives-heading" class="initiatives-heading">
-              Empowering Lives.<br>
-              <span class="text-gold">Enriching Society.</span>
+            <!-- Main Editorial Serif Title -->
+            <h2 class="banquet__title">
+              <span class="banquet__title-dark">Timeless Venues.</span>
+              <span class="banquet__title-gold">Memorable Celebrations.</span>
             </h2>
-            <p class="initiatives-desc">
-              Our initiatives span education, healthcare, cultural preservation, and community development.
+
+            <!-- Paragraph Description (Max 3 lines) -->
+            <p class="banquet__desc">
+              From intimate gatherings to grand celebrations, our banquet halls blend heritage elegance with modern
+              comfort to create unforgettable moments.
             </p>
-            <a href="our-work.html" class="initiatives-link">
-              EXPLORE OUR INITIATIVES <span class="arrow" aria-hidden="true">→</span>
-            </a>
+
+            <!-- Thin Gold Divider with Motif -->
+            <div class="banquet__divider" aria-hidden="true">
+              <span class="banquet__divider-line"></span>
+              <span class="banquet__divider-motif">❖</span>
+              <span class="banquet__divider-line"></span>
+            </div>
+
+            <!-- Faint Architectural Line Illustration Background -->
+            <svg class="banquet__illustration" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path
+                d="M200 20 L240 60 L160 60 Z M160 60 L240 60 L240 220 L160 220 Z M40 100 L80 60 L120 100 Z M60 100 L100 100 L100 220 L60 220 Z M280 100 L320 60 L360 100 Z M300 100 L340 100 L340 220 L300 220 Z"
+                stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M20 220 L380 220" stroke="var(--gold)" stroke-width="1.5" />
+              <circle cx="200" cy="110" r="18" stroke="var(--gold)" stroke-width="1" />
+            </svg>
           </div>
 
-          <!-- Right Column (Cards) -->
-          <div class="initiatives-grid">
+          <!-- Right Column: Large Featured Image & Floating Glass Info Card (65%) -->
+          <div class="banquet__right-col">
+            <div class="banquet__featured-wrapper">
+              <img src="assets/banquets/hall1.png" alt="Shree Bhatiawadi Basil Hall" class="banquet__featured-img"
+                id="banquet-featured-img" width="850" height="560">
 
-            <!-- Card 1 -->
-            <a href="our-work.html#education" class="initiative-card reveal-fade-up" style="transition-delay: 50ms;">
-              <img src="assets/logos/open-book.png" alt="Education Support Icon" class="initiative-card__icon"
-                width="56" height="56" loading="lazy">
-              <h3 class="initiative-card__title">Education<br>Support</h3>
-            </a>
+              <!-- Floating Glass Information Card (Bottom Left Overlapping Image) -->
+              <div class="banquet__info-card" id="banquet-info-overlay">
+                <h3 class="banquet-info__name" id="banquet-hall-name">Basil Hall</h3>
+                <div class="banquet-info__subtitle" id="banquet-hall-subtitle">GRAND. ELEGANT. TIMELESS.</div>
 
-            <!-- Card 2 -->
-            <a href="our-work.html#healthcare" class="initiative-card reveal-fade-up" style="transition-delay: 100ms;">
-              <img src="assets/logos/healthcare.png" alt="Healthcare Initiatives Icon" class="initiative-card__icon"
-                width="56" height="56" loading="lazy">
-              <h3 class="initiative-card__title">Healthcare<br>Initiatives</h3>
-            </a>
+                <!-- Two Capacity Columns -->
+                <div class="banquet-info__capacity-grid">
+                  <div class="banquet-capacity-item">
+                    <svg class="banquet-capacity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.5">
+                      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                      <path d="M16 3.13a4 4 0 010 7.75" />
+                    </svg>
+                    <div>
+                      <div class="banquet-capacity-val" id="banquet-seating-val">300+</div>
+                      <div class="banquet-capacity-label">Seating Capacity</div>
+                    </div>
+                  </div>
+                  <div class="banquet-capacity-item">
+                    <svg class="banquet-capacity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.5">
+                      <path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z" />
+                      <path d="M19 11v1a7 7 0 01-14 0v-1" />
+                      <path d="M12 19v3M8 22h8" />
+                    </svg>
+                    <div>
+                      <div class="banquet-capacity-val" id="banquet-standing-val">500+</div>
+                      <div class="banquet-capacity-label">Standing Capacity</div>
+                    </div>
+                  </div>
+                </div>
 
-            <!-- Card 3 -->
-            <a href="our-work.html#food" class="initiative-card reveal-fade-up" style="transition-delay: 150ms;">
-              <img src="assets/logos/food-distribution.png" alt="Food Distribution Icon" class="initiative-card__icon"
-                width="56" height="56" loading="lazy">
-              <h3 class="initiative-card__title">Food<br>Distribution</h3>
-            </a>
+                <!-- Small Gold Line Features List -->
+                <div class="banquet-info__features">
+                  <div class="banquet-features-title">FEATURES</div>
+                  <div class="banquet-features-list" id="banquet-features-list">
+                    <div class="banquet-feature-item" title="Air Conditioning">
+                      <svg class="banquet-feature-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93" stroke="currentColor"
+                          stroke-width="1.5" stroke-linecap="round" />
+                      </svg>
+                      <span class="banquet-feature-name">AC</span>
+                    </div>
+                    <div class="banquet-feature-item" title="Catering">
+                      <svg class="banquet-feature-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3a9 9 0 00-9 9h18a9 9 0 00-9-9zM3 16h18M6 20h12" stroke="currentColor"
+                          stroke-width="1.5" stroke-linecap="round" />
+                      </svg>
+                      <span class="banquet-feature-name">Catering</span>
+                    </div>
+                    <div class="banquet-feature-item" title="Parking">
+                      <svg class="banquet-feature-icon" viewBox="0 0 24 24" fill="none">
+                        <rect x="4" y="3" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.5" />
+                        <path d="M9 17V7h4a3 3 0 010 6H9" stroke="currentColor" stroke-width="1.5" />
+                      </svg>
+                      <span class="banquet-feature-name">Parking</span>
+                    </div>
+                    <div class="banquet-feature-item" title="Sound System">
+                      <svg class="banquet-feature-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"
+                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                      </svg>
+                      <span class="banquet-feature-name">Sound System</span>
+                    </div>
+                    <div class="banquet-feature-item" title="Stage">
+                      <svg class="banquet-feature-icon" viewBox="0 0 24 24" fill="none">
+                        <rect x="3" y="14" width="18" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+                        <path d="M7 14l5-8 5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                      </svg>
+                      <span class="banquet-feature-name">Stage</span>
+                    </div>
+                  </div>
+                </div>
 
-            <!-- Card 4 -->
-            <a href="our-work.html#skill" class="initiative-card reveal-fade-up" style="transition-delay: 200ms;">
-              <img src="assets/logos/self-improvement.png" alt="Skill Development Icon" class="initiative-card__icon"
-                width="56" height="56" loading="lazy">
-              <h3 class="initiative-card__title">Skill<br>Development</h3>
-            </a>
+                <!-- Primary & Secondary Action Buttons -->
+                <div class="banquet-info__buttons">
+                  <a href="banquet-halls.html" class="btn btn--banquet-primary">EXPLORE VENUE</a>
+                  <a href="banquet-halls.html#booking" class="btn btn--banquet-secondary">SCHEDULE A VISIT →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <!-- Card 5 -->
-            <a href="our-work.html#cultural" class="initiative-card reveal-fade-up" style="transition-delay: 250ms;">
-              <img src="assets/logos/culutural.png" alt="Cultural Programs Icon" class="initiative-card__icon"
-                width="56" height="56" loading="lazy">
-              <h3 class="initiative-card__title">Cultural<br>Programs</h3>
-            </a>
+        <!-- Four Fixed Premium Hall Selector Cards -->
+        <div class="banquet__selectors-grid" role="tablist" aria-label="Banquet Hall Selector">
 
-            <!-- Card 6 -->
-            <a href="our-work.html#senior" class="initiative-card reveal-fade-up" style="transition-delay: 300ms;">
-              <img src="assets/logos/senior_care.png" alt="Senior Care Icon" class="initiative-card__icon" width="56"
-                height="56" loading="lazy">
-              <h3 class="initiative-card__title">Senior<br>Care</h3>
-            </a>
+          <!-- Hall Card 1: Basil Hall (Selected by default) -->
+          <div class="banquet-card-outer banquet-card-outer--selected" data-hall-id="basil-hall" role="tab"
+            aria-selected="true" tabindex="0" aria-label="Select Basil Hall">
+            <div class="banquet-selector-card">
+              <img src="assets/banquets/hall1.png" alt="Basil Hall Thumbnail" class="banquet-selector-card__media"
+                loading="lazy">
+              <div class="banquet-selector-card__overlay">
+                <h4 class="banquet-selector-card__title">Basil Hall</h4>
+                <div class="banquet-selector-card__capacity">300+ Capacity</div>
+              </div>
+            </div>
+          </div>
 
+          <!-- Hall Card 2: Leaf Hall -->
+          <div class="banquet-card-outer" data-hall-id="leaf-hall" role="tab" aria-selected="false" tabindex="0"
+            aria-label="Select Leaf Hall">
+            <div class="banquet-selector-card">
+              <img src="assets/banquets/hall2.png" alt="Leaf Hall Thumbnail" class="banquet-selector-card__media"
+                loading="lazy">
+              <div class="banquet-selector-card__overlay">
+                <h4 class="banquet-selector-card__title">Leaf Hall</h4>
+                <div class="banquet-selector-card__capacity">200+ Capacity</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hall Card 3: Lotus Hall -->
+          <div class="banquet-card-outer" data-hall-id="lotus-hall" role="tab" aria-selected="false" tabindex="0"
+            aria-label="Select Lotus Hall">
+            <div class="banquet-selector-card">
+              <img src="assets/banquets/hall3.png" alt="Lotus Hall Thumbnail" class="banquet-selector-card__media"
+                loading="lazy">
+              <div class="banquet-selector-card__overlay">
+                <h4 class="banquet-selector-card__title">Lotus Hall</h4>
+                <div class="banquet-selector-card__capacity">150+ Capacity</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hall Card 4: Orchid Hall -->
+          <div class="banquet-card-outer" data-hall-id="orchid-hall" role="tab" aria-selected="false" tabindex="0"
+            aria-label="Select Orchid Hall">
+            <div class="banquet-selector-card">
+              <img src="assets/banquets/hall4.png" alt="Orchid Hall Thumbnail" class="banquet-selector-card__media"
+                loading="lazy">
+              <div class="banquet-selector-card__overlay">
+                <h4 class="banquet-selector-card__title">Orchid Hall</h4>
+                <div class="banquet-selector-card__capacity">250+ Capacity</div>
+              </div>
+            </div>
           </div>
 
         </div>
+      </div>
+    </section>
+
+    <!-- PHASE 5 — LUXURY LEGACY TIMELINE & IMPACT SHOWCASE SECTION -->
+    <section class="section legacy-section" id="legacy-timeline" data-section="legacy">
+      <!-- Ambient Radial Gold Glow behind Timeline -->
+      <div class="legacy__ambient-glow" aria-hidden="true"></div>
+
+      <!-- Faint Architectural Line Art Background (3-5% Opacity) -->
+      <svg class="legacy__bg-illustration" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M200 20 L240 60 L160 60 Z M160 60 L240 60 L240 260 L160 260 Z M40 100 L80 60 L120 100 Z M60 100 L100 100 L100 260 L60 260 Z M280 100 L320 60 L360 100 Z M300 100 L340 100 L340 260 L300 260 Z" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 260 L380 260" stroke="var(--gold)" stroke-width="1.5"/>
+        <circle cx="200" cy="110" r="18" stroke="var(--gold)" stroke-width="1"/>
+      </svg>
+
+      <div class="legacy__container">
+        
+        <!-- Top Main Grid (42% Left Story Panel / 58% Right Timeline & Header) -->
+        <div class="legacy__grid">
+
+          <!-- Left Column: Hero Story Panel (Editorial Feature 42%) -->
+          <div class="legacy__left-col">
+            <div class="legacy__story-panel">
+              <!-- Archival Sepia Image Background -->
+              <img src="assets/history/archival_history.png" alt="Archival photograph of early Shree Bhatiawadi Trust gathering" class="legacy__story-bg" loading="lazy" width="600" height="800">
+              <div class="legacy__story-overlay" aria-hidden="true"></div>
+
+              <!-- Content Overlay (Lower Left, 44px Padding) -->
+              <div class="legacy__story-content">
+                <div class="legacy__label">
+                  <span class="legacy__label-icon">❖</span>
+                  <span class="legacy__label-text">OUR LEGACY OF IMPACT</span>
+                </div>
+
+                <h2 class="legacy__story-title">
+                  <span class="legacy__title-ivory">75+ Years</span>
+                  <span class="legacy__title-gold">of Trust & Service</span>
+                </h2>
+
+                <p class="legacy__story-desc">
+                  Since 1948, Shree Bhatiawadi Trust has been dedicated to preserving cultural heritage, supporting community welfare, and hosting unforgettable celebrations across generations.
+                </p>
+
+                <a href="about.html" class="btn btn--legacy-cta">
+                  EXPLORE OUR JOURNEY →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Content Header Block + Timeline Showcase (58%) -->
+          <div class="legacy__right-col">
+            
+            <!-- Right Content Header Block -->
+            <div class="legacy-header-block">
+              <div class="legacy-header-block__label">
+                <span class="legacy__label-icon">❖</span>
+                <span class="legacy__label-text">OUR JOURNEY</span>
+              </div>
+
+              <h3 class="legacy-header-block__heading">
+                Building a Legacy Across Generations
+              </h3>
+
+              <p class="legacy-header-block__desc">
+                From a modest community foundation in 1948 to a premier cultural institution, explore our key historical milestones of service and commitment.
+              </p>
+            </div>
+
+            <!-- Horizontal Museum Timeline -->
+            <div class="legacy-timeline" aria-label="Trust Milestone Timeline">
+              <!-- Continuous Gold Line Track -->
+              <div class="legacy-timeline__track" aria-hidden="true">
+                <div class="legacy-timeline__line-progress"></div>
+              </div>
+
+              <!-- 5 Timeline Milestone Nodes Grid -->
+              <div class="legacy-timeline__nodes-grid">
+
+                <!-- Node 1: 1948 -->
+                <div class="legacy-timeline__node">
+                  <div class="legacy-timeline__icon-wrap">
+                    <svg class="legacy-timeline__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="legacy-timeline__year">1948</div>
+                  <div class="legacy-timeline__milestone">Foundation of the Trust</div>
+                </div>
+
+                <!-- Node 2: 1960s -->
+                <div class="legacy-timeline__node">
+                  <div class="legacy-timeline__icon-wrap">
+                    <svg class="legacy-timeline__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+                    </svg>
+                  </div>
+                  <div class="legacy-timeline__year">1960s</div>
+                  <div class="legacy-timeline__milestone">Community Initiatives</div>
+                </div>
+
+                <!-- Node 3: 1980s -->
+                <div class="legacy-timeline__node">
+                  <div class="legacy-timeline__icon-wrap">
+                    <svg class="legacy-timeline__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                  </div>
+                  <div class="legacy-timeline__year">1980s</div>
+                  <div class="legacy-timeline__milestone">Expansion of Facilities</div>
+                </div>
+
+                <!-- Node 4: 2000s -->
+                <div class="legacy-timeline__node">
+                  <div class="legacy-timeline__icon-wrap">
+                    <svg class="legacy-timeline__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                  </div>
+                  <div class="legacy-timeline__year">2000s</div>
+                  <div class="legacy-timeline__milestone">Cultural & Social Programs</div>
+                </div>
+
+                <!-- Node 5: Today -->
+                <div class="legacy-timeline__node">
+                  <div class="legacy-timeline__icon-wrap">
+                    <svg class="legacy-timeline__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                    </svg>
+                  </div>
+                  <div class="legacy-timeline__year">Today</div>
+                  <div class="legacy-timeline__milestone">75+ Years of Service</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Integrated Smoked Glass Impact Statistics Panel (4 Equal Columns) -->
+        <div class="legacy-impact-panel">
+          <div class="legacy-stat-col">
+            <div class="legacy-stat__val" data-target="75+">75+</div>
+            <div class="legacy-stat__label">Years of Service</div>
+          </div>
+
+          <div class="legacy-stat-col">
+            <div class="legacy-stat__val" data-target="100K+">100K+</div>
+            <div class="legacy-stat__label">Lives Touched</div>
+          </div>
+
+          <div class="legacy-stat-col">
+            <div class="legacy-stat__val" data-target="5,000+">5,000+</div>
+            <div class="legacy-stat__label">Events Hosted</div>
+          </div>
+
+          <div class="legacy-stat-col">
+            <div class="legacy-stat__val" data-target="Many">Many</div>
+            <div class="legacy-stat__label">Community Programs</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PHASE 6 — LUXURY EDITORIAL INITIATIVES GALLERY SECTION -->
+    <section class="section initiatives-section" id="initiatives" data-section="initiatives">
+      <div class="initiatives__container">
+        
+        <!-- Section Header Block -->
+        <div class="initiatives-header">
+          <div class="initiatives-label">
+            <span class="initiatives-label__icon">❖</span>
+            <span class="initiatives-label__text">OUR INITIATIVES</span>
+          </div>
+
+          <h2 id="initiatives-heading" class="initiatives-title">
+            <span class="initiatives-title__charcoal">Empowering Lives.</span>
+            <span class="initiatives-title__gold">Enriching Society.</span>
+          </h2>
+
+          <p class="initiatives-desc">
+            Through dedicated charitable service, cultural preservation, and social welfare programs, Shree Bhatiawadi Trust strives to create a meaningful impact across generations.
+          </p>
+        </div>
+
+        <!-- Editorial Photography Gallery (Architectural Grid with 24px Gutters) -->
+        <div class="initiatives-masonry">
+
+          <!-- Initiative Card 1: Education Support (Large Landscape Feature) -->
+          <a href="our-work.html#education" class="initiative-card initiative-card--feature" aria-label="Explore Education Support">
+            <img src="assets/initiatives/education.png" alt="Children in classroom during education support program" class="initiative-card__img" loading="lazy" width="800" height="500">
+            <div class="initiative-card__overlay" aria-hidden="true"></div>
+            <div class="initiative-card__content">
+              <h3 class="initiative-card__title">Education Support</h3>
+              <p class="initiative-card__desc">Empowering youth through scholarships, learning materials, and modern educational infrastructure.</p>
+              <span class="initiative-card__link">LEARN MORE →</span>
+            </div>
+          </a>
+
+          <!-- Initiative Card 2: Healthcare Initiatives (Tall Portrait Feature) -->
+          <a href="our-work.html#healthcare" class="initiative-card initiative-card--tall" aria-label="Explore Healthcare Initiatives">
+            <img src="assets/initiatives/healthcare.png" alt="Medical camp providing healthcare assistance" class="initiative-card__img" loading="lazy" width="600" height="800">
+            <div class="initiative-card__overlay" aria-hidden="true"></div>
+            <div class="initiative-card__content">
+              <h3 class="initiative-card__title">Healthcare Initiatives</h3>
+              <p class="initiative-card__desc">Providing accessible medical camps, health checkups, and medicine distribution for families in need.</p>
+              <span class="initiative-card__link">LEARN MORE →</span>
+            </div>
+          </a>
+
+          <!-- Initiative Card 3: Food Distribution (Medium Landscape) -->
+          <a href="our-work.html#food" class="initiative-card initiative-card--medium-left" aria-label="Explore Food Distribution">
+            <img src="assets/initiatives/food.png" alt="Community food distribution program" class="initiative-card__img" loading="lazy" width="600" height="400">
+            <div class="initiative-card__overlay" aria-hidden="true"></div>
+            <div class="initiative-card__content">
+              <h3 class="initiative-card__title">Food Distribution</h3>
+              <p class="initiative-card__desc">Serving nutritious meals and essential ration kits to underprivileged communities with dignity.</p>
+              <span class="initiative-card__link">LEARN MORE →</span>
+            </div>
+          </a>
+
+          <!-- Initiative Card 4: Skill Development (Supporting Card) -->
+          <a href="our-work.html#skill" class="initiative-card initiative-card--supporting-right" aria-label="Explore Skill Development">
+            <img src="assets/initiatives/skills.png" alt="Vocational training and skill development workshop" class="initiative-card__img" loading="lazy" width="800" height="400">
+            <div class="initiative-card__overlay" aria-hidden="true"></div>
+            <div class="initiative-card__content">
+              <h3 class="initiative-card__title">Skill Development</h3>
+              <p class="initiative-card__desc">Fostering self-reliance through vocational workshops, digital literacy, and handicraft training.</p>
+              <span class="initiative-card__link">LEARN MORE →</span>
+            </div>
+          </a>
+
+          <!-- Initiative Card 5: Cultural Programs (Supporting Card) -->
+          <a href="our-work.html#cultural" class="initiative-card initiative-card--supporting-left" aria-label="Explore Cultural Programs">
+            <img src="assets/initiatives/cultural.png" alt="Traditional Indian cultural festival performance" class="initiative-card__img" loading="lazy" width="700" height="400">
+            <div class="initiative-card__overlay" aria-hidden="true"></div>
+            <div class="initiative-card__content">
+              <h3 class="initiative-card__title">Cultural Programs</h3>
+              <p class="initiative-card__desc">Preserving Indian traditions, arts, and heritage festivals for future generations to celebrate.</p>
+              <span class="initiative-card__link">LEARN MORE →</span>
+            </div>
+          </a>
+
+          <!-- Initiative Card 6: Senior Care (Medium Landscape) -->
+          <a href="our-work.html#senior" class="initiative-card initiative-card--medium-right" aria-label="Explore Senior Care">
+            <img src="assets/initiatives/senior_care.png" alt="Caring for senior citizens in peaceful courtyard" class="initiative-card__img" loading="lazy" width="700" height="400">
+            <div class="initiative-card__overlay" aria-hidden="true"></div>
+            <div class="initiative-card__content">
+              <h3 class="initiative-card__title">Senior Care</h3>
+              <p class="initiative-card__desc">Offering companionship, healthcare support, and peaceful living spaces for senior citizens.</p>
+              <span class="initiative-card__link">LEARN MORE →</span>
+            </div>
+          </a>
+
+        </div>
+
       </div>
     </section>
 
     <!-- PHASE 7.1 — UPCOMING EVENTS -->
-    <section class="events-section section" id="events" aria-labelledby="events-heading">
+    <section class="events-section section" id="events" aria-labelledby="events-heading" data-section="events">
+      <canvas class="section-particle-canvas" data-particle-section="events" aria-hidden="true"></canvas>
       <!-- Decorative Background -->
       <!-- Since no subtle mandala was present in assets/images, using a muted inline SVG placeholder that scales -->
       <svg class="events-bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
@@ -341,7 +749,7 @@
       <div class="container events-container">
 
         <header class="events-header reveal-fade-up">
-          <span class="eyebrow" id="events-heading">UPCOMING EVENTS</span>
+          <span class="eyebrow eyebrow--with-rule" id="events-heading">UPCOMING EVENTS</span>
           <a href="events.html" class="initiatives-link">
             VIEW ALL EVENTS <span class="arrow" aria-hidden="true">→</span>
           </a>
@@ -356,7 +764,8 @@
     </section>
 
     <!-- PHASE 7.2 — LEGACY CTA BANNER -->
-    <section class="cta-section section" id="legacy-cta" aria-label="Call to Action">
+    <section class="cta-section section" id="legacy-cta" aria-label="Call to Action" data-section="cta">
+      <canvas class="section-particle-canvas" data-particle-section="cta" aria-hidden="true"></canvas>
       <div class="container">
 
         <div class="legacy-banner reveal-fade-up">
@@ -389,7 +798,11 @@
   </main>
 
   <!-- PHASE 8 — FOOTER -->
+  <!-- Rhythm: CTA Dark Brown → Footer Parchment → Copyright Dark Strip -->
   <footer class="footer">
+    <canvas class="section-particle-canvas" data-particle-section="footer" aria-hidden="true"></canvas>
+
+    <!-- Parchment Body inside container -->
     <div class="container">
       <div class="footer__grid reveal-fade-up">
 
@@ -491,24 +904,30 @@
         </div>
 
       </div>
+    </div><!-- /.container -->
 
-      <!-- Bottom Legal Bar -->
-      <div class="footer__bottom reveal-fade-up" style="transition-delay: 200ms;">
+    <!-- Full-width Dark Brown Copyright Strip — sits OUTSIDE .container -->
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner">
         <span class="footer__copyright">&copy; 2024 Shree Bhatiyawadi Trust. All rights reserved.</span>
         <ul class="footer__legal-links">
           <li><a href="privacy.html" class="footer__legal-link">Privacy Policy</a></li>
-          <li><a href="terms.html" class="footer__legal-link">Terms & Conditions</a></li>
+          <li><a href="terms.html" class="footer__legal-link">Terms &amp; Conditions</a></li>
         </ul>
       </div>
     </div>
+
   </footer>
 
-  <!-- JavaScript Architecture Files -->
+  <!-- Feature module scripts (preloader MUST load first) -->
+  <script src="js/preloader.js"></script>
+  <script src="js/particles.js"></script>
+  <!-- Core application scripts -->
   <script src="js/main.js"></script>
+  <script src="js/hero.js"></script>
   <script src="js/navbar.js"></script>
-  <script src="js/banquet-data.js"></script>
-  <script src="js/carousel.js"></script>
-  <script src="js/stats.js"></script>
+  <script src="js/banquet.js"></script>
+  <script src="js/legacy.js"></script>
   <script src="js/events.js"></script>
   <script src="js/scroll.js"></script>
 
