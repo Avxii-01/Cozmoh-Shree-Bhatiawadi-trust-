@@ -38,18 +38,17 @@
     padding-right: 24px;
   }
 
-  /* Stack columns: Featured Image first, then text content below */
   .banquet__top-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
   .banquet__right-col {
-    order: 1;                            /* Featured image comes first */
+    order: 1;                            /* Featured image comes first on tablet */
   }
 
   .banquet__left-col {
-    order: 2;                            /* Text content comes second */
+    order: 2;                            /* Text content comes second on tablet */
     max-width: 100%;
   }
 
@@ -85,61 +84,203 @@
   }
 }
 
-/* ── Mobile (768px & below) ──────────────────────────────────────────── */
+/* ── Mobile Touch Experience (768px & below) ─────────────────────────
+   Touch-first redesign with vertical flow, centered typography, 
+   reduced 220-260px featured image, compact glass card, and snap carousel
+   ========================================================================== */
 @media (max-width: 768px) {
   .banquet-section {
-    padding: 56px 0;
+    padding: 64px 0 72px 0;
   }
 
   .banquet__container {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-  /* Featured Image & Information Card */
-  .banquet__featured-wrapper {
-    height: 280px;
-    border-radius: 18px;
+  /* 1. Mobile Vertical Flow Structure: Text Header -> Image -> Carousel */
+  .banquet__top-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
-  /* Floating Info Card becomes static block positioned beneath the image on mobile */
-  .banquet__info-card {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    width: 100%;
+  /* Top Text Header Content First */
+  .banquet__left-col {
+    order: 1;
+    text-align: center;
     max-width: 100%;
-    margin-top: 16px;
-    padding: 20px;
-    box-sizing: border-box;
+    margin-bottom: 40px; /* Paragraph -> 40px -> Featured Image */
+  }
+
+  /* Label -> 20px -> Heading */
+  .banquet__label {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  /* Heading -> 24px -> Paragraph */
+  .banquet__title {
+    font-size: clamp(2rem, 6.5vw, 2.5rem);
+    line-height: 1.18;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .banquet__title-dark,
+  .banquet__title-gold {
+    display: block;
+  }
+
+  /* Paragraph: Centered & Limited Width */
+  .banquet__desc {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Hide decorative background illustration & extra divider lines on mobile */
+  .banquet__divider,
+  .banquet__illustration {
+    display: none;
+  }
+
+  /* Featured Image & Overlay Block Second */
+  .banquet__right-col {
+    order: 2;
+    margin-bottom: 32px; /* Featured Image -> 32px -> Hall Selector */
+  }
+
+  /* 2. Reduced Featured Image Height (220–260px, 16:9 Aspect Ratio) */
+  .banquet__featured-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    min-height: 220px;
+    max-height: 260px;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+  }
+
+  .banquet__featured-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* 3. Repositioned Glass Information Overlay Card at Bottom */
+  .banquet__info-card {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    max-width: 340px;
+    padding: 12px 16px;
+    background: rgba(22, 17, 13, 0.86);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(200, 154, 74, 0.35);
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    margin-top: 0;
   }
 
   .banquet-info__name {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
+    margin-bottom: 2px;
+    text-align: center;
   }
 
-  /* Hall selector cards become horizontally scrollable row */
+  .banquet-info__subtitle {
+    font-size: 0.625rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  /* Compact capacity grid for mobile card overlay */
+  .banquet-info__capacity-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(200, 154, 74, 0.18);
+    margin-bottom: 0;
+  }
+
+  .banquet-capacity-item {
+    gap: 6px;
+  }
+
+  .banquet-capacity-val {
+    font-size: 0.9375rem;
+  }
+
+  .banquet-capacity-label {
+    font-size: 0.625rem;
+  }
+
+  /* Hide verbose features list and extra action buttons on mobile overlay to prevent blocking image */
+  .banquet-info__features,
+  .banquet-info__buttons {
+    display: none;
+  }
+
+  /* 5. Hall Selector Snap Carousel (240–260px Width per Card) */
   .banquet__selectors-grid {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 16px;
-    padding-bottom: 12px;
-    margin-bottom: 40px;
+    gap: 18px;
+    padding: 12px 4px 18px 4px;
+    margin-bottom: 24px;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide Firefox scrollbar */
+    -ms-overflow-style: none; /* Hide IE/Edge scrollbar */
   }
 
+  /* 6. Hide Native Scrollbar across browsers */
+  .banquet__selectors-grid::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  /* 7 & 8. Active Card Frame & Touch Snap Alignment */
   .banquet-card-outer {
-    flex: 0 0 240px;
-    scroll-snap-align: start;
-    padding: 6px;
+    flex: 0 0 250px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    padding: 8px;
+    border-radius: 16px;
+    overflow: visible;
+    transition: transform 300ms ease, box-shadow 300ms ease;
+  }
+
+  .banquet-card-outer--selected {
+    box-shadow: 0 0 24px rgba(200, 154, 74, 0.4);
+    transform: scale(1.02);
   }
 
   .banquet-selector-card {
-    height: 180px;
+    height: 165px;
+    border-radius: 12px;
   }
 
-  /* Statistics panel becomes 2 columns on mobile */
+  .banquet-selector-card__name {
+    font-size: 1.125rem;
+  }
+
+  .banquet-selector-card__capacity {
+    font-size: 0.75rem;
+  }
+
+  /* Statistics panel on mobile */
   .banquet-stats-panel {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
