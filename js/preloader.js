@@ -22,9 +22,9 @@
 (function SBTPreloader() {
   'use strict';
 
-  var HOLD_DURATION = 3200; /* Extended hold for total ~3s display */
+  var HOLD_DURATION = 4500; /* Extended hold for total ~4.5s display (1.3s longer) */
   var REDUCED_HOLD  = 400;
-  var EXIT_DURATION = 1000;
+  var EXIT_DURATION = 1200;
   var DOM_CLEANUP   = EXIT_DURATION + 100;
 
   /* Dev mode: sessionStorage check disabled for live testing */

@@ -35,38 +35,38 @@ window.SBTParticles = (function SBTParticles() {
   var CONFIG = {
     /* Section baseline particle counts (Desktop baseline) */
     counts: {
-      'hero':        50,
-      'banquet':     30,
-      'legacy':      45,
-      'initiatives': 25,
-      'events':      40,
-      'cta':         20,
-      'footer':      20,
+      'hero': 50,
+      'banquet': 42, /* Increased 40% from 30 */
+      'legacy': 45,
+      'initiatives': 35, /* Increased 40% from 25 */
+      'events': 40,
+      'cta': 28, /* Increased 40% from 20 */
+      'footer': 28, /* Increased 40% from 20 */
     },
 
-    /* Responsive scaling factors */
-    tabletScale: 0.65,
-    mobileScale: 0.40,
+    /* Responsive scaling factors (1.0 on mobile to preserve full density) */
+    tabletScale: 0.90,
+    mobileScale: 1.0,
 
     /* Background classification per section key */
     darkSections: ['hero', 'legacy', 'events'],
 
     /* Dual Palettes */
     palettes: {
-      light: ['#7A4F1D', '#8A5A24', '#9C6A2F', '#A8741A'],
-      dark:  ['#C89B3C', '#D4A64A', '#E3C06A']
+      light: ['#B88A3A', '#C69C4D', '#C8A25A', '#BF9544'],
+      dark: ['#C89B3C', '#D4A64A', '#E3C06A']
     },
 
-    /* Size distribution (55% small, 30% medium, 15% large) */
+    /* Size distribution (50% small 2-3px, 35% medium 4-5px, 15% accent 6px) */
     sizeDistribution: [
-      { weight: 55, min: 1.5, max: 2.0, speedMin: 0.14, speedMax: 0.24, tier: 'small'  },
-      { weight: 30, min: 2.0, max: 3.0, speedMin: 0.09, speedMax: 0.16, tier: 'medium' },
-      { weight: 15, min: 3.0, max: 4.0, speedMin: 0.05, speedMax: 0.09, tier: 'large'  },
+      { weight: 50, min: 2.0, max: 3.0, speedMin: 0.12, speedMax: 0.22, tier: 'small' },
+      { weight: 35, min: 4.0, max: 5.0, speedMin: 0.08, speedMax: 0.15, tier: 'medium' },
+      { weight: 15, min: 5.5, max: 6.5, speedMin: 0.04, speedMax: 0.08, tier: 'large' },
     ],
 
-    /* Increased opacity range for high visibility without distraction */
-    opacityMin: 0.16,
-    opacityMax: 0.28,
+    /* Opacity range for light & dark sections */
+    opacityMin: 0.20,
+    opacityMax: 0.30,
 
     /* 28% soft glow */
     glowChance: 0.28,
@@ -82,7 +82,7 @@ window.SBTParticles = (function SBTParticles() {
   };
 
   /* Helper functions */
-  function rnd(min, max)    { return min + Math.random() * (max - min); }
+  function rnd(min, max) { return min + Math.random() * (max - min); }
   function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
 
   function pickSizeTier() {
@@ -173,7 +173,7 @@ window.SBTParticles = (function SBTParticles() {
 
     if (this.hasGlow) {
       ctx.shadowColor = this.color;
-      ctx.shadowBlur  = this.glowBlur;
+      ctx.shadowBlur = this.glowBlur;
     }
 
     ctx.fillStyle = this.color;
@@ -215,16 +215,21 @@ window.SBTParticles = (function SBTParticles() {
   SectionInstance.prototype.resize = function () {
     var parent = this.canvas.parentElement;
     if (!parent) return;
-    this.W = parent.offsetWidth  || window.innerWidth;
+    this.W = parent.offsetWidth || window.innerWidth;
     this.H = parent.offsetHeight || 400;
-    this.canvas.width  = this.W;
+    this.canvas.width = this.W;
     this.canvas.height = this.H;
   };
 
   SectionInstance.prototype.getCount = function () {
     var base = CONFIG.counts[this.sectionKey] || 45;
-    if (this.W < 640)  return Math.max(12, Math.round(base * CONFIG.mobileScale));
-    if (this.W < 1024) return Math.max(20, Math.round(base * CONFIG.tabletScale));
+    if (this.W < 768) {
+      if (this.sectionKey === 'hero') {
+        return 24; /* Mobile Hero particle count set to exactly 24 */
+      }
+      return Math.max(base, Math.round(base * CONFIG.mobileScale));
+    }
+    if (this.W < 1024) return Math.max(base, Math.round(base * CONFIG.tabletScale));
     return base;
   };
 
@@ -321,7 +326,7 @@ window.SBTParticles = (function SBTParticles() {
 
     setTimeout(function () {
       if (!isInitialized) initAll();
-    }, 4500);
+    }, 6000);
   }
 
   if (document.readyState === 'loading') {
