@@ -536,29 +536,85 @@
   .cultural-nav-btn--next { right: -24px; }
 }
 
-/* Tablet (768px - 1023px) */
-@media (max-width: 1023px) {
+/* Tablet (768px - 1024px) Dedicated Responsive Layout */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .events-section {
+    padding-top: 80px;                 /* Specified Top padding: 80px */
+    padding-bottom: 90px;              /* Specified Bottom padding: 90px */
+  }
+
+  .cultural-forum-header {
+    max-width: 650px;                  /* Specified Max width around 650px */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;               /* Specified CTA -> Carousel: 50px */
+    text-align: center;
+  }
+
+  .cultural-heading {
+    font-size: clamp(2.4rem, 4.2vw, 3.2rem);
+    margin-bottom: 28px;               /* Specified Heading -> Description: 28px */
+    max-width: 650px;
+  }
+
+  .cultural-desc {
+    font-size: 0.96875rem;
+    line-height: 1.82;
+    max-width: 650px;                  /* Limit width to around 650px */
+    margin: 0 0 28px 0;                /* Specified Description -> CTA: 28px */
+    text-align: center;
+  }
+
+  .cultural-cta-wrap {
+    justify-content: center;
+  }
+
   .cultural-slider-container {
-    width: 100%;
+    width: 90%;                        /* Approximately 90% of viewport width */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;               /* Specified Carousel -> Pagination: 24px */
   }
 
   .cultural-slider-viewport {
-    height: 460px;
+    height: 480px;                     /* Maintained height ratio */
+    border-radius: 22px;
   }
 
+  /* Scaled Overlay Information Card (Bottom Left, Reduced width & padding) */
   .cultural-glass-card {
-    width: 320px;
+    width: 310px;                      /* Reduced width slightly */
     bottom: 24px;
     left: 24px;
-    padding: 24px 22px;
+    padding: 22px 20px;                /* Reduced padding */
+    border-radius: 18px;
   }
 
   .cultural-card-title {
-    font-size: 1.6rem;
+    font-size: 1.55rem;
+    margin-bottom: 10px;
   }
 
-  .cultural-nav-btn--prev { left: 16px; }
-  .cultural-nav-btn--next { right: 16px; }
+  .cultural-card-desc {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    -webkit-line-clamp: 3;
+  }
+
+  /* Navigation Arrows vertically centered outside/flanking viewport */
+  .cultural-nav-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .cultural-nav-btn--prev { left: -22px; }
+  .cultural-nav-btn--next { right: -22px; }
+
+  .cultural-pagination-wrap {
+    margin-top: 24px;
+  }
 }
 
 /* Mobile (767px & below) */

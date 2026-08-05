@@ -72,7 +72,7 @@
   box-sizing: border-box;
 }
 
-/* ── Section Header Block (Centered) ─────────────────────────────────── */
+/* ── Section Header Block (Centered Luxury Heritage Alignment) ───────── */
 .mission-header {
   text-align: center;
   max-width: 820px;
@@ -84,12 +84,12 @@
   align-items: center;
 }
 
-/* Small Gold Section Label */
+/* Small Gold Section Label (40px spacing below) */
 .mission-label {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 40px;                 /* Specified 40px spacing below label */
 }
 
 .mission-label__icon {
@@ -106,7 +106,36 @@
   letter-spacing: 0.22em;
 }
 
-/* Decorative Heritage Ornament Divider */
+/* Editorial Serif Heading (Max-width ~620px, 28px spacing below) */
+.mission-title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.4rem, 3.8vw, 3.4rem);
+  line-height: 1.15;
+  margin-bottom: 28px;                 /* Specified 28px spacing below heading */
+  max-width: 620px;                    /* Specified ~620px max width */
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: none;                   /* Specified explicitly: no text shadow */
+  letter-spacing: -0.01em;
+}
+
+.mission-title__charcoal {
+  display: block;
+  font-weight: 500;                    /* Font weight 500-600 */
+  color: #2A211A;                      /* Specified Dark Charcoal #2A211A */
+}
+
+.mission-title__gold {
+  display: block;
+  font-weight: 500;
+  font-style: italic;                  /* Specified slight italic serif style */
+  background: linear-gradient(135deg, #C89A3D 0%, #E2BF70 100%); /* Gold gradient #C89A3D -> #E2BF70 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Decorative Heritage Ornament Divider below Heading (────────◇────────) */
 .mission-divider {
   display: flex;
   align-items: center;
@@ -114,7 +143,7 @@
   gap: 16px;
   width: 100%;
   max-width: 240px;
-  margin-bottom: 20px;
+  margin-bottom: 28px;                 /* 28px spacing before description */
 }
 
 .mission-divider__line {
@@ -130,35 +159,29 @@
   opacity: 0.85;
 }
 
-/* Editorial Serif Heading */
-.mission-title {
-  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(2.5rem, 4vw, 3.75rem);
-  font-weight: 600;
-  color: #241B15;
-  line-height: 1.15;
-  margin-bottom: 20px;
-  text-shadow: none;
-}
-
-/* Paragraph: max width ~700px, center aligned, line-height 1.8 */
+/* Paragraph: max width 680px, 18px font (desktop), 1.8 line height, color rgba(60,45,35,.82) */
 .mission-paragraph {
   font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: clamp(1rem, 1.1vw, 1.125rem);
-  line-height: 1.8;
-  color: #5A4F46;
-  max-width: 700px;
+  font-size: 1.125rem;                 /* Specified 18px on desktop */
+  line-height: 1.8;                    /* Specified 1.8 line height */
+  color: rgba(60, 45, 35, 0.82);      /* Specified rgba(60,45,35,.82) */
+  max-width: 680px;                    /* Specified 680px max width */
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 45px;                 /* 40-50px spacing before CTA */
+  margin-bottom: 36px;                 /* Specified 36px spacing before CTA */
   text-align: center;
+  text-shadow: none;                   /* No text shadow */
 }
 
-/* ── CTA Placement ───────────────────────────────────────────────────── */
+/* ── CTA Placement (18px 36px padding, 36px top / 60px bottom spacing) ── */
 .mission-cta-wrapper {
   display: flex;
   justify-content: center;
-  margin-bottom: 56px;                 /* 50-60px spacing before cards */
+  margin-bottom: 60px;                 /* Specified 60px spacing before cards */
+}
+
+.mission-cta-btn {
+  padding: 18px 36px !important;       /* Specified 18px 36px padding */
 }
 
 /* ── Mission Cards Grid ──────────────────────────────────────────────── */
@@ -559,12 +582,22 @@
     padding-right: 16px;
   }
 
+  .mission-title {
+    font-size: 2.625rem;              /* Specified ~42px on mobile */
+  }
+
   .mission-paragraph {
+    font-size: 1rem;                   /* Specified 16px on mobile */
     margin-bottom: 32px;
   }
 
   .mission-cta-wrapper {
     margin-bottom: 40px;
+  }
+
+  .mission-cta-btn {
+    width: auto;                       /* Button full content width (not full screen) */
+    max-width: 100%;
   }
 
   .mission-grid {
