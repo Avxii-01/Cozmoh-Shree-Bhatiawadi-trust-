@@ -1,18 +1,19 @@
 /* ==========================================================================
-   SHREE BHATIAWADI — UPCOMING EVENTS SECTION (v3 — Luxury Editorial Showcase)
+   SHREE BHATIAWADI — BHATIA CULTURAL FORUM SECTION (css/events.css)
+   Pixel-faithful implementation of the reference luxury heritage slider section.
    ========================================================================== */
 
-/* ── Section Wrapper & Dark Background ───────────────────────────────── */
+/* ── Section Outer Container & Dark Background ───────────────────────── */
 .events-section {
-  padding-top: var(--space-section-tight);
-  padding-bottom: var(--space-section-tight);
-  background: linear-gradient(180deg, #17120F 0%, #120F0D 100%);
+  padding-top: 100px;
+  padding-bottom: 110px;
+  background: linear-gradient(180deg, #16120E 0%, #110E0B 100%);
   position: relative;
   overflow: hidden;
-  color: var(--color-text-on-dark);
+  color: var(--color-text-on-dark, #F5EFE5);
 }
 
-/* Subtle SVG Paper Texture & Grain Overlay */
+/* Subtle SVG Paper Texture & Micro Grain Overlay */
 .events-section::before {
   content: '';
   position: absolute;
@@ -24,17 +25,17 @@
   z-index: 1;
 }
 
-/* Soft Vignette Effect */
+/* Soft Vignette Overlay */
 .events-section::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.65) 100%);
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.7) 100%);
   pointer-events: none;
   z-index: 1;
 }
 
-/* Ambient Gold Particle Canvas Overlay */
+/* Ambient Gold Particle Canvas Overlay (behind slider, z-index 1) */
 .events-section .section-particle-canvas {
   position: absolute;
   inset: 0;
@@ -52,443 +53,561 @@
   opacity: 0.035;
   pointer-events: none;
   z-index: 0;
-  color: var(--color-primary-gold);
+  color: var(--gold, #C89A4A);
 }
 
-/* ── Container ───────────────────────────────────────────────────────── */
 .events-container {
   position: relative;
   z-index: 2;
-}
-
-/* ── Section Header ──────────────────────────────────────────────────── */
-.events-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: var(--space-48);
-  gap: var(--space-32);
-}
-
-.events-header__left {
-  max-width: 680px;
-}
-
-/* Small Gold Eyebrow Label */
-.events-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-8);
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  color: var(--color-primary-gold);
-  margin-bottom: var(--space-12);
-}
-
-.events-eyebrow__rule {
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background-color: var(--color-primary-gold);
-  opacity: 0.6;
-}
-
-/* Large Editorial Heading */
-.events-heading {
-  font-family: var(--font-heading);
-  font-size: var(--font-h2);
-  line-height: 1.15;
-  margin-bottom: var(--space-16);
-  letter-spacing: -0.01em;
-}
-
-.events-heading__ivory {
-  display: block;
-  color: #F5EFE5;
-}
-
-.events-heading__gold {
-  display: block;
-  color: var(--color-primary-gold);
-  font-style: italic;
-}
-
-/* Supporting Paragraph */
-.events-desc {
-  font-family: var(--font-body);
-  font-size: var(--font-body-lg);
-  color: var(--color-muted-on-dark);
-  line-height: 1.6;
-  max-width: 580px;
-  margin: 0;
-}
-
-/* Header Right Actions */
-.events-header__right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: var(--space-20);
-  flex-shrink: 0;
-}
-
-.events-view-all {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-8);
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  color: var(--color-primary-gold);
-  text-decoration: none;
-  text-transform: uppercase;
-  padding-bottom: 4px;
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--transition-fast), color var(--transition-fast);
-}
-
-.events-view-all:hover {
-  color: var(--color-gold-light);
-  border-bottom-color: var(--color-primary-gold);
-}
-
-.events-view-all .arrow {
-  transition: transform var(--transition-fast);
-}
-
-.events-view-all:hover .arrow {
-  transform: translateX(4px);
-}
-
-/* Slider Controls (Prev/Next Manual Arrows) */
-.events-slider-controls {
-  display: flex;
-  align-items: center;
-  gap: var(--space-12);
-}
-
-.events-slider-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(200, 154, 74, 0.25);
-  color: var(--color-primary-gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  outline: none;
-}
-
-.events-slider-btn:hover:not(:disabled) {
-  background: rgba(200, 154, 74, 0.15);
-  border-color: var(--color-primary-gold);
-  color: #FFFFFF;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(200, 154, 74, 0.2);
-}
-
-.events-slider-btn:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.events-slider-btn:focus-visible {
-  outline: 2px solid var(--color-primary-gold);
-  outline-offset: 2px;
-}
-
-/* ── Events Track / Slider Layout ────────────────────────────────────── */
-.events-track-wrapper {
-  overflow: hidden;
-  position: relative;
-  margin: 0 -4px;
-  padding: 8px 4px 20px 4px;
-}
-
-.events-grid {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc(33.333% - 16px);
-  gap: var(--space-24);
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.events-grid::-webkit-scrollbar {
-  display: none;
-}
-
-/* ── Premium Editorial Event Card ────────────────────────────────────── */
-.event-card {
-  position: relative;
-  height: 430px;
-  border-radius: 20px;
-  overflow: hidden;
-  background-color: var(--card);
-  border: 1px solid rgba(200, 154, 74, 0.18);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 380ms cubic-bezier(0.25, 1, 0.5, 1),
-              box-shadow 380ms cubic-bezier(0.25, 1, 0.5, 1),
-              border-color 380ms cubic-bezier(0.25, 1, 0.5, 1);
-  outline: none;
+  max-width: 1400px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
   box-sizing: border-box;
 }
 
-.event-card:focus-visible {
-  outline: 2px solid var(--color-primary-gold);
-  outline-offset: 4px;
+/* ==========================================================================
+   1. CENTERED EDITORIAL HEADER (Reference Exact Match)
+   ========================================================================== */
+
+.cultural-forum-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 54px;
 }
 
-/* Card Background Image */
-.event-card__image-wrap {
+/* Section Eyebrow Label with Thin Flanking Gold Rules */
+.cultural-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.cultural-label__line {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background-color: #C89A4A;
+  opacity: 0.6;
+}
+
+.cultural-label__text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: #C89A4A;
+}
+
+/* Large Two-Line Luxury Serif Heading */
+.cultural-heading {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+  line-height: 1.12;
+  margin: 0 0 16px 0;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.cultural-heading__ivory {
+  display: block;
+  color: #F7F3EC;
+}
+
+.cultural-heading__gold {
+  display: block;
+  color: #C89A4A;
+  font-style: italic;                  /* Specified italic serif style */
+  font-weight: 400;
+}
+
+/* Mughal-inspired Thin Gold Lotus Divider */
+.cultural-header-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 22px;
+}
+
+.cultural-divider-line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, #C89A4A, transparent);
+  opacity: 0.5;
+}
+
+/* Description Paragraph (Centered, Max Width ~650px, Line-height ~1.8) */
+.cultural-desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(0.96875rem, 1.1vw, 1.0625rem);
+  color: rgba(245, 239, 229, 0.78);
+  line-height: 1.82;
+  max-width: 650px;
+  margin: 0 0 28px 0;
+  text-align: center;
+}
+
+/* Centered CTA Link with Gold Underline & Arrow Hover */
+.cultural-cta-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.cultural-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #C89A4A;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid #C89A4A;
+  transition: color 300ms ease, border-color 300ms ease;
+}
+
+.cultural-cta:hover {
+  color: #E6C478;
+  border-bottom-color: #E6C478;
+}
+
+.cultural-cta .arrow {
+  transition: transform 300ms ease;
+}
+
+.cultural-cta:hover .arrow {
+  transform: translateX(6px);
+}
+
+/* ==========================================================================
+   2. FEATURED CULTURAL SLIDER (~90% Page Width, Rounded 24px, Gold Border)
+   ========================================================================== */
+
+.cultural-slider-container {
+  position: relative;
+  width: 90%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+}
+
+/* Slider Viewport (Container for Stacked Crossfading Slides) */
+.cultural-slider-viewport {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 24px;                 /* Specified 24px border radius */
+  overflow: hidden;
+  border: 1px solid rgba(200, 154, 74, 0.22); /* Subtle gold border */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+  background-color: #14100D;
+}
+
+/* Individual Slide (Stacked Absolute Layers for Luxury Crossfade Effect) */
+.cultural-slide {
   position: absolute;
   inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 800ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
+}
+
+.cultural-slide--active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+/* Slide Background Image & Ambient Overlay */
+.cultural-slide__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
-.event-card__img {
+.cultural-slide__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 450ms cubic-bezier(0.25, 1, 0.5, 1),
-              filter 450ms cubic-bezier(0.25, 1, 0.5, 1);
+  filter: contrast(1.05) brightness(0.92) sepia(0.06);
+  transform: scale(1.02);
+  transition: transform 6000ms ease-out, filter 800ms ease;
 }
 
-/* Cinematic Gradient Overlay — Extended ~45-50% for High Contrast Legibility */
-.event-card__overlay {
+.cultural-slide--active .cultural-slide__img {
+  transform: scale(1.0);
+}
+
+/* Dark Vignette & Gradient Overlay */
+.cultural-slide__overlay {
   position: absolute;
   inset: 0;
-  z-index: 2;
   background: linear-gradient(
-    to top,
-    rgba(10, 8, 6, 0.95) 0%,
-    rgba(14, 11, 9, 0.82) 35%,
-    rgba(18, 15, 13, 0.45) 65%,
-    rgba(20, 16, 13, 0.1) 85%,
+    90deg,
+    rgba(14, 10, 7, 0.75) 0%,
+    rgba(14, 10, 7, 0.45) 45%,
+    rgba(14, 10, 7, 0.15) 75%,
     transparent 100%
+  ),
+  linear-gradient(
+    0deg,
+    rgba(12, 9, 6, 0.85) 0%,
+    transparent 50%
   );
-  transition: background 380ms ease;
 }
 
-/* Signature Vertical Date Badge */
-.event-date-badge {
+/* ── Floating Dark Glassmorphism Information Card (Bottom Left) ─────── */
+.cultural-glass-card {
   position: absolute;
-  top: 24px;
-  left: 24px;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 62px;
-  padding: 10px 14px;
-  background: #FAF6F0;
-  border: 1px solid rgba(200, 154, 74, 0.7);
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(4px);
-  transition: transform 380ms cubic-bezier(0.25, 1, 0.5, 1),
-              box-shadow 380ms cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.event-date-badge__day {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #17120F;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-}
-
-.event-date-badge__month {
-  font-family: var(--font-body);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: #8D6738;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  margin-top: 4px;
-}
-
-/* Safe Content Area Overlay (24px 24px 22px Equal Padding) */
-.event-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  padding: 24px 24px 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  bottom: 36px;
+  left: 36px;
+  z-index: 5;
+  width: 350px;
+  background: rgba(20, 15, 10, 0.82);   /* Specified rgba(20,15,10,.82) */
+  backdrop-filter: blur(20px);         /* Specified 18-24px backdrop blur */
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(200, 154, 74, 0.28); /* Subtle gold border */
+  border-radius: 20px;                 /* Specified 20px rounded corners */
+  padding: 30px 28px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.08);
   box-sizing: border-box;
-  overflow: hidden;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
-/* Title Typography Hierarchy (85-90% Width, 2 Lines Max, 1.18 Line Height) */
-.event-info__title {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: #F5EFE5;
-  line-height: 1.18;
-  margin: 0;
-  max-width: 88%;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  letter-spacing: -0.01em;
-  transition: color 350ms ease;
+.cultural-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* Description Line Clamping (2 Lines Max) */
-.event-info__desc {
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  color: var(--color-muted-on-dark);
-  line-height: 1.55;
-  margin: 0;
-  max-width: 96%;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-/* Metadata Row (Location & Time Fixed at Bottom) */
-.event-info__meta {
+/* Category Label */
+.cultural-card-category {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-16);
-  margin-top: 2px;
-  overflow: hidden;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  gap: 8px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #C89A4A;
+  margin-bottom: 12px;
 }
 
-.event-meta-item {
+/* Event Title (Serif Warm Ivory) */
+.cultural-card-title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: #F7F3EC;
+  line-height: 1.18;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.01em;
+}
+
+/* Small Gold Divider Motif */
+.cultural-card-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 140px;
+  margin-bottom: 14px;
+}
+
+.cultural-card-divider .line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, #C89A4A, transparent);
+  opacity: 0.45;
+}
+
+.cultural-card-divider .dot {
+  color: #C89A4A;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+/* Description Text */
+.cultural-card-desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: rgba(245, 239, 229, 0.75);
+  margin: 0 0 20px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;               /* Specified max 4 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card Action Link */
+.cultural-card-cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--color-gold-light);
-  letter-spacing: 0.02em;
-  white-space: nowrap;
+  gap: 8px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #C89A4A;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 300ms ease;
 }
 
-.event-meta-item svg {
-  color: var(--color-primary-gold);
-  flex-shrink: 0;
+.cultural-card-cta:hover {
+  color: #E6C478;
 }
 
-/* ── Hover Interaction ───────────────────────────────────────────────── */
-.event-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.7), 0 0 30px rgba(200, 154, 74, 0.28);
-  border-color: rgba(200, 154, 74, 0.55);
+.cultural-card-cta .arrow {
+  transition: transform 300ms ease;
 }
 
-.event-card:hover .event-card__img {
-  transform: scale(1.04);
+.cultural-card-cta:hover .arrow {
+  transform: translateX(4px);
 }
 
-.event-card:hover .event-card__overlay {
-  background: linear-gradient(
-    to top,
-    rgba(6, 4, 3, 0.98) 0%,
-    rgba(10, 8, 6, 0.88) 35%,
-    rgba(14, 11, 9, 0.55) 65%,
-    rgba(18, 14, 11, 0.15) 85%,
-    transparent 100%
-  );
+/* ── Independent Cinematic Staggered Entrance Animations ────────────── */
+.cultural-slide .cultural-glass-card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
 }
 
-.event-card:hover .event-info__title {
-  color: #FFFFFF;
+.cultural-slide .cultural-card-title {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 500ms ease 350ms, transform 500ms ease 350ms;
 }
 
-.event-card:hover .event-date-badge {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45), 0 0 15px rgba(200, 154, 74, 0.3);
+.cultural-slide .cultural-card-desc {
+  opacity: 0;
+  transition: opacity 500ms ease 500ms;
 }
 
-/* ── Responsive Adaptations ──────────────────────────────────────────── */
+.cultural-slide .cultural-card-cta {
+  opacity: 0;
+  transition: opacity 400ms ease 620ms;
+}
+
+/* Active Slide Revealed Entrance */
+.cultural-slide--active .cultural-glass-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cultural-slide--active .cultural-card-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cultural-slide--active .cultural-card-desc {
+  opacity: 1;
+}
+
+.cultural-slide--active .cultural-card-cta {
+  opacity: 1;
+}
+
+/* ── Navigation Arrows (Positioned Outside Image Container) ──────────── */
+.cultural-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(20, 15, 10, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(200, 154, 74, 0.4);
+  color: #C89A4A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: all 300ms ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.cultural-nav-btn--prev {
+  left: -68px;                         /* Positioned outside left */
+}
+
+.cultural-nav-btn--next {
+  right: -68px;                        /* Positioned outside right */
+}
+
+.cultural-nav-btn:hover {
+  background: rgba(200, 154, 74, 0.22);
+  border-color: #C89A4A;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 10px 30px rgba(200, 154, 74, 0.35);
+}
+
+.cultural-nav-btn:focus-visible {
+  outline: 2px solid #C89A4A;
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   3. PAGINATION CONTROLS (Centered below slider: — ● ○ ○ ○ —)
+   ========================================================================== */
+
+.cultural-pagination-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.pagination-decor-line {
+  display: inline-block;
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C89A4A);
+  opacity: 0.5;
+}
+
+.pagination-decor-line:last-child {
+  background: linear-gradient(90deg, #C89A4A, transparent);
+}
+
+.cultural-pagination-dots {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cultural-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid #C89A4A;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  transition: all 300ms ease;
+}
+
+.cultural-dot--active {
+  background: #C89A4A;
+  transform: scale(1.15);
+  box-shadow: 0 0 10px rgba(200, 154, 74, 0.6);
+}
+
+.cultural-dot:hover:not(.cultural-dot--active) {
+  background: rgba(200, 154, 74, 0.35);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* Laptop & Large Screens (Arrows adjust inside max container margin if tight) */
+@media (max-width: 1380px) {
+  .cultural-nav-btn--prev { left: -24px; }
+  .cultural-nav-btn--next { right: -24px; }
+}
+
+/* Tablet (768px - 1023px) */
 @media (max-width: 1023px) {
-  .events-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-20);
-  }
-
-  .events-header__right {
-    align-items: flex-start;
+  .cultural-slider-container {
     width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
   }
 
-  .events-grid {
-    grid-auto-columns: calc(50% - 12px);
+  .cultural-slider-viewport {
+    height: 460px;
   }
 
-  .event-info__title {
-    font-size: 1.5rem;
+  .cultural-glass-card {
+    width: 320px;
+    bottom: 24px;
+    left: 24px;
+    padding: 24px 22px;
   }
+
+  .cultural-card-title {
+    font-size: 1.6rem;
+  }
+
+  .cultural-nav-btn--prev { left: 16px; }
+  .cultural-nav-btn--next { right: 16px; }
 }
 
-@media (max-width: 640px) {
-  .events-grid {
-    grid-auto-flow: row;
-    grid-template-columns: 1fr;
-    gap: var(--space-20);
+/* Mobile (767px & below) */
+@media (max-width: 767px) {
+  .events-section {
+    padding-top: 60px;
+    padding-bottom: 70px;
   }
 
-  .events-slider-controls {
-    display: none;
+  .cultural-forum-header {
+    margin-bottom: 36px;
   }
 
-  .event-card {
-    height: 440px;
+  .cultural-slider-container {
+    width: 100%;
   }
 
-  .event-info {
-    padding: 20px 20px 18px;
+  .cultural-slider-viewport {
+    height: 520px;                     /* Mobile height accommodating stacked card */
+    border-radius: 18px;
   }
 
-  .event-info__title {
+  /* Information card repositions to bottom spanning full width */
+  .cultural-glass-card {
+    position: absolute;
+    inset: auto 14px 14px 14px;
+    width: auto;
+    padding: 20px 18px;
+    border-radius: 16px;
+    background: rgba(16, 12, 8, 0.88);
+  }
+
+  .cultural-card-title {
     font-size: 1.45rem;
-    max-width: 100%;
+    margin-bottom: 10px;
   }
 
-  .event-date-badge {
-    top: 18px;
-    left: 18px;
+  .cultural-card-desc {
+    font-size: 0.8125rem;
+    -webkit-line-clamp: 3;
+    margin-bottom: 14px;
   }
+
+  /* Smaller Navigation Arrows on mobile */
+  .cultural-nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cultural-nav-btn--prev { left: 10px; }
+  .cultural-nav-btn--next { right: 10px; }
 }

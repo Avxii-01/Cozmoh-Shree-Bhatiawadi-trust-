@@ -1,162 +1,163 @@
 /**
  * ==========================================================================
- * SHREE BHATIAWADI - UPCOMING EVENTS DATA & EDITORIAL CAROUSEL
+ * SHREE BHATIAWADI — BHATIA CULTURAL FORUM SLIDER (js/events.js)
+ * Lightweight Vanilla JS custom carousel with clean modular logic:
+ * - Auto-play crossfade every 5 seconds (700-900ms transition)
+ * - Manual navigation (Prev/Next buttons, Pagination dots)
+ * - Temporary pause on manual interaction (resumes after 8 seconds)
+ * - Hover pause on desktop, touch swipe gestures on mobile.
  * ==========================================================================
  */
 
-// Reusable Events Dataset
-const events = [
-  {
-    id: 'evt-1',
-    date: '05',
-    month: 'NOV',
-    title: 'Navratri Garba Night',
-    description: 'Large Garba celebration with traditional dance and music.',
-    location: 'Community Hall',
-    time: '7:00 PM onwards',
-    image: 'assets/events/navratri.png'
-  },
-  {
-    id: 'evt-2',
-    date: '15',
-    month: 'NOV',
-    title: 'Classical Music Evening',
-    description: 'Live classical music performance featuring renowned artists.',
-    location: 'Cultural Auditorium',
-    time: '6:30 PM',
-    image: 'assets/events/classical_music.png'
-  },
-  {
-    id: 'evt-3',
-    date: '01',
-    month: 'DEC',
-    title: 'Diwali Celebration',
-    description: 'Festival of lights with cultural performances and community gathering.',
-    location: 'Trust Grounds',
-    time: '6:00 PM',
-    image: 'assets/events/diwali.png'
-  }
-];
-
 document.addEventListener('DOMContentLoaded', () => {
-  const eventsGrid = document.getElementById('events-grid');
-  const prevBtn = document.getElementById('events-prev-btn');
-  const nextBtn = document.getElementById('events-next-btn');
+  const viewport = document.getElementById('cultural-slider-viewport');
+  const slides = Array.from(document.querySelectorAll('.cultural-slide'));
+  const dots = Array.from(document.querySelectorAll('.cultural-dot'));
+  const prevBtn = document.getElementById('cultural-prev-btn');
+  const nextBtn = document.getElementById('cultural-next-btn');
 
-  if (!eventsGrid) return;
+  if (!viewport || slides.length === 0) return;
+
+  let currentIndex = 0;
+  let autoPlayTimer = null;
+  let resumeTimer = null;
+  let isHovered = false;
+
+  const AUTO_PLAY_INTERVAL = 5000;   /* 5 seconds */
+  const RESUME_DELAY = 8000;         /* 8 seconds after manual interaction */
 
   /**
-   * Render Event Cards Dynamically
+   * Switch Active Slide
+   * @param {number} targetIndex - Index of slide to display
    */
-  const renderEventCards = (eventList) => {
-    const html = eventList.map((event, index) => {
-      return `
-        <a href="events.html#${event.id}" class="event-card" aria-label="${event.title} - ${event.date} ${event.month}">
-          <!-- Imagery Wrapper -->
-          <div class="event-card__image-wrap">
-            <img 
-              src="${event.image}" 
-              alt="${event.title}" 
-              class="event-card__img" 
-              loading="lazy" 
-              width="600" 
-              height="400"
-            />
-          </div>
+  const goToSlide = (targetIndex) => {
+    if (targetIndex === currentIndex) return;
 
-          <!-- Dark Gradient Overlay -->
-          <div class="event-card__overlay" aria-hidden="true"></div>
+    // Remove active class from current slide & dot
+    slides[currentIndex].classList.remove('cultural-slide--active');
+    dots[currentIndex].classList.remove('cultural-dot--active');
+    dots[currentIndex].setAttribute('aria-selected', 'false');
 
-          <!-- Signature Vertical Date Badge -->
-          <div class="event-date-badge" aria-label="Date: ${event.date} ${event.month}">
-            <span class="event-date-badge__day">${event.date}</span>
-            <span class="event-date-badge__month">${event.month}</span>
-          </div>
+    // Set new current index with wrap-around boundary check
+    currentIndex = (targetIndex + slides.length) % slides.length;
 
-          <!-- Event Information Overlay -->
-          <div class="event-info">
-            <h3 class="event-info__title">${event.title}</h3>
-            <p class="event-info__desc">${event.description}</p>
-            
-            <div class="event-info__meta">
-              <!-- Location Icon & Text -->
-              <span class="event-meta-item">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                ${event.location}
-              </span>
-
-              <!-- Time Icon & Text (if available) -->
-              ${event.time ? `
-                <span class="event-meta-item">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                  ${event.time}
-                </span>
-              ` : ''}
-            </div>
-          </div>
-        </a>
-      `;
-    }).join('');
-
-    eventsGrid.innerHTML = html;
+    // Activate new slide & dot
+    slides[currentIndex].classList.add('cultural-slide--active');
+    dots[currentIndex].classList.add('cultural-dot--active');
+    dots[currentIndex].setAttribute('aria-selected', 'true');
   };
 
   /**
-   * Manual Slider Controller Logic
+   * Next Slide Handler
    */
-  const updateSliderButtons = () => {
-    if (!prevBtn || !nextBtn) return;
-    
-    const maxScrollLeft = eventsGrid.scrollWidth - eventsGrid.clientWidth;
-    
-    if (maxScrollLeft <= 5) {
-      // If content fits completely without overflow
-      prevBtn.disabled = true;
-      nextBtn.disabled = true;
-      return;
+  const nextSlide = () => {
+    goToSlide(currentIndex + 1);
+  };
+
+  /**
+   * Prev Slide Handler
+   */
+  const prevSlide = () => {
+    goToSlide(currentIndex - 1);
+  };
+
+  /**
+   * Start Auto Play Cycle
+   */
+  const startAutoPlay = () => {
+    stopAutoPlay();
+    autoPlayTimer = setInterval(() => {
+      if (!isHovered) {
+        nextSlide();
+      }
+    }, AUTO_PLAY_INTERVAL);
+  };
+
+  /**
+   * Stop Auto Play Cycle
+   */
+  const stopAutoPlay = () => {
+    if (autoPlayTimer) {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = null;
     }
-
-    prevBtn.disabled = eventsGrid.scrollLeft <= 5;
-    nextBtn.disabled = eventsGrid.scrollLeft >= maxScrollLeft - 5;
   };
 
-  const getScrollDistance = () => {
-    const firstCard = eventsGrid.querySelector('.event-card');
-    if (!firstCard) return 360;
-    const cardWidth = firstCard.getBoundingClientRect().width;
-    const gap = 24; // var(--space-24)
-    return cardWidth + gap;
+  /**
+   * Handle Manual Interaction (Pause & Resume after 8 seconds)
+   */
+  const handleUserInteraction = () => {
+    stopAutoPlay();
+    if (resumeTimer) clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(() => {
+      startAutoPlay();
+    }, RESUME_DELAY);
   };
 
+  /* ── Event Listeners ───────────────────────────────────────────────── */
+
+  // Navigation Arrows
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
-      eventsGrid.scrollBy({
-        left: -getScrollDistance(),
-        behavior: 'smooth'
-      });
+      prevSlide();
+      handleUserInteraction();
     });
   }
 
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
-      eventsGrid.scrollBy({
-        left: getScrollDistance(),
-        behavior: 'smooth'
-      });
+      nextSlide();
+      handleUserInteraction();
     });
   }
 
-  // Update slider buttons on scroll and resize
-  eventsGrid.addEventListener('scroll', updateSliderButtons, { passive: true });
-  window.addEventListener('resize', updateSliderButtons, { passive: true });
+  // Pagination Dots
+  dots.forEach((dot) => {
+    dot.addEventListener('click', (e) => {
+      const targetIndex = parseInt(e.currentTarget.getAttribute('data-slide-target'), 10);
+      if (!isNaN(targetIndex)) {
+        goToSlide(targetIndex);
+        handleUserInteraction();
+      }
+    });
+  });
 
-  // Initial render
-  renderEventCards(events);
-  updateSliderButtons();
+  // Desktop Hover Pause
+  viewport.parentElement.addEventListener('mouseenter', () => {
+    isHovered = true;
+  });
+
+  viewport.parentElement.addEventListener('mouseleave', () => {
+    isHovered = false;
+  });
+
+  // Touch Swipe Support for Mobile Devices
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  viewport.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  viewport.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  const handleSwipe = () => {
+    const swipeThreshold = 50; // Minimum swipe distance in px
+    if (touchEndX < touchStartX - swipeThreshold) {
+      // Swiped Left -> Next Slide
+      nextSlide();
+      handleUserInteraction();
+    } else if (touchEndX > touchStartX + swipeThreshold) {
+      // Swiped Right -> Prev Slide
+      prevSlide();
+      handleUserInteraction();
+    }
+  };
+
+  // Initialize Auto Play
+  startAutoPlay();
 });
