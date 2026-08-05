@@ -36,6 +36,7 @@ window.SBTParticles = (function SBTParticles() {
     /* Section baseline particle counts (Desktop baseline) */
     counts: {
       'hero': 50,
+      'mission': 40,
       'banquet': 42, /* Increased 40% from 30 */
       'legacy': 45,
       'initiatives': 35, /* Increased 40% from 25 */
