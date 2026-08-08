@@ -8,7 +8,8 @@
 /* ── Main Section Wrapper ─────────────────────────────────────────────── */
 .banquet-section {
   position: relative;
-  background-color: #F6F0E7;            /* Warm heritage background */
+  background-color: #F6F0E7;
+  /* Warm heritage background */
   color: #1F1914;
   padding: 120px 0;
   overflow: hidden;
@@ -19,7 +20,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     radial-gradient(rgba(141, 103, 56, 0.07) 1px, transparent 1px),
     linear-gradient(45deg, rgba(200, 154, 74, 0.05) 1px, transparent 1px);
   background-size: 28px 28px, 48px 48px;
@@ -96,13 +97,15 @@
   font-weight: 500;
   color: var(--gold, #C89A4A);
   text-transform: uppercase;
-  letter-spacing: 0.18em;               /* 0.18em tracking */
+  letter-spacing: 0.18em;
+  /* 0.18em tracking */
 }
 
 .banquet__title {
   font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
   font-size: clamp(2.5rem, 3.8vw, 3.75rem);
-  font-weight: 600;                     /* Clean 600 weight, no text shadows */
+  font-weight: 600;
+  /* Clean 600 weight, no text shadows */
   line-height: 1.15;
   letter-spacing: 0.01em;
   margin-bottom: 24px;
@@ -122,12 +125,14 @@
 .banquet__desc {
   font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 1rem;
-  line-height: 1.7;                     /* Warm charcoal, 1.7 line height */
+  line-height: 1.7;
+  /* Warm charcoal, 1.7 line height */
   color: #5A4F46;
   max-width: 420px;
   margin-bottom: 28px;
   display: -webkit-box;
-  -webkit-line-clamp: 3;                 /* Maximum 3 lines */
+  -webkit-line-clamp: 3;
+  /* Maximum 3 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -166,7 +171,8 @@
   left: -20px;
   width: 360px;
   height: auto;
-  opacity: 0.07;                         /* 6-8% opacity */
+  opacity: 0.07;
+  /* 6-8% opacity */
   pointer-events: none;
   z-index: -1;
 }
@@ -180,8 +186,10 @@
 .banquet__featured-wrapper {
   position: relative;
   width: 100%;
-  height: clamp(440px, 36vw, 560px);    /* Approx 850x560 ratio */
-  border-radius: 24px;                  /* 24px rounded corners */
+  height: clamp(440px, 36vw, 560px);
+  /* Approx 850x560 ratio */
+  border-radius: 24px;
+  /* 24px rounded corners */
   overflow: hidden;
   box-shadow: 0 24px 60px rgba(35, 25, 19, 0.18);
   background-color: #241B15;
@@ -192,9 +200,10 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: contrast(1.08) saturate(1.1) brightness(0.96); /* Warm highlights & rich shadows */
+  filter: contrast(1.08) saturate(1.1) brightness(0.96);
+  /* Warm highlights & rich shadows */
   transition: opacity 350ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
-              transform 500ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1));
+    transform 500ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1));
 }
 
 .banquet__img--fading {
@@ -210,7 +219,8 @@
   z-index: 10;
   width: min(440px, calc(100% - 48px));
   max-width: 440px;
-  background: rgba(28, 20, 16, 0.68);   /* Smoked glass rgba(28,20,16,0.68) */
+  background: rgba(28, 20, 16, 0.68);
+  /* Smoked glass rgba(28,20,16,0.68) */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(201, 170, 109, 0.20);
@@ -219,7 +229,7 @@
   color: #F5EFE5;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
   transition: opacity 350ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
-              transform 350ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1));
+    transform 350ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1));
 }
 
 .banquet__overlay--fading {
@@ -229,7 +239,8 @@
 
 .banquet-info__name {
   font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
-  font-size: 2.125rem;                  /* Clean 600 weight, no shadow */
+  font-size: 2.125rem;
+  /* Clean 600 weight, no shadow */
   font-weight: 600;
   color: #FFFFFF;
   line-height: 1.1;
@@ -241,7 +252,8 @@
   font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--gold, #C89A4A);          /* Gold uppercase */
+  color: var(--gold, #C89A4A);
+  /* Gold uppercase */
   letter-spacing: 0.18em;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -295,7 +307,8 @@
   font-weight: 600;
   color: var(--gold, #C89A4A);
   text-transform: uppercase;
-  letter-spacing: 0.18em;               /* 0.18em uppercase tracking */
+  letter-spacing: 0.18em;
+  /* 0.18em uppercase tracking */
   margin-bottom: 10px;
 }
 
@@ -394,20 +407,23 @@
 /* Outer Card Container & Royal Gold Frame Wrapper */
 .banquet-card-outer {
   position: relative;
-  padding: 10px;                         /* 10-12px breathing space */
+  padding: 10px;
+  /* 10-12px breathing space */
   border-radius: 24px;
   border: 3px solid transparent;
   transition: transform 400ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
-              box-shadow 400ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
-              border-color 400ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1));
+    box-shadow 400ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
+    border-color 400ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1));
   outline: none;
 }
 
 /* Active Selected State Frame (Only attached to the active card) */
 .banquet-card-outer--selected {
-  border-color: var(--gold, #C89A4A);    /* 3px Royal Gold Frame */
+  border-color: var(--gold, #C89A4A);
+  /* 3px Royal Gold Frame */
   box-shadow: 0 14px 36px rgba(200, 154, 74, 0.30);
-  transform: translateY(-6px);            /* Slight elevation (-6px) */
+  transform: translateY(-6px);
+  /* Slight elevation (-6px) */
 }
 
 /* Top & Bottom Flourish Ornaments on Selected Card Frame */
@@ -444,14 +460,16 @@
   position: relative;
   width: 100%;
   height: 220px;
-  border-radius: 18px;                   /* 18px rounded inner card */
+  border-radius: 18px;
+  /* 18px rounded inner card */
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(35, 25, 19, 0.12);
   transition: transform 350ms var(--ease-heritage), box-shadow 350ms var(--ease-heritage);
 }
 
 .banquet-card-outer:hover {
-  transform: translateY(-4px);           /* Lift 4px on hover */
+  transform: translateY(-4px);
+  /* Lift 4px on hover */
 }
 
 .banquet-card-outer:hover .banquet-selector-card__media {
@@ -470,12 +488,10 @@
 .banquet-selector-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.82) 0%,
-    rgba(0, 0, 0, 0.25) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.25) 50%,
+      transparent 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -487,7 +503,8 @@
   font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
   font-size: 1.5rem;
   font-weight: 600;
-  color: #FFFFFF;                        /* White heading */
+  color: #FFFFFF;
+  /* White heading */
   line-height: 1.1;
   margin-bottom: 4px;
 }
@@ -496,7 +513,8 @@
   font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--gold, #C89A4A);           /* Gold capacity subtitle */
+  color: var(--gold, #C89A4A);
+  /* Gold capacity subtitle */
 }
 
 /* ── Elegant Statistics Panel (5 Equal Columns) ───────────────────────── */
@@ -527,7 +545,8 @@
 .banquet-stat-icon {
   width: 36px;
   height: 36px;
-  color: var(--gold, #C89A4A);           /* Gold line icon */
+  color: var(--gold, #C89A4A);
+  /* Gold line icon */
   flex-shrink: 0;
 }
 
@@ -551,4 +570,307 @@
   color: #6E6258;
   line-height: 1.2;
   margin-top: 4px;
+}
+
+/* ==========================================================================
+   BANQUET HALLS PAGE HERO / HEADER SECTION (.banquet-hero)
+   ========================================================================== */
+
+.banquet-hero {
+  position: relative;
+  width: 100%;
+  height: clamp(620px, 68vh, 820px);
+  min-height: 620px;
+  background-color: var(--bg-dark, #15120F);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding-top: calc(var(--header-height, 80px) + 28px);
+  padding-bottom: 56px;
+  box-sizing: border-box;
+}
+
+/* ── Multi-Layer Background Structure ─────────────────────────────────── */
+.banquet-hero__bg-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.banquet-hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  filter: contrast(1.08) saturate(1.1) brightness(0.65);
+  transform: scale(1.02);
+  animation: banquetHeroBgFadeIn 1400ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)) forwards;
+}
+
+@keyframes banquetHeroBgFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+
+  to {
+    opacity: 0.60;
+    transform: scale(1);
+  }
+}
+
+/* Layer 1: Dark Vignette & Edge Shadows */
+.banquet-hero__overlay-radial {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 72% 90% at center,
+      rgba(21, 18, 15, 0.70) 0%,
+      rgba(21, 18, 15, 0.92) 58%,
+      rgba(21, 18, 15, 0.98) 100%);
+  z-index: 2;
+}
+
+/* Layer 2: Warm Central Radial Halo Light */
+.banquet-hero__overlay-glow {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 420px;
+  background: radial-gradient(ellipse at center,
+      rgba(200, 154, 74, 0.14) 0%,
+      rgba(200, 154, 74, 0.03) 48%,
+      transparent 72%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Layer 3: Top Gradient */
+.banquet-hero__overlay-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(180deg, rgba(21, 18, 15, 0.98) 0%, transparent 100%);
+  z-index: 4;
+}
+
+/* Layer 4: Indian Architectural Edge Linework / Arch Outlines */
+.banquet-hero__arch-left,
+.banquet-hero__arch-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(160px, 20vw, 320px);
+  height: auto;
+  z-index: 5;
+  opacity: 0.08;
+  color: var(--gold, #C89A4A);
+  pointer-events: none;
+}
+
+.banquet-hero__arch-left {
+  left: -20px;
+}
+
+.banquet-hero__arch-right {
+  right: -20px;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+/* ── Container Layout ─────────────────────────────────────────────────── */
+.banquet-hero__container {
+  position: relative;
+  z-index: 10;
+  width: min(92vw, 1400px);
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 3vw, 48px);
+  padding-right: clamp(20px, 3vw, 48px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* Breadcrumb Styling (Upper-Left Aligned) */
+.banquet-hero__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary, #C9B8A0);
+  margin-bottom: auto;
+  width: 100%;
+  text-align: left;
+}
+
+.banquet-hero__breadcrumb-item {
+  color: var(--text-secondary, #C9B8A0);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.banquet-hero__breadcrumb-item:hover {
+  color: var(--gold-light, #D9B56C);
+}
+
+.banquet-hero__breadcrumb-sep {
+  color: var(--gold, #C89A4A);
+  opacity: 0.7;
+  font-size: 0.85rem;
+}
+
+.banquet-hero__breadcrumb-current {
+  color: var(--text, #F5EFE5);
+  font-weight: 600;
+}
+
+/* ── Central Hero Content Stack (Bhatia Cultural Forum Exact Rhythm) ──── */
+.banquet-hero__content-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* 1. Small Gold Section Label with Flanking Gold Rules (OUR PREMIUM SPACES) */
+.banquet-hero__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.banquet-hero__label-line {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background-color: #C89A4A;
+  opacity: 0.6;
+}
+
+.banquet-hero__label-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: #C89A4A;
+}
+
+/* 2. Large Single-Line Flat Editorial Serif Heading (Banquet Halls.) */
+.banquet-hero__heading {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(3.25rem, 6vw, 4.85rem);
+  line-height: 1.1;
+  margin: 0 0 18px 0;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+.banquet-hero__heading-ivory {
+  display: inline;
+  color: #F7F3EC;
+  text-shadow: none !important;
+}
+
+.banquet-hero__heading-gold {
+  display: inline;
+  color: #C89A4A;
+  font-style: italic;
+  font-weight: 400;
+  margin-left: 0.18em;
+  text-shadow: none !important;
+}
+
+/* 3. Lotus / Heritage Diamond Divider Motif */
+.banquet-hero__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 24px;
+}
+
+.banquet-hero__divider-line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, #C89A4A, transparent);
+  opacity: 0.5;
+}
+
+/* 4. Centered Description Paragraph (Identical to Cultural Forum Body Rhythm) */
+.banquet-hero__desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(0.96875rem, 1.1vw, 1.0625rem);
+  color: rgba(245, 239, 229, 0.78);
+  line-height: 1.82;
+  max-width: 650px;
+  margin: 0;
+  text-align: center;
+  text-shadow: none !important;
+}
+
+/* ── Hero Entrance Animations ────────────────────────────────────────── */
+.banquet-hero__animate {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: banquetHeroReveal 800ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)) forwards;
+}
+
+.banquet-hero__animate--delay-1 {
+  animation-delay: 150ms;
+}
+
+.banquet-hero__animate--delay-2 {
+  animation-delay: 300ms;
+}
+
+.banquet-hero__animate--delay-3 {
+  animation-delay: 450ms;
+}
+
+.banquet-hero__animate--delay-4 {
+  animation-delay: 600ms;
+}
+
+.banquet-hero__animate--delay-5 {
+  animation-delay: 750ms;
+}
+
+@keyframes banquetHeroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

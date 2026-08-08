@@ -302,3 +302,82 @@
     border-bottom: none;
   }
 }
+
+/* ── Hero Responsive Tweaks ───────────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .banquet-hero {
+    height: clamp(540px, 66vh, 660px);
+    min-height: 540px;
+    padding-top: calc(var(--header-height, 80px) + 24px);
+    padding-bottom: 40px;
+  }
+
+  .banquet-hero__breadcrumb {
+    margin-bottom: 24px;
+  }
+
+  .banquet-hero__heading {
+    font-size: clamp(2.65rem, 5.4vw, 3.85rem);
+    line-height: 1.12;
+  }
+
+  .banquet-hero__arch-left,
+  .banquet-hero__arch-right {
+    opacity: 0.05;
+    width: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banquet-hero {
+    height: auto;
+    min-height: clamp(480px, 64vh, 580px);
+    padding-top: calc(var(--header-height, 80px) + 16px);
+    padding-bottom: 48px;
+  }
+
+  .banquet-hero__breadcrumb {
+    margin-bottom: 20px;
+    font-size: 0.75rem;
+    justify-content: flex-start;
+  }
+
+  .banquet-hero__label {
+    margin-bottom: 14px;
+  }
+
+  .banquet-hero__label-line {
+    width: 24px;
+  }
+
+  .banquet-hero__label-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+  }
+
+  .banquet-hero__heading {
+    font-size: clamp(2.25rem, 8.5vw, 3.1rem);
+    line-height: 1.12;
+    margin-bottom: 16px;
+  }
+
+  .banquet-hero__divider {
+    margin-bottom: 20px;
+    max-width: 170px;
+  }
+
+  .banquet-hero__desc {
+    font-size: 0.875rem;
+    line-height: 1.68;
+    padding: 0 4px;
+  }
+
+  .banquet-hero__arch-left,
+  .banquet-hero__arch-right {
+    display: none;
+  }
+}
+
+
+
+
