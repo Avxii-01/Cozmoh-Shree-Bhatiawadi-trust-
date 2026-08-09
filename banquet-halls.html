@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/banquet.css">
   <link rel="stylesheet" href="css/banquet-responsive.css">
+  <link rel="stylesheet" href="css/cta.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/forms.css">
   <link rel="stylesheet" href="css/animations.css">
@@ -207,49 +208,222 @@
 
 
   <!-- ==========================================================================
-       EXISTING BANQUET SHOWCASE SECTION (Light Ivory Section Transition)
+       VENUE COLLECTION SECTION (.venue-collection)
+       Dynamic alternating 2-column layout with auto multi-image carousel
        ========================================================================== -->
-  <section class="section banquet-section" id="banquet-showcase" data-section="banquet">
+  <section class="section venue-collection" id="venue-collection" data-section="banquet">
     <canvas class="section-particle-canvas" data-particle-section="banquet" aria-hidden="true"></canvas>
-    
-    <div class="banquet__container">
-      <div class="banquet__top-grid">
-        
-        <!-- Left Col: Content & Info -->
-        <div class="banquet__left-col">
-          <div class="banquet__label">
-            <span class="banquet__label-icon">❖</span>
-            <span class="banquet__label-text">EXQUISITE VENUES</span>
-          </div>
 
-          <h2 class="banquet__title">
-            <span class="banquet__title-dark">Timeless Venues.</span>
-            <span class="banquet__title-gold">Memorable Celebrations.</span>
-          </h2>
+    <div class="venue-collection__container">
 
-          <p class="banquet__desc">
-            From intimate family gatherings to grand wedding celebrations, our banquet halls offer rich heritage aesthetics coupled with state-of-the-art facilities.
-          </p>
-
-          <div class="banquet__divider" aria-hidden="true">
-            <span class="banquet__divider-line"></span>
-            <span class="banquet__divider-motif">❖</span>
-            <span class="banquet__divider-line"></span>
-          </div>
+      <!-- Section Header -->
+      <div class="venue-collection-header reveal-fade-up">
+        <div class="venue-collection-header__label">
+          <span class="venue-collection-header__label-line" aria-hidden="true"></span>
+          <span class="venue-collection-header__label-text">VENUE COLLECTION</span>
+          <span class="venue-collection-header__label-line" aria-hidden="true"></span>
         </div>
 
-        <!-- Right Col: Featured Hall Image Container -->
-        <div class="banquet__right-col">
-          <div class="banquet__featured-wrapper">
-            <img src="assets/banquets/hall1.png" alt="Shree Bhatiawadi Grand Hall Interior" class="banquet__featured-img" id="banquet-featured-img">
-            <div class="banquet__info-card">
-              <h3 class="banquet-info__name">Basil Hall</h3>
-              <div class="banquet-info__subtitle">GRAND. ELEGANT. TIMELESS.</div>
-            </div>
+        <h2 class="venue-collection-header__title">
+          <span>Spaces</span> <span class="venue-collection-header__title-accent">Crafted</span> <span>for Every Celebration.</span>
+        </h2>
+
+        <div class="venue-collection-header__divider" aria-hidden="true">
+          <span class="venue-collection-header__divider-line"></span>
+          <svg width="24" height="16" viewBox="0 0 24 16" fill="none" stroke="#C89A4A" stroke-width="1.2">
+            <path d="M12 2C10 6 6 8 2 8c4 0 8 2 10 6 2-4 6-6 10-6-4 0-8-2-10-6z" fill="rgba(200, 154, 74, 0.15)" />
+            <circle cx="12" cy="8" r="1.5" fill="#C89A4A" />
+          </svg>
+          <span class="venue-collection-header__divider-line"></span>
+        </div>
+
+        <p class="venue-collection-header__desc">
+          From intimate gatherings to grand celebrations, our venues offer the perfect blend of heritage charm, comfort and world-class amenities for unforgettable moments.
+        </p>
+      </div>
+
+      <!-- Dynamic Venue Listings Container -->
+      <div id="venue-collection-container">
+        <!-- Rendered by js/banquet.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       OUR SHARED AMENITIES SECTION (.shared-amenities)
+       Dark luxury heritage transition section — spacious 4x2 grid with warm ivory typography
+       ========================================================================== -->
+  <section class="shared-amenities shared-amenities--dark" id="shared-amenities" data-section="shared-amenities">
+    <!-- Dark Section Particle Canvas -->
+    <canvas class="section-particle-canvas" data-particle-section="shared-amenities" aria-hidden="true"></canvas>
+
+    <!-- Subtle Background Texture -->
+    <div class="shared-amenities__bg-texture" aria-hidden="true"></div>
+
+    <div class="container shared-amenities__container">
+      
+      <!-- Section Header -->
+      <header class="shared-amenities__header reveal-fade-up">
+        <div class="shared-amenities__eyebrow">
+          <span class="shared-amenities__eyebrow-rule" aria-hidden="true"></span>
+          <span class="shared-amenities__eyebrow-text">PREMIUM EXPERIENCE, EVERY TIME</span>
+          <span class="shared-amenities__eyebrow-rule" aria-hidden="true"></span>
+        </div>
+
+        <h2 class="shared-amenities__title">Our Shared Amenities</h2>
+
+        <div class="shared-amenities__divider" aria-hidden="true">
+          <span class="shared-amenities__divider-line"></span>
+          <span class="shared-amenities__divider-motif">✦</span>
+          <span class="shared-amenities__divider-line"></span>
+        </div>
+      </header>
+
+      <!-- Editorial 4x2 Grid -->
+      <div class="shared-amenities__grid reveal-fade-up">
+
+        <!-- Amenity 1 -->
+        <div class="shared-amenity-item">
+          <div class="shared-amenity-item__icon-wrap">
+            <svg class="shared-amenity-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <path d="M9 17V7h4a3 3 0 0 1 0 6H9"></path>
+            </svg>
           </div>
+          <h3 class="shared-amenity-item__name">Valet Parking</h3>
+        </div>
+
+        <!-- Amenity 2 -->
+        <div class="shared-amenity-item">
+          <div class="shared-amenity-item__icon-wrap">
+            <svg class="shared-amenity-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"></path>
+            </svg>
+          </div>
+          <h3 class="shared-amenity-item__name">Air Conditioning</h3>
+        </div>
+
+        <!-- Amenity 3 -->
+        <div class="shared-amenity-item">
+          <div class="shared-amenity-item__icon-wrap">
+            <svg class="shared-amenity-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            </svg>
+          </div>
+          <h3 class="shared-amenity-item__name">Audio Visual</h3>
+        </div>
+
+        <!-- Amenity 4 -->
+        <div class="shared-amenity-item">
+          <div class="shared-amenity-item__icon-wrap">
+            <svg class="shared-amenity-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path>
+              <path d="M16 4.5a3 3 0 0 1 3 3"></path>
+            </svg>
+          </div>
+          <h3 class="shared-amenity-item__name">Bridal Room</h3>
+        </div>
+
+        <!-- Amenity 5 -->
+        <div class="shared-amenity-item">
+          <div class="shared-amenity-item__icon-wrap">
+            <svg class="shared-amenity-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3a9 9 0 0 0-9 9h18a9 9 0 0 0-9-9zM3 16h18M6 20h12"></path>
+            </svg>
+          </div>
+          <h3 class="shared-amenity-item__name">Catering Support</h3>
+        </div>
+
+        <!-- Amenity 6 -->
+        <div class="shared-amenity-item">
+          <div class="shared-amenity-item__icon-wrap">
+            <svg class="shared-amenity-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+            </svg>
+          </div>
+          <h3 class="shared-amenity-item__name">Power Backup</h3>
+        </div>
+
+        <!-- Amenity 7 -->
+        <div class="shared-amenity-item">
+          <div class="shared-amenity-item__icon-wrap">
+            <svg class="shared-amenity-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="4" r="2.5"></circle>
+              <path d="M12 7v5l3 3M9 12h5a4 4 0 0 1 4 4v3"></path>
+              <circle cx="10" cy="17" r="4"></circle>
+            </svg>
+          </div>
+          <h3 class="shared-amenity-item__name">Wheelchair Accessible</h3>
+        </div>
+
+        <!-- Amenity 8 -->
+        <div class="shared-amenity-item">
+          <div class="shared-amenity-item__icon-wrap">
+            <svg class="shared-amenity-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2C10 6 6 8 2 8c4 0 8 2 10 6 2-4 6-6 10-6-4 0-8-2-10-6z"></path>
+              <circle cx="12" cy="8" r="1.5"></circle>
+            </svg>
+          </div>
+          <h3 class="shared-amenity-item__name">Decoration Support</h3>
         </div>
 
       </div>
+
+      <!-- Bottom Heritage Ornament Divider -->
+      <div class="shared-amenities__bottom-motif" aria-hidden="true">
+        <span class="shared-amenities__bottom-line"></span>
+        <span class="shared-amenities__bottom-symbol">✦</span>
+        <span class="shared-amenities__bottom-line"></span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PHASE 7.2 — MINIMAL EDITORIAL CTA -->
+  <section class="cta-section section" id="legacy-cta" aria-labelledby="cta-heading" data-section="cta">
+    <canvas class="section-particle-canvas" data-particle-section="cta" aria-hidden="true"></canvas>
+    <div class="container cta-container">
+
+      <!-- Centered Editorial Composition -->
+      <div class="cta-content reveal-fade-up">
+        <!-- Small Section Label -->
+        <div class="cta-eyebrow">
+          <span class="cta-eyebrow__rule" aria-hidden="true"></span>
+          <span>BEGIN YOUR JOURNEY</span>
+          <span class="cta-eyebrow__rule" aria-hidden="true"></span>
+        </div>
+
+        <!-- Large Editorial Serif Heading -->
+        <h2 id="cta-heading" class="cta-heading">
+          <span class="cta-heading__charcoal">Every Celebration</span>
+          <span class="cta-heading__gold">Begins With a Conversation.</span>
+        </h2>
+
+        <!-- Concise Supporting Paragraph -->
+        <p class="cta-desc">
+          Whether you're planning a wedding, hosting a cultural celebration, or exploring our community initiatives,
+          our team is here to help you create something truly memorable.
+        </p>
+
+        <!-- Centered CTA Buttons -->
+        <div class="cta-actions">
+          <a href="banquet-halls.html#booking" class="btn btn--primary">
+            BOOK A VENUE
+            <span class="btn__icon btn__icon--arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="contact.html" class="btn btn--secondary">CONTACT US</a>
+        </div>
+
+        <!-- Subtle Heritage Divider -->
+        <div class="cta-divider" aria-hidden="true">
+          <span class="cta-divider__line"></span>
+          <span class="cta-divider__ornament">✦</span>
+          <span class="cta-divider__line"></span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -379,6 +553,7 @@
   <script src="js/navbar.js"></script>
   <script src="js/particles.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/banquet-data.js"></script>
   <script src="js/banquet.js"></script>
   <script src="js/scroll.js"></script>
 </body>

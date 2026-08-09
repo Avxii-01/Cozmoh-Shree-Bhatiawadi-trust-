@@ -573,6 +573,664 @@
 }
 
 /* ==========================================================================
+   VENUE COLLECTION SECTION (.venue-collection)
+   ========================================================================== */
+
+.venue-collection {
+  position: relative;
+  background-color: #F6F0E7;
+  color: #1F1914;
+  padding: 100px 0 120px 0;
+  overflow: hidden;
+}
+
+.venue-collection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(141, 103, 56, 0.06) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(200, 154, 74, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px, 48px 48px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.venue-collection__container {
+  max-width: 1400px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 3vw, 48px);
+  padding-right: clamp(20px, 3vw, 48px);
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+/* ── Section Header (Centered Editorial Block) ────────────────────────── */
+.venue-collection-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 64px;
+}
+
+.venue-collection-header__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.venue-collection-header__label-line {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background-color: #C89A4A;
+  opacity: 0.6;
+}
+
+.venue-collection-header__label-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: #C89A4A;
+}
+
+.venue-collection-header__title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.5rem, 4.2vw, 3.85rem);
+  line-height: 1.12;
+  margin: 0 0 16px 0;
+  font-weight: 500;
+  color: #241B15;
+  letter-spacing: -0.01em;
+}
+
+.venue-collection-header__title-accent {
+  color: #C89A4A;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.venue-collection-header__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.venue-collection-header__divider-line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, #C89A4A, transparent);
+  opacity: 0.5;
+}
+
+.venue-collection-header__desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(0.96875rem, 1.1vw, 1.0625rem);
+  color: #5A4F46;
+  line-height: 1.75;
+  max-width: 660px;
+  margin: 0;
+  text-align: center;
+}
+
+/* ==========================================================================
+   VS — VENUE SHOWCASE  (reference-matched editorial spread)
+   ========================================================================== */
+
+/* Remove text-shadow / glow completely from venue typography */
+.venue-collection *,
+.vs *,
+.shared-amenities * {
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* ── Article wrapper ─────────────────────────────────────────────────── */
+.vs {
+  position: relative;
+  width: 100%;
+  background: #FAF6F0;
+  padding: 32px 36px;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: none !important;
+  border-radius: 4px;
+}
+
+/* ── Thin double-gold SVG border ─────────────────────────────────────── */
+.vs__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── SVG corner ornaments (curved L + circle) ────────────────────────── */
+.vs__co {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.vs__co--tl {
+  top: 6px;
+  left: 6px;
+}
+
+.vs__co--tr {
+  top: 6px;
+  right: 6px;
+}
+
+.vs__co--bl {
+  bottom: 6px;
+  left: 6px;
+}
+
+.vs__co--br {
+  bottom: 6px;
+  right: 6px;
+}
+
+/* ── Inner grid — content + image ────────────────────────────────────── */
+.vs__inner {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 46% 54%;
+  gap: 0;
+  align-items: stretch;
+  min-height: 440px;
+}
+
+.vs--img-left .vs__inner {
+  grid-template-columns: 54% 46%;
+}
+
+.vs--img-right .vs__inner {
+  grid-template-columns: 46% 54%;
+}
+
+/* ==========================================================================
+   IMAGE AREA + SUBTLE CAROUSEL
+   ========================================================================== */
+.vs__image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.vs__slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.vs__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1000ms ease;
+}
+
+.vs__slide--active {
+  opacity: 1;
+}
+
+/* Carousel indicator dots */
+.vs__dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.vs__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 250ms ease;
+}
+
+.vs__dot--active {
+  background: #C89A4A;
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   CONTENT — ART-DIRECTED EDITORIAL HIERARCHY
+   ========================================================================== */
+.vs__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 36px;
+  box-sizing: border-box;
+}
+
+/* — venue number -------------------------------------------------------- */
+.vs__num {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-style: normal;
+  color: #C89A4A;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+/* — venue name ---------------------------------------------------------- */
+.vs__name {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 500;
+  color: #241B15;
+  line-height: 1.12;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+/* — tagline ------------------------------------------------------------- */
+.vs__tag {
+  display: block;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #C89A4A;
+  margin-bottom: 18px;
+}
+
+/* — description --------------------------------------------------------- */
+.vs__desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.90625rem;
+  line-height: 1.7;
+  color: #5A4F46;
+  margin: 0 0 32px 0;
+  max-width: 420px;
+}
+
+/* ==========================================================================
+   CAPACITY PANEL — simple, quiet block
+   ========================================================================== */
+.vs__cap {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(200, 154, 74, 0.28);
+  background: rgba(200, 154, 74, 0.04);
+  border-radius: 6px;
+  padding: 14px 22px;
+  margin-bottom: 24px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: none !important;
+}
+
+.vs__cap-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.vs__cap-ic {
+  width: 20px;
+  height: 20px;
+  color: #C89A4A;
+  flex-shrink: 0;
+}
+
+.vs__cap-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.vs__cap-val {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #241B15;
+  line-height: 1;
+}
+
+.vs__cap-lbl {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8C6F3D;
+  margin-top: 3px;
+}
+
+.vs__cap-div {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(200, 154, 74, 0.28);
+  margin: 0 18px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   AMENITIES — compact inline list
+   ========================================================================== */
+.vs__amenities {
+  list-style: none;
+  margin: 0 0 28px 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.vs-amenity {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vs-amenity__ic {
+  width: 14px;
+  height: 14px;
+  color: #C89A4A;
+  flex-shrink: 0;
+}
+
+.vs-amenity__tx {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #4A3E35;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   CTA BUTTON
+   ========================================================================== */
+.vs__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 28px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #C89A4A;
+  color: #15120F;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background 250ms ease, transform 200ms ease;
+  box-shadow: none !important;
+}
+
+.vs__cta:hover {
+  background: #D9B56C;
+  transform: translateY(-1px);
+}
+
+.vs__cta-arr {
+  font-size: 1.05em;
+  transition: transform 200ms ease;
+}
+
+.vs__cta:hover .vs__cta-arr {
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   VENUE SEPARATOR
+   ========================================================================== */
+.vs-sep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 48px 0;
+  opacity: 0.55;
+}
+
+.vs-sep__l {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 154, 74, 0.3), transparent);
+}
+
+/* ==========================================================================
+   SHARED AMENITIES SECTION (.shared-amenities)
+   Dark luxury heritage transition section — spacious 4x2 grid with warm ivory typography
+   ========================================================================== */
+
+.shared-amenities {
+  position: relative;
+  width: 100%;
+  padding: 110px 0;
+  background-color: #120F0D;
+  /* Deep warm brown / near black matching homepage dark sections */
+  color: #F7F3EC;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Faint architectural particle / texture background */
+.shared-amenities__bg-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(200, 154, 74, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.shared-amenities .section-particle-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+}
+
+.shared-amenities__container {
+  position: relative;
+  z-index: 2;
+  width: min(90vw, 1160px);
+  margin: 0 auto;
+}
+
+/* Header */
+.shared-amenities__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.shared-amenities__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.shared-amenities__eyebrow-rule {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: #C89A4A;
+  opacity: 0.5;
+}
+
+.shared-amenities__eyebrow-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #C89A4A;
+}
+
+.shared-amenities__title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.25rem, 3.5vw, 3rem);
+  font-weight: 500;
+  color: #F7F3EC;
+  /* Warm Ivory */
+  margin: 0 0 20px 0;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.shared-amenities__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  max-width: 220px;
+  margin: 0 auto;
+  color: #C89A4A;
+}
+
+.shared-amenities__divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 154, 74, 0.6), transparent);
+}
+
+.shared-amenities__divider-motif {
+  font-size: 0.75rem;
+  opacity: 0.55;
+}
+
+/* Grid: 4 columns x 2 rows */
+.shared-amenities__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 40px;
+  row-gap: 56px;
+  width: 100%;
+  margin-bottom: 64px;
+}
+
+/* Item */
+.shared-amenity-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shared-amenity-item:hover {
+  transform: translateY(-3px);
+}
+
+.shared-amenity-item__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 16px;
+  color: #C89A4A;
+  transition: color 350ms ease;
+}
+
+.shared-amenity-item__icon {
+  width: 26px;
+  height: 26px;
+  stroke: currentColor;
+}
+
+.shared-amenity-item:hover .shared-amenity-item__icon-wrap {
+  color: #D9B56C;
+}
+
+.shared-amenity-item__name {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.1875rem;
+  font-weight: 500;
+  color: #E8DFD1;
+  /* Muted Cream / Warm Ivory */
+  line-height: 1.3;
+  margin: 0;
+  transition: color 350ms ease;
+}
+
+.shared-amenity-item:hover .shared-amenity-item__name {
+  color: #FFFFFF;
+}
+
+/* Bottom Motif */
+.shared-amenities__bottom-motif {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  max-width: 220px;
+  margin: 0 auto;
+  opacity: 0.35;
+  color: #C89A4A;
+}
+
+.shared-amenities__bottom-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C89A4A, transparent);
+}
+
+.shared-amenities__bottom-symbol {
+  font-size: 0.75rem;
+}
+
+
+
+/* ==========================================================================
    BANQUET HALLS PAGE HERO / HEADER SECTION (.banquet-hero)
    ========================================================================== */
 

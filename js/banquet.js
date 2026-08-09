@@ -1,184 +1,148 @@
 /**
  * ==========================================================================
- * SHREE BHATIAWADI TRUST — BANQUET HALLS DATA & CONTROLLER (js/banquet.js)
- * ES6 Vanilla JavaScript — Single Source of Truth
- * Controls hall selection, smooth 400-500ms opacity crossfade, active frame animation,
- * and mobile scroll alignment.
+ * SHREE BHATIAWADI TRUST — VENUE SHOWCASE RENDERER (js/banquet.js)
+ * Editorial venue spread with alternating layouts & subtle image carousel
  * ==========================================================================
  */
 
-const BANQUET_HALLS_DATA = [
-  {
-    id: 'basil-hall',
-    name: 'Basil Hall',
-    tagline: 'GRAND. ELEGANT. TIMELESS.',
-    seating: '300+',
-    standing: '500+',
-    featuredImage: 'assets/banquets/hall1.png',
-    features: [
-      { name: 'Air Conditioning', iconSvg: '<path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' },
-      { name: 'Catering', iconSvg: '<path d="M12 3a9 9 0 00-9 9h18a9 9 0 00-9-9zM3 16h18M6 20h12" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' },
-      { name: 'Parking', iconSvg: '<rect x="4" y="3" width="16" height="18" rx="3" stroke="var(--gold)" stroke-width="1.5"/><path d="M9 17V7h4a3 3 0 010 6H9" stroke="var(--gold)" stroke-width="1.5"/>' },
-      { name: 'Sound System', iconSvg: '<path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' },
-      { name: 'Stage', iconSvg: '<rect x="3" y="14" width="18" height="6" rx="1" stroke="var(--gold)" stroke-width="1.5"/><path d="M7 14l5-8 5 8" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' }
-    ]
-  },
-  {
-    id: 'leaf-hall',
-    name: 'Leaf Hall',
-    tagline: 'SERENE. REFINED. CHARMING.',
-    seating: '200+',
-    standing: '350+',
-    featuredImage: 'assets/banquets/hall2.png',
-    features: [
-      { name: 'Air Conditioning', iconSvg: '<path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' },
-      { name: 'Catering', iconSvg: '<path d="M12 3a9 9 0 00-9 9h18a9 9 0 00-9-9zM3 16h18M6 20h12" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' },
-      { name: 'Parking', iconSvg: '<rect x="4" y="3" width="16" height="18" rx="3" stroke="var(--gold)" stroke-width="1.5"/><path d="M9 17V7h4a3 3 0 010 6H9" stroke="var(--gold)" stroke-width="1.5"/>' },
-      { name: 'Sound System', iconSvg: '<path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' },
-      { name: 'Stage', iconSvg: '<rect x="3" y="14" width="18" height="6" rx="1" stroke="var(--gold)" stroke-width="1.5"/><path d="M7 14l5-8 5 8" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' }
-    ]
-  },
-  {
-    id: 'lotus-hall',
-    name: 'Lotus Hall',
-    tagline: 'INTIMATE. REGAL. PRESTIGIOUS.',
-    seating: '150+',
-    standing: '250+',
-    featuredImage: 'assets/banquets/hall3.png',
-    features: [
-      { name: 'Air Conditioning', iconSvg: '<path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' },
-      { name: 'Catering', iconSvg: '<path d="M12 3a9 9 0 00-9 9h18a9 9 0 00-9-9zM3 16h18M6 20h12" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' },
-      { name: 'Parking', iconSvg: '<rect x="4" y="3" width="16" height="18" rx="3" stroke="var(--gold)" stroke-width="1.5"/><path d="M9 17V7h4a3 3 0 010 6H9" stroke="var(--gold)" stroke-width="1.5"/>' },
-      { name: 'Sound System', iconSvg: '<path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' },
-      { name: 'Stage', iconSvg: '<rect x="3" y="14" width="18" height="6" rx="1" stroke="var(--gold)" stroke-width="1.5"/><path d="M7 14l5-8 5 8" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' }
-    ]
-  },
-  {
-    id: 'orchid-hall',
-    name: 'Orchid Hall',
-    tagline: 'OPULENT. MAJESTIC. EXPANSIVE.',
-    seating: '250+',
-    standing: '400+',
-    featuredImage: 'assets/banquets/hall4.png',
-    features: [
-      { name: 'Air Conditioning', iconSvg: '<path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' },
-      { name: 'Catering', iconSvg: '<path d="M12 3a9 9 0 00-9 9h18a9 9 0 00-9-9zM3 16h18M6 20h12" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' },
-      { name: 'Parking', iconSvg: '<rect x="4" y="3" width="16" height="18" rx="3" stroke="var(--gold)" stroke-width="1.5"/><path d="M9 17V7h4a3 3 0 010 6H9" stroke="var(--gold)" stroke-width="1.5"/>' },
-      { name: 'Sound System', iconSvg: '<path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' },
-      { name: 'Stage', iconSvg: '<rect x="3" y="14" width="18" height="6" rx="1" stroke="var(--gold)" stroke-width="1.5"/><path d="M7 14l5-8 5 8" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/>' }
-    ]
-  }
-];
-
-class BanquetSectionController {
+class VenueShowcaseRenderer {
   constructor() {
-    this.section = document.getElementById('banquet-halls');
-    this.featuredImg = document.getElementById('banquet-featured-img');
-    this.infoOverlay = document.getElementById('banquet-info-overlay');
-    this.nameElem = document.getElementById('banquet-hall-name');
-    this.subtitleElem = document.getElementById('banquet-hall-subtitle');
-    this.seatingElem = document.getElementById('banquet-seating-val');
-    this.standingElem = document.getElementById('banquet-standing-val');
-    this.featuresContainer = document.getElementById('banquet-features-list');
-    this.outerCards = document.querySelectorAll('.banquet-card-outer');
-    
-    this.activeId = 'basil-hall';
-    this.isTransitioning = false;
-
-    if (this.section && this.outerCards.length) {
-      this.init();
+    this.container = document.getElementById('venue-collection-container');
+    this.carousels = [];
+    if (this.container && window.venueCollectionData) {
+      this.render();
+      this.initCarousels();
     }
   }
 
-  init() {
-    this.bindCardEvents();
-    this.preloadHallImages();
-  }
+  render() {
+    const venues = window.venueCollectionData;
+    let html = '';
 
-  preloadHallImages() {
-    BANQUET_HALLS_DATA.forEach(hall => {
-      const img = new Image();
-      img.src = hall.featuredImage;
-    });
-  }
+    venues.forEach((venue, i) => {
+      const imgLeft = i % 2 === 0;
 
-  bindCardEvents() {
-    this.outerCards.forEach(card => {
-      const handleSelect = () => {
-        const hallId = card.getAttribute('data-hall-id');
-        if (hallId && hallId !== this.activeId && !this.isTransitioning) {
-          this.switchHall(hallId, card);
-        }
-      };
+      const amenities = venue.amenities.map(a => `
+        <li class="vs-amenity">
+          <svg class="vs-amenity__ic" viewBox="0 0 24 24" fill="none">${a.icon}</svg>
+          <span class="vs-amenity__tx">${a.name}</span>
+        </li>
+      `).join('');
 
-      card.addEventListener('click', handleSelect);
+      // Carousel images
+      const slides = venue.images.map((src, idx) => `
+        <img src="${src}" alt="${venue.name}" class="vs__slide ${idx === 0 ? 'vs__slide--active' : ''}" data-index="${idx}" loading="lazy">
+      `).join('');
 
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          handleSelect();
-        }
-      });
-    });
-  }
+      // Carousel dots
+      const dots = venue.images.map((_, idx) => `
+        <button type="button" class="vs__dot ${idx === 0 ? 'vs__dot--active' : ''}" data-slide="${idx}" aria-label="Slide ${idx + 1}"></button>
+      `).join('');
 
-  switchHall(hallId, clickedCard) {
-    const hallData = BANQUET_HALLS_DATA.find(h => h.id === hallId);
-    if (!hallData) return;
-
-    this.isTransitioning = true;
-    this.activeId = hallId;
-
-    // 1. Move active ornamental gold frame class to clicked card only
-    this.outerCards.forEach(card => {
-      const isSelected = card.getAttribute('data-hall-id') === hallId;
-      card.classList.toggle('banquet-card-outer--selected', isSelected);
-      card.setAttribute('aria-selected', isSelected ? 'true' : 'false');
-    });
-
-    // 2. Smoothly scroll clicked card into view on mobile if scrollable
-    if (window.innerWidth <= 768 && clickedCard) {
-      clickedCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-    }
-
-    // 3. Fade out featured image & info panel (250ms)
-    if (this.featuredImg) this.featuredImg.classList.add('banquet__img--fading');
-    if (this.infoOverlay) this.infoOverlay.classList.add('banquet__overlay--fading');
-
-    setTimeout(() => {
-      // 4. Update content from single source of truth data object
-      if (this.featuredImg) {
-        this.featuredImg.src = hallData.featuredImage;
-        this.featuredImg.alt = `Shree Bhatiawadi ${hallData.name}`;
-      }
-      if (this.nameElem) this.nameElem.textContent = hallData.name;
-      if (this.subtitleElem) this.subtitleElem.textContent = hallData.tagline;
-      if (this.seatingElem) this.seatingElem.textContent = hallData.seating;
-      if (this.standingElem) this.standingElem.textContent = hallData.standing;
-
-      if (this.featuresContainer) {
-        this.featuresContainer.innerHTML = hallData.features.map(f => `
-          <div class="banquet-feature-item" title="${f.name}">
-            <svg class="banquet-feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              ${f.iconSvg}
-            </svg>
-            <span class="banquet-feature-name">${f.name}</span>
+      const content = `
+        <div class="vs__content">
+          <span class="vs__num">${venue.number}</span>
+          <h3 class="vs__name">${venue.name}</h3>
+          <span class="vs__tag">${venue.tagline}</span>
+          <p class="vs__desc">${venue.description}</p>
+          <div class="vs__cap">
+            <div class="vs__cap-item">
+              <svg class="vs__cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0v-5a2 2 0 012-2h2a2 2 0 012 2v5m-6 0h6"/></svg>
+              <div class="vs__cap-text">
+                <span class="vs__cap-val">${venue.seatingCapacity}</span>
+                <span class="vs__cap-lbl">${venue.seatingLabel}</span>
+              </div>
+            </div>
+            <span class="vs__cap-div"></span>
+            <div class="vs__cap-item">
+              <svg class="vs__cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <div class="vs__cap-text">
+                <span class="vs__cap-val">${venue.movingCapacity}</span>
+                <span class="vs__cap-lbl">${venue.movingLabel}</span>
+              </div>
+            </div>
           </div>
-        `).join('');
+          <ul class="vs__amenities">${amenities}</ul>
+          <a href="${venue.bookingUrl}" class="vs__cta">BOOK THIS VENUE <span class="vs__cta-arr">&rarr;</span></a>
+        </div>`;
+
+      const image = `
+        <div class="vs__image" id="carousel-${venue.id}">
+          <div class="vs__slides">${slides}</div>
+          <div class="vs__dots">${dots}</div>
+        </div>`;
+
+      html += `
+      <article class="vs ${imgLeft ? 'vs--img-left' : 'vs--img-right'} reveal-fade-up" id="venue-${venue.id}">
+        <!-- Double gold frame border -->
+        <svg class="vs__frame" viewBox="0 0 1200 480" preserveAspectRatio="none" aria-hidden="true">
+          <rect x="5" y="5" width="1190" height="470" rx="8" fill="none" stroke="#C89A4A" stroke-width="1.5" opacity="0.5"/>
+          <rect x="12" y="12" width="1176" height="456" rx="5" fill="none" stroke="#C89A4A" stroke-width="0.7" opacity="0.28"/>
+        </svg>
+        <!-- Corner ornaments (curved L + dot) -->
+        <svg class="vs__co vs__co--tl" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M4 32V14C4 8.477 8.477 4 14 4H32" stroke="#C89A4A" stroke-width="1.2" opacity="0.6"/>
+          <circle cx="14" cy="14" r="2" fill="#C89A4A" opacity="0.5"/>
+        </svg>
+        <svg class="vs__co vs__co--tr" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M32 32V14C32 8.477 27.523 4 22 4H4" stroke="#C89A4A" stroke-width="1.2" opacity="0.6"/>
+          <circle cx="22" cy="14" r="2" fill="#C89A4A" opacity="0.5"/>
+        </svg>
+        <svg class="vs__co vs__co--bl" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M4 4V22C4 27.523 8.477 32 14 32H32" stroke="#C89A4A" stroke-width="1.2" opacity="0.6"/>
+          <circle cx="14" cy="22" r="2" fill="#C89A4A" opacity="0.5"/>
+        </svg>
+        <svg class="vs__co vs__co--br" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M32 4V22C32 27.523 27.523 32 22 32H4" stroke="#C89A4A" stroke-width="1.2" opacity="0.6"/>
+          <circle cx="22" cy="22" r="2" fill="#C89A4A" opacity="0.5"/>
+        </svg>
+        <div class="vs__inner">
+          ${imgLeft ? image + content : content + image}
+        </div>
+      </article>`;
+
+      if (i < venues.length - 1) {
+        html += `<div class="vs-sep" aria-hidden="true"><span class="vs-sep__l"></span><svg width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M10 1C8.5 4.5 5 6.5 1 7c4 0 7.5 2.5 9 6 1.5-3.5 5-6 9-6-4-.5-7.5-2.5-9-6z" fill="rgba(200,154,74,.12)" stroke="#C89A4A" stroke-width=".8"/><circle cx="10" cy="7" r="1.2" fill="#C89A4A"/></svg><span class="vs-sep__l"></span></div>`;
       }
+    });
 
-      // 5. Fade back in (350ms)
-      if (this.featuredImg) this.featuredImg.classList.remove('banquet__img--fading');
-      if (this.infoOverlay) this.infoOverlay.classList.remove('banquet__overlay--fading');
+    this.container.innerHTML = html;
+  }
 
-      setTimeout(() => {
-        this.isTransitioning = false;
-      }, 350);
-    }, 250);
+  initCarousels() {
+    const venues = window.venueCollectionData;
+    venues.forEach(venue => {
+      const el = document.getElementById(`carousel-${venue.id}`);
+      if (el) this.carousels.push(new VsCarousel(el));
+    });
   }
 }
 
-// Instantiate on DOM Ready
-document.addEventListener('DOMContentLoaded', () => {
-  window.shreeBanquet = new BanquetSectionController();
-});
+class VsCarousel {
+  constructor(el) {
+    this.el = el;
+    this.slides = el.querySelectorAll('.vs__slide');
+    this.dots = el.querySelectorAll('.vs__dot');
+    this.cur = 0;
+    this.total = this.slides.length;
+    this.iv = null;
+
+    if (this.total > 1) {
+      this.dots.forEach((d, i) => d.addEventListener('click', () => { this.go(i); this.reset(); }));
+      this.start();
+    }
+  }
+  go(i) {
+    if (i === this.cur) return;
+    this.slides[this.cur].classList.remove('vs__slide--active');
+    this.dots[this.cur].classList.remove('vs__dot--active');
+    this.cur = i;
+    this.slides[this.cur].classList.add('vs__slide--active');
+    this.dots[this.cur].classList.add('vs__dot--active');
+  }
+  next() { this.go((this.cur + 1) % this.total); }
+  start() { this.iv = setInterval(() => this.next(), 5000); }
+  reset() { clearInterval(this.iv); this.start(); }
+}
+
+document.addEventListener('DOMContentLoaded', () => new VenueShowcaseRenderer());

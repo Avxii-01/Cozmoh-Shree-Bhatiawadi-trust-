@@ -44,11 +44,13 @@
   }
 
   .banquet__right-col {
-    order: 1;                            /* Featured image comes first on tablet */
+    order: 1;
+    /* Featured image comes first on tablet */
   }
 
   .banquet__left-col {
-    order: 2;                            /* Text content comes second on tablet */
+    order: 2;
+    /* Text content comes second on tablet */
     max-width: 100%;
   }
 
@@ -110,7 +112,8 @@
     order: 1;
     text-align: center;
     max-width: 100%;
-    margin-bottom: 40px; /* Paragraph -> 40px -> Featured Image */
+    margin-bottom: 40px;
+    /* Paragraph -> 40px -> Featured Image */
   }
 
   /* Label -> 20px -> Heading */
@@ -150,7 +153,8 @@
   /* Featured Image & Overlay Block Second */
   .banquet__right-col {
     order: 2;
-    margin-bottom: 32px; /* Featured Image -> 32px -> Hall Selector */
+    margin-bottom: 32px;
+    /* Featured Image -> 32px -> Hall Selector */
   }
 
   /* 2. Reduced Featured Image Height (220–260px, 16:9 Aspect Ratio) */
@@ -240,8 +244,10 @@
     padding: 12px 4px 18px 4px;
     margin-bottom: 24px;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Hide Firefox scrollbar */
-    -ms-overflow-style: none; /* Hide IE/Edge scrollbar */
+    scrollbar-width: none;
+    /* Hide Firefox scrollbar */
+    -ms-overflow-style: none;
+    /* Hide IE/Edge scrollbar */
   }
 
   /* 6. Hide Native Scrollbar across browsers */
@@ -372,12 +378,220 @@
     padding: 0 4px;
   }
 
-  .banquet-hero__arch-left,
-  .banquet-hero__arch-right {
-    display: none;
+  /* ── Venue Showcase Responsive ────────────────────────────────────────── */
+  @media (max-width: 1023px) {
+    .venue-collection {
+      padding: 80px 0 96px 0;
+    }
+
+    .vs {
+      padding: 22px 20px;
+    }
+
+    .vs__inner {
+      grid-template-columns: 1fr !important;
+      min-height: auto;
+    }
+
+    .vs__image {
+      order: 1;
+    }
+
+    .vs__content {
+      order: 2;
+    }
+
+    .vs__image {
+      min-height: 320px;
+    }
+
+    .vs__slide {
+      min-height: 320px;
+    }
+
+    .vs__content {
+      padding: 28px 20px;
+    }
+
+    .vs__co {
+      width: 28px;
+      height: 28px;
+    }
+
+    .vs-sep {
+      padding: 36px 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .venue-collection {
+      padding: 56px 0 72px 0;
+    }
+
+    .venue-collection-header {
+      margin-bottom: 36px;
+    }
+
+    .vs {
+      padding: 16px 12px;
+    }
+
+    .vs__co {
+      width: 22px;
+      height: 22px;
+    }
+
+    .vs__co--tl {
+      top: 6px;
+      left: 6px;
+    }
+
+    .vs__co--tr {
+      top: 6px;
+      right: 6px;
+    }
+
+    .vs__co--bl {
+      bottom: 6px;
+      left: 6px;
+    }
+
+    .vs__co--br {
+      bottom: 6px;
+      right: 6px;
+    }
+
+    .vs__image {
+      min-height: 220px;
+    }
+
+    .vs__slide {
+      min-height: 220px;
+    }
+
+    .vs__content {
+      padding: 22px 10px;
+    }
+
+    .vs__num {
+      font-size: 1.1rem;
+    }
+
+    .vs__name {
+      font-size: 1.5rem;
+    }
+
+    .vs__tag {
+      margin-bottom: 12px;
+    }
+
+    .vs__desc {
+      font-size: 0.84rem;
+      margin-bottom: 18px;
+    }
+
+    .vs__cap {
+      flex-direction: column;
+      gap: 10px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      max-width: 100%;
+    }
+
+    .vs__cap-div {
+      width: 100%;
+      height: 1px;
+      margin: 0;
+    }
+
+    .vs__amenities {
+      grid-template-columns: repeat(2, auto);
+      gap: 6px 14px;
+      margin-bottom: 20px;
+    }
+
+    .vs-amenity__tx {
+      font-size: 0.7rem;
+    }
+
+    .vs__cta {
+      height: 36px;
+      padding: 0 20px;
+      font-size: 0.68rem;
+    }
+
+    .vs__dots {
+      bottom: 10px;
+      gap: 5px;
+    }
+
+    .vs__dot {
+      width: 6px;
+      height: 6px;
+    }
+
+    .vs-sep {
+      padding: 28px 0;
+    }
+  }
+
+  /* ── Our Shared Amenities Responsive Layout ────────────────────────────── */
+  @media (max-width: 1023px) {
+    .shared-amenities {
+      padding: 80px 0;
+    }
+
+    .shared-amenities__header {
+      margin-bottom: 48px;
+    }
+
+    .shared-amenities__grid {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 28px;
+      row-gap: 48px;
+      margin-bottom: 48px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .shared-amenities {
+      padding: 64px 0;
+    }
+
+    .shared-amenities__header {
+      margin-bottom: 36px;
+    }
+
+    .shared-amenities__eyebrow-text {
+      font-size: 0.6875rem;
+      letter-spacing: 0.18em;
+    }
+
+    .shared-amenities__title {
+      font-size: 1.875rem;
+      margin-bottom: 16px;
+    }
+
+    .shared-amenities__grid {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 20px;
+      row-gap: 36px;
+      margin-bottom: 40px;
+    }
+
+    .shared-amenity-item__icon-wrap {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 12px;
+    }
+
+    .shared-amenity-item__icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .shared-amenity-item__name {
+      font-size: 1.0625rem;
+    }
   }
 }
-
-
-
-
