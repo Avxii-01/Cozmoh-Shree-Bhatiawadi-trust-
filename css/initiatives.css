@@ -8,7 +8,8 @@
 /* ── Outer Section Container ─────────────────────────────────────────── */
 .initiatives-section {
   position: relative;
-  background-color: #F5EFE6;            /* Warm heritage background */
+  background-color: #F5EFE6;
+  /* Warm heritage background */
   color: #1F1914;
   padding: 120px 0;
   overflow: hidden;
@@ -19,7 +20,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     radial-gradient(rgba(141, 103, 56, 0.05) 1px, transparent 1px),
     linear-gradient(45deg, rgba(200, 154, 74, 0.03) 1px, transparent 1px);
   background-size: 28px 28px, 56px 56px;
@@ -68,13 +69,15 @@
   font-weight: 500;
   color: var(--gold, #C89A4A);
   text-transform: uppercase;
-  letter-spacing: 0.18em;                /* Standardized 0.18em tracking */
+  letter-spacing: 0.18em;
+  /* Standardized 0.18em tracking */
 }
 
 .initiatives-title {
   font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
   font-size: clamp(2.5rem, 3.8vw, 3.75rem);
-  font-weight: 600;                      /* Clean 600 weight, no heavy shadows */
+  font-weight: 600;
+  /* Clean 600 weight, no heavy shadows */
   line-height: 1.15;
   margin-bottom: 20px;
   text-align: center;
@@ -94,7 +97,8 @@
 .initiatives-desc {
   font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 1rem;
-  line-height: 1.7;                      /* Warm charcoal, 1.7 line height */
+  line-height: 1.7;
+  /* Warm charcoal, 1.7 line height */
   color: #5A4F46;
   text-align: center;
   max-width: 640px;
@@ -104,8 +108,10 @@
 /* ── Editorial Masonry Gallery Layout (Consistent 24px Gutters) ───────── */
 .initiatives-masonry {
   display: grid;
-  grid-template-columns: repeat(12, 1fr); /* 12-column grid system */
-  gap: 24px;                             /* Consistent architectural gutters */
+  grid-template-columns: repeat(12, 1fr);
+  /* 12-column grid system */
+  gap: 24px;
+  /* Consistent architectural gutters */
 }
 
 /* Card 1: Large Landscape Feature (Columns 1-7, Height 460px) */
@@ -148,12 +154,13 @@
 .initiative-card {
   position: relative;
   width: 100%;
-  border-radius: 18px;                   /* 18px rounded corners */
+  border-radius: 18px;
+  /* 18px rounded corners */
   overflow: hidden;
   text-decoration: none;
   box-shadow: 0 12px 32px rgba(35, 25, 19, 0.12);
   transition: transform 400ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
-              box-shadow 400ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1));
+    box-shadow 400ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1));
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -161,7 +168,8 @@
 }
 
 .initiative-card:hover {
-  transform: translateY(-6px);           /* Lift 6px on hover */
+  transform: translateY(-6px);
+  /* Lift 6px on hover */
   box-shadow: 0 20px 48px rgba(35, 25, 19, 0.24);
 }
 
@@ -173,11 +181,12 @@
   object-fit: cover;
   object-position: center;
   transition: transform 600ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
-              filter 400ms var(--ease-heritage);
+    filter 400ms var(--ease-heritage);
 }
 
 .initiative-card:hover .initiative-card__img {
-  transform: scale(1.04);                /* Scale to 1.04 on hover */
+  transform: scale(1.04);
+  /* Scale to 1.04 on hover */
   filter: brightness(1.06) contrast(1.02);
 }
 
@@ -185,12 +194,10 @@
 .initiative-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(18, 14, 11, 0.92) 0%,
-    rgba(18, 14, 11, 0.55) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(to top,
+      rgba(18, 14, 11, 0.92) 0%,
+      rgba(18, 14, 11, 0.55) 50%,
+      transparent 100%);
   z-index: 2;
 }
 
@@ -241,6 +248,7 @@
   margin-bottom: 14px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: inherit;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -271,10 +279,12 @@
   .initiatives-section {
     padding: 90px 0;
   }
+
   .initiative-card--feature,
   .initiative-card--tall {
     height: 400px;
   }
+
   .initiative-card--medium-left,
   .initiative-card--supporting-right,
   .initiative-card--supporting-left,
