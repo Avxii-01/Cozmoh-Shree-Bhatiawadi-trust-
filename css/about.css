@@ -1,0 +1,798 @@
+/* ==========================================================================
+   SHREE BHATIAWADI TRUST — ABOUT US HERO SECTION (css/about.css)
+   Full-width bleed background image, left-gradient dark overlay,
+   70-80vh desktop height, left-aligned editorial content stack,
+   Cormorant Garamond heading, justified description block (380-480px width),
+   and subtle gold heritage decorative divider.
+   ========================================================================== */
+
+.about-hero {
+  position: relative;
+  width: 100%;
+  height: clamp(580px, 75vh, 780px);
+  min-height: 560px;
+  background-color: var(--bg-dark, #15120F);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: var(--header-height, 80px);
+  box-sizing: border-box;
+}
+
+/* ── Full Bleed Background Image & Multi-layer Overlays ────────────────── */
+.about-hero__bg-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.about-hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transform: scale(1.03);
+  animation: aboutHeroBgFadeIn 1400ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)) forwards;
+  filter: contrast(1.05) saturate(1.08) brightness(0.85);
+}
+
+@keyframes aboutHeroBgFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Layer 1: Left Dark Gradient Fade to Right (Strong on Left, Lighter on Right) */
+.about-hero__overlay-left {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+      rgba(15, 12, 9, 0.95) 0%,
+      rgba(15, 12, 9, 0.88) 32%,
+      rgba(15, 12, 9, 0.65) 58%,
+      rgba(15, 12, 9, 0.25) 82%,
+      rgba(15, 12, 9, 0.10) 100%);
+  z-index: 2;
+}
+
+/* Layer 2: Top Ambient Gradient Shadow for Navbar Readability */
+.about-hero__overlay-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(180deg,
+      rgba(15, 12, 9, 0.85) 0%,
+      transparent 100%);
+  z-index: 3;
+}
+
+/* Layer 3: Subtle Vignette to Frame the Edges */
+.about-hero__overlay-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%,
+      transparent 35%,
+      rgba(15, 12, 9, 0.55) 100%);
+  z-index: 4;
+}
+
+/* ── Hero Container & Grid System ─────────────────────────────────────── */
+.about-hero__container {
+  position: relative;
+  z-index: 10;
+  width: min(92vw, 1400px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(24px, 4vw, 56px);
+  padding-right: clamp(24px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* ── Content Stack (Strictly Left-Aligned) ─────────────────────────────── */
+.about-hero__content-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 580px;
+}
+
+/* 1. Gold Eyebrow Label */
+.about-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.about-hero__eyebrow-line {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background-color: var(--gold, #C89A4A);
+  opacity: 0.75;
+}
+
+.about-hero__eyebrow-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(0.75rem, 0.9vw, 0.8125rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold, #C89A4A);
+}
+
+/* 2. Main Heading: About Our Trust */
+.about-hero__heading {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(3rem, 5.5vw, 4.75rem);
+  line-height: 1.08;
+  font-weight: 500;
+  color: var(--text, #F5EFE5);
+  letter-spacing: -0.01em;
+  margin: 0 0 20px 0;
+}
+
+/* 3. Subtle Royal Decorative Divider */
+.about-hero__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 260px;
+  margin-bottom: 24px;
+}
+
+.about-hero__divider-line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, #C89A4A 0%, rgba(200, 154, 74, 0.2) 100%);
+  opacity: 0.7;
+}
+
+.about-hero__divider-diamond {
+  width: 6px;
+  height: 6px;
+  background-color: #C89A4A;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* 4. Description Paragraph (JUSTIFIED) */
+.about-hero__desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(0.9375rem, 1.05vw, 1.0625rem);
+  color: rgba(245, 239, 229, 0.85);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  text-align: left;
+  max-width: 540px;
+  margin: 0;
+}
+
+/* ── Hero Entrance Animations ────────────────────────────────────────── */
+.about-hero__animate {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aboutHeroReveal 800ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)) forwards;
+}
+
+.about-hero__animate--delay-1 {
+  animation-delay: 150ms;
+}
+
+.about-hero__animate--delay-2 {
+  animation-delay: 300ms;
+}
+
+.about-hero__animate--delay-3 {
+  animation-delay: 450ms;
+}
+
+.about-hero__animate--delay-4 {
+  animation-delay: 600ms;
+}
+
+@keyframes aboutHeroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsiveness ─────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .about-hero {
+    height: clamp(520px, 70vh, 680px);
+  }
+
+  .about-hero__heading {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+  }
+
+  .about-hero__desc {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    height: auto;
+    min-height: 520px;
+    padding-top: calc(var(--header-height, 80px) + 40px);
+    padding-bottom: 60px;
+  }
+
+  .about-hero__overlay-left {
+    background: linear-gradient(180deg,
+        rgba(15, 12, 9, 0.92) 0%,
+        rgba(15, 12, 9, 0.85) 60%,
+        rgba(15, 12, 9, 0.75) 100%);
+  }
+
+  .about-hero__container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .about-hero__content-stack {
+    max-width: 100%;
+  }
+
+  .about-hero__heading {
+    font-size: clamp(2.25rem, 7.5vw, 3.25rem);
+    margin-bottom: 16px;
+  }
+
+  .about-hero__eyebrow-text {
+    letter-spacing: 0.16em;
+  }
+
+  .about-hero__desc {
+    max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+}
+
+/* ==========================================================================
+   ABOUT US — LIGHT SECTION: MISSION & VISION (.about-purpose)
+   ========================================================================== */
+.about-purpose {
+  position: relative;
+  background-color: #F7F3EC;
+  /* Warm ivory paper background */
+  color: #1F1914;
+  padding: 120px 0 130px 0;
+  overflow: hidden;
+}
+
+/* Subtle Symmetrical Architectural Background Linework */
+.about-purpose__bg-arch {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80%;
+  width: auto;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.about-purpose__bg-arch--left {
+  left: 0;
+}
+
+.about-purpose__bg-arch--right {
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+/* Subtle Handmade Paper Texture Overlay */
+.about-purpose::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(141, 103, 56, 0.05) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(200, 154, 74, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px, 56px 56px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-purpose__container {
+  max-width: 1320px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(24px, 4vw, 56px);
+  padding-right: clamp(24px, 4vw, 56px);
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+/* 1. Section Intro Header */
+.about-purpose__intro {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 72px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-purpose__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.about-purpose__eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--gold, #C89A4A);
+  opacity: 0.6;
+}
+
+.about-purpose__eyebrow-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold, #C89A4A);
+}
+
+.about-purpose__title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.6rem, 4.3vw, 3.6rem);
+  font-weight: 500;
+  color: #1F1914;
+  line-height: 1.15;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.01em;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+.about-purpose__title-gold {
+  text-shadow: none !important;
+}
+
+.about-purpose__title-dark {
+  text-shadow: none !important;
+}
+
+.about-purpose__subtitle {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(1rem, 1.12vw, 1.125rem);
+  color: #5C4A3A;
+  line-height: 1.75;
+  margin: 0;
+  max-width: 680px;
+  text-shadow: none !important;
+}
+
+/* 2. Mission + Vision Editorial Layout */
+.about-purpose__grid {
+  display: grid;
+  grid-template-columns: 1fr 24px 1fr;
+  gap: clamp(32px, 4vw, 64px);
+  align-items: stretch;
+  position: relative;
+}
+
+/* Delicate Muted-Gold Vertical Divider with Central Diamond Motif */
+.about-purpose__vertical-divider-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  align-self: center;
+  position: relative;
+}
+
+.about-purpose__vertical-line {
+  width: 1px;
+  flex: 1;
+  background: linear-gradient(180deg, transparent 0%, rgba(200, 154, 74, 0.4) 30%, rgba(200, 154, 74, 0.4) 100%);
+}
+
+.about-purpose__vertical-line--bottom {
+  background: linear-gradient(180deg, rgba(200, 154, 74, 0.4) 0%, rgba(200, 154, 74, 0.4) 70%, transparent 100%);
+}
+
+.about-purpose__vertical-diamond {
+  width: 7px;
+  height: 7px;
+  background-color: var(--gold, #C89A4A);
+  transform: rotate(45deg);
+  margin: 14px 0;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* Mobile Horizontal Divider */
+.about-purpose__mobile-divider {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 160px;
+  margin: 16px auto;
+}
+
+.about-purpose__mobile-line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, rgba(200, 154, 74, 0.5), transparent);
+}
+
+.about-purpose__mobile-diamond {
+  width: 5px;
+  height: 5px;
+  background-color: var(--gold, #C89A4A);
+  transform: rotate(45deg);
+  opacity: 0.8;
+}
+
+/* Editorial Content Panels (NO ICONS / NO CARDS / NO SHADOWS) */
+.about-purpose__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  padding: 8px 4px;
+}
+
+.about-purpose__panel-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.about-purpose__panel-heading {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.5rem, 3.8vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.12;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.01em;
+  text-align: center;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+.about-purpose__panel-heading-dark {
+  color: #1F1914;
+  text-shadow: none !important;
+}
+
+.about-purpose__panel-heading-gold {
+  color: var(--gold, #C89A4A);
+  text-shadow: none !important;
+}
+
+/* Symmetrical Gold Accent Line + Centered Diamond Divider below Headings */
+.about-purpose__panel-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.about-purpose__panel-line {
+  height: 1px;
+  flex: 1;
+  background: var(--gold, #C89A4A);
+  opacity: 0.65;
+}
+
+.about-purpose__panel-diamond {
+  width: 6px;
+  height: 6px;
+  background-color: var(--gold, #C89A4A);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.about-purpose__panel-body {
+  width: 100%;
+  text-align: justify;
+}
+
+.about-purpose__panel-body p {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(0.96875rem, 1.05vw, 1.0625rem);
+  color: #4A3E33;
+  line-height: 1.82;
+  margin: 0 0 20px 0;
+  text-shadow: none !important;
+  text-align: justify;
+}
+
+.about-purpose__panel-body p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ==========================================================================
+   ABOUT US — DARK SECTION: CORE VALUES (.about-values)
+   ========================================================================== */
+.about-values {
+  position: relative;
+  background-color: var(--bg-dark, #15120F);
+  color: var(--text, #F5EFE5);
+  padding: 110px 0 120px 0;
+  overflow: hidden;
+}
+
+/* Ambient Radial Lighting Overlay */
+.about-values__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(ellipse at center,
+      rgba(200, 154, 74, 0.07) 0%,
+      rgba(200, 154, 74, 0.02) 50%,
+      transparent 75%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-values__container {
+  max-width: 1320px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(24px, 4vw, 56px);
+  padding-right: clamp(24px, 4vw, 56px);
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+/* Section Header */
+.about-values__header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 64px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-values__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.about-values__eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--gold, #C89A4A);
+  opacity: 0.6;
+}
+
+.about-values__eyebrow-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold, #C89A4A);
+}
+
+.about-values__title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.5rem, 4.2vw, 3.5rem);
+  font-weight: 500;
+  color: var(--text, #F5EFE5);
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.01em;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+.about-values__subtitle {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(1rem, 1.12vw, 1.125rem);
+  color: var(--text-secondary, #C9B8A0);
+  line-height: 1.7;
+  margin: 0;
+  text-shadow: none !important;
+}
+
+/* Core Values 4-Column Editorial Grid Layout */
+.about-values__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(24px, 3.2vw, 48px);
+}
+
+/* Value Item Column (Editorial Integrated Style - NO Heavy Cards/Borders/Shadows) */
+.about-values__column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 12px;
+}
+
+/* Subtle Vertical Divider Separators between Desktop Columns */
+.about-values__column:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -24px;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent 0%, rgba(200, 154, 74, 0.22) 30%, rgba(200, 154, 74, 0.22) 70%, transparent 100%);
+  pointer-events: none;
+}
+
+/* SVG Icon Container (NO CIRCLES / NO BACKGROUNDS / NO BORDERS) */
+.about-values__icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 16px;
+}
+
+.about-values__icon {
+  width: 38px;
+  height: 38px;
+  color: var(--gold, #C89A4A);
+  transition: transform 300ms ease;
+}
+
+.about-values__column:hover .about-values__icon {
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Value Name (Primary Emphasis) */
+.about-values__name {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.5rem, 1.85vw, 1.85rem);
+  font-weight: 500;
+  color: var(--text, #F5EFE5);
+  margin: 0 0 12px 0;
+  letter-spacing: 0.01em;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* Short Gold Decorative Divider beneath Title */
+.about-values__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 80px;
+  margin: 0 auto 16px auto;
+}
+
+.about-values__divider-line {
+  height: 1px;
+  flex: 1;
+  background: var(--gold, #C89A4A);
+  opacity: 0.5;
+}
+
+.about-values__divider-diamond {
+  width: 4px;
+  height: 4px;
+  background-color: var(--gold, #C89A4A);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+/* Value Description */
+.about-values__desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(0.875rem, 0.95vw, 0.9375rem);
+  color: var(--text-secondary, #C9B8A0);
+  line-height: 1.72;
+  margin: 0;
+  max-width: 270px;
+  text-shadow: none !important;
+}
+
+/* ── Responsiveness ─────────────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .about-purpose__grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .about-purpose__vertical-divider-wrapper {
+    display: none;
+  }
+
+  .about-purpose__mobile-divider {
+    display: flex;
+  }
+
+  .about-purpose__bg-arch {
+    opacity: 0.02;
+  }
+
+  .about-values__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 28px;
+  }
+
+  .about-values__column:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .about-purpose,
+  .about-values {
+    padding: 70px 0;
+  }
+
+  .about-purpose__intro,
+  .about-values__header {
+    margin-bottom: 48px;
+  }
+
+  .about-purpose__panel-heading {
+    font-size: 2.1rem;
+  }
+
+  .about-values__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-values__column {
+    padding: 12px 8px;
+  }
+}
