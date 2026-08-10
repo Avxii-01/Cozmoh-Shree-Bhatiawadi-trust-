@@ -50,15 +50,10 @@
   }
 }
 
-.history-hero__overlay-left {
+.history-hero__overlay-center {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg,
-      rgba(15, 12, 9, 0.95) 0%,
-      rgba(15, 12, 9, 0.88) 35%,
-      rgba(15, 12, 9, 0.65) 60%,
-      rgba(15, 12, 9, 0.25) 85%,
-      rgba(15, 12, 9, 0.10) 100%);
+  background: radial-gradient(circle at 50% 45%, rgba(15, 12, 9, 0.82) 0%, rgba(15, 12, 9, 0.72) 55%, rgba(15, 12, 9, 0.55) 100%);
   z-index: 2;
 }
 
@@ -75,7 +70,7 @@
 .history-hero__overlay-vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 70% 50%, transparent 35%, rgba(15, 12, 9, 0.55) 100%);
+  background: radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(15, 12, 9, 0.50) 100%);
   z-index: 4;
 }
 
@@ -89,6 +84,7 @@
   padding-right: clamp(24px, 4vw, 56px);
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   box-sizing: border-box;
 }
@@ -96,24 +92,26 @@
 .history-hero__content-stack {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  max-width: 620px;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  margin-inline: auto;
 }
 
 .history-hero__eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 18px;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 22px;
 }
 
 .history-hero__eyebrow-line {
   display: inline-block;
-  width: 28px;
+  width: 36px;
   height: 1px;
   background-color: var(--gold, #C89A4A);
-  opacity: 0.75;
+  opacity: 0.65;
 }
 
 .history-hero__eyebrow-text {
@@ -121,39 +119,42 @@
   font-size: clamp(0.75rem, 0.9vw, 0.8125rem);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
   color: var(--gold, #C89A4A);
 }
 
 .history-hero__heading {
   font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
   font-size: clamp(2.75rem, 5.2vw, 4.5rem);
-  line-height: 1.1;
+  line-height: 1.12;
   font-weight: 500;
   color: var(--text, #F5EFE5);
   letter-spacing: -0.01em;
-  margin: 0 0 20px 0;
+  text-align: center;
+  margin: 0 0 24px 0;
   text-shadow: none !important;
   filter: none !important;
 }
 
 .history-hero__heading-gold {
   color: var(--gold, #C89A4A);
+  display: block;
 }
 
 .history-hero__divider {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   width: 100%;
-  max-width: 360px;
-  margin-bottom: 24px;
+  max-width: 220px;
+  margin: 0 auto 28px auto;
 }
 
 .history-hero__divider-line {
   height: 1px;
   flex: 1;
-  background: linear-gradient(90deg, #C89A4A 0%, rgba(200, 154, 74, 0.2) 100%);
+  background: linear-gradient(90deg, rgba(200, 154, 74, 0.15) 0%, #C89A4A 50%, rgba(200, 154, 74, 0.15) 100%);
   opacity: 0.7;
 }
 
@@ -167,13 +168,13 @@
 
 .history-hero__desc {
   font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: clamp(0.9375rem, 1.05vw, 1.0625rem);
-  color: rgba(245, 239, 229, 0.85);
+  font-size: clamp(0.96875rem, 1.1vw, 1.125rem);
+  color: rgba(245, 239, 229, 0.88);
   line-height: 1.8;
   letter-spacing: 0.01em;
-  text-align: left;
-  max-width: 540px;
-  margin: 0;
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto;
   text-shadow: none !important;
 }
 
