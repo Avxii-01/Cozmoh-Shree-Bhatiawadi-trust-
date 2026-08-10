@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History &amp; Heritage — Shree Bhatiawadi Trust | A Legacy of Service</title>
+  <meta name="description"
+    content="A journey spanning generations, built on the foundation of service, tradition, and unwavering commitment to our community at Shree Bhatiawadi Trust.">
+
+  <!-- Google Fonts: Cormorant Garamond & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Architecture Files -->
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/history.css">
+  <link rel="stylesheet" href="css/cta.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/particles.css">
+
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       GLOBAL REUSABLE NAVIGATION COMPONENT (Identical to Approved Homepage)
+       ========================================================================== -->
+  <header class="navbar" id="main-navbar">
+    <div class="container navbar__container">
+
+      <!-- Left Section: Logo & Tagline -->
+      <a href="index.html" class="navbar__logo" aria-label="Shree Bhatiawadi Trust Home">
+        <img src="assets/icons/taj-mahal.png" alt="Shree Bhatiawadi Emblem" class="navbar__logo-emblem">
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-title">SHREE BHATIAWADI TRUST</span>
+          <span class="navbar__logo-subtitle">SERVING WITH DEVOTION</span>
+        </div>
+      </a>
+
+      <!-- Center Section: Navigation Links -->
+      <nav class="navbar__nav" aria-label="Main Navigation">
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="index.html" class="navbar__link">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="about.html" class="navbar__link">About Us</a>
+          </li>
+          <li class="navbar__item">
+            <a href="history.html" class="navbar__link navbar__link--active" aria-current="page">History</a>
+          </li>
+          <li class="navbar__item">
+            <a href="banquet-halls.html" class="navbar__link">Banquet Halls</a>
+          </li>
+          <li class="navbar__item">
+            <a href="cultural-forum.html" class="navbar__link">Cultural Forum</a>
+          </li>
+          <li class="navbar__item">
+            <a href="trustees.html" class="navbar__link">Trustees</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right Section: Actions & CTA Button -->
+      <div class="navbar__actions">
+        <a href="banquet-halls.html#booking" class="btn btn--primary navbar__cta">BOOK A VENUE</a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button class="navbar__toggle" aria-expanded="false" aria-controls="mobile-menu"
+          aria-label="Toggle Navigation Menu">
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Slide-Down Navigation Panel -->
+    <div class="navbar__mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="navbar__mobile-header">
+        <a href="index.html" class="navbar__logo" aria-label="Shree Bhatiawadi Trust Home">
+          <img src="assets/icons/taj-mahal.png" alt="Shree Bhatiawadi Emblem" class="navbar__logo-emblem">
+          <div class="navbar__logo-text">
+            <span class="navbar__logo-title">SHREE BHATIAWADI TRUST</span>
+            <span class="navbar__logo-subtitle">SERVING WITH DEVOTION</span>
+          </div>
+        </a>
+        <button class="navbar__mobile-close" aria-label="Close navigation menu">✕</button>
+      </div>
+
+      <div class="navbar__mobile-body">
+        <ul class="navbar__mobile-links">
+          <li><a href="index.html" class="navbar__mobile-link">Home</a></li>
+          <li><a href="about.html" class="navbar__mobile-link">About Us</a></li>
+          <li><a href="history.html" class="navbar__mobile-link navbar__mobile-link--active">History</a></li>
+          <li><a href="banquet-halls.html" class="navbar__mobile-link">Banquet Halls</a></li>
+          <li><a href="cultural-forum.html" class="navbar__mobile-link">Cultural Forum</a></li>
+          <li><a href="trustees.html" class="navbar__mobile-link">Trustees</a></li>
+        </ul>
+
+        <div class="navbar__mobile-actions">
+          <a href="banquet-halls.html#booking" class="btn btn--primary navbar__mobile-cta">BOOK A VENUE</a>
+
+          <div class="navbar__mobile-socials">
+            <a href="#" class="navbar__mobile-social-icon" aria-label="Facebook">f</a>
+            <a href="#" class="navbar__mobile-social-icon" aria-label="Instagram">📷</a>
+            <a href="#" class="navbar__mobile-social-icon" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==========================================================================
+       1. HERO SECTION — DARK (.history-hero)
+       70-80vh Desktop Height | Left-Aligned Editorial Stack | Cinematic Settle Reveal
+       ========================================================================== -->
+  <section class="history-hero" id="history-hero">
+
+    <!-- Gold Ambient Particle Canvas Engine -->
+    <canvas class="section-particle-canvas" data-particle-section="hero" aria-hidden="true"></canvas>
+
+    <!-- Multi-Layer Background Infrastructure -->
+    <div class="history-hero__bg-wrapper" aria-hidden="true">
+      <img src="assets/history/archival_history.png" alt="Shree Bhatiawadi Trust Heritage Gathering"
+        class="history-hero__bg-img">
+      <div class="history-hero__overlay-left"></div>
+      <div class="history-hero__overlay-top"></div>
+      <div class="history-hero__overlay-vignette"></div>
+    </div>
+
+    <!-- Hero Content Container -->
+    <div class="history-hero__container">
+      <div class="history-hero__content-stack">
+
+        <!-- 1. Gold Eyebrow -->
+        <div class="history-hero__eyebrow history-hero__animate history-hero__animate--delay-1">
+          <span class="history-hero__eyebrow-line" aria-hidden="true"></span>
+          <span class="history-hero__eyebrow-text">OUR HERITAGE</span>
+
+        </div>
+
+        <!-- 2. Main Heading -->
+        <h1 class="history-hero__heading history-hero__animate history-hero__animate--delay-2">
+          A Legacy of Service.<br>
+          <span class="history-hero__heading-gold">A Heritage of Generations.</span>
+        </h1>
+
+        <!-- 3. Subtle Royal Decorative Divider -->
+        <div class="history-hero__divider history-hero__animate history-hero__animate--delay-3" aria-hidden="true">
+          <span class="history-hero__divider-line"></span>
+          <span class="history-hero__divider-diamond"></span>
+          <span class="history-hero__divider-line"></span>
+        </div>
+
+        <!-- 4. Supporting Paragraph -->
+        <p class="history-hero__desc history-hero__animate history-hero__animate--delay-4">
+          A journey spanning generations, built on the foundation of service, tradition, and unwavering commitment to
+          our community.
+        </p>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ==========================================================================
+       2. LEGACY OF SERVICE — LIGHT SECTION (.history-story)
+       Warm Ivory Background | 2-Column Editorial Story Layout
+       ========================================================================== -->
+  <section class="history-story" id="history-story">
+    <div class="history-story__container">
+
+      <div class="history-story__grid">
+
+        <!-- Left Column: Story Content -->
+        <div class="history-story__content reveal-fade-up">
+          <div class="history-story__eyebrow">
+            <span class="history-story__eyebrow-line" aria-hidden="true"></span>
+            <span class="history-story__eyebrow-text">OUR STORY</span>
+          </div>
+
+          <h2 class="history-story__title">The Story Behind Our Service</h2>
+
+          <div class="history-story__divider" aria-hidden="true">
+            <span class="history-story__divider-line"></span>
+            <span class="history-story__divider-diamond"></span>
+            <span class="history-story__divider-line"></span>
+          </div>
+
+          <div class="history-story__text">
+            <p>
+              The story of Shree Bhatiawadi Trust begins in the heart of Mumbai, where a group of dedicated community
+              leaders came together with a shared vision of creating lasting positive change.
+            </p>
+            <p>
+              Through decades of dedicated service, we have grown from a small community initiative into a respected
+              institution that touches thousands of lives each year.
+            </p>
+            <p>
+              Our journey has been marked by continuous evolution while staying true to our core values of compassion,
+              integrity, and cultural preservation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column: Editorial Photograph with Architectural Frame -->
+        <div class="history-story__image-column reveal-fade-up">
+          <div class="history-story__image-wrapper">
+            <img src="assets/images/mission_culture.png" alt="Shree Bhatiawadi Cultural Heritage Gathering"
+              class="history-story__img" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       3. OUR JOURNEY THROUGH TIME — DARK SECTION (.history-timeline)
+       Deep Dark Background | Reversible Scroll-Progress Heritage Path Timeline
+       ========================================================================== -->
+  <section class="history-timeline" id="history-timeline">
+
+    <!-- Ambient Radial Lighting Overlay -->
+    <div class="history-timeline__glow" aria-hidden="true"></div>
+
+    <div class="history-timeline__container">
+
+      <!-- Centered Section Header -->
+      <div class="history-timeline__header reveal-fade-up">
+        <div class="history-timeline__eyebrow">
+          <span class="history-timeline__eyebrow-line" aria-hidden="true"></span>
+          <span class="history-timeline__eyebrow-text">OUR JOURNEY THROUGH TIME</span>
+          <span class="history-timeline__eyebrow-line" aria-hidden="true"></span>
+        </div>
+
+        <h2 class="history-timeline__title">Milestones That Shaped Our Story</h2>
+
+        <p class="history-timeline__subtitle">
+          Milestones that shaped our organization and strengthened our commitment to the community
+        </p>
+
+        <div class="history-timeline__header-divider" aria-hidden="true">
+          <span class="history-timeline__header-line"></span>
+          <span class="history-timeline__header-diamond"></span>
+          <span class="history-timeline__header-line"></span>
+        </div>
+      </div>
+
+      <!-- Vertical Heritage Path Timeline Track (Floating Open Editorial Layout) -->
+      <div class="history-timeline__track">
+        <!-- Progressive Animated Gold Line Fill -->
+        <div class="history-timeline__line-fill" aria-hidden="true"></div>
+
+        <!-- Milestone 1: 1950 (Left) -->
+        <div class="history-timeline__item history-timeline__item--left">
+          <div class="history-timeline__marker" aria-hidden="true"></div>
+          <article class="history-timeline__content">
+            <div class="history-timeline__year">1950</div>
+            <h3 class="history-timeline__milestone-title">Foundation</h3>
+            <div class="history-timeline__rule" aria-hidden="true"></div>
+            <p class="history-timeline__desc">
+              Shree Bhatiawadi Trust was established by visionary community leaders with a mission to serve and uplift
+              the community through charitable works.
+            </p>
+          </article>
+        </div>
+
+        <!-- Milestone 2: 1965 (Right) -->
+        <div class="history-timeline__item history-timeline__item--right">
+          <div class="history-timeline__marker" aria-hidden="true"></div>
+          <article class="history-timeline__content">
+            <div class="history-timeline__year">1965</div>
+            <h3 class="history-timeline__milestone-title">First Banquet Hall</h3>
+            <div class="history-timeline__rule" aria-hidden="true"></div>
+            <p class="history-timeline__desc">
+              Construction of our first banquet hall was completed, providing a beautiful venue for community
+              celebrations and gatherings.
+            </p>
+          </article>
+        </div>
+
+        <!-- Milestone 3: 1980 (Left) -->
+        <div class="history-timeline__item history-timeline__item--left">
+          <div class="history-timeline__marker" aria-hidden="true"></div>
+          <article class="history-timeline__content">
+            <div class="history-timeline__year">1980</div>
+            <h3 class="history-timeline__milestone-title">Expansion</h3>
+            <div class="history-timeline__rule" aria-hidden="true"></div>
+            <p class="history-timeline__desc">
+              Major expansion project undertaken to add more facilities and enhance our charitable programs across the
+              region.
+            </p>
+          </article>
+        </div>
+
+        <!-- Milestone 4: 1995 (Right) -->
+        <div class="history-timeline__item history-timeline__item--right">
+          <div class="history-timeline__marker" aria-hidden="true"></div>
+          <article class="history-timeline__content">
+            <div class="history-timeline__year">1995</div>
+            <h3 class="history-timeline__milestone-title">Modernization</h3>
+            <div class="history-timeline__rule" aria-hidden="true"></div>
+            <p class="history-timeline__desc">
+              Complete renovation and modernization of facilities while preserving the traditional architectural
+              elements and cultural heritage.
+            </p>
+          </article>
+        </div>
+
+        <!-- Milestone 5: 2010 (Left) -->
+        <div class="history-timeline__item history-timeline__item--left">
+          <div class="history-timeline__marker" aria-hidden="true"></div>
+          <article class="history-timeline__content">
+            <div class="history-timeline__year">2010</div>
+            <h3 class="history-timeline__milestone-title">New Era</h3>
+            <div class="history-timeline__rule" aria-hidden="true"></div>
+            <p class="history-timeline__desc">
+              Introduction of state-of-the-art amenities and technology, making our venues among the finest in the area.
+            </p>
+          </article>
+        </div>
+
+        <!-- Milestone 6: 2020 (Right) -->
+        <div class="history-timeline__item history-timeline__item--right">
+          <div class="history-timeline__marker" aria-hidden="true"></div>
+          <article class="history-timeline__content">
+            <div class="history-timeline__year">2020</div>
+            <h3 class="history-timeline__milestone-title">Community Impact</h3>
+            <div class="history-timeline__rule" aria-hidden="true"></div>
+            <p class="history-timeline__desc">
+              Reached milestone of serving over 100,000 community members through various charitable initiatives and
+              programs.
+            </p>
+          </article>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       4. LEGACY AT A GLANCE — LIGHT SECTION (.history-stats)
+       Warm Ivory Background | 3 One-Time Animated Count-Up Columns
+       ========================================================================== -->
+  <section class="history-stats" id="history-stats">
+    <div class="history-stats__container">
+
+      <!-- Section Header -->
+      <div class="history-stats__header reveal-fade-up">
+        <div class="history-stats__eyebrow">
+          <span class="history-stats__eyebrow-line" aria-hidden="true"></span>
+          <span class="history-stats__eyebrow-text">OUR LEGACY</span>
+          <span class="history-stats__eyebrow-line" aria-hidden="true"></span>
+        </div>
+        <h2 class="history-stats__title">Legacy at a Glance</h2>
+      </div>
+
+      <!-- 3 Editorial Columns -->
+      <div class="history-stats__grid reveal-fade-up">
+
+        <!-- Stat 1: 75+ -->
+        <div class="history-stats__column">
+          <div class="history-stats__number" data-count="75" data-suffix="+">0+</div>
+          <div class="history-stats__label">Years of Service</div>
+          <p class="history-stats__desc">Serving the community with dedication</p>
+        </div>
+
+        <!-- Stat 2: 100K+ -->
+        <div class="history-stats__column">
+          <div class="history-stats__number" data-count="100" data-suffix="K+">0K+</div>
+          <div class="history-stats__label">Lives Touched</div>
+          <p class="history-stats__desc">Through charitable initiatives</p>
+        </div>
+
+        <!-- Stat 3: 5000+ -->
+        <div class="history-stats__column">
+          <div class="history-stats__number" data-count="5000" data-suffix="+">0+</div>
+          <div class="history-stats__label">Events Hosted</div>
+          <p class="history-stats__desc">Celebrations and gatherings</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       5. HOMEPAGE FOOTER — DARK (.footer)
+       ========================================================================== -->
+  <footer class="footer">
+    <canvas class="section-particle-canvas" data-particle-section="footer" aria-hidden="true"></canvas>
+
+    <div class="container">
+      <div class="footer__grid reveal-fade-up">
+
+        <!-- Column 1: Brand -->
+        <div class="footer__brand">
+          <img src="assets/logos/tajmahal.png" alt="Shree Bhatiawadi Trust Heritage Logo" class="footer__logo"
+            width="100" height="auto" loading="lazy">
+          <span class="footer__tagline">Serving with Devotion</span>
+          <p class="footer__description">
+            A legacy of charitable service and cultural preservation, dedicated to uplifting our community.
+          </p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">QUICK LINKS</h4>
+          <ul class="footer__links">
+            <li><a href="about.html" class="footer__link">About Us</a></li>
+            <li><a href="history.html" class="footer__link">History</a></li>
+            <li><a href="our-work.html" class="footer__link">Our Work</a></li>
+            <li><a href="banquet-halls.html" class="footer__link">Banquet Halls</a></li>
+            <li><a href="cultural-forum.html" class="footer__link">Cultural Forum</a></li>
+            <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Support -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">SUPPORT</h4>
+          <ul class="footer__links">
+            <li><a href="donate.html" class="footer__link">Donate</a></li>
+            <li><a href="volunteer.html" class="footer__link">Volunteer</a></li>
+            <li><a href="trustees.html" class="footer__link">Trustee Information</a></li>
+            <li><a href="faqs.html" class="footer__link">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">CONTACT US</h4>
+          <ul class="footer__contact-list">
+            <li>
+              <a href="#" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Bhatiyawadi, Mumbai,<br>Maharashtra, India</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+9102212345678" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+                <span>+91 (022) 1234-5678</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@shreebhatiwadi.org" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>info@shreebhatiwadi.org</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright Strip -->
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner">
+        <span class="footer__copyright">&copy; 2024 Shree Bhatiyawadi Trust. All rights reserved.</span>
+        <ul class="footer__legal-links">
+          <li><a href="privacy.html" class="footer__legal-link">Privacy Policy</a></li>
+          <li><a href="terms.html" class="footer__legal-link">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Core JavaScript Controllers -->
+  <script src="js/navbar.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

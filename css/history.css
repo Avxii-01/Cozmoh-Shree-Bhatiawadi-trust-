@@ -1,0 +1,859 @@
+/* ==========================================================================
+   SHREE BHATIAWADI TRUST — HISTORY & HERITAGE PAGE (css/history.css)
+   Royal Heritage Editorial Layout, Cinematic Hero, Story Section,
+   Scroll-Progress Driven Reversible Timeline Path, and Count-Up Stats.
+   ========================================================================== */
+
+/* ── 1. HISTORY HERO SECTION (.history-hero) ──────────────────────────── */
+.history-hero {
+  position: relative;
+  width: 100%;
+  height: clamp(580px, 75vh, 780px);
+  min-height: 560px;
+  background-color: var(--bg-dark, #15120F);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: var(--header-height, 80px);
+  box-sizing: border-box;
+}
+
+.history-hero__bg-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.history-hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transform: scale(1.08);
+  animation: historyHeroBgSettle 1600ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  filter: contrast(1.05) saturate(1.08) brightness(0.82);
+}
+
+@keyframes historyHeroBgSettle {
+  from {
+    opacity: 0.2;
+    transform: scale(1.08);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+}
+
+.history-hero__overlay-left {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+      rgba(15, 12, 9, 0.95) 0%,
+      rgba(15, 12, 9, 0.88) 35%,
+      rgba(15, 12, 9, 0.65) 60%,
+      rgba(15, 12, 9, 0.25) 85%,
+      rgba(15, 12, 9, 0.10) 100%);
+  z-index: 2;
+}
+
+.history-hero__overlay-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(180deg, rgba(15, 12, 9, 0.85) 0%, transparent 100%);
+  z-index: 3;
+}
+
+.history-hero__overlay-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, transparent 35%, rgba(15, 12, 9, 0.55) 100%);
+  z-index: 4;
+}
+
+.history-hero__container {
+  position: relative;
+  z-index: 10;
+  width: min(92vw, 1400px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(24px, 4vw, 56px);
+  padding-right: clamp(24px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.history-hero__content-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 620px;
+}
+
+.history-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.history-hero__eyebrow-line {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background-color: var(--gold, #C89A4A);
+  opacity: 0.75;
+}
+
+.history-hero__eyebrow-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(0.75rem, 0.9vw, 0.8125rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold, #C89A4A);
+}
+
+.history-hero__heading {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.75rem, 5.2vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 500;
+  color: var(--text, #F5EFE5);
+  letter-spacing: -0.01em;
+  margin: 0 0 20px 0;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+.history-hero__heading-gold {
+  color: var(--gold, #C89A4A);
+}
+
+.history-hero__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: 24px;
+}
+
+.history-hero__divider-line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, #C89A4A 0%, rgba(200, 154, 74, 0.2) 100%);
+  opacity: 0.7;
+}
+
+.history-hero__divider-diamond {
+  width: 6px;
+  height: 6px;
+  background-color: #C89A4A;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.history-hero__desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(0.9375rem, 1.05vw, 1.0625rem);
+  color: rgba(245, 239, 229, 0.85);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  text-align: left;
+  max-width: 540px;
+  margin: 0;
+  text-shadow: none !important;
+}
+
+.history-hero__animate {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: historyHeroReveal 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.history-hero__animate--delay-1 {
+  animation-delay: 200ms;
+}
+
+.history-hero__animate--delay-2 {
+  animation-delay: 380ms;
+}
+
+.history-hero__animate--delay-3 {
+  animation-delay: 540ms;
+}
+
+.history-hero__animate--delay-4 {
+  animation-delay: 700ms;
+}
+
+@keyframes historyHeroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ── 2. LEGACY OF SERVICE STORY SECTION (.history-story) ──────────────── */
+.history-story {
+  position: relative;
+  background-color: #F7F3EC;
+  /* Warm ivory paper background */
+  color: #1F1914;
+  padding: 120px 0 130px 0;
+  overflow: hidden;
+}
+
+.history-story::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(141, 103, 56, 0.05) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(200, 154, 74, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px, 56px 56px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.history-story__container {
+  max-width: 1320px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(24px, 4vw, 56px);
+  padding-right: clamp(24px, 4vw, 56px);
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+.history-story__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 5vw, 72px);
+  align-items: center;
+}
+
+.history-story__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.history-story__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.history-story__eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--gold, #C89A4A);
+  opacity: 0.6;
+}
+
+.history-story__eyebrow-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold, #C89A4A);
+}
+
+.history-story__title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.5rem, 3.8vw, 3.25rem);
+  font-weight: 500;
+  color: #1F1914;
+  line-height: 1.15;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.01em;
+  text-shadow: none !important;
+}
+
+.history-story__divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 440px;
+  margin-bottom: 24px;
+}
+
+.history-story__divider-line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, #C89A4A 0%, rgba(200, 154, 74, 0.2) 100%);
+  opacity: 0.7;
+}
+
+.history-story__divider-diamond {
+  width: 5px;
+  height: 5px;
+  background-color: var(--gold, #C89A4A);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.history-story__text p {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(0.96875rem, 1.05vw, 1.0625rem);
+  color: #4A3E33;
+  line-height: 1.82;
+  margin-bottom: 20px;
+  text-shadow: none !important;
+}
+
+.history-story__text p:last-child {
+  margin-bottom: 0;
+}
+
+.history-story__image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(200, 154, 74, 0.25);
+  box-shadow: 0 20px 48px rgba(31, 25, 20, 0.09);
+  background-color: #15120F;
+}
+
+.history-story__img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 500ms ease;
+}
+
+.history-story__image-wrapper:hover .history-story__img {
+  transform: scale(1.03);
+  filter: brightness(1.04);
+}
+
+
+/* ── 3. OUR JOURNEY THROUGH TIME TIMELINE SECTION (.history-timeline) ── */
+/* LUXURY EDITORIAL MUSEUM EXHIBITION DIRECTION — NO CARDS OR RECTANGULAR BOXES */
+.history-timeline {
+  position: relative;
+  background-color: var(--bg-dark, #15120F);
+  color: var(--text, #F5EFE5);
+  padding: 140px 0 160px 0;
+  overflow: hidden;
+}
+
+.history-timeline__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(200, 154, 74, 0.07) 0%, rgba(200, 154, 74, 0.015) 55%, transparent 75%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.history-timeline__container {
+  max-width: 1240px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(24px, 4vw, 56px);
+  padding-right: clamp(24px, 4vw, 56px);
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+/* Section Header */
+.history-timeline__header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 90px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.history-timeline__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.history-timeline__eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--gold, #C89A4A);
+  opacity: 0.6;
+}
+
+.history-timeline__eyebrow-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold, #C89A4A);
+}
+
+.history-timeline__title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.5rem, 4.2vw, 3.5rem);
+  font-weight: 500;
+  color: var(--text, #F5EFE5);
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.01em;
+  text-shadow: none !important;
+}
+
+.history-timeline__subtitle {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(1rem, 1.12vw, 1.125rem);
+  color: var(--text-secondary, #C9B8A0);
+  line-height: 1.7;
+  margin: 0 0 24px 0;
+  text-shadow: none !important;
+}
+
+/* Symmetrical Header Divider */
+.history-timeline__header-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 180px;
+  margin: 0 auto;
+}
+
+.history-timeline__header-line {
+  height: 1px;
+  flex: 1;
+  background: var(--gold, #C89A4A);
+  opacity: 0.6;
+}
+
+.history-timeline__header-diamond {
+  width: 6px;
+  height: 6px;
+  background-color: var(--gold, #C89A4A);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+/* Central Heritage Path Vertical Timeline Track */
+.history-timeline__track {
+  position: relative;
+  width: 100%;
+  padding: 30px 0;
+}
+
+/* Thin Base Warm-Gold Vertical Line */
+.history-timeline__track::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(200, 154, 74, 0.16);
+  transform: translateX(-50%);
+}
+
+/* Dynamic Scroll-Progress Gold Line Fill */
+.history-timeline__line-fill {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 0%;
+  background: linear-gradient(180deg, #C89A4A 0%, #D9B56C 100%);
+  box-shadow: 0 0 8px rgba(200, 154, 74, 0.4);
+  transform: translateX(-50%);
+  transition: height 120ms linear;
+  z-index: 2;
+}
+
+/* Timeline Item Row (Generous Vertical Spacing) */
+.history-timeline__item {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: clamp(64px, 8vw, 100px);
+  opacity: 0.25;
+  transition: opacity 550ms cubic-bezier(0.22, 1, 0.36, 1), transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.history-timeline__item:last-child {
+  margin-bottom: 0;
+}
+
+/* Directional Offsets when inactive */
+.history-timeline__item--left {
+  justify-content: flex-start;
+  transform: translateX(-20px);
+}
+
+.history-timeline__item--right {
+  justify-content: flex-end;
+  transform: translateX(20px);
+}
+
+/* Active State (Scroll-Driven & Fully Reversible!) */
+.history-timeline__item.is-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Refined Small Diamond Marker */
+.history-timeline__marker {
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background-color: #15120F;
+  border: 1.5px solid rgba(200, 154, 74, 0.4);
+  z-index: 5;
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1), background-color 450ms ease, border-color 450ms ease, box-shadow 450ms ease;
+}
+
+.history-timeline__item.is-active .history-timeline__marker {
+  background-color: var(--gold, #C89A4A);
+  border-color: var(--gold, #C89A4A);
+  transform: translate(-50%, -50%) rotate(45deg) scale(1.25);
+  box-shadow: 0 0 14px rgba(200, 154, 74, 0.65);
+}
+
+/* Open Editorial Floating Content (NO CARDS, NO BOXES, NO OUTLINES) */
+.history-timeline__content {
+  width: calc(50% - 52px);
+  position: relative;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 8px 0;
+  box-sizing: border-box;
+}
+
+.history-timeline__item--left .history-timeline__content {
+  text-align: right;
+  padding-right: 12px;
+}
+
+.history-timeline__item--right .history-timeline__content {
+  text-align: left;
+  padding-left: 12px;
+}
+
+/* Year Number (Large Serif, Gold Accent) */
+.history-timeline__year {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.35rem, 3.4vw, 3rem);
+  font-weight: 600;
+  color: rgba(200, 154, 74, 0.5);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+  transition: color 450ms ease, text-shadow 450ms ease;
+}
+
+.history-timeline__item.is-active .history-timeline__year {
+  color: var(--gold, #C89A4A);
+}
+
+/* Subtle Thin Gold Rule under Milestone Heading */
+.history-timeline__rule {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, #C89A4A 0%, rgba(200, 154, 74, 0.1) 100%);
+  margin-bottom: 12px;
+  opacity: 0.4;
+  transition: width 450ms cubic-bezier(0.22, 1, 0.36, 1), opacity 450ms ease;
+}
+
+.history-timeline__item--left .history-timeline__rule {
+  margin-left: auto;
+  background: linear-gradient(270deg, #C89A4A 0%, rgba(200, 154, 74, 0.1) 100%);
+}
+
+.history-timeline__item.is-active .history-timeline__rule {
+  width: 72px;
+  opacity: 0.85;
+}
+
+/* Milestone Title */
+.history-timeline__milestone-title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.4rem, 1.8vw, 1.75rem);
+  font-weight: 500;
+  color: rgba(245, 239, 229, 0.6);
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+  text-shadow: none !important;
+  transition: color 450ms ease;
+}
+
+.history-timeline__item.is-active .history-timeline__milestone-title {
+  color: var(--text, #F5EFE5);
+}
+
+/* Milestone Description */
+.history-timeline__desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(0.875rem, 0.95vw, 0.9375rem);
+  color: rgba(245, 239, 229, 0.7);
+  line-height: 1.75;
+  margin: 0;
+  text-shadow: none !important;
+  max-width: 460px;
+  transition: color 450ms ease;
+}
+
+.history-timeline__item--left .history-timeline__desc {
+  margin-left: auto;
+}
+
+.history-timeline__item.is-active .history-timeline__desc {
+  color: rgba(245, 239, 229, 0.88);
+}
+
+
+/* ── 4. LEGACY AT A GLANCE STATS SECTION (.history-stats) ────────────── */
+.history-stats {
+  position: relative;
+  background-color: #F7F3EC;
+  /* Warm ivory paper background */
+  color: #1F1914;
+  padding: 115px 0 125px 0;
+  overflow: hidden;
+}
+
+.history-stats::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(141, 103, 56, 0.05) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(200, 154, 74, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px, 56px 56px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.history-stats__container {
+  max-width: 1240px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(24px, 4vw, 56px);
+  padding-right: clamp(24px, 4vw, 56px);
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+.history-stats__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 64px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.history-stats__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.history-stats__eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--gold, #C89A4A);
+  opacity: 0.6;
+}
+
+.history-stats__eyebrow-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold, #C89A4A);
+}
+
+.history-stats__title {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.25rem, 3.6vw, 3rem);
+  font-weight: 500;
+  color: #1F1914;
+  line-height: 1.15;
+  margin: 0;
+  text-shadow: none !important;
+}
+
+/* 3 Editorial Columns */
+.history-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  position: relative;
+}
+
+.history-stats__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 24px;
+  position: relative;
+}
+
+/* Delicate Thin Gold Vertical Separators */
+.history-stats__column:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent 0%, rgba(200, 154, 74, 0.3) 30%, rgba(200, 154, 74, 0.3) 70%, transparent 100%);
+}
+
+.history-stats__number {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(3.25rem, 5.5vw, 4.5rem);
+  font-weight: 600;
+  color: var(--gold, #C89A4A);
+  line-height: 1;
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+.history-stats__label {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  font-weight: 600;
+  color: #1F1914;
+  margin-bottom: 6px;
+}
+
+.history-stats__desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(0.875rem, 0.95vw, 0.9375rem);
+  color: #5C4A3A;
+  margin: 0;
+}
+
+
+/* ── 5. RESPONSIVENESS ────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .history-hero {
+    height: clamp(520px, 70vh, 680px);
+  }
+
+  .history-story__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .history-story__img {
+    height: 380px;
+  }
+
+  .history-timeline__track::before,
+  .history-timeline__line-fill {
+    left: 24px;
+    transform: none;
+  }
+
+  .history-timeline__item {
+    justify-content: flex-start;
+    transform: translateX(16px);
+  }
+
+  .history-timeline__marker {
+    left: 24px;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .history-timeline__item.is-active .history-timeline__marker {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+  }
+
+  .history-timeline__content {
+    width: calc(100% - 56px);
+    margin-left: 56px;
+    text-align: left !important;
+    padding-left: 0;
+  }
+
+  .history-timeline__rule {
+    margin-left: 0 !important;
+    background: linear-gradient(90deg, #C89A4A 0%, rgba(200, 154, 74, 0.1) 100%) !important;
+  }
+
+  .history-timeline__desc {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .history-hero {
+    height: auto;
+    min-height: 500px;
+    padding-top: calc(var(--header-height, 80px) + 32px);
+    padding-bottom: 56px;
+  }
+
+  .history-story,
+  .history-timeline,
+  .history-stats {
+    padding: 70px 0;
+  }
+
+  .history-stats__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .history-stats__column:not(:last-child)::after {
+    display: none;
+  }
+}
