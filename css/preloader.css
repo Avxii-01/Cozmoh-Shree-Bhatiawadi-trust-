@@ -129,9 +129,7 @@ body.page-ready .footer {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: brightness(0) saturate(100%)
-          invert(76%) sepia(38%) saturate(560%)
-          hue-rotate(6deg) brightness(110%);
+  filter: drop-shadow(0 0 10px rgba(200, 154, 74, 0.35));
 }
 
 /* ── Separator rule ──────────────────────────────────────────────────── */
