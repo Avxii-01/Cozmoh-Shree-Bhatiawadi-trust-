@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cultural Forum — Shree Bhatiawadi Trust | Heritage & Tradition</title>
+  <meta name="description"
+    content="Experience the vibrant cultural forum of Shree Bhatiawadi Trust through Garba Mahotsav, classical arts, festival illuminations, and community celebrations.">
+
+  <!-- Google Fonts: Cormorant Garamond & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Architecture Files -->
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/events.css">
+  <link rel="stylesheet" href="css/cta.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/particles.css">
+
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       GLOBAL REUSABLE NAVIGATION COMPONENT
+       ========================================================================== -->
+  <header class="navbar" id="main-navbar">
+    <div class="container navbar__container">
+
+      <!-- Left Section: Logo & Tagline -->
+      <a href="index.html" class="navbar__logo" aria-label="Shree Bhatiawadi Trust Home">
+        <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Emblem" class="navbar__logo-emblem">
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-title">SHREE BHATIAWADI TRUST</span>
+          <span class="navbar__logo-subtitle">SERVING WITH DEVOTION</span>
+        </div>
+      </a>
+
+      <!-- Center Section: Navigation Links -->
+      <nav class="navbar__nav" aria-label="Main Navigation">
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="index.html" class="navbar__link">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="about.html" class="navbar__link">About Us</a>
+          </li>
+          <li class="navbar__item">
+            <a href="history.html" class="navbar__link">History</a>
+          </li>
+          <li class="navbar__item">
+            <a href="banquet-halls.html" class="navbar__link">Banquet Halls</a>
+          </li>
+          <li class="navbar__item">
+            <a href="cultural-forum.html" class="navbar__link navbar__link--active" aria-current="page">Cultural Forum</a>
+          </li>
+          <li class="navbar__item">
+            <a href="trustees.html" class="navbar__link">Trustees</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right Section: Actions & CTA Button -->
+      <div class="navbar__actions">
+        <a href="banquet-halls.html#booking" class="btn btn--primary navbar__cta">BOOK A VENUE</a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button class="navbar__toggle" aria-expanded="false" aria-controls="mobile-menu"
+          aria-label="Toggle Navigation Menu">
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Slide-Down Navigation Panel -->
+    <div class="navbar__mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="navbar__mobile-header">
+        <a href="index.html" class="navbar__logo" aria-label="Shree Bhatiawadi Trust Home">
+          <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Emblem" class="navbar__logo-emblem">
+          <div class="navbar__logo-text">
+            <span class="navbar__logo-title">SHREE BHATIAWADI TRUST</span>
+            <span class="navbar__logo-subtitle">SERVING WITH DEVOTION</span>
+          </div>
+        </a>
+        <button class="navbar__mobile-close" aria-label="Close navigation menu">✕</button>
+      </div>
+
+      <div class="navbar__mobile-body">
+        <ul class="navbar__mobile-links">
+          <li><a href="index.html" class="navbar__mobile-link">Home</a></li>
+          <li><a href="about.html" class="navbar__mobile-link">About Us</a></li>
+          <li><a href="history.html" class="navbar__mobile-link">History</a></li>
+          <li><a href="banquet-halls.html" class="navbar__mobile-link">Banquet Halls</a></li>
+          <li><a href="cultural-forum.html" class="navbar__mobile-link navbar__mobile-link--active">Cultural Forum</a></li>
+          <li><a href="trustees.html" class="navbar__mobile-link">Trustees</a></li>
+        </ul>
+
+        <div class="navbar__mobile-actions">
+          <a href="banquet-halls.html#booking" class="btn btn--primary navbar__mobile-cta">BOOK A VENUE</a>
+
+          <div class="navbar__mobile-socials">
+            <a href="#" class="navbar__mobile-social-icon" aria-label="Facebook">f</a>
+            <a href="#" class="navbar__mobile-social-icon" aria-label="Instagram">📷</a>
+            <a href="#" class="navbar__mobile-social-icon" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       1. CULTURAL FORUM HERO SECTION (DARK, ATMOSPHERIC, HORIZONTALLY & VERTICALLY CENTERED)
+       ========================================================================== -->
+  <section class="cultural-hero" id="cultural-hero">
+    <canvas class="section-particle-canvas" data-particle-section="hero" aria-hidden="true"></canvas>
+
+    <div class="cultural-hero__bg-wrapper" aria-hidden="true">
+      <img src="assets/events/navratri.png" alt="Bhatia Cultural Forum Atmosphere" class="cultural-hero__bg-img">
+      <div class="cultural-hero__overlay-radial"></div>
+      <div class="cultural-hero__overlay-top"></div>
+      <div class="cultural-hero__overlay-vignette"></div>
+    </div>
+
+    <div class="cultural-hero__container">
+      <div class="cultural-hero__content-stack">
+        <!-- Small Editorial Gold Label with Flanking Lines -->
+        <div class="cultural-hero__eyebrow cultural-hero__animate cultural-hero__animate--delay-1">
+          <span class="cultural-hero__eyebrow-line" aria-hidden="true"></span>
+          <span class="cultural-hero__eyebrow-text">BHATIA CULTURAL FORUM</span>
+          <span class="cultural-hero__eyebrow-line" aria-hidden="true"></span>
+        </div>
+
+        <!-- Large Two-Line Heading -->
+        <h1 class="cultural-hero__heading cultural-hero__animate cultural-hero__animate--delay-2">
+          <span class="cultural-hero__title-ivory">Where Culture</span>
+          <span class="cultural-hero__title-gold">Comes Alive.</span>
+        </h1>
+
+        <!-- Subtle Royal Decorative Divider -->
+        <div class="cultural-hero__divider cultural-hero__animate cultural-hero__animate--delay-3" aria-hidden="true">
+          <span class="cultural-hero__divider-line"></span>
+          <svg width="24" height="16" viewBox="0 0 24 16" fill="none" stroke="#C89A4A" stroke-width="1.2">
+            <path d="M12 2C10 6 6 8 2 8c4 0 8 2 10 6 2-4 6-6 10-6-4 0-8-2-10-6z" fill="rgba(200, 154, 74, 0.15)"></path>
+            <circle cx="12" cy="8" r="1.5" fill="#C89A4A"></circle>
+          </svg>
+          <span class="cultural-hero__divider-line"></span>
+        </div>
+
+        <!-- Concise Description Paragraph -->
+        <p class="cultural-hero__desc cultural-hero__animate cultural-hero__animate--delay-4">
+          Celebrating and preserving our rich cultural heritage through vibrant festivals, classical music traditions,
+          and community gatherings throughout the year.
+        </p>
+
+        <!-- Subtle Editorial CTA Link -->
+        <div class="cultural-hero__cta-wrapper cultural-hero__animate cultural-hero__animate--delay-5">
+          <a href="#cultural-mission" class="cultural-hero__cta">
+            EXPLORE CULTURAL FORUM <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       2. OUR CULTURAL MISSION — LIGHT EDITORIAL SECTION (WARM IVORY)
+       ========================================================================== -->
+  <section class="cultural-mission-section" id="cultural-mission" data-section="mission">
+    <!-- Subtle Faint Architectural Edge Geometry -->
+    <svg class="cultural-mission__bg-arch cultural-mission__bg-arch--left" viewBox="0 0 160 400" fill="none"
+      xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M0 0 C80 100, 160 200, 0 400" stroke="var(--gold)" stroke-width="0.8" opacity="0.12" />
+      <path d="M0 40 C60 120, 120 220, 0 360" stroke="var(--gold)" stroke-width="0.5" stroke-dasharray="3 3"
+        opacity="0.1" />
+    </svg>
+    <svg class="cultural-mission__bg-arch cultural-mission__bg-arch--right" viewBox="0 0 160 400" fill="none"
+      xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M160 0 C80 100, 0 200, 160 400" stroke="var(--gold)" stroke-width="0.8" opacity="0.12" />
+      <path d="M160 40 C100 120, 40 220, 160 360" stroke="var(--gold)" stroke-width="0.5" stroke-dasharray="3 3"
+        opacity="0.1" />
+    </svg>
+
+    <div class="container cultural-mission__container">
+      <div class="cultural-mission__grid">
+
+        <!-- Image Column (Left / 55%) -->
+        <div class="cultural-mission__image-col reveal-fade-up">
+          <div class="cultural-mission__image-frame">
+            <!-- Heritage SVG Architectural Border Frame -->
+            <svg class="cultural-mission__frame-svg" viewBox="0 0 600 440" fill="none" preserveAspectRatio="none" aria-hidden="true">
+              <rect x="6" y="6" width="588" height="428" rx="10" stroke="#C89A4A" stroke-width="1.2" opacity="0.45" />
+              <rect x="14" y="14" width="572" height="412" rx="6" stroke="#C89A4A" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.25" />
+            </svg>
+            <div class="cultural-mission__image-wrap">
+              <img src="assets/images/mission_culture.png" alt="Indian Classical Dance & Cultural Expression" class="cultural-mission__img" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Column (Right / 45%) -->
+        <div class="cultural-mission__content reveal-fade-up" style="transition-delay: 150ms;">
+          <div class="cultural-mission__label">
+            <span class="cultural-mission__label-line" aria-hidden="true"></span>
+            <span class="cultural-mission__label-text">OUR CULTURAL MISSION</span>
+          </div>
+
+          <h2 class="cultural-mission__heading">
+            Preserving the Spirit of Our Heritage.
+          </h2>
+
+          <div class="cultural-mission__divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="dot">❖</span>
+            <span class="line"></span>
+          </div>
+
+          <p class="cultural-mission__paragraph">
+            The Bhatia Cultural Forum is dedicated to preserving and celebrating the rich traditions of Indian classical music, dance, and festivals. We create spaces where community members can connect with their heritage and share in the joy of cultural expression.
+          </p>
+
+          <p class="cultural-mission__paragraph">
+            Through carefully curated events and performances, we bring together artists, enthusiasts, and families to experience the timeless beauty of our cultural traditions.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: EVENT GALLERY — HERITAGE COLLAGE ARCHIVE (LIGHT / IVORY THEME)
+       Exact Match to Reference Composition & Independent Auto-Crossfade
+       ========================================================================== -->
+  <section class="heritage-gallery-section" id="event-gallery" data-section="gallery">
+    <canvas class="section-particle-canvas" data-particle-section="gallery" aria-hidden="true"></canvas>
+
+    <!-- Faint Architectural Floral Edge Accents -->
+    <div class="gallery-corner-ornament gallery-corner-ornament--top-left" aria-hidden="true">
+      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0H60C60 33.1371 33.1371 60 0 60V0Z" fill="var(--gold)" opacity="0.15" />
+        <path d="M0 0V120C66.2742 120 120 66.2742 120 0H0Z" stroke="var(--gold)" stroke-width="1" stroke-dasharray="4 4"
+          opacity="0.25" />
+      </svg>
+    </div>
+    <div class="gallery-corner-ornament gallery-corner-ornament--bottom-right" aria-hidden="true">
+      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0H60C60 33.1371 33.1371 60 0 60V0Z" fill="var(--gold)" opacity="0.15" />
+        <path d="M0 0V120C66.2742 120 120 66.2742 120 0H0Z" stroke="var(--gold)" stroke-width="1" stroke-dasharray="4 4"
+          opacity="0.25" />
+      </svg>
+    </div>
+
+    <div class="container gallery-container">
+
+      <!-- Centered Editorial Header -->
+      <header class="gallery-header reveal-fade-up">
+        <div class="gallery-label">
+          <span class="gallery-label__line" aria-hidden="true"></span>
+          <span class="gallery-label__text">EVENT GALLERY</span>
+          <span class="gallery-label__line" aria-hidden="true"></span>
+        </div>
+
+        <h2 class="gallery-heading">
+          Moments From Our Celebrations
+        </h2>
+
+        <div class="gallery-header-divider" aria-hidden="true">
+          <span class="gallery-divider-line"></span>
+          <svg width="24" height="16" viewBox="0 0 24 16" fill="none" stroke="#C89A4A" stroke-width="1.2">
+            <path d="M12 2C10 6 6 8 2 8c4 0 8 2 10 6 2-4 6-6 10-6-4 0-8-2-10-6z" fill="rgba(200, 154, 74, 0.15)" />
+            <circle cx="12" cy="8" r="1.5" fill="#C89A4A" />
+          </svg>
+          <span class="gallery-divider-line"></span>
+        </div>
+      </header>
+
+      <!-- Asymmetrical Heritage Collage Canvas (Matches Reference Layout) -->
+      <div class="heritage-collage-canvas reveal-fade-up" id="heritage-collage-canvas">
+
+        <!-- Frame 01: Classical Music (Top Left) -->
+        <article class="h-frame h-frame--1" data-frame-index="0">
+          <div class="h-frame__border-wrap">
+            <div class="h-frame__slides" id="h-frame-slides-1">
+              <img src="assets/events/classical_music.png" alt="Classical Music Performance" class="h-frame__img h-frame__img--active" loading="lazy">
+              <img src="assets/banquets/hall1.png" alt="Classical Sitar Recital" class="h-frame__img" loading="lazy">
+              <img src="assets/images/mission_culture.png" alt="Cultural Music Gathering" class="h-frame__img" loading="lazy">
+            </div>
+          </div>
+          <div class="h-frame__caption">
+            <span class="h-frame__num">01</span>
+            <div class="h-frame__text-stack">
+              <span class="h-frame__title">CLASSICAL MUSIC</span>
+              <span class="h-frame__sub">Sitar & Tabla Recitals</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Frame 02: Navratri (Top Center/Right Hero Frame) -->
+        <article class="h-frame h-frame--2" data-frame-index="1">
+          <div class="h-frame__border-wrap">
+            <div class="h-frame__slides" id="h-frame-slides-2">
+              <img src="assets/events/navratri.png" alt="Navratri Garba Night Celebration" class="h-frame__img h-frame__img--active" loading="lazy">
+              <img src="assets/images/mission_culture.png" alt="Garba Circle Celebration" class="h-frame__img" loading="lazy">
+              <img src="assets/events/women_cultural.png" alt="Dandiya Raas Gathering" class="h-frame__img" loading="lazy">
+            </div>
+          </div>
+          <div class="h-frame__caption h-frame__caption--external-right">
+            <span class="h-frame__num">02</span>
+            <div class="h-frame__text-stack">
+              <span class="h-frame__title">NAVRATRI</span>
+              <span class="h-frame__sub">Garba Night</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Frame 03: Diwali (Mid Left Frame) -->
+        <article class="h-frame h-frame--3" data-frame-index="2">
+          <div class="h-frame__border-wrap">
+            <div class="h-frame__slides" id="h-frame-slides-3">
+              <img src="assets/events/diwali.png" alt="Diwali Festival of Lights" class="h-frame__img h-frame__img--active" loading="lazy">
+              <img src="assets/images/cta_heritage.png" alt="Heritage Temple Illumination" class="h-frame__img" loading="lazy">
+              <img src="assets/banquets/hall3.png" alt="Diwali Festive Evening" class="h-frame__img" loading="lazy">
+            </div>
+          </div>
+          <div class="h-frame__caption">
+            <span class="h-frame__num">03</span>
+            <div class="h-frame__text-stack">
+              <span class="h-frame__title">DIWALI</span>
+              <span class="h-frame__sub">Festival of Lights</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Frame 04: Classical Dance (Mid Right Overlapping Frame) -->
+        <article class="h-frame h-frame--4" data-frame-index="3">
+          <div class="h-frame__border-wrap">
+            <div class="h-frame__slides" id="h-frame-slides-4">
+              <img src="assets/images/mission_culture.png" alt="Classical Dance Performance" class="h-frame__img h-frame__img--active" loading="lazy">
+              <img src="assets/events/classical_music.png" alt="Classical Artistry" class="h-frame__img" loading="lazy">
+              <img src="assets/events/navratri.png" alt="Traditional Dance Expression" class="h-frame__img" loading="lazy">
+            </div>
+          </div>
+          <div class="h-frame__caption">
+            <span class="h-frame__num">04</span>
+            <div class="h-frame__text-stack">
+              <span class="h-frame__title">CLASSICAL DANCE</span>
+              <span class="h-frame__sub">Performance</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Frame 05: Community (Bottom Center Wide Frame) -->
+        <article class="h-frame h-frame--5" data-frame-index="4">
+          <div class="h-frame__border-wrap">
+            <div class="h-frame__slides" id="h-frame-slides-5">
+              <img src="assets/events/women_cultural.png" alt="Community Cultural Gatherings" class="h-frame__img h-frame__img--active" loading="lazy">
+              <img src="assets/images/mission_space.png" alt="Trust Courtyard Gathering" class="h-frame__img" loading="lazy">
+              <img src="assets/banquets/hall2.png" alt="Community Banquet Celebration" class="h-frame__img" loading="lazy">
+            </div>
+          </div>
+          <div class="h-frame__caption h-frame__caption--center">
+            <span class="h-frame__num">05</span>
+            <div class="h-frame__text-stack">
+              <span class="h-frame__title">COMMUNITY</span>
+              <span class="h-frame__sub">Gatherings</span>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /.heritage-collage-canvas -->
+
+    </div><!-- /.container -->
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <canvas class="section-particle-canvas" data-particle-section="footer" aria-hidden="true"></canvas>
+
+    <div class="container">
+      <div class="footer__grid reveal-fade-up">
+
+        <div class="footer__brand">
+          <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Trust Heritage Logo" class="footer__logo"
+            width="100" height="auto" loading="lazy">
+          <span class="footer__tagline">Serving with Devotion</span>
+          <p class="footer__description">
+            A legacy of charitable service and cultural preservation, dedicated to uplifting our community.
+          </p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__column-title">QUICK LINKS</h4>
+          <ul class="footer__links">
+            <li><a href="about.html" class="footer__link">About Us</a></li>
+            <li><a href="history.html" class="footer__link">History</a></li>
+            <li><a href="banquet-halls.html" class="footer__link">Banquet Halls</a></li>
+            <li><a href="cultural-forum.html" class="footer__link">Cultural Forum</a></li>
+            <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__column-title">SUPPORT</h4>
+          <ul class="footer__links">
+            <li><a href="donate.html" class="footer__link">Donate</a></li>
+            <li><a href="volunteer.html" class="footer__link">Volunteer</a></li>
+            <li><a href="trustees.html" class="footer__link">Trustee Information</a></li>
+            <li><a href="faqs.html" class="footer__link">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__column-title">CONTACT US</h4>
+          <ul class="footer__contact-list">
+            <li>
+              <a href="#" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Bhatiyawadi, Mumbai,<br>Maharashtra, India</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+9102212345678" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+                <span>+91 (022) 1234-5678</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@shreebhatiwadi.org" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>info@shreebhatiwadi.org</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner">
+        <span class="footer__copyright">&copy; 2024 Shree Bhatiyawadi Trust. All rights reserved.</span>
+        <ul class="footer__legal-links">
+          <li><a href="privacy.html" class="footer__legal-link">Privacy Policy</a></li>
+          <li><a href="terms.html" class="footer__legal-link">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript Controllers -->
+  <script src="js/navbar.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
