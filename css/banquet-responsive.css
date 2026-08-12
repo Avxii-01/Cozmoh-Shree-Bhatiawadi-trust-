@@ -311,8 +311,9 @@
   }
 
   .vs {
-    padding: 28px 24px;
+    padding: 32px 24px;
     height: auto;
+    border-radius: 14px;
   }
 
   .vs__co {
@@ -356,7 +357,7 @@
     aspect-ratio: 16 / 9;
     min-height: 320px;
     max-height: 420px;
-    border-radius: 4px;
+    border-radius: 10px;
     position: relative;
   }
 
@@ -425,33 +426,37 @@
 
   .vs__cap {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    padding: 12px 16px;
+    padding: 14px 20px;
     margin: 0 auto 24px auto;
-    max-width: 400px;
+    max-width: 420px;
     width: 100%;
+    border-radius: 10px;
     box-sizing: border-box;
   }
 
   .vs__cap-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    text-align: center;
+    gap: 4px;
     min-width: 0;
-    width: auto;
-    max-width: 100%;
+    width: 100%;
     box-sizing: border-box;
-    padding: 0 10px;
-  }
-
-  .vs__cap-item:first-child {
-    border-right: 1px solid rgba(200, 154, 74, 0.28);
+    padding: 0 8px;
+    border-right: none !important;
   }
 
   .vs__cap-div {
-    display: none;
+    display: block !important;
+    width: 1px;
+    height: 44px;
+    background: rgba(200, 154, 74, 0.28);
+    margin: 0 12px;
+    flex-shrink: 0;
   }
 
   .vs__cap-ic {
@@ -460,40 +465,26 @@
     flex-shrink: 0;
   }
 
-  .vs__cap-text {
-    min-width: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-  }
-
   .vs__cap-val {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     line-height: 1;
   }
 
   .vs__cap-lbl {
-    font-size: 0.58rem;
-    letter-spacing: 0.06em;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
     margin-top: 2px;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    text-align: left;
-    white-space: normal;
-    overflow-wrap: normal;
-    word-break: normal;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .vs__amenities {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px 16px;
     margin: 0 auto 28px auto;
     width: 100%;
-    max-width: 440px;
+    max-width: 480px;
     padding: 0;
     justify-content: center;
     align-items: center;
@@ -502,7 +493,7 @@
   .vs-amenity {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 8px;
     width: 100%;
   }
@@ -884,8 +875,9 @@
   }
 
   .vs {
-    padding: 20px 16px;
+    padding: 24px 18px;
     height: auto;
+    border-radius: 12px;
   }
 
   .vs__co {
@@ -929,7 +921,7 @@
     aspect-ratio: 16 / 9;
     min-height: 200px;
     max-height: 260px;
-    border-radius: 4px;
+    border-radius: 8px;
     position: relative;
   }
 
@@ -982,36 +974,42 @@
     line-height: 1.65;
     margin-bottom: 18px;
     text-align: center;
-    max-width: 320px;
+    max-width: 340px;
   }
 
   .vs__cap {
-    display: flex;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    padding: 10px 6px;
+    padding: 12px 14px;
     margin: 0 auto 20px auto;
+    max-width: 320px;
+    width: 100%;
+    border-radius: 8px;
     box-sizing: border-box;
   }
 
   .vs__cap-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    text-align: center;
+    gap: 3px;
     min-width: 0;
-    width: auto;
-    max-width: 100%;
+    width: 100%;
     box-sizing: border-box;
     padding: 0 4px;
-  }
-
-  .vs__cap-item:first-child {
-    border-right: 1px solid rgba(200, 154, 74, 0.28);
+    border-right: none !important;
   }
 
   .vs__cap-div {
-    display: none;
+    display: block !important;
+    width: 1px;
+    height: 38px;
+    background: rgba(200, 154, 74, 0.28);
+    margin: 0 8px;
+    flex-shrink: 0;
   }
 
   .vs__cap-ic {
@@ -1020,37 +1018,23 @@
     flex-shrink: 0;
   }
 
-  .vs__cap-text {
-    min-width: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-  }
-
   .vs__cap-val {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     line-height: 1;
   }
 
   .vs__cap-lbl {
-    font-size: 0.5rem;
-    letter-spacing: 0.04em;
+    font-size: 0.52rem;
+    letter-spacing: 0.06em;
     margin-top: 1px;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    text-align: left;
-    white-space: normal;
-    overflow-wrap: normal;
-    word-break: normal;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .vs__amenities {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px 12px;
+    gap: 10px 14px;
     margin: 0 auto 22px auto;
     width: 100%;
     max-width: 320px;
@@ -1062,24 +1046,24 @@
   .vs-amenity {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 6px;
     width: 100%;
   }
 
   .vs-amenity__ic {
-    width: 13px;
-    height: 13px;
+    width: 14px;
+    height: 14px;
   }
 
   .vs-amenity__tx {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     white-space: nowrap;
   }
 
   .vs__cta {
     height: 38px;
-    padding: 0 22px;
+    padding: 0 24px;
     font-size: 0.68rem;
     white-space: nowrap;
     align-self: center;
