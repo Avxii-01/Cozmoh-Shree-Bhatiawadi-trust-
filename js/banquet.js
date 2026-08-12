@@ -165,11 +165,12 @@ class HallSelectorController {
     this.seatingVal = document.getElementById('banquet-seating-val');
     this.standingVal = document.getElementById('banquet-standing-val');
     this.featuresList = document.getElementById('banquet-features-list');
+    this.primaryCta = document.querySelector('.banquet-info__buttons .btn--banquet-primary');
+    this.secondaryCta = document.querySelector('.banquet-info__buttons .btn--banquet-secondary');
 
     this.currentIndex = 0;
     this.autoTimer = null;
     this.resumeTimer = null;
-    this.isPausedByUser = false;
 
     if (this.cards.length && window.venueCollectionData) {
       this.init();
@@ -181,63 +182,65 @@ class HallSelectorController {
     this.cards.forEach((card, index) => {
       card.addEventListener('click', (e) => {
         e.preventDefault();
-        this.handleUserInteraction(index);
+        this.selectHall(index, { source: 'user' });
       });
 
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          this.handleUserInteraction(index);
+          this.selectHall(index, { source: 'user' });
         }
       });
     });
 
-    // Touch / Scroll interaction listeners on mobile container to temporarily pause auto-rotate
-    if (this.selectorsGrid) {
-      const pauseOnTouch = () => this.pauseAutoRotation();
-      this.selectorsGrid.addEventListener('touchstart', pauseOnTouch, { passive: true });
-      this.selectorsGrid.addEventListener('mousedown', pauseOnTouch);
-    }
+    // Initial hall UI update
+    this.updateHallUI(0);
 
-    // Start auto-rotation (4.5s interval)
-    this.startAutoRotation();
+    // Check prefers-reduced-motion
+    this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Start auto-rotation (3.5 seconds cycle)
+    this.scheduleAutoRotation();
   }
 
-  handleUserInteraction(index) {
-    this.pauseAutoRotation();
-    this.selectHallByIndex(index);
-  }
-
-  startAutoRotation() {
-    this.stopAutoRotation();
-    this.autoTimer = setInterval(() => {
-      if (!this.isPausedByUser) {
-        const nextIndex = (this.currentIndex + 1) % this.cards.length;
-        this.selectHallByIndex(nextIndex);
-      }
-    }, 4500);
-  }
-
-  stopAutoRotation() {
+  clearAllTimers() {
     if (this.autoTimer) {
       clearInterval(this.autoTimer);
       this.autoTimer = null;
     }
+    if (this.resumeTimer) {
+      clearTimeout(this.resumeTimer);
+      this.resumeTimer = null;
+    }
   }
 
-  pauseAutoRotation() {
-    this.isPausedByUser = true;
-    if (this.resumeTimer) clearTimeout(this.resumeTimer);
-    
-    // Resume auto-slide after 7 seconds of inactivity
-    this.resumeTimer = setTimeout(() => {
-      this.isPausedByUser = false;
-      this.startAutoRotation();
-    }, 7000);
+  scheduleAutoRotation(interval = 3500) {
+    this.clearAllTimers();
+    this.autoTimer = setInterval(() => {
+      const nextIndex = (this.currentIndex + 1) % this.cards.length;
+      this.selectHall(nextIndex, { source: 'auto' });
+    }, interval);
   }
 
-  selectHallByIndex(index) {
+  selectHall(index, { source = 'auto' } = {}) {
     if (index < 0 || index >= this.cards.length) return;
+
+    // If user clicked, pause auto rotation immediately and schedule resume after 12s
+    if (source === 'user') {
+      this.clearAllTimers();
+      this.updateActiveHallState(index);
+
+      // Resume normal auto-rotation cycle after 12 seconds
+      this.resumeTimer = setTimeout(() => {
+        this.scheduleAutoRotation(3500);
+      }, 12000);
+    } else {
+      // Auto rotation call
+      this.updateActiveHallState(index);
+    }
+  }
+
+  updateActiveHallState(index) {
     this.currentIndex = index;
     const targetCard = this.cards[index];
     const hallId = targetCard.getAttribute('data-hall-id');
@@ -251,48 +254,70 @@ class HallSelectorController {
       c.setAttribute('aria-selected', isSelected ? 'true' : 'false');
     });
 
-    // Smoothly scroll active card into view on mobile horizontal carousel
-    if (window.innerWidth <= 767 && targetCard) {
-      targetCard.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center'
+    // Mobile horizontal selector scrolling (ONLY scroll selector container, NEVER window)
+    if (window.innerWidth <= 767 && targetCard && this.selectorsGrid) {
+      const cardLeft = targetCard.offsetLeft;
+      const cardWidth = targetCard.offsetWidth;
+      const gridWidth = this.selectorsGrid.offsetWidth;
+      const targetScrollLeft = cardLeft - (gridWidth / 2) + (cardWidth / 2);
+      this.selectorsGrid.scrollTo({
+        left: targetScrollLeft,
+        behavior: 'smooth'
       });
     }
 
-    // Trigger subtle fade transition out
+    if (this.reducedMotion) {
+      this.updateHallUI(index);
+      return;
+    }
+
+    // Smooth cinematic transition (subtle fade/scale)
     if (this.featuredImg) this.featuredImg.classList.add('banquet__img--fading');
     if (this.infoOverlay) this.infoOverlay.classList.add('banquet__overlay--fading');
 
     setTimeout(() => {
-      // Update image
-      if (this.featuredImg && venueData.images.length) {
-        this.featuredImg.src = venueData.images[0];
-        this.featuredImg.alt = `Shree Bhatiawadi ${venueData.name}`;
-      }
-
-      // Update text fields
-      if (this.hallName) this.hallName.textContent = venueData.name;
-      if (this.hallSubtitle) this.hallSubtitle.textContent = venueData.tagline;
-      if (this.seatingVal) this.seatingVal.textContent = `${venueData.seatingCapacity}+`;
-      if (this.standingVal) this.standingVal.textContent = `${venueData.movingCapacity}+`;
-
-      // Update features list
-      if (this.featuresList && venueData.amenities) {
-        this.featuresList.innerHTML = venueData.amenities.map(a => `
-          <div class="banquet-feature-item" title="${a.name}">
-            <svg class="banquet-feature-icon" viewBox="0 0 24 24" fill="none">
-              ${a.icon}
-            </svg>
-            <span class="banquet-feature-name">${a.name}</span>
-          </div>
-        `).join('');
-      }
-
-      // Trigger subtle fade transition back in
+      this.updateHallUI(index);
       if (this.featuredImg) this.featuredImg.classList.remove('banquet__img--fading');
       if (this.infoOverlay) this.infoOverlay.classList.remove('banquet__overlay--fading');
-    }, 200);
+    }, 300);
+  }
+
+  updateHallUI(index) {
+    const targetCard = this.cards[index];
+    if (!targetCard) return;
+    const hallId = targetCard.getAttribute('data-hall-id');
+    const venueData = window.venueCollectionData.find(v => v.id === hallId);
+    if (!venueData) return;
+
+    // Update image
+    if (this.featuredImg && venueData.images.length) {
+      this.featuredImg.src = venueData.images[0];
+      this.featuredImg.alt = `Shree Bhatiawadi ${venueData.name}`;
+    }
+
+    // Update text fields
+    if (this.hallName) this.hallName.textContent = venueData.name;
+    if (this.hallSubtitle) this.hallSubtitle.textContent = venueData.tagline;
+    if (this.seatingVal) this.seatingVal.textContent = `${venueData.seatingCapacity}+`;
+    if (this.standingVal) this.standingVal.textContent = `${venueData.movingCapacity}+`;
+
+    // Limit features on homepage card to max 3 key items
+    if (this.featuresList && venueData.amenities) {
+      const displayAmenities = venueData.amenities.slice(0, 3);
+      this.featuresList.innerHTML = displayAmenities.map(a => `
+        <div class="banquet-feature-item" title="${a.name}">
+          <svg class="banquet-feature-icon" viewBox="0 0 24 24" fill="none">
+            ${a.icon}
+          </svg>
+          <span class="banquet-feature-name">${a.name}</span>
+        </div>
+      `).join('');
+    }
+
+    // Update CTA link to target specific hall on detailed page
+    if (this.primaryCta) {
+      this.primaryCta.href = `banquet-halls.html#venue-${venueData.id}`;
+    }
   }
 }
 

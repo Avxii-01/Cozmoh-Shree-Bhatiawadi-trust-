@@ -637,19 +637,24 @@
   .banquet__left-col {
     order: 1;
     text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     max-width: 100%;
-    margin-bottom: 32px;
+    margin-inline: auto;
+    margin-bottom: 24px;
   }
 
   .banquet__label {
     justify-content: center;
-    margin-bottom: 16px;
+    margin-inline: auto;
+    margin-bottom: 12px;
   }
 
   .banquet__title {
-    font-size: clamp(1.85rem, 6vw, 2.35rem);
+    font-size: clamp(1.75rem, 5.5vw, 2.25rem);
     line-height: 1.18;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     text-align: center;
   }
 
@@ -660,27 +665,37 @@
 
   .banquet__desc {
     font-size: 0.875rem;
-    line-height: 1.65;
-    max-width: 90%;
-    margin: 0 auto;
+    line-height: 1.6;
+    max-width: 340px;
+    margin-inline: auto;
+    margin-bottom: 16px;
     text-align: center;
   }
 
-  .banquet__divider,
+  .banquet__divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 200px;
+    margin-inline: auto;
+    margin-bottom: 0;
+  }
+
   .banquet__illustration {
     display: none;
   }
 
   .banquet__right-col {
     order: 2;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .banquet__featured-wrapper {
     height: auto;
-    aspect-ratio: 16 / 9;
-    min-height: 200px;
-    max-height: 250px;
+    aspect-ratio: 16 / 10;
+    min-height: 240px;
+    max-height: 280px;
     border-radius: 16px;
     overflow: hidden;
     position: relative;
@@ -696,43 +711,45 @@
 
   .banquet__info-card {
     position: absolute;
-    bottom: 8px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: min(92%, 330px);
-    max-width: 92%;
+    width: min(90%, 330px);
+    max-width: 90%;
     box-sizing: border-box;
-    padding: 10px 14px;
+    padding: 10px 12px;
     background: rgba(22, 17, 13, 0.88);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(200, 154, 74, 0.35);
-    border-radius: 12px;
+    border-radius: 14px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .banquet-info__name {
-    font-size: 1.15rem;
-    margin-bottom: 2px;
+    font-size: 1.25rem;
+    margin-bottom: 8px;
     text-align: center;
   }
 
   .banquet-info__subtitle {
-    font-size: 0.6rem;
-    letter-spacing: 0.14em;
-    margin-bottom: 6px;
-    text-align: center;
+    display: none !important;
   }
 
   .banquet-info__capacity-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
-    padding-top: 6px;
+    padding: 6px 0;
     border-top: 1px solid rgba(200, 154, 74, 0.18);
-    margin-bottom: 0;
+    border-bottom: 1px solid rgba(200, 154, 74, 0.18);
+    margin-bottom: 8px;
     width: 100%;
     box-sizing: border-box;
+    align-items: center;
   }
 
   .banquet-capacity-item {
@@ -743,19 +760,51 @@
     min-width: 0;
     width: 100%;
     box-sizing: border-box;
+    text-align: left;
+  }
+
+  .banquet-capacity-item:first-child {
+    border-right: 1px solid rgba(200, 154, 74, 0.25);
+    padding-right: 4px;
+  }
+
+  .banquet-capacity-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
   }
 
   .banquet-capacity-val {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
+    line-height: 1;
   }
 
   .banquet-capacity-label {
     font-size: 0.58rem;
+    line-height: 1.1;
+    white-space: nowrap;
   }
 
-  .banquet-info__features,
+  .banquet-info__features {
+    display: none !important;
+  }
+
   .banquet-info__buttons {
-    display: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn--banquet-primary {
+    width: 100%;
+    height: 34px;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+  }
+
+  .btn--banquet-secondary {
+    display: none !important;
   }
 
   /* Horizontal touch carousel for Hall Selectors on mobile */
