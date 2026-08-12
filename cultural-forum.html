@@ -247,7 +247,122 @@
   </section>
 
   <!-- ==========================================================================
-       SECTION 3: EVENT GALLERY — HERITAGE COLLAGE ARCHIVE (LIGHT / IVORY THEME)
+       SECTION 3: UPCOMING EVENTS / OUR CULTURAL CALENDAR (DARK HERITAGE SHOWCASE)
+       Cinematic Large Showcase + Adjoining Info Panel + Manual Event Selectors
+       ========================================================================== -->
+  <section class="upcoming-events-section" id="upcoming-events" data-section="events">
+    <canvas class="section-particle-canvas" data-particle-section="events" aria-hidden="true"></canvas>
+
+    <!-- Subtle Background Radial Glow & Vignette -->
+    <div class="upcoming-events__bg-overlay" aria-hidden="true"></div>
+
+    <div class="container upcoming-events__container">
+
+      <!-- Centered Editorial Section Header -->
+      <header class="upcoming-events__header reveal-fade-up">
+        <div class="upcoming-events__eyebrow">
+          <span class="upcoming-events__eyebrow-line" aria-hidden="true"></span>
+          <span class="upcoming-events__eyebrow-text">OUR CULTURAL CALENDAR</span>
+          <span class="upcoming-events__eyebrow-line" aria-hidden="true"></span>
+        </div>
+
+        <h2 class="upcoming-events__heading">
+          <span class="upcoming-events__heading-ivory">Celebrations That Bring</span>
+          <br>
+          <span class="upcoming-events__heading-gold">Us Together.</span>
+        </h2>
+
+        <div class="upcoming-events__header-divider" aria-hidden="true">
+          <span class="upcoming-events__divider-line"></span>
+          <svg width="24" height="16" viewBox="0 0 24 16" fill="none" stroke="#C89A4A" stroke-width="1.2">
+            <path d="M12 2C10 6 6 8 2 8c4 0 8 2 10 6 2-4 6-6 10-6-4 0-8-2-10-6z" fill="rgba(200, 154, 74, 0.15)" />
+            <circle cx="12" cy="8" r="1.5" fill="#C89A4A" />
+          </svg>
+          <span class="upcoming-events__divider-line"></span>
+        </div>
+      </header>
+
+      <!-- Main Cinematic Event Showcase Container (Image Left + Info Right) -->
+      <div class="upcoming-events__showcase-wrapper reveal-fade-up" style="transition-delay: 150ms;">
+        <div class="upcoming-events__showcase" id="events-showcase">
+
+          <!-- Left Side: Large Event Image -->
+          <div class="upcoming-events__image-col">
+            <div class="upcoming-events__image-frame">
+              <img src="assets/events/navratri.png" alt="Navratri Garba Night" class="upcoming-events__img" id="event-showcase-img">
+              <div class="upcoming-events__img-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <!-- Right Side: Dark Information Panel -->
+          <div class="upcoming-events__info-panel" id="event-showcase-info">
+            <div class="upcoming-events__info-content">
+
+              <!-- Small Metadata: Category & Index Number -->
+              <div class="upcoming-events__meta-category">
+                <span class="upcoming-events__meta-num" id="event-showcase-num">01 — NAVRATRI</span>
+              </div>
+
+              <!-- Prominent Event Title -->
+              <h3 class="upcoming-events__title" id="event-showcase-title">
+                Navratri<br>Garba Night
+              </h3>
+
+              <!-- Subtle Gold Divider -->
+              <div class="upcoming-events__title-divider" aria-hidden="true">
+                <span class="line"></span>
+                <span class="dot">✦</span>
+                <span class="line"></span>
+              </div>
+
+              <!-- Event Description -->
+              <p class="upcoming-events__desc" id="event-showcase-desc">
+                Experience the vibrant spirit of Navratri with traditional Garba, devotional music, and joyful community participation.
+              </p>
+
+              <!-- Event Date & Time Metadata (Horizontal Compact) -->
+              <div class="upcoming-events__datetime">
+                <span class="upcoming-events__date" id="event-showcase-date">OCTOBER 05, 2024</span>
+                <span class="upcoming-events__datetime-dot" aria-hidden="true">•</span>
+                <span class="upcoming-events__time" id="event-showcase-time">7:00 PM</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div><!-- /.upcoming-events__showcase -->
+
+        <!-- Manual Event Selectors (Compact Editorial Row) -->
+        <nav class="upcoming-events__selectors" aria-label="Event Calendar Selector">
+          <button type="button" class="upcoming-events__selector upcoming-events__selector--active" data-event-index="0" aria-label="Select Event 01: NAVRATRI">
+            <span class="selector-num">01</span>
+            <span class="selector-name">NAVRATRI</span>
+            <span class="selector-line" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="upcoming-events__selector" data-event-index="1" aria-label="Select Event 02: CLASSICAL MUSIC">
+            <span class="selector-num">02</span>
+            <span class="selector-name">CLASSICAL MUSIC</span>
+            <span class="selector-line" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="upcoming-events__selector" data-event-index="2" aria-label="Select Event 03: DIWALI">
+            <span class="selector-num">03</span>
+            <span class="selector-name">DIWALI</span>
+            <span class="selector-line" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="upcoming-events__selector" data-event-index="3" aria-label="Select Event 04: COMMUNITY">
+            <span class="selector-num">04</span>
+            <span class="selector-name">COMMUNITY</span>
+            <span class="selector-line" aria-hidden="true"></span>
+          </button>
+        </nav>
+
+      </div><!-- /.upcoming-events__showcase-wrapper -->
+
+    </div><!-- /.container -->
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: EVENT GALLERY — HERITAGE COLLAGE ARCHIVE (LIGHT / IVORY THEME)
        Exact Match to Reference Composition & Independent Auto-Crossfade
        ========================================================================== -->
   <section class="heritage-gallery-section" id="event-gallery" data-section="gallery">
@@ -392,6 +507,128 @@
   </section>
 
   <!-- ==========================================================================
+       SECTION 4: WHY JOIN OUR FORUM — EDITORIAL MANIFESTO (DARK THEME)
+       ========================================================================== -->
+  <section class="cultural-why-join-section" id="why-join" data-section="why-join">
+    <canvas class="section-particle-canvas" data-particle-section="why-join" aria-hidden="true"></canvas>
+
+    <div class="container why-join-container">
+
+      <!-- Centered Editorial Header -->
+      <header class="why-join-header reveal-fade-up">
+        <div class="why-join-label">
+          <span class="why-join-label__line" aria-hidden="true"></span>
+          <span class="why-join-label__text">WHY JOIN OUR FORUM</span>
+          <span class="why-join-label__line" aria-hidden="true"></span>
+        </div>
+
+        <h2 class="why-join-heading">
+          A Community Built Around Culture
+        </h2>
+
+        <div class="why-join-header-divider" aria-hidden="true">
+          <span class="why-join-divider-line"></span>
+          <svg width="24" height="16" viewBox="0 0 24 16" fill="none" stroke="#C89A4A" stroke-width="1.2">
+            <path d="M12 2C10 6 6 8 2 8c4 0 8 2 10 6 2-4 6-6 10-6-4 0-8-2-10-6z" fill="rgba(200, 154, 74, 0.15)" />
+            <circle cx="12" cy="8" r="1.5" fill="#C89A4A" />
+          </svg>
+          <span class="why-join-divider-line"></span>
+        </div>
+      </header>
+
+      <!-- Editorial 3-Column x 2-Row Grid Layout -->
+      <div class="why-join-grid reveal-fade-up" style="transition-delay: 150ms;">
+
+        <!-- Block 01 -->
+        <article class="why-join-item">
+          <div class="why-join-item__index-col">
+            <span class="why-join-item__num">01</span>
+            <span class="why-join-item__mark" aria-hidden="true">✦</span>
+          </div>
+          <div class="why-join-item__content-col">
+            <h3 class="why-join-item__title">CONNECT WITH HERITAGE</h3>
+            <p class="why-join-item__desc">
+              Deepen your connection with Indian classical traditions and cultural values through immersive experiences.
+            </p>
+          </div>
+        </article>
+
+        <!-- Block 02 -->
+        <article class="why-join-item">
+          <div class="why-join-item__index-col">
+            <span class="why-join-item__num">02</span>
+            <span class="why-join-item__mark" aria-hidden="true">✦</span>
+          </div>
+          <div class="why-join-item__content-col">
+            <h3 class="why-join-item__title">MEET LIKE-MINDED PEOPLE</h3>
+            <p class="why-join-item__desc">
+              Join a community of culture enthusiasts, artists, and families who share your passion for the arts.
+            </p>
+          </div>
+        </article>
+
+        <!-- Block 03 -->
+        <article class="why-join-item">
+          <div class="why-join-item__index-col">
+            <span class="why-join-item__num">03</span>
+            <span class="why-join-item__mark" aria-hidden="true">✦</span>
+          </div>
+          <div class="why-join-item__content-col">
+            <h3 class="why-join-item__title">EXPERIENCE EXCELLENCE</h3>
+            <p class="why-join-item__desc">
+              Enjoy performances by renowned artists and access to exclusive cultural events throughout the year.
+            </p>
+          </div>
+        </article>
+
+        <!-- Block 04 -->
+        <article class="why-join-item">
+          <div class="why-join-item__index-col">
+            <span class="why-join-item__num">04</span>
+            <span class="why-join-item__mark" aria-hidden="true">✦</span>
+          </div>
+          <div class="why-join-item__content-col">
+            <h3 class="why-join-item__title">LEARN &amp; GROW</h3>
+            <p class="why-join-item__desc">
+              Participate in workshops and educational programs that deepen your understanding of classical arts.
+            </p>
+          </div>
+        </article>
+
+        <!-- Block 05 -->
+        <article class="why-join-item">
+          <div class="why-join-item__index-col">
+            <span class="why-join-item__num">05</span>
+            <span class="why-join-item__mark" aria-hidden="true">✦</span>
+          </div>
+          <div class="why-join-item__content-col">
+            <h3 class="why-join-item__title">CELEBRATE TOGETHER</h3>
+            <p class="why-join-item__desc">
+              Be part of grand celebrations that bring the community together in joy and shared cultural pride.
+            </p>
+          </div>
+        </article>
+
+        <!-- Block 06 -->
+        <article class="why-join-item">
+          <div class="why-join-item__index-col">
+            <span class="why-join-item__num">06</span>
+            <span class="why-join-item__mark" aria-hidden="true">✦</span>
+          </div>
+          <div class="why-join-item__content-col">
+            <h3 class="why-join-item__title">SUPPORT TRADITION</h3>
+            <p class="why-join-item__desc">
+              Contribute to the preservation and promotion of our rich cultural heritage for future generations.
+            </p>
+          </div>
+        </article>
+
+      </div><!-- /.why-join-grid -->
+
+    </div><!-- /.container -->
+  </section>
+
+  <!-- ==========================================================================
        FOOTER
        ========================================================================== -->
   <footer class="footer">
@@ -511,6 +748,7 @@
   <script src="js/particles.js"></script>
   <script src="js/scroll.js"></script>
   <script src="js/gallery.js"></script>
+  <script src="js/events.js"></script>
   <script src="js/main.js"></script>
 </body>
 
