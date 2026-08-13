@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trustees — Shree Bhatiawadi Trust | Leadership & Governance</title>
+  <meta name="description"
+    content="Meet the dedicated board of trustees guiding the Shree Bhatiawadi Trust with wisdom, integrity, and unwavering commitment to serving the community.">
+
+  <!-- Google Fonts: Cormorant Garamond & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Architecture Files -->
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/events.css">
+  <link rel="stylesheet" href="css/cta.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/particles.css">
+  <link rel="stylesheet" href="css/trustees.css">
+
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       GLOBAL REUSABLE NAVIGATION COMPONENT
+       ========================================================================== -->
+  <header class="navbar" id="main-navbar">
+    <div class="container navbar__container">
+
+      <!-- Left Section: Logo & Tagline -->
+      <a href="index.html" class="navbar__logo" aria-label="Shree Bhatiawadi Trust Home">
+        <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Emblem" class="navbar__logo-emblem">
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-title">SHREE BHATIAWADI TRUST</span>
+          <span class="navbar__logo-subtitle">SERVING WITH DEVOTION</span>
+        </div>
+      </a>
+
+      <!-- Center Section: Navigation Links -->
+      <nav class="navbar__nav" aria-label="Main Navigation">
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="index.html" class="navbar__link">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="about.html" class="navbar__link">About Us</a>
+          </li>
+          <li class="navbar__item">
+            <a href="history.html" class="navbar__link">History</a>
+          </li>
+          <li class="navbar__item">
+            <a href="banquet-halls.html" class="navbar__link">Banquet Halls</a>
+          </li>
+          <li class="navbar__item">
+            <a href="cultural-forum.html" class="navbar__link">Cultural Forum</a>
+          </li>
+          <li class="navbar__item">
+            <a href="trustees.html" class="navbar__link navbar__link--active" aria-current="page">Trustees</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right Section: Actions & CTA Button -->
+      <div class="navbar__actions">
+        <a href="banquet-halls.html#booking" class="btn btn--primary navbar__cta">BOOK A VENUE</a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button class="navbar__toggle" aria-expanded="false" aria-controls="mobile-menu"
+          aria-label="Toggle Navigation Menu">
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Slide-Down Navigation Panel -->
+    <div class="navbar__mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="navbar__mobile-header">
+        <a href="index.html" class="navbar__logo" aria-label="Shree Bhatiawadi Trust Home">
+          <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Emblem" class="navbar__logo-emblem">
+          <div class="navbar__logo-text">
+            <span class="navbar__logo-title">SHREE BHATIAWADI TRUST</span>
+            <span class="navbar__logo-subtitle">SERVING WITH DEVOTION</span>
+          </div>
+        </a>
+        <button class="navbar__mobile-close" aria-label="Close navigation menu">✕</button>
+      </div>
+
+      <div class="navbar__mobile-body">
+        <ul class="navbar__mobile-links">
+          <li><a href="index.html" class="navbar__mobile-link">Home</a></li>
+          <li><a href="about.html" class="navbar__mobile-link">About Us</a></li>
+          <li><a href="history.html" class="navbar__mobile-link">History</a></li>
+          <li><a href="banquet-halls.html" class="navbar__mobile-link">Banquet Halls</a></li>
+          <li><a href="cultural-forum.html" class="navbar__mobile-link">Cultural Forum</a></li>
+          <li><a href="trustees.html" class="navbar__mobile-link navbar__mobile-link--active">Trustees</a></li>
+        </ul>
+
+        <div class="navbar__mobile-actions">
+          <a href="banquet-halls.html#booking" class="btn btn--primary navbar__mobile-cta">BOOK A VENUE</a>
+
+          <div class="navbar__mobile-socials">
+            <a href="#" class="navbar__mobile-social-icon" aria-label="Facebook">f</a>
+            <a href="#" class="navbar__mobile-social-icon" aria-label="Instagram">📷</a>
+            <a href="#" class="navbar__mobile-social-icon" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==========================================================================
+       2. HERO SECTION — DARK (.trustees-hero)
+       ========================================================================== -->
+  <section class="trustees-hero" id="trustees-hero">
+
+    <!-- Gold Ambient Particle Canvas Engine -->
+    <canvas class="section-particle-canvas" data-particle-section="hero" aria-hidden="true"></canvas>
+
+    <!-- Multi-Layer Background Infrastructure -->
+    <div class="trustees-hero__bg-wrapper" aria-hidden="true">
+      <img src="assets/images/about_hero.png" alt="Shree Bhatiawadi Governance Heritage" class="trustees-hero__bg-img">
+      <div class="trustees-hero__overlay-radial"></div>
+      <div class="trustees-hero__overlay-top"></div>
+      <div class="trustees-hero__overlay-vignette"></div>
+    </div>
+
+    <!-- Hero Content Container -->
+    <div class="trustees-hero__container">
+      <div class="trustees-hero__content-stack">
+
+        <!-- 1. Small Editorial Gold Label with Flanking Lines -->
+        <div class="trustees-hero__eyebrow trustees-hero__animate trustees-hero__animate--delay-1">
+          <span class="trustees-hero__eyebrow-line" aria-hidden="true"></span>
+          <span class="trustees-hero__eyebrow-text">OUR TRUSTEES</span>
+          <span class="trustees-hero__eyebrow-line" aria-hidden="true"></span>
+        </div>
+
+        <!-- 2. Large Two-Line Heading -->
+        <h1 class="trustees-hero__heading trustees-hero__animate trustees-hero__animate--delay-2">
+          <span class="trustees-hero__title-ivory">The People Behind</span>
+          <span class="trustees-hero__title-gold">Our Purpose.</span>
+        </h1>
+
+        <!-- 3. Centered Gold Ornamental Divider -->
+        <div class="trustees-hero__divider trustees-hero__animate trustees-hero__animate--delay-3" aria-hidden="true">
+          <span class="trustees-hero__divider-line"></span>
+          <svg width="24" height="16" viewBox="0 0 24 16" fill="none" stroke="#C89A4A" stroke-width="1.2">
+            <path d="M12 2C10 6 6 8 2 8c4 0 8 2 10 6 2-4 6-6 10-6-4 0-8-2-10-6z" fill="rgba(200, 154, 74, 0.15)"></path>
+            <circle cx="12" cy="8" r="1.5" fill="#C89A4A"></circle>
+          </svg>
+          <span class="trustees-hero__divider-line"></span>
+        </div>
+
+        <!-- 4. Centered Supporting Text -->
+        <p class="trustees-hero__desc trustees-hero__animate trustees-hero__animate--delay-4">
+          Meet the dedicated leaders who guide our mission and uphold our values with wisdom and integrity.
+        </p>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ==========================================================================
+       3. LEADERSHIP & GOVERNANCE — LIGHT SECTION (.trustees-register)
+       Archival Trustee Register (Alternating Horizontal Editorial Layout)
+       ========================================================================== -->
+  <section class="trustees-register" id="trustees-register">
+    <div class="trustees-register__container">
+
+      <!-- Section Introduction Header -->
+      <div class="trustees-register__header reveal-fade-up">
+        <div class="trustees-register__eyebrow">
+          <span>LEADERSHIP & GOVERNANCE</span>
+        </div>
+        <h2 class="trustees-register__heading">
+          Guided by Experience.<br>
+          <span class="trustees-register__heading-gold">United by Service.</span>
+        </h2>
+        <p class="trustees-register__desc">
+          Our board of trustees brings together diverse expertise and unwavering commitment to serve the community. Each
+          member contributes their unique skills and experience to ensure the trust continues to thrive and fulfill its
+          charitable mission.
+        </p>
+      </div>
+
+      <!-- Archival Trustee Register List -->
+      <div class="trustees-list">
+
+        <!-- ── TRUSTEE 01 — Dr. Eleanor Vance ───────────────────────────────── -->
+        <article class="trustee-entry trustee-entry--odd reveal-fade-up">
+          <div class="trustee-entry__inner">
+
+            <!-- Portrait Column -->
+            <div class="trustee-entry__portrait-col">
+              <div class="trustee-portrait-frame" aria-label="Portrait of Dr. Eleanor Vance">
+                <img src="assets/trustees/eleanor_vance.jpg" alt="Dr. Eleanor Vance — Chairperson"
+                  class="trustee-portrait-img">
+              </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class="trustee-entry__content-col">
+              <div class="trustee-entry__header">
+                <h3 class="trustee-entry__name">Dr. Eleanor Vance</h3>
+                <span class="trustee-entry__role">CHAIRPERSON</span>
+              </div>
+
+              <p class="trustee-entry__bio">
+                Dr. Eleanor Vance brings over 25 years of experience in non-profit leadership and strategic planning.
+                Her vision has been instrumental in guiding the organization's growth and impact. She holds a PhD in
+                Social Sciences from the University of Cambridge.
+              </p>
+
+              <div class="trustee-entry__meta-wrapper">
+                <div class="trustee-meta-item">
+                  <span class="trustee-meta-label">
+                    <svg class="trustee-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    APPOINTED
+                  </span>
+                  <span class="trustee-meta-value">March 2008</span>
+                </div>
+
+                <div class="trustee-meta-divider" aria-hidden="true"></div>
+
+                <div class="trustee-meta-item">
+                  <span class="trustee-meta-label">
+                    <svg class="trustee-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 16 14"></polyline>
+                    </svg>
+                    SERVICE
+                  </span>
+                  <span class="trustee-meta-value">16 Years</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- ── TRUSTEE 02 — Mr. David Chen ─────────────────────────────────── -->
+        <article class="trustee-entry trustee-entry--even reveal-fade-up">
+          <div class="trustee-entry__inner">
+
+            <!-- Content Column -->
+            <div class="trustee-entry__content-col">
+              <div class="trustee-entry__header">
+                <h3 class="trustee-entry__name">Mr. David Chen</h3>
+                <span class="trustee-entry__role">SECRETARY</span>
+              </div>
+
+              <p class="trustee-entry__bio">
+                Mr. David Chen is a seasoned legal professional with a focus on corporate governance and compliance. His
+                meticulous attention to detail ensures the smooth operation of board affairs and adherence to all
+                regulatory standards. He joined the board in 2015.
+              </p>
+
+              <div class="trustee-entry__meta-wrapper">
+                <div class="trustee-meta-item">
+                  <span class="trustee-meta-label">
+                    <svg class="trustee-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    APPOINTED
+                  </span>
+                  <span class="trustee-meta-value">July 2015</span>
+                </div>
+
+                <div class="trustee-meta-divider" aria-hidden="true"></div>
+
+                <div class="trustee-meta-item">
+                  <span class="trustee-meta-label">
+                    <svg class="trustee-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 16 14"></polyline>
+                    </svg>
+                    SERVICE
+                  </span>
+                  <span class="trustee-meta-value">9 Years</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Portrait Column -->
+            <div class="trustee-entry__portrait-col">
+              <div class="trustee-portrait-frame" aria-label="Portrait of Mr. David Chen">
+                <img src="assets/trustees/david_chen.jpg" alt="Mr. David Chen — Secretary" class="trustee-portrait-img">
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- ── TRUSTEE 03 — Ms. Sarah Jenkins ──────────────────────────────── -->
+        <article class="trustee-entry trustee-entry--odd reveal-fade-up">
+          <div class="trustee-entry__inner">
+
+            <!-- Portrait Column -->
+            <div class="trustee-entry__portrait-col">
+              <div class="trustee-portrait-frame" aria-label="Portrait of Ms. Sarah Jenkins">
+                <img src="assets/trustees/sarah_jenkins.jpg" alt="Ms. Sarah Jenkins — Treasurer"
+                  class="trustee-portrait-img">
+              </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class="trustee-entry__content-col">
+              <div class="trustee-entry__header">
+                <h3 class="trustee-entry__name">Ms. Sarah Jenkins</h3>
+                <span class="trustee-entry__role">TREASURER</span>
+              </div>
+
+              <p class="trustee-entry__bio">
+                Ms. Sarah Jenkins is a Chartered Accountant with extensive experience in financial management and
+                auditing for charitable organizations. She oversees the financial health and sustainability of the
+                trust, ensuring transparency and accountability.
+              </p>
+
+              <div class="trustee-entry__meta-wrapper">
+                <div class="trustee-meta-item">
+                  <span class="trustee-meta-label">
+                    <svg class="trustee-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    APPOINTED
+                  </span>
+                  <span class="trustee-meta-value">January 2020</span>
+                </div>
+
+                <div class="trustee-meta-divider" aria-hidden="true"></div>
+
+                <div class="trustee-meta-item">
+                  <span class="trustee-meta-label">
+                    <svg class="trustee-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 16 14"></polyline>
+                    </svg>
+                    SERVICE
+                  </span>
+                  <span class="trustee-meta-value">4 Years</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- ── TRUSTEE 04 — Prof. Robert Maxwell ───────────────────────────── -->
+        <article class="trustee-entry trustee-entry--even reveal-fade-up">
+          <div class="trustee-entry__inner">
+
+            <!-- Content Column -->
+            <div class="trustee-entry__content-col">
+              <div class="trustee-entry__header">
+                <h3 class="trustee-entry__name">Prof. Robert Maxwell</h3>
+                <span class="trustee-entry__role">TRUSTEE MEMBER</span>
+              </div>
+
+              <p class="trustee-entry__bio">
+                Professor Robert Maxwell is a distinguished academic in environmental studies, bringing valuable
+                insights into sustainable practices and community engagement. His expertise helps shape the
+                organization's long-term environmental initiatives.
+              </p>
+
+              <div class="trustee-entry__meta-wrapper">
+                <div class="trustee-meta-item">
+                  <span class="trustee-meta-label">
+                    <svg class="trustee-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    APPOINTED
+                  </span>
+                  <span class="trustee-meta-value">September 2017</span>
+                </div>
+
+                <div class="trustee-meta-divider" aria-hidden="true"></div>
+
+                <div class="trustee-meta-item">
+                  <span class="trustee-meta-label">
+                    <svg class="trustee-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 16 14"></polyline>
+                    </svg>
+                    SERVICE
+                  </span>
+                  <span class="trustee-meta-value">7 Years</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Portrait Column -->
+            <div class="trustee-entry__portrait-col">
+              <div class="trustee-portrait-frame" aria-label="Portrait of Prof. Robert Maxwell">
+                <img src="assets/trustees/robert_maxwell.jpg" alt="Prof. Robert Maxwell — Trustee Member"
+                  class="trustee-portrait-img">
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- ── TRUSTEE 05 — Ms. Anya Sharma ────────────────────────────────── -->
+        <article class="trustee-entry trustee-entry--odd reveal-fade-up">
+          <div class="trustee-entry__inner">
+
+            <!-- Portrait Column -->
+            <div class="trustee-entry__portrait-col">
+              <div class="trustee-portrait-frame" aria-label="Portrait of Ms. Anya Sharma">
+                <img src="assets/trustees/anya_sharma.jpg" alt="Ms. Anya Sharma — Trustee Member"
+                  class="trustee-portrait-img">
+              </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class="trustee-entry__content-col">
+              <div class="trustee-entry__header">
+                <h3 class="trustee-entry__name">Ms. Anya Sharma</h3>
+                <span class="trustee-entry__role">TRUSTEE MEMBER</span>
+              </div>
+
+              <p class="trustee-entry__bio">
+                Ms. Anya Sharma is a passionate advocate for youth development and education. With a background in
+                public policy, she contributes to programs aimed at empowering the next generation and fostering
+                inclusive communities.
+              </p>
+
+              <div class="trustee-entry__meta-wrapper">
+                <div class="trustee-meta-item">
+                  <span class="trustee-meta-label">
+                    <svg class="trustee-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    APPOINTED
+                  </span>
+                  <span class="trustee-meta-value">April 2022</span>
+                </div>
+
+                <div class="trustee-meta-divider" aria-hidden="true"></div>
+
+                <div class="trustee-meta-item">
+                  <span class="trustee-meta-label">
+                    <svg class="trustee-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 16 14"></polyline>
+                    </svg>
+                    SERVICE
+                  </span>
+                  <span class="trustee-meta-value">2 Years</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- ── TRUSTEE 06 — Mr. Michael O'Connell ──────────────────────────── -->
+        <article class="trustee-entry trustee-entry--even reveal-fade-up">
+          <div class="trustee-entry__inner">
+
+            <!-- Content Column -->
+            <div class="trustee-entry__content-col">
+              <div class="trustee-entry__header">
+                <h3 class="trustee-entry__name">Mr. Michael O'Connell</h3>
+                <span class="trustee-entry__role">TRUSTEE MEMBER</span>
+              </div>
+
+              <p class="trustee-entry__bio">
+                Mr. Michael O'Connell has a rich history in community organizing and local government. His deep
+                understanding of local needs and strong community ties are invaluable in connecting the trust's work
+                with the people it serves.
+              </p>
+
+              <div class="trustee-entry__meta-wrapper">
+                <div class="trustee-meta-item">
+                  <span class="trustee-meta-label">
+                    <svg class="trustee-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    APPOINTED
+                  </span>
+                  <span class="trustee-meta-value">November 2010</span>
+                </div>
+
+                <div class="trustee-meta-divider" aria-hidden="true"></div>
+
+                <div class="trustee-meta-item">
+                  <span class="trustee-meta-label">
+                    <svg class="trustee-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 16 14"></polyline>
+                    </svg>
+                    SERVICE
+                  </span>
+                  <span class="trustee-meta-value">14 Years</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Portrait Column -->
+            <div class="trustee-entry__portrait-col">
+              <div class="trustee-portrait-frame" aria-label="Portrait of Mr. Michael O'Connell">
+                <img src="assets/trustees/michael_oconnell.jpg" alt="Mr. Michael O'Connell — Trustee Member"
+                  class="trustee-portrait-img">
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       4. OUR COMMITMENT — DARK SECTION (.trustees-commitment)
+       4 Horizontal Principles Layout Matching Visual Reference Structure
+       ========================================================================== -->
+  <section class="trustees-commitment" id="trustees-commitment">
+
+    <!-- Gold Ambient Particle Canvas Engine -->
+    <canvas class="section-particle-canvas" data-particle-section="hero" aria-hidden="true"></canvas>
+
+    <div class="trustees-commitment__container">
+
+      <!-- Section Introduction Header Stack -->
+      <div class="trustees-commitment__header reveal-fade-up">
+        <div class="trustees-commitment__eyebrow">
+          <span>OUR COMMITMENT</span>
+        </div>
+
+        <h2 class="trustees-commitment__heading">
+          The Trustees Uphold These Principles<br>
+          <span class="trustees-hero__heading-gold">in All Decisions and Actions</span>
+        </h2>
+
+        <!-- Gold Ornamental Divider -->
+        <div class="trustees-commitment__divider" aria-hidden="true">
+          <span class="trustees-commitment__divider-line"></span>
+          <svg width="24" height="16" viewBox="0 0 24 16" fill="none" stroke="#C89A4A" stroke-width="1.2">
+            <path d="M12 2C10 6 6 8 2 8c4 0 8 2 10 6 2-4 6-6 10-6-4 0-8-2-10-6z" fill="rgba(200, 154, 74, 0.15)"></path>
+            <circle cx="12" cy="8" r="1.5" fill="#C89A4A"></circle>
+          </svg>
+          <span class="trustees-commitment__divider-line"></span>
+        </div>
+      </div>
+
+      <!-- 4 Principles Horizontal Grid -->
+      <div class="trustees-commitment__grid">
+
+        <!-- 01 TRANSPARENCY -->
+        <div class="commitment-card reveal-fade-up">
+          <span class="commitment-card__number">01</span>
+          <div class="commitment-card__icon-wrapper" aria-hidden="true">
+            <svg class="commitment-card__svg" viewBox="0 0 64 64" fill="none" stroke="#C89A4A" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M32 12C24 12 16 18 16 26C16 38 32 52 32 52C32 52 48 38 48 26C48 18 40 12 32 12Z" stroke="#C89A4A"
+                stroke-width="1.8" fill="rgba(200, 154, 74, 0.08)" />
+              <path d="M26 24C26 20.7 28.7 18 32 18C35.3 18 38 20.7 38 24C38 28 32 32 32 32C32 32 26 28 26 24Z"
+                stroke="#C89A4A" stroke-width="1.5" fill="rgba(200, 154, 74, 0.15)" />
+            </svg>
+          </div>
+          <h3 class="commitment-card__title">TRANSPARENCY</h3>
+          <p class="commitment-card__desc">Open and honest communication in all operations</p>
+        </div>
+
+        <!-- 02 ACCOUNTABILITY -->
+        <div class="commitment-card reveal-fade-up">
+          <span class="commitment-card__number">02</span>
+          <div class="commitment-card__icon-wrapper" aria-hidden="true">
+            <svg class="commitment-card__svg" viewBox="0 0 64 64" fill="none" stroke="#C89A4A" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M32 8L14 16V28C14 41 21.7 52.8 32 56C42.3 52.8 50 41 50 28V16L32 8Z" stroke="#C89A4A"
+                stroke-width="1.8" fill="rgba(200, 154, 74, 0.08)" />
+              <polyline points="24 28 30 34 40 22" stroke="#C89A4A" stroke-width="2" />
+            </svg>
+          </div>
+          <h3 class="commitment-card__title">ACCOUNTABILITY</h3>
+          <p class="commitment-card__desc">Responsible stewardship of trust resources</p>
+        </div>
+
+        <!-- 03 INTEGRITY -->
+        <div class="commitment-card reveal-fade-up">
+          <span class="commitment-card__number">03</span>
+          <div class="commitment-card__icon-wrapper" aria-hidden="true">
+            <svg class="commitment-card__svg" viewBox="0 0 64 64" fill="none" stroke="#C89A4A" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="32" y1="12" x2="32" y2="52" stroke-width="2" />
+              <line x1="16" y1="20" x2="48" y2="20" stroke-width="2" />
+              <path d="M12 36C12 42 20 42 20 36H12Z" fill="rgba(200, 154, 74, 0.12)" />
+              <path d="M44 36C44 42 52 42 52 36H44Z" fill="rgba(200, 154, 74, 0.12)" />
+              <line x1="16" y1="20" x2="12" y2="36" />
+              <line x1="16" y1="20" x2="20" y2="36" />
+              <line x1="48" y1="20" x2="44" y2="36" />
+              <line x1="48" y1="20" x2="52" y2="36" />
+              <line x1="22" y1="52" x2="42" y2="52" stroke-width="2" />
+            </svg>
+          </div>
+          <h3 class="commitment-card__title">INTEGRITY</h3>
+          <p class="commitment-card__desc">Ethical conduct in every aspect of governance</p>
+        </div>
+
+        <!-- 04 SERVICE -->
+        <div class="commitment-card reveal-fade-up">
+          <span class="commitment-card__number">04</span>
+          <div class="commitment-card__icon-wrapper" aria-hidden="true">
+            <svg class="commitment-card__svg" viewBox="0 0 64 64" fill="none" stroke="#C89A4A" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 28C16 21.4 21.4 16 28 16C32.4 16 36.2 18.4 38.3 22" stroke-width="1.8" />
+              <path d="M48 36C48 42.6 42.6 48 36 48C31.6 48 27.8 45.6 25.7 42" stroke-width="1.8" />
+              <circle cx="32" cy="32" r="8" fill="rgba(200, 154, 74, 0.15)" />
+              <circle cx="20" cy="20" r="4" fill="#C89A4A" />
+              <circle cx="44" cy="44" r="4" fill="#C89A4A" />
+              <circle cx="44" cy="20" r="4" fill="#C89A4A" />
+              <circle cx="20" cy="44" r="4" fill="#C89A4A" />
+            </svg>
+          </div>
+          <h3 class="commitment-card__title">SERVICE</h3>
+          <p class="commitment-card__desc">Dedicated commitment to community welfare</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       5. REUSABLE FOOTER COMPONENT
+       ========================================================================== -->
+  <footer class="footer" id="main-footer">
+
+    <!-- Gold Ambient Particle Canvas Engine -->
+    <canvas class="section-particle-canvas" data-particle-section="footer" aria-hidden="true"></canvas>
+
+    <!-- Top Accent Gold Line -->
+    <div class="footer__accent-bar" aria-hidden="true"></div>
+
+    <div class="container footer__container">
+      <div class="footer__grid">
+
+        <!-- Column 1: Brand & Tagline -->
+        <div class="footer__column footer__column--brand">
+          <a href="index.html" class="footer__logo" aria-label="Shree Bhatiawadi Trust Home">
+            <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Emblem" class="footer__logo-emblem">
+            <div class="footer__logo-text">
+              <span class="footer__logo-title">SHREE BHATIAWADI TRUST</span>
+              <span class="footer__logo-subtitle">SERVING WITH DEVOTION</span>
+            </div>
+          </a>
+          <p class="footer__tagline">
+            Serving the community with devotion, heritage, and social service since 1912. Preserving culture, supporting
+            lives, and building unity.
+          </p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg class="footer__social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg class="footer__social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <svg class="footer__social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">QUICK LINKS</h4>
+          <ul class="footer__links">
+            <li><a href="about.html" class="footer__link">About Us</a></li>
+            <li><a href="history.html" class="footer__link">History</a></li>
+            <li><a href="banquet-halls.html" class="footer__link">Banquet Halls</a></li>
+            <li><a href="cultural-forum.html" class="footer__link">Cultural Forum</a></li>
+            <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Support -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">SUPPORT</h4>
+          <ul class="footer__links">
+            <li><a href="donate.html" class="footer__link">Donate</a></li>
+            <li><a href="volunteer.html" class="footer__link">Volunteer</a></li>
+            <li><a href="trustees.html" class="footer__link">Trustee Information</a></li>
+            <li><a href="faqs.html" class="footer__link">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">CONTACT US</h4>
+          <ul class="footer__contact-list">
+            <li>
+              <a href="#" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Bhatiyawadi, Mumbai,<br>Maharashtra, India</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+9102212345678" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+                <span>+91 (022) 1234-5678</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@shreebhatiwadi.org" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>info@shreebhatiwadi.org</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright Strip -->
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner">
+        <span class="footer__copyright">&copy; 2024 Shree Bhatiyawadi Trust. All rights reserved.</span>
+        <ul class="footer__legal-links">
+          <li><a href="privacy.html" class="footer__legal-link">Privacy Policy</a></li>
+          <li><a href="terms.html" class="footer__legal-link">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Core JavaScript Controllers -->
+  <script src="js/navbar.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
