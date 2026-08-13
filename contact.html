@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Shree Bhatiawadi Trust | Event Inquiries & Location</title>
+  <meta name="description"
+    content="Reach out to Shree Bhatiawadi Trust for hall bookings, venue inquiries, cultural events, and general assistance in Mumbai. We are here to help you create meaningful celebrations.">
+
+  <!-- Google Fonts: Cormorant Garamond & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Architecture Files -->
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/events.css">
+  <link rel="stylesheet" href="css/cta.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/particles.css">
+  <link rel="stylesheet" href="css/contact.css">
+
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       1. GLOBAL REUSABLE NAVIGATION COMPONENT
+       ========================================================================== -->
+  <header class="navbar" id="main-navbar">
+    <div class="container navbar__container">
+
+      <!-- Left Section: Logo & Tagline -->
+      <a href="index.html" class="navbar__logo" aria-label="Shree Bhatiawadi Trust Home">
+        <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Emblem" class="navbar__logo-emblem">
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-title">SHREE BHATIAWADI TRUST</span>
+          <span class="navbar__logo-subtitle">SERVING WITH DEVOTION</span>
+        </div>
+      </a>
+
+      <!-- Center Section: Navigation Links -->
+      <nav class="navbar__nav" aria-label="Main Navigation">
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="index.html" class="navbar__link">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="about.html" class="navbar__link">About Us</a>
+          </li>
+          <li class="navbar__item">
+            <a href="history.html" class="navbar__link">History</a>
+          </li>
+          <li class="navbar__item">
+            <a href="banquet-halls.html" class="navbar__link">Banquet Halls</a>
+          </li>
+          <li class="navbar__item">
+            <a href="cultural-forum.html" class="navbar__link">Cultural Forum</a>
+          </li>
+          <li class="navbar__item">
+            <a href="trustees.html" class="navbar__link">Trustees</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right Section: Actions & CTA Button -->
+      <div class="navbar__actions">
+        <a href="contact.html" class="btn btn--primary navbar__cta">BOOK A VENUE</a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button class="navbar__toggle" aria-expanded="false" aria-controls="mobile-menu"
+          aria-label="Toggle Navigation Menu">
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Slide-Down Navigation Panel -->
+    <div class="navbar__mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="navbar__mobile-header">
+        <a href="index.html" class="navbar__logo" aria-label="Shree Bhatiawadi Trust Home">
+          <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Emblem" class="navbar__logo-emblem">
+          <div class="navbar__logo-text">
+            <span class="navbar__logo-title">SHREE BHATIAWADI TRUST</span>
+            <span class="navbar__logo-subtitle">SERVING WITH DEVOTION</span>
+          </div>
+        </a>
+        <button class="navbar__mobile-close" aria-label="Close navigation menu">✕</button>
+      </div>
+
+      <div class="navbar__mobile-body">
+        <ul class="navbar__mobile-links">
+          <li><a href="index.html" class="navbar__mobile-link">Home</a></li>
+          <li><a href="about.html" class="navbar__mobile-link">About Us</a></li>
+          <li><a href="history.html" class="navbar__mobile-link">History</a></li>
+          <li><a href="banquet-halls.html" class="navbar__mobile-link">Banquet Halls</a></li>
+          <li><a href="cultural-forum.html" class="navbar__mobile-link">Cultural Forum</a></li>
+          <li><a href="trustees.html" class="navbar__mobile-link">Trustees</a></li>
+        </ul>
+
+        <div class="navbar__mobile-actions">
+          <a href="contact.html" class="btn btn--primary navbar__mobile-cta">BOOK A VENUE</a>
+
+          <div class="navbar__mobile-socials">
+            <a href="#" class="navbar__mobile-social-icon" aria-label="Facebook">f</a>
+            <a href="#" class="navbar__mobile-social-icon" aria-label="Instagram">📷</a>
+            <a href="#" class="navbar__mobile-social-icon" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==========================================================================
+       2. HERO SECTION — DARK (.contact-hero)
+       ========================================================================== -->
+  <section class="contact-hero" id="contact-hero">
+
+    <!-- Gold Ambient Particle Canvas Engine -->
+    <canvas class="section-particle-canvas" data-particle-section="hero" aria-hidden="true"></canvas>
+
+    <!-- Multi-Layer Background Infrastructure -->
+    <div class="contact-hero__bg-wrapper" aria-hidden="true">
+      <img src="assets/images/about_hero.png" alt="Shree Bhatiawadi Heritage Building Entrance" class="contact-hero__bg-img">
+      <div class="contact-hero__overlay-radial"></div>
+      <div class="contact-hero__overlay-top"></div>
+      <div class="contact-hero__overlay-vignette"></div>
+    </div>
+
+    <!-- Hero Content Container -->
+    <div class="contact-hero__container">
+      <div class="contact-hero__content-stack">
+
+        <!-- 1. Small Editorial Gold Label with Flanking Lines -->
+        <div class="contact-hero__eyebrow contact-hero__animate contact-hero__animate--delay-1">
+          <span class="contact-hero__eyebrow-line" aria-hidden="true"></span>
+          <span class="contact-hero__eyebrow-text">GET IN TOUCH</span>
+          <span class="contact-hero__eyebrow-line" aria-hidden="true"></span>
+        </div>
+
+        <!-- 2. Large Two-Line Serif Heading -->
+        <h1 class="contact-hero__heading contact-hero__animate contact-hero__animate--delay-2">
+          <span class="contact-hero__title-ivory">Let's Create</span>
+          <span class="contact-hero__title-gold">Something Meaningful.</span>
+        </h1>
+
+        <!-- 3. Centered Gold Ornamental Divider -->
+        <div class="contact-hero__divider contact-hero__animate contact-hero__animate--delay-3" aria-hidden="true">
+          <span class="contact-hero__divider-line"></span>
+          <svg width="24" height="16" viewBox="0 0 24 16" fill="none" stroke="#C89A4A" stroke-width="1.2">
+            <path d="M12 2C10 6 6 8 2 8c4 0 8 2 10 6 2-4 6-6 10-6-4 0-8-2-10-6z" fill="rgba(200, 154, 74, 0.15)"></path>
+            <circle cx="12" cy="8" r="1.5" fill="#C89A4A"></circle>
+          </svg>
+          <span class="contact-hero__divider-line"></span>
+        </div>
+
+        <!-- 4. Centered Supporting Text -->
+        <p class="contact-hero__desc contact-hero__animate contact-hero__animate--delay-4">
+          We're here to help you plan your perfect event. Reach out to us with your questions or booking inquiries.
+        </p>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ==========================================================================
+       3. CONTACT INFORMATION + ENQUIRY FORM — LIGHT SECTION (.contact-section)
+       ========================================================================== -->
+  <section class="contact-section" id="contact-section">
+    <div class="contact-section__container">
+
+      <div class="contact-section__grid">
+
+        <!-- ── LEFT COLUMN — CONTACT INFORMATION ────────────────────────────── -->
+        <div class="contact-info-col reveal-fade-up">
+
+          <!-- Section Eyebrow -->
+          <div class="contact-info__eyebrow">
+            <span>CONTACT INFORMATION</span>
+          </div>
+
+          <!-- Section Heading -->
+          <h2 class="contact-info__heading">
+            We're Here<br>
+            <span class="contact-info__heading-gold">to Help.</span>
+          </h2>
+
+          <!-- Supporting Text -->
+          <p class="contact-info__desc">
+            Feel free to reach out through any of these channels. Our team is ready to assist you with your event planning needs.
+          </p>
+
+          <!-- Contact Information List -->
+          <div class="contact-info-list">
+
+            <!-- 1. VISIT US -->
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon-wrap" aria-hidden="true">
+                <svg class="contact-info-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-info-item__body">
+                <h3 class="contact-info-item__title">VISIT US</h3>
+                <span class="contact-info-item__text">
+                  Shree Bhatiawadi Trust<br>
+                  Bhatiawadi, Kalbadevi, Mumbai<br>
+                  Maharashtra 400002, India
+                </span>
+              </div>
+            </div>
+
+            <!-- 2. CALL US -->
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon-wrap" aria-hidden="true">
+                <svg class="contact-info-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-info-item__body">
+                <h3 class="contact-info-item__title">CALL US</h3>
+                <a href="tel:+9102212345678" class="contact-info-item__link">+91 (022) 1234-5678</a>
+                <a href="tel:+9102287654321" class="contact-info-item__link">+91 (022) 8765-4321</a>
+                <span class="contact-info-item__subtext">Mon–Sat: 9:00 AM – 6:00 PM</span>
+              </div>
+            </div>
+
+            <!-- 3. EMAIL US -->
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon-wrap" aria-hidden="true">
+                <svg class="contact-info-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-info-item__body">
+                <h3 class="contact-info-item__title">EMAIL US</h3>
+                <a href="mailto:info@shreebhatiawadi.org" class="contact-info-item__link">info@shreebhatiawadi.org</a>
+                <a href="mailto:bookings@shreebhatiawadi.org" class="contact-info-item__link">bookings@shreebhatiawadi.org</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ── RIGHT COLUMN — SEND US A MESSAGE FORM ────────────────────────── -->
+        <div class="contact-form-col reveal-fade-up">
+
+          <div class="contact-form-card">
+            <!-- Form Header -->
+            <div class="contact-form__header">
+              <div class="contact-form__eyebrow">
+                <span>SEND US A MESSAGE</span>
+              </div>
+              <h3 class="contact-form__title">Let's Start a Conversation.</h3>
+            </div>
+
+            <!-- Form -->
+            <form class="contact-form" action="#" method="POST" id="contact-enquiry-form">
+
+              <!-- Row 1: First & Last Name -->
+              <div class="contact-form__row">
+                <div class="contact-form__group">
+                  <label for="first-name" class="contact-form__label">
+                    First Name<span class="contact-form__req">*</span>
+                  </label>
+                  <input type="text" id="first-name" name="first_name" class="contact-form__input" placeholder="e.g. Rajesh" required>
+                </div>
+
+                <div class="contact-form__group">
+                  <label for="last-name" class="contact-form__label">
+                    Last Name<span class="contact-form__req">*</span>
+                  </label>
+                  <input type="text" id="last-name" name="last_name" class="contact-form__input" placeholder="e.g. Bhatia" required>
+                </div>
+              </div>
+
+              <!-- Row 2: Email & Phone -->
+              <div class="contact-form__row">
+                <div class="contact-form__group">
+                  <label for="email" class="contact-form__label">
+                    Email<span class="contact-form__req">*</span>
+                  </label>
+                  <input type="email" id="email" name="email" class="contact-form__input" placeholder="e.g. rajesh@example.com" required>
+                </div>
+
+                <div class="contact-form__group">
+                  <label for="phone" class="contact-form__label">
+                    Phone<span class="contact-form__req">*</span>
+                  </label>
+                  <input type="tel" id="phone" name="phone" class="contact-form__input" placeholder="+91 98765 43210" required>
+                </div>
+              </div>
+
+              <!-- Row 3: Venue Name & Event Type -->
+              <div class="contact-form__row">
+                <div class="contact-form__group">
+                  <label for="venue-name" class="contact-form__label">
+                    Venue Name<span class="contact-form__req">*</span>
+                  </label>
+                  <select id="venue-name" name="venue_name" class="contact-form__select" required>
+                    <option value="" disabled selected>Select a venue</option>
+                    <option value="Basil Hall">Basil Hall</option>
+                    <option value="Leaf Hall">Leaf Hall</option>
+                    <option value="Lotus Hall">Lotus Hall</option>
+                    <option value="Orchid Hall">Orchid Hall</option>
+                  </select>
+                </div>
+
+                <div class="contact-form__group">
+                  <label for="event-type" class="contact-form__label">
+                    Event Type<span class="contact-form__req">*</span>
+                  </label>
+                  <select id="event-type" name="event_type" class="contact-form__select" required>
+                    <option value="" disabled selected>Select an event type</option>
+                    <option value="Wedding & Reception">Wedding &amp; Reception</option>
+                    <option value="Cultural Celebration">Cultural Celebration</option>
+                    <option value="Corporate Gala / Meeting">Corporate Gala / Meeting</option>
+                    <option value="Social Gathering">Social Gathering</option>
+                    <option value="Anniversary / Birthday">Anniversary / Birthday</option>
+                    <option value="Other Special Event">Other Special Event</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Row 4: Message Textarea -->
+              <div class="contact-form__group contact-form__group--full">
+                <label for="message" class="contact-form__label">
+                  Message<span class="contact-form__req">*</span>
+                </label>
+                <textarea id="message" name="message" class="contact-form__textarea" rows="4" placeholder="Please share details about your event, expected guest count, preferred dates, or any special requirements..." required></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn--primary contact-form__submit">
+                SEND MESSAGE
+                <span class="btn__icon btn__icon--arrow" aria-hidden="true">→</span>
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       4. FIND US / MAP SECTION — DARK (.contact-map-section)
+       ========================================================================== -->
+  <section class="contact-map-section" id="contact-map-section">
+
+    <!-- Gold Ambient Particle Canvas Engine -->
+    <canvas class="section-particle-canvas" data-particle-section="hero" aria-hidden="true"></canvas>
+
+    <div class="contact-map-section__container">
+
+      <!-- Section Header -->
+      <div class="contact-map-section__header reveal-fade-up">
+        <div class="contact-map-section__eyebrow">
+          <span class="contact-map-section__eyebrow-line" aria-hidden="true"></span>
+          <span>FIND US</span>
+          <span class="contact-map-section__eyebrow-line" aria-hidden="true"></span>
+        </div>
+
+        <h2 class="contact-map-section__heading">
+          Visit Us in the Heart of Mumbai.
+        </h2>
+
+        <p class="contact-map-section__desc">
+          Located in the heart of Mumbai, easily accessible from all parts of the city.
+        </p>
+
+        <!-- Gold Ornamental Divider -->
+        <div class="contact-map-section__divider" aria-hidden="true">
+          <span class="contact-map-section__divider-line"></span>
+          <svg width="24" height="16" viewBox="0 0 24 16" fill="none" stroke="#C89A4A" stroke-width="1.2">
+            <path d="M12 2C10 6 6 8 2 8c4 0 8 2 10 6 2-4 6-6 10-6-4 0-8-2-10-6z" fill="rgba(200, 154, 74, 0.15)"></path>
+            <circle cx="12" cy="8" r="1.5" fill="#C89A4A"></circle>
+          </svg>
+          <span class="contact-map-section__divider-line"></span>
+        </div>
+      </div>
+
+      <!-- Map Container Frame -->
+      <div class="contact-map-frame reveal-fade-up">
+        <iframe
+          class="contact-map-iframe"
+          title="Shree Bhatiawadi Trust Location Map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.4754714152!2d72.825838!3d18.954722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce18e24c56e3%3A0x6b63c22b9c7b8c0a!2sKalbadevi%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+        <!-- Map Address Badge -->
+        <div class="contact-map-badge">
+          <div class="contact-map-badge__title">SHREE BHATIAWADI TRUST</div>
+          <div class="contact-map-badge__text">
+            Bhatiawadi, Kalbadevi, Mumbai — 400002, Maharashtra, India
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       5. EXACT GLOBAL FOOTER COMPONENT
+       ========================================================================== -->
+  <footer class="footer">
+    <canvas class="section-particle-canvas" data-particle-section="footer" aria-hidden="true"></canvas>
+
+    <div class="container">
+      <div class="footer__grid reveal-fade-up">
+
+        <div class="footer__brand">
+          <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Trust Heritage Logo" class="footer__logo"
+            width="100" height="auto" loading="lazy">
+          <span class="footer__tagline">Serving with Devotion</span>
+          <p class="footer__description">
+            A legacy of charitable service and cultural preservation, dedicated to uplifting our community.
+          </p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__column-title">QUICK LINKS</h4>
+          <ul class="footer__links">
+            <li><a href="about.html" class="footer__link">About Us</a></li>
+            <li><a href="history.html" class="footer__link">History</a></li>
+            <li><a href="banquet-halls.html" class="footer__link">Banquet Halls</a></li>
+            <li><a href="cultural-forum.html" class="footer__link">Cultural Forum</a></li>
+            <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__column-title">SUPPORT</h4>
+          <ul class="footer__links">
+            <li><a href="donate.html" class="footer__link">Donate</a></li>
+            <li><a href="volunteer.html" class="footer__link">Volunteer</a></li>
+            <li><a href="trustees.html" class="footer__link">Trustee Information</a></li>
+            <li><a href="faqs.html" class="footer__link">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__column-title">CONTACT US</h4>
+          <ul class="footer__contact-list">
+            <li>
+              <a href="#" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Bhatiyawadi, Mumbai,<br>Maharashtra, India</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+9102212345678" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+                <span>+91 (022) 1234-5678</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@shreebhatiwadi.org" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>info@shreebhatiwadi.org</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner">
+        <span class="footer__copyright">&copy; 2024 Shree Bhatiyawadi Trust. All rights reserved.</span>
+        <ul class="footer__legal-links">
+          <li><a href="privacy.html" class="footer__legal-link">Privacy Policy</a></li>
+          <li><a href="terms.html" class="footer__legal-link">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript Controllers -->
+  <script src="js/navbar.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
