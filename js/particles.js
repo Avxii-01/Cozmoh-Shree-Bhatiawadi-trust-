@@ -260,7 +260,21 @@ window.SBTParticles = (function SBTParticles() {
 
   SectionInstance.prototype.observe = function () {
     var self = this;
-    if ('IntersectionObserver' in window) {
+    var parent = this.canvas.parentElement;
+
+    if ('ResizeObserver' in window && parent) {
+      this.resizeObserver = new ResizeObserver(function () {
+        var prevW = self.W;
+        var prevH = self.H;
+        self.resize();
+        if (Math.abs(self.W - prevW) > 5 || Math.abs(self.H - prevH) > 5) {
+          self.build();
+        }
+      });
+      this.resizeObserver.observe(parent);
+    }
+
+    if ('IntersectionObserver' in window && parent) {
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           self.isVisible = entry.isIntersecting;
@@ -272,7 +286,7 @@ window.SBTParticles = (function SBTParticles() {
           }
         });
       }, { threshold: 0.05 });
-      observer.observe(this.canvas.parentElement);
+      observer.observe(parent);
     } else {
       this.isVisible = true;
       this.active = true;
@@ -320,14 +334,19 @@ window.SBTParticles = (function SBTParticles() {
   }
 
   function boot() {
-    document.addEventListener('sbt:preloader-done', function onDone() {
-      document.removeEventListener('sbt:preloader-done', onDone);
+    var preloader = document.getElementById('preloader');
+    if (preloader) {
+      document.addEventListener('sbt:preloader-done', function onDone() {
+        document.removeEventListener('sbt:preloader-done', onDone);
+        initAll();
+      });
+      setTimeout(function () {
+        if (!isInitialized) initAll();
+      }, 3500);
+    } else {
+      /* Inner pages without preloader initialize immediately */
       initAll();
-    });
-
-    setTimeout(function () {
-      if (!isInitialized) initAll();
-    }, 6000);
+    }
   }
 
   if (document.readyState === 'loading') {

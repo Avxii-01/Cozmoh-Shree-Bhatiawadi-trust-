@@ -139,6 +139,8 @@
 .history-hero__heading-gold {
   color: var(--gold, #C89A4A);
   display: block;
+  font-style: italic;
+  font-weight: 400;
 }
 
 .history-hero__divider {
@@ -434,6 +436,12 @@
   margin: 0 0 16px 0;
   letter-spacing: -0.01em;
   text-shadow: none !important;
+}
+
+.history-timeline__title-gold {
+  color: var(--gold, #C89A4A);
+  font-style: italic;
+  font-weight: 400;
 }
 
 .history-timeline__subtitle {
