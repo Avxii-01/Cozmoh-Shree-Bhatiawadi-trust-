@@ -149,6 +149,12 @@
   filter: none !important;
 }
 
+.about-hero__heading-gold {
+  color: var(--gold, #C89A4A);
+  font-style: italic;
+  font-weight: 400;
+}
+
 /* 3. Subtle Royal Decorative Divider */
 .about-hero__divider {
   display: flex;
@@ -493,6 +499,8 @@
 
 .about-purpose__panel-heading-gold {
   color: var(--gold, #C89A4A);
+  font-style: italic;
+  font-weight: 400;
   text-shadow: none !important;
 }
 

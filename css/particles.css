@@ -5,6 +5,9 @@
 
 /* ── Section Stacking Context Setup ─────────────────────────────────── */
 .hero,
+.about-hero,
+.about-purpose,
+.about-values,
 .banquet-section,
 .legacy-section,
 .stats-section,
@@ -18,6 +21,7 @@
 
 /* Ensure background pseudo-elements (::before, ::after) stay at z-index: 0 */
 .hero::before,
+.about-purpose::before,
 .legacy-section::before,
 .stats-section::before,
 .events-section::before,
@@ -39,6 +43,9 @@
 
 /* ── Container Content Z-Index Lock ────────────────────────────────── */
 .hero__container,
+.about-hero__container,
+.about-purpose__container,
+.about-values__container,
 .banquet-section .container,
 .banquet__container,
 .legacy__container,

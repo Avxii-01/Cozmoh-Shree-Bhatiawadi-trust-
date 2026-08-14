@@ -92,6 +92,8 @@
 .initiatives-title__gold {
   color: var(--gold, #C89A4A);
   display: block;
+  font-style: italic;
+  font-weight: 400;
 }
 
 .initiatives-desc {
