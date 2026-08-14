@@ -202,7 +202,7 @@
   align-items: center;
   gap: var(--space-16, 16px);
   flex-wrap: wrap;
-  margin-bottom: clamp(32px, 4vw, 56px);
+  margin-bottom: 0;
 }
 
 /* Primary Gold Button (12px rounded, gradient hover glow) */
@@ -271,65 +271,6 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
-/* ── Mouse Scroll Indicator ───────────────────────────────────────────── */
-.hero__scroll-indicator {
-  display: flex;
-  align-items: center;
-  gap: var(--space-12, 12px);
-  cursor: pointer;
-  opacity: 0.85;
-  transition: opacity 300ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1));
-  user-select: none;
-}
-
-.hero__scroll-indicator:hover {
-  opacity: 1;
-}
-
-.hero__mouse {
-  width: 22px;
-  height: 36px;
-  border: 1.5px solid var(--gold, #C89A4A);
-  border-radius: 12px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  box-shadow: 0 0 10px rgba(200, 154, 74, 0.2);
-}
-
-.hero__mouse-wheel {
-  width: 3px;
-  height: 7px;
-  background-color: var(--gold, #C89A4A);
-  border-radius: 2px;
-  margin-top: 6px;
-  animation: heroScrollWheel 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
-}
-
-@keyframes heroScrollWheel {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  60% {
-    transform: translateY(12px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-}
-
-.hero__scroll-label {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-secondary, #C9B8A0);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-}
-
 /* ── Mughal Corner Ornament (Bottom Right) ───────────────────────────── */
 .hero__ornament-corner {
   position: absolute;
@@ -359,16 +300,12 @@
 .hero.hero--animated .hero__title { transition-delay: 300ms; }
 .hero.hero--animated .hero__paragraph { transition-delay: 450ms; }
 .hero.hero--animated .hero__actions { transition-delay: 600ms; }
-.hero.hero--animated .hero__scroll-indicator { transition-delay: 750ms; }
 
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   .hero__bg-image {
     animation: none !important;
     transform: scale(1) !important;
-  }
-  .hero__mouse-wheel {
-    animation: none !important;
   }
   .hero .reveal-fade-up {
     opacity: 1 !important;

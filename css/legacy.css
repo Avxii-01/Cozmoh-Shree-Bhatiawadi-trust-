@@ -119,9 +119,10 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(to top,
-      rgba(18, 15, 13, 0.96) 0%,
-      rgba(23, 18, 15, 0.65) 50%,
-      rgba(23, 18, 15, 0.10) 100%);
+      rgba(18, 15, 13, 0.98) 0%,
+      rgba(21, 16, 13, 0.88) 35%,
+      rgba(23, 18, 15, 0.55) 65%,
+      rgba(23, 18, 15, 0.08) 100%);
   z-index: 2;
 }
 
