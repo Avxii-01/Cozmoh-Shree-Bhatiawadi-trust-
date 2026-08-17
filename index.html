@@ -53,37 +53,54 @@
        ========================================================================== -->
   <div id="preloader" role="status" aria-label="Loading Shree Bhatiawadi Trust" data-preloader>
 
-    <!-- Ambient full-screen warm glow -->
+    <!-- Layer 1: Ambient warm background glow -->
     <div class="preloader__ambient" aria-hidden="true"></div>
 
-    <!-- Radial halo glow expanding behind logo and into hero background -->
+    <!-- Layer 2: Subtle vignette for depth -->
+    <div class="preloader__vignette" aria-hidden="true"></div>
+
+    <!-- Layer 3: Soft central halo glow behind emblem -->
     <div class="preloader__glow" aria-hidden="true"></div>
 
-    <!-- Logo Container with SVG Spark Trace & Gold Fill -->
-    <div class="preloader__logo-container">
-      <svg class="preloader__svg-trace" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true">
-        <!-- Golden stroke outline path drawn by animation -->
-        <path class="preloader__path-trace"
-          d="M50 8 C32 20, 20 34, 20 60 C20 78, 33 90, 50 90 C67 90, 80 78, 80 60 C80 34, 68 20, 50 8 Z M50 25 L65 42 L35 42 Z"
-          stroke="#C89B3C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-        <!-- Spark point circle head at tip -->
-        <circle class="preloader__spark" cx="50" cy="8" r="3.5" fill="#FFF3D1" filter="drop-shadow(0 0 6px #C89B3C)" />
-      </svg>
-      <!-- Logo gold fill image overlay -->
-      <div class="preloader__logo-fill">
-        <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Trust Emblem" class="preloader__logo-img" width="110"
-          height="110" draggable="false">
+    <!-- Layer 4: Floating gold dust particles -->
+    <canvas class="preloader__particles" id="preloader-particles" aria-hidden="true"></canvas>
+
+    <!-- Ceremonial Hero Logo & Tagline Container -->
+    <div class="preloader__content">
+      <!-- Logo Container: Houses the concentric ceremonial golden framing ring & actual official logo reveal -->
+      <div class="preloader__emblem-wrap">
+        
+        <!-- Ceremonial Golden Framing Ring (Concentric to the official logo's optical bounds: 928x895) -->
+        <svg class="preloader__framing-arc" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Concentric framing ring: rx=490, ry=474, stroke-width=12 (approx 1.8-2px on desktop screen) -->
+          <ellipse class="preloader__arc-path" cx="500" cy="500" rx="490" ry="474" stroke="#C89A4A" stroke-width="12" stroke-linecap="round" />
+        </svg>
+
+        <!-- Official Authentic Logo: Progressive Materialization (Emerging from Darkness) -->
+        <div class="preloader__logo-container">
+          <!-- Deep gold / soft shadow under-layer for physical depth -->
+          <div class="preloader__logo-depth">
+            <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Trust Heritage Emblem" class="preloader__logo-img preloader__logo-img--depth" width="928" height="895" draggable="false">
+          </div>
+          <!-- Sharp illuminated authentic master logo -->
+          <div class="preloader__logo-master">
+            <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Trust Master Logo" class="preloader__logo-img preloader__logo-img--master" width="928" height="895" draggable="false">
+          </div>
+        </div>
+
       </div>
-    </div>
 
-    <!-- Gold horizontal rule -->
-    <hr class="preloader__rule" aria-hidden="true">
+      <!-- Refined Heritage Ornament Divider (Appears BEFORE Tagline) -->
+      <div class="preloader__ornament" aria-hidden="true">
+        <span class="preloader__ornament-line preloader__ornament-line--left"></span>
+        <span class="preloader__ornament-diamond">✦</span>
+        <span class="preloader__ornament-line preloader__ornament-line--right"></span>
+      </div>
 
-    <!-- Wordmark & Tagline -->
-    <div class="preloader__wordmark">
-      <span class="preloader__name">SHREE BHATIAWADI TRUST</span>
-      <span class="preloader__tagline">SERVING WITH DEVOTION</span>
+      <!-- Tagline Reveal (Appears AFTER Divider) -->
+      <div class="preloader__tagline-wrap">
+        <span class="preloader__tagline">SERVING WITH DEVOTION</span>
+      </div>
     </div>
 
   </div><!-- /#preloader -->

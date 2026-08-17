@@ -1,33 +1,37 @@
 /* ==========================================================================
-   SHREE BHATIAWADI TRUST — PREMIUM PRELOADER  (v4 — Refined Spacing & Glow)
-   Dark royal brown overlay · Logo 20% larger · Non-overlapping flex layout
-   Soft glow expansion into homepage transition
+   SHREE BHATIAWADI TRUST — GILDED HERITAGE EMBLEM REVEAL (PRELOADER)
+   Sequence: Golden Line Draws -> Line Completes -> Line Dissolves ->
+             Actual Logo Reveals -> Settle -> Heritage Divider -> Tagline
    ========================================================================== */
 
 /* ── Body states ─────────────────────────────────────────────────────── */
 body.preloader-active {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 body.preloader-active #main-navbar,
 body.preloader-active main,
-body.preloader-active .footer {
+body.preloader-active .footer,
+body.preloader-active .floating-wa-btn {
   opacity: 0;
+  pointer-events: none;
 }
 
 body.page-ready #main-navbar,
 body.page-ready main,
-body.page-ready .footer {
+body.page-ready .footer,
+body.page-ready .floating-wa-btn {
   opacity: 1;
-  transition: opacity 900ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: auto;
+  transition: opacity 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* ── Full-screen overlay ─────────────────────────────────────────────── */
 #preloader {
   position: fixed;
   inset: 0;
-  z-index: 9999;
-  background-color: #15120F;
+  z-index: 99999;
+  background-color: var(--bg-dark, #15120F);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,8 +40,9 @@ body.page-ready .footer {
   visibility: visible;
   padding: 24px;
   box-sizing: border-box;
-  transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1),
-              visibility 1200ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #preloader.preloader--exit {
@@ -46,219 +51,429 @@ body.page-ready .footer {
   pointer-events: none;
 }
 
-/* ── Ambient background glow ─────────────────────────────────────────── */
+/* ── Layer 1: Ambient background glow (Calm, Warm Atmosphere) ────────── */
 .preloader__ambient {
   position: absolute;
   inset: 0;
   pointer-events: none;
   background: radial-gradient(
-    ellipse 65% 60% at 50% 50%,
-    rgba(200, 155, 60, 0.08) 0%,
-    transparent 70%
+    ellipse 75% 65% at 50% 50%,
+    rgba(200, 154, 74, 0.09) 0%,
+    rgba(200, 154, 74, 0.02) 45%,
+    transparent 75%
   );
-  animation: preloader-ambient-breathe 4s ease-in-out infinite;
+  animation: preloader-ambient-breathe 5s ease-in-out infinite alternate;
 }
 
-/* ── Glow expanding behind logo & into hero ──────────────────── */
+/* ── Layer 2: Subtle Vignette ────────────────────────────────────────── */
+.preloader__vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    transparent 45%,
+    rgba(12, 9, 7, 0.60) 100%
+  );
+}
+
+/* ── Layer 3: Central Golden Halo Glow (Behind Logo) ─────────────────── */
 .preloader__glow {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   background: radial-gradient(
     circle at center,
-    rgba(200, 155, 60, 0.32) 0%,
-    rgba(200, 155, 60, 0.14) 40%,
-    rgba(200, 155, 60, 0.03) 65%,
+    rgba(200, 154, 74, 0.25) 0%,
+    rgba(200, 154, 74, 0.09) 40%,
+    rgba(200, 154, 74, 0.02) 65%,
     transparent 80%
   );
   opacity: 0;
-  transform: scale(0.6);
-  animation: preloader-glow-appear 1000ms cubic-bezier(0.22, 1, 0.36, 1) 1500ms forwards,
-             preloader-glow-pulse  3.5s  ease-in-out                     2500ms infinite;
+  transform: scale(0.7);
   pointer-events: none;
+  /* Emerges softly as line draws (600ms), remains when line disappears, settles with logo */
+  animation: preloader-glow-reveal 2400ms cubic-bezier(0.22, 1, 0.36, 1) 800ms forwards,
+             preloader-glow-breathe 4s ease-in-out 3200ms infinite alternate;
 }
 
-/* On exit, glow expands into hero background as homepage softly fades in */
 #preloader.preloader--exit .preloader__glow {
-  animation: preloader-glow-expand-hero 1200ms cubic-bezier(0.2, 0, 0.3, 1) forwards;
+  animation: preloader-glow-exit 1000ms cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-/* ── SVG Logo & Trace Container (20% Larger: 132px) ──────────────────── */
+/* ── Layer 4: Particle Canvas ────────────────────────────────────────── */
+.preloader__particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Preloader Content Wrapper ────────────────────────────────────────── */
+.preloader__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ── Emblem Wrap Container (Houses Framing Ring + Official Logo) ─────── */
+.preloader__emblem-wrap {
+  position: relative;
+  width: 156px;
+  height: 156px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Ceremonial Golden Framing Ring (Draws 800-2500ms, Holds, Dissolves 2750-3100ms) ─ */
+.preloader__framing-arc {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  transform: rotate(-90deg); /* Starts gracefully from top center */
+  filter: drop-shadow(0 0 5px rgba(200, 154, 74, 0.55));
+  animation: preloader-ring-dissolve 350ms cubic-bezier(0.4, 0, 0.2, 1) 2750ms forwards;
+}
+
+.preloader__arc-path {
+  stroke-dasharray: 3040;
+  stroke-dashoffset: 3040;
+  animation: preloader-arc-draw 1700ms cubic-bezier(0.4, 0, 0.2, 1) 800ms forwards;
+}
+
+/* ── Official Master Logo Materialization (Reveals 2950ms - 3500ms, Settles 3500-3800ms) ─ */
 .preloader__logo-container {
   position: relative;
-  width: 132px;
-  height: 132px;
-  margin-bottom: 24px; /* Distinct vertical separation */
-  z-index: 1;
-  flex-shrink: 0;
+  width: 92.8%;  /* Perfectly nested within the 1000x1000 coordinate frame (928/1000) */
+  height: 89.5%; /* (895/1000) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.preloader__svg-trace {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* Path stroke dash tracing */
-.preloader__path-trace {
-  stroke-dasharray: 450;
-  stroke-dashoffset: 450;
-  animation: preloader-trace-path 1400ms cubic-bezier(0.45, 0, 0.25, 1) 400ms forwards;
-}
-
-/* Spark head animation */
-.preloader__spark {
-  opacity: 0;
-  animation: preloader-spark-fade 1400ms ease-in-out 400ms forwards;
-}
-
-/* Logo gold fill fade-in */
-.preloader__logo-fill {
-  opacity: 0;
-  transform: scale(0.92);
-  animation: preloader-fill-gold 900ms cubic-bezier(0.22, 1, 0.36, 1) 1600ms forwards;
-  width: 100%;
-  height: 100%;
+/* Phase A: Deep Gold / Ambient Shadow Underlayer */
+.preloader__logo-depth {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0.96);
+  filter: brightness(0.7) contrast(1.1) blur(1.5px) drop-shadow(0 2px 14px rgba(200, 154, 74, 0.2));
+  animation: preloader-depth-emerge 600ms cubic-bezier(0.22, 1, 0.36, 1) 2900ms forwards;
+}
+
+/* Phase B: Sharp Master Logo Reveal */
+.preloader__logo-master {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0.97);
+  filter: drop-shadow(0 4px 22px rgba(200, 154, 74, 0.32));
+  animation: preloader-master-reveal 650ms cubic-bezier(0.22, 1, 0.36, 1) 2950ms forwards,
+             preloader-master-settle 400ms cubic-bezier(0.25, 1, 0.5, 1) 3500ms forwards;
 }
 
 .preloader__logo-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(200, 154, 74, 0.35));
+  display: block;
 }
 
-/* ── Separator rule ──────────────────────────────────────────────────── */
-.preloader__rule {
-  width: 0;
-  height: 1px;
-  background: linear-gradient(to right, transparent, #C89B3C 30%, #C89B3C 70%, transparent);
-  margin-top: 0;
-  margin-bottom: 20px;
-  border: none;
-  opacity: 0;
-  flex-shrink: 0;
-  animation: preloader-rule-draw 800ms ease-out 2200ms forwards;
-}
-
-/* ── Wordmark & Tagline Layout ──────────────────────────────────────── */
-.preloader__wordmark {
+/* ── Refined Heritage Ornament Divider (3800ms - 4300ms) ─────────────── */
+.preloader__ornament {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  z-index: 1;
-  flex-shrink: 0;
+  gap: 12px;
+  margin-top: 24px;
+  opacity: 0;
+  animation: preloader-ornament-fade 500ms ease-out 3800ms forwards;
 }
 
-.preloader__name {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.5625rem; /* 25px */
-  font-weight: 600;
-  color: #FFFFFF;
-  letter-spacing: 0.07em;
-  text-align: center;
-  line-height: 1.2;
-  margin: 0;
+.preloader__ornament-line {
   display: block;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold, #C89A4A), transparent);
+}
+
+.preloader__ornament-line--left,
+.preloader__ornament-line--right {
+  animation: preloader-draw-divider 500ms cubic-bezier(0.22, 1, 0.36, 1) 3800ms forwards;
+}
+
+.preloader__ornament-diamond {
+  font-size: 0.65rem;
+  color: var(--gold, #C89A4A);
+  line-height: 1;
+  text-shadow: 0 0 6px rgba(200, 154, 74, 0.5);
   opacity: 0;
-  transform: translateY(10px);
-  animation: preloader-wordmark-in 750ms cubic-bezier(0.22, 1, 0.36, 1) 2400ms forwards;
+  transform: scale(0.5);
+  animation: preloader-diamond-reveal 400ms cubic-bezier(0.22, 1, 0.36, 1) 3800ms forwards;
+}
+
+/* ── Tagline Reveal (4200ms - 4700ms) ────────────────────────────────── */
+.preloader__tagline-wrap {
+  margin-top: 10px;
+  overflow: hidden;
 }
 
 .preloader__tagline {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #C89B3C;
-  letter-spacing: 0.28em;
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gold, #C89A4A);
+  letter-spacing: 0.26em;
   text-transform: uppercase;
-  text-align: center;
-  line-height: 1.2;
-  margin: 0;
   display: block;
   opacity: 0;
   transform: translateY(8px);
-  animation: preloader-wordmark-in 700ms ease-out 2750ms forwards;
+  animation: preloader-tagline-reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) 4200ms forwards;
+}
+
+/* ── Exit Fade for Content ────────────────────────────────────────────── */
+#preloader.preloader--exit .preloader__content {
+  animation: preloader-content-exit 900ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 /* ── Keyframes ────────────────────────────────────────────────────────── */
-@keyframes preloader-trace-path {
-  0%   { stroke-dashoffset: 450; }
-  100% { stroke-dashoffset: 0;   }
+
+/* 1. Golden Framing Ring Draw */
+@keyframes preloader-arc-draw {
+  0% {
+    stroke-dashoffset: 3040;
+    opacity: 0.3;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
 }
 
-@keyframes preloader-spark-fade {
-  0%   { opacity: 0; }
-  15%  { opacity: 1; }
-  85%  { opacity: 1; }
-  100% { opacity: 0; }
+/* 2. Ring Elegant Dissolve (opacity 1->0, subtle scale 1->1.02) */
+@keyframes preloader-ring-dissolve {
+  0% {
+    opacity: 1;
+    transform: rotate(-90deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-90deg) scale(1.02);
+  }
 }
 
-@keyframes preloader-fill-gold {
-  0%   { opacity: 0; transform: scale(0.92); }
-  100% { opacity: 1; transform: scale(1);    }
+/* 3. Deep Shadow Underlayer Emerge */
+@keyframes preloader-depth-emerge {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    filter: brightness(0.5) blur(2.5px);
+  }
+  100% {
+    opacity: 0.75;
+    transform: scale(0.97);
+    filter: brightness(0.7) blur(1.2px);
+  }
 }
 
-@keyframes preloader-glow-appear {
-  0%   { opacity: 0; transform: scale(0.6); }
-  100% { opacity: 1; transform: scale(1);   }
+/* 4. Sharp Master Logo Reveal */
+@keyframes preloader-master-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+    filter: brightness(0.8) contrast(1.1);
+  }
+  60% {
+    opacity: 0.85;
+    filter: brightness(1.05) contrast(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(0.99);
+    filter: brightness(1) contrast(1);
+  }
 }
 
-@keyframes preloader-glow-pulse {
-  0%,  100% { transform: scale(1);    opacity: 0.85; }
-  50%        { transform: scale(1.12); opacity: 1;    }
+@keyframes preloader-master-settle {
+  0% {
+    transform: scale(0.99);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-@keyframes preloader-glow-expand-hero {
-  0%   { opacity: 1; transform: scale(1);   }
-  100% { opacity: 0; transform: scale(5.5); }
+/* 5. Golden Halo Glow Keyframes */
+@keyframes preloader-glow-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+  60% {
+    opacity: 0.85;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
 }
 
-@keyframes preloader-rule-draw {
-  0%   { width: 0;     opacity: 0; }
-  100% { width: 140px; opacity: 1; }
+@keyframes preloader-glow-breathe {
+  0%   { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 0.85; transform: scale(1.05); }
 }
 
-@keyframes preloader-wordmark-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0);    }
-}
-
+/* 6. Ambient Background Pulse */
 @keyframes preloader-ambient-breathe {
-  0%, 100% { opacity: 0.5; }
-  50%       { opacity: 0.9; }
+  0%   { opacity: 0.6; transform: scale(0.96); }
+  100% { opacity: 1;   transform: scale(1.04); }
 }
 
-/* ── Reduced Motion ─────────────────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  .preloader__logo-fill,
-  .preloader__name,
+/* 7. Heritage Divider & Diamond */
+@keyframes preloader-draw-divider {
+  0%   { width: 0; }
+  100% { width: 40px; }
+}
+
+@keyframes preloader-ornament-fade {
+  0%   { opacity: 0; }
+  100% { opacity: 0.9; }
+}
+
+@keyframes preloader-diamond-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 8. Tagline Rise */
+@keyframes preloader-tagline-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 9. Exit Animations */
+@keyframes preloader-content-exit {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes preloader-glow-exit {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+
+/* ── Responsive Scaling (Proportional locking) ───────────────────────── */
+@media (max-width: 768px) {
+  .preloader__emblem-wrap {
+    width: 130px;
+    height: 130px;
+  }
   .preloader__tagline {
-    animation: none;
-    opacity: 1;
-    transform: none;
+    font-size: 0.625rem;
+    letter-spacing: 0.22em;
   }
-  .preloader__path-trace,
-  .preloader__spark {
-    display: none;
+  .preloader__glow {
+    width: 270px;
+    height: 270px;
   }
-  .preloader__rule {
-    animation: none;
-    width: 140px;
-    opacity: 1;
+  @keyframes preloader-draw-divider {
+    0%   { width: 0; }
+    100% { width: 32px; }
   }
+}
+
+@media (max-width: 480px) {
+  .preloader__emblem-wrap {
+    width: 112px;
+    height: 112px;
+  }
+  .preloader__ornament {
+    margin-top: 18px;
+    gap: 8px;
+  }
+  @keyframes preloader-draw-divider {
+    0%   { width: 0; }
+    100% { width: 24px; }
+  }
+  .preloader__tagline-wrap {
+    margin-top: 8px;
+  }
+  .preloader__tagline {
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+  }
+  .preloader__glow {
+    width: 230px;
+    height: 230px;
+  }
+}
+
+/* ── Reduced Motion Support ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .preloader__ambient,
   .preloader__glow,
-  .preloader__ambient {
-    animation: none;
-    opacity: 1;
+  .preloader__logo-depth,
+  .preloader__logo-master,
+  .preloader__ornament,
+  .preloader__ornament-diamond,
+  .preloader__tagline,
+  .preloader__content {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .preloader__framing-arc,
+  .preloader__particles {
+    display: none !important;
+  }
+  .preloader__ornament-line {
+    width: 40px !important;
+    animation: none !important;
   }
   #preloader {
-    transition: opacity 200ms ease, visibility 200ms ease;
+    transition: opacity 300ms ease, visibility 300ms ease !important;
   }
 }
