@@ -10,103 +10,108 @@ const TRUSTEES_DATA = [
     id: 1,
     name: "Viren Merchant",
     role: "CHAIRPERSON",
-    image: "assets/trustees/person1.JPG",
+    image: "assets/trustees/person7.JPG",
     bio: "A dedicated member of the trust committed to supporting the organisation's mission, preserving its heritage, and serving the community with integrity.",
-    appointed: "To Be Updated",
-    service: "To Be Updated"
+    appointed: "2005",
+    service: "19 years"
   },
   {
     id: 2,
-    name: "Hemant Lilani",
+    name: "Mukund Zaveri",
     role: "TRUSTEE MEMBER",
     image: "assets/trustees/person2.JPG",
     bio: "A dedicated member of the trust committed to supporting the organisation's mission, preserving its heritage, and serving the community with integrity.",
-    appointed: "To Be Updated",
-    service: "To Be Updated"
+    appointed: "2009",
+    service: "15 years"
   },
   {
     id: 3,
-    name: "Rajesh Lilani",
+    name: "Haren Merchant",
     role: "TRUSTEE MEMBER",
-    image: "assets/trustees/person3.JPG",
+    image: "assets/trustees/Haren Merchant Kurta 1.png",
     bio: "A dedicated member of the trust committed to supporting the organisation's mission, preserving its heritage, and serving the community with integrity.",
-    appointed: "To Be Updated",
-    service: "To Be Updated"
+    appointed: "2005",
+    service: "19 years"
   },
   {
     id: 4,
-    name: "Krish Merchant",
+    name: "Meet Merchant",
     role: "TRUSTEE MEMBER",
     image: "assets/trustees/person4.JPG",
     bio: "A dedicated member of the trust committed to supporting the organisation's mission, preserving its heritage, and serving the community with integrity.",
-    appointed: "To Be Updated",
-    service: "To Be Updated"
+    appointed: "2026",
+    service: "New"
   },
   {
     id: 5,
-    name: "Dheer Merchant",
+    name: "Bhavik Lilani",
     role: "TRUSTEE MEMBER",
     image: "assets/trustees/person5.JPG",
     bio: "A dedicated member of the trust committed to supporting the organisation's mission, preserving its heritage, and serving the community with integrity.",
-    appointed: "To Be Updated",
-    service: "To Be Updated"
+    appointed: "2026",
+    service: "New"
   },
   {
     id: 6,
-    name: "Bhavik Lilani",
+    name: "Krish Merchant",
     role: "TRUSTEE MEMBER",
     image: "assets/trustees/person6.JPG",
     bio: "A dedicated member of the trust committed to supporting the organisation's mission, preserving its heritage, and serving the community with integrity.",
-    appointed: "To Be Updated",
-    service: "To Be Updated"
+    appointed: "2026",
+    service: "New"
   },
   {
     id: 7,
-    name: "Meet Merchant",
+    name: "Dheer Merchant",
     role: "TRUSTEE MEMBER",
-    image: "assets/trustees/person7.JPG",
+    image: "assets/trustees/person1.JPG",
     bio: "A dedicated member of the trust committed to supporting the organisation's mission, preserving its heritage, and serving the community with integrity.",
-    appointed: "To Be Updated",
-    service: "To Be Updated"
+    appointed: "2026",
+    service: "New"
   },
   {
     id: 8,
-    name: "Rohit Dhagai",
+    name: "Manish Merchant",
     role: "TRUSTEE MEMBER",
     image: "assets/trustees/person8.JPG",
     bio: "A dedicated member of the trust committed to supporting the organisation's mission, preserving its heritage, and serving the community with integrity.",
-    appointed: "To Be Updated",
-    service: "To Be Updated"
+    appointed: "2026",
+    service: "New"
   },
   {
     id: 9,
-    name: "Haren Merchant",
+    name: "Rajesh Lilani",
     role: "TRUSTEE MEMBER",
     image: "assets/trustees/person9.JPG",
     bio: "A dedicated member of the trust committed to supporting the organisation's mission, preserving its heritage, and serving the community with integrity.",
-    appointed: "To Be Updated",
-    service: "To Be Updated"
+    appointed: "2005",
+    service: "19 years"
   },
   {
     id: 10,
-    name: "Mukund Zaveri",
+    name: "Rohit Dhagai",
     role: "TRUSTEE MEMBER",
     image: "assets/trustees/person10.JPG",
     bio: "A dedicated member of the trust committed to supporting the organisation's mission, preserving its heritage, and serving the community with integrity.",
-    appointed: "To Be Updated",
-    service: "To Be Updated"
+    appointed: "2009",
+    service: "15 years"
   },
   {
     id: 11,
-    name: "Manish Merchant",
+    name: "Hemant Lilani",
     role: "TRUSTEE MEMBER",
     image: "assets/trustees/person11.jpg",
     bio: "A dedicated member of the trust committed to supporting the organisation's mission, preserving its heritage, and serving the community with integrity.",
-    appointed: "To Be Updated",
-    service: "To Be Updated"
+    appointed: "2009",
+    service: "15 years"
   }
 ];
 
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { TRUSTES_DATA: TRUSTEES_DATA };
+if (typeof window !== 'undefined') {
+  window.TRUSTEES_DATA = TRUSTEES_DATA;
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { TRUSTEES_DATA, TRUSTES_DATA: TRUSTEES_DATA };
+}
+
