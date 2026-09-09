@@ -2,8 +2,8 @@
  * ==========================================================================
  * SHREE BHATIAWADI TRUST — TRUSTEES RENDERER (js/trustees.js)
  * Single source of truth rendering for archival trustees register.
- * Reads TRUSTEES_DATA, sorts programmatically, and dynamically generates
- * alternating editorial entries adhering strictly to design architecture.
+ * Reads TRUSTEES_DATA and dynamically generates alternating editorial entries
+ * adhering strictly to the explicit order defined in js/trustees-data.js.
  * ==========================================================================
  */
 
@@ -26,52 +26,12 @@
   }
 
   /**
-   * Sort trustees data according to institutional governance rules:
-   * 1. CHAIRPERSON always appears first.
-   * 2. Remaining TRUSTEE MEMBER entries sorted by appointment year ascending (oldest -> newest).
-   * 3. Same appointment year preserves original index order from TRUSTEES_DATA.
-   * 4. Missing/non-numeric appointment years placed after valid years (preserving relative order).
+   * Automatic sorting disabled: renders trustees strictly in the explicit order
+   * defined in js/trustees-data.js.
    */
   function sortTrustees(data) {
     if (!Array.isArray(data)) return [];
-
-    var itemsWithIndex = data.map(function (item, index) {
-      return {
-        item: item,
-        originalIndex: index
-      };
-    });
-
-    itemsWithIndex.sort(function (a, b) {
-      var itemA = a.item;
-      var itemB = b.item;
-
-      var aIsChair = Boolean(itemA.role && itemA.role.toUpperCase().indexOf('CHAIRPERSON') !== -1);
-      var bIsChair = Boolean(itemB.role && itemB.role.toUpperCase().indexOf('CHAIRPERSON') !== -1);
-
-      if (aIsChair && !bIsChair) return -1;
-      if (!aIsChair && bIsChair) return 1;
-
-      var yearA = parseInt(itemA.appointed, 10);
-      var yearB = parseInt(itemB.appointed, 10);
-      var aValidYear = !isNaN(yearA);
-      var bValidYear = !isNaN(yearB);
-
-      if (aValidYear && !bValidYear) return -1;
-      if (!aValidYear && bValidYear) return 1;
-
-      if (aValidYear && bValidYear) {
-        if (yearA !== yearB) {
-          return yearA - yearB;
-        }
-      }
-
-      return a.originalIndex - b.originalIndex;
-    });
-
-    return itemsWithIndex.map(function (wrapper) {
-      return wrapper.item;
-    });
+    return data.slice();
   }
 
   /**
