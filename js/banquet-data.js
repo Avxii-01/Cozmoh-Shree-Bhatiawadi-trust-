@@ -12,10 +12,12 @@ window.venueCollectionData = [
     name: 'Basil Hall',
     tagline: 'GRAND. ELEGANT. TIMELESS.',
     description: 'A grand and spacious venue designed for large celebrations, wedding receptions, and cultural galas with exceptional comfort and world-class facilities.',
-    seatingCapacity: '400',
-    seatingLabel: 'SEATED CAPACITY',
-    movingCapacity: '600',
-    movingLabel: 'MOVING CAPACITY',
+    capacity: '400+',
+    capacityLabel: 'Guests',
+    seatingCapacity: '400+',
+    seatingLabel: 'GUESTS',
+    movingCapacity: '400+',
+    movingLabel: 'GUESTS',
     images: [
       'assets/banquets/hall1.png',
       'assets/banquets/hall2.png',
@@ -35,15 +37,17 @@ window.venueCollectionData = [
     bookingUrl: 'contact.html#book-basil'
   },
   {
-    id: 'leaf-hall',
+    id: 'bayleaf-hall',
     number: '02',
-    name: 'Leaf Hall',
+    name: 'Bayleaf Hall',
     tagline: 'SERENE. REFINED. CHARMING.',
     description: 'An elegantly appointed banquet hall suitable for medium-sized functions, engagement ceremonies, anniversary parties, and corporate seminars.',
-    seatingCapacity: '250',
-    seatingLabel: 'SEATED CAPACITY',
-    movingCapacity: '400',
-    movingLabel: 'MOVING CAPACITY',
+    capacity: '200+',
+    capacityLabel: 'Guests',
+    seatingCapacity: '200+',
+    seatingLabel: 'GUESTS',
+    movingCapacity: '200+',
+    movingLabel: 'GUESTS',
     images: [
       'assets/banquets/hall2.png',
       'assets/banquets/hall3.png',
@@ -59,18 +63,20 @@ window.venueCollectionData = [
       { name: 'High-Speed Wi-Fi', icon: '<path d="M5 12.55a11 11 0 0114 0M8.5 16a7 7 0 017 0M12 19h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' },
       { name: 'Valet Parking', icon: '<rect x="4" y="3" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M9 17V7h4a3 3 0 010 6H9" stroke="currentColor" stroke-width="1.5"/>' }
     ],
-    bookingUrl: 'contact.html#book-leaf'
+    bookingUrl: 'contact.html#book-bayleaf'
   },
   {
-    id: 'lotus-hall',
+    id: 'thyme-hall',
     number: '03',
-    name: 'Lotus Hall',
+    name: 'Thyme Hall',
     tagline: 'INTIMATE. REGAL. PRESTIGIOUS.',
     description: 'A cozy yet regal venue crafted specifically for intimate family gatherings, traditional rituals, birthday celebrations, and executive meetings.',
-    seatingCapacity: '150',
-    seatingLabel: 'SEATED CAPACITY',
-    movingCapacity: '250',
-    movingLabel: 'MOVING CAPACITY',
+    capacity: '200+',
+    capacityLabel: 'Guests',
+    seatingCapacity: '200+',
+    seatingLabel: 'GUESTS',
+    movingCapacity: '200+',
+    movingLabel: 'GUESTS',
     images: [
       'assets/banquets/hall3.png',
       'assets/banquets/hall4.png',
@@ -84,18 +90,20 @@ window.venueCollectionData = [
       { name: 'High-Speed Wi-Fi', icon: '<path d="M5 12.55a11 11 0 0114 0M8.5 16a7 7 0 017 0M12 19h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' },
       { name: 'Valet Parking', icon: '<rect x="4" y="3" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M9 17V7h4a3 3 0 010 6H9" stroke="currentColor" stroke-width="1.5"/>' }
     ],
-    bookingUrl: 'contact.html#book-lotus'
+    bookingUrl: 'contact.html#book-thyme'
   },
   {
-    id: 'orchid-hall',
+    id: 'mint-hall',
     number: '04',
-    name: 'Orchid Hall',
+    name: 'Mint Hall',
     tagline: 'OPULENT. MAJESTIC. EXPANSIVE.',
     description: 'A lavishly styled venue featuring intricate heritage motifs, grand chandeliers, and flexible layout options for grand sangeet & reception functions.',
-    seatingCapacity: '350',
-    seatingLabel: 'SEATED CAPACITY',
-    movingCapacity: '550',
-    movingLabel: 'MOVING CAPACITY',
+    capacity: '100+',
+    capacityLabel: 'Guests',
+    seatingCapacity: '100+',
+    seatingLabel: 'GUESTS',
+    movingCapacity: '100+',
+    movingLabel: 'GUESTS',
     images: [
       'assets/banquets/hall4.png',
       'assets/banquets/hall1.png',
@@ -111,6 +119,6 @@ window.venueCollectionData = [
       { name: 'High-Speed Wi-Fi', icon: '<path d="M5 12.55a11 11 0 0114 0M8.5 16a7 7 0 017 0M12 19h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' },
       { name: 'Valet Parking', icon: '<rect x="4" y="3" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M9 17V7h4a3 3 0 010 6H9" stroke="currentColor" stroke-width="1.5"/>' }
     ],
-    bookingUrl: 'contact.html#book-orchid'
+    bookingUrl: 'contact.html#book-mint'
   }
 ];

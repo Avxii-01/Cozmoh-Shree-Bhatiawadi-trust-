@@ -46,17 +46,10 @@ class VenueShowcaseRenderer {
           <span class="vs__tag">${venue.tagline}</span>
           <p class="vs__desc">${venue.description}</p>
           <div class="vs__cap">
-            <div class="vs__cap-item">
-              <svg class="vs__cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0v-5a2 2 0 012-2h2a2 2 0 012 2v5m-6 0h6"/></svg>
-              <span class="vs__cap-val">${venue.seatingCapacity}</span>
-              <span class="vs__cap-lbl">${venue.seatingLabel}</span>
-            </div>
-            <span class="vs__cap-div"></span>
-            <div class="vs__cap-item">
-              <svg class="vs__cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-              <span class="vs__cap-val">${venue.movingCapacity}</span>
-              <span class="vs__cap-lbl">${venue.movingLabel}</span>
-            </div>
+            <span class="vs__cap-motif" aria-hidden="true">✦</span>
+            <span class="vs__cap-val">${venue.capacity || venue.seatingCapacity}</span>
+            <span class="vs__cap-lbl">GUESTS</span>
+            <span class="vs__cap-line" aria-hidden="true"></span>
           </div>
           <ul class="vs__amenities">${amenities}</ul>
           <a href="${venue.bookingUrl}" class="vs__cta">BOOK THIS VENUE <span class="vs__cta-arr">&rarr;</span></a>
@@ -159,7 +152,6 @@ class HallSelectorController {
     this.hallName = document.getElementById('banquet-hall-name');
     this.hallSubtitle = document.getElementById('banquet-hall-subtitle');
     this.seatingVal = document.getElementById('banquet-seating-val');
-    this.standingVal = document.getElementById('banquet-standing-val');
     this.featuresList = document.getElementById('banquet-features-list');
     this.primaryCta = document.querySelector('.banquet-info__buttons .btn--banquet-primary');
     this.secondaryCta = document.querySelector('.banquet-info__buttons .btn--banquet-secondary');
@@ -294,8 +286,9 @@ class HallSelectorController {
     // Update text fields
     if (this.hallName) this.hallName.textContent = venueData.name;
     if (this.hallSubtitle) this.hallSubtitle.textContent = venueData.tagline;
-    if (this.seatingVal) this.seatingVal.textContent = `${venueData.seatingCapacity}+`;
-    if (this.standingVal) this.standingVal.textContent = `${venueData.movingCapacity}+`;
+    const capVal = venueData.capacity || venueData.seatingCapacity;
+    const formattedCap = capVal.endsWith('+') ? capVal : `${capVal}+`;
+    if (this.seatingVal) this.seatingVal.textContent = formattedCap;
 
     // Limit features on homepage card to max 3 key items
     if (this.featuresList && venueData.amenities) {
