@@ -61,7 +61,7 @@ class LegacyTimelineController {
       }
     }
 
-    // Step 3: Sequentially reveal milestones (1948 -> 1960s -> 1980s -> 2000s -> Today) with 150ms delay
+    // Step 3: Sequentially reveal milestones (1953 -> 1955 -> 1976 -> 2006 -> 2009) with 150ms delay
     this.timelineNodes.forEach((node, index) => {
       setTimeout(() => {
         node.classList.add('legacy-timeline__node--active');
