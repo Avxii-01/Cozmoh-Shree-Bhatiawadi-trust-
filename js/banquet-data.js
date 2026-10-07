@@ -19,9 +19,10 @@ window.venueCollectionData = [
     movingCapacity: '400+',
     movingLabel: 'GUESTS',
     images: [
-      'assets/banquets/hall1.png',
-      'assets/banquets/hall2.png',
-      'assets/banquets/hall3.png'
+      'assets/images/client/banquet/basil/basil-hero.webp',
+      'assets/images/client/banquet/basil/basil-gallery-01.webp',
+      'assets/images/client/banquet/basil/basil-gallery-02.webp',
+      'assets/images/client/banquet/basil/basil-gallery-03.webp'
     ],
     amenities: [
       { name: 'Fully AC', icon: '<path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' },
@@ -78,9 +79,10 @@ window.venueCollectionData = [
     movingCapacity: '200+',
     movingLabel: 'GUESTS',
     images: [
-      'assets/banquets/hall3.png',
-      'assets/banquets/hall4.png',
-      'assets/banquets/hall1.png'
+      'assets/images/client/banquet/thyme/thyme-hero.webp',
+      'assets/images/client/banquet/thyme/thyme-gallery-01.webp',
+      'assets/images/client/banquet/thyme/thyme-gallery-02.webp',
+      'assets/images/client/banquet/thyme/thyme-gallery-03.webp'
     ],
     amenities: [
       { name: 'Fully AC', icon: '<path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' },

@@ -140,7 +140,11 @@
     <!-- Multi-Layer Background Infrastructure -->
     <div class="about-hero__bg-wrapper" aria-hidden="true">
       <!-- Full Bleed Cultural / Banquet Interior Image -->
-      <img src="assets/images/about_hero.png" alt="Shree Bhatiawadi Trust Heritage Interior" class="about-hero__bg-img">
+      <picture>
+        <source type="image/avif" srcset="assets/images/client/about/about-hero-640.avif 640w, assets/images/client/about/about-hero-1200.avif 1200w, assets/images/client/about/about-hero-1920.avif 1920w" sizes="100vw">
+        <source type="image/webp" srcset="assets/images/client/about/about-hero-640.webp 640w, assets/images/client/about/about-hero-1200.webp 1200w, assets/images/client/about/about-hero-1920.webp 1920w" sizes="100vw">
+        <img src="assets/images/client/about/about-hero-1920.jpg" srcset="assets/images/client/about/about-hero-640.jpg 640w, assets/images/client/about/about-hero-1200.jpg 1200w, assets/images/client/about/about-hero-1920.jpg 1920w" sizes="100vw" alt="Shree Bhatiawadi Grand Heritage Entrance Gateway" class="about-hero__bg-img" width="1920" height="1080" fetchpriority="high" loading="eager" decoding="async">
+      </picture>
       <!-- Layer 1: Center Dark Radial Overlay for Readability -->
       <div class="about-hero__overlay-center"></div>
       <!-- Layer 2: Top Ambient Shadow for Navbar Readability -->
@@ -511,8 +515,12 @@
         <!-- Initiative Card 5: Cultural Programs (Supporting Card) -->
         <a href="our-work.html#cultural" class="initiative-card initiative-card--supporting-left"
           aria-label="Explore Cultural Programs">
-          <img src="assets/initiatives/cultural.png" alt="Traditional Indian cultural festival performance"
-            class="initiative-card__img" loading="lazy" width="700" height="400">
+          <picture>
+            <source type="image/avif" srcset="assets/images/client/cultural-forum/cultural-forum-hero-640.avif 640w, assets/images/client/cultural-forum/cultural-forum-hero-1200.avif 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+            <source type="image/webp" srcset="assets/images/client/cultural-forum/cultural-forum-hero-640.webp 640w, assets/images/client/cultural-forum/cultural-forum-hero-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+            <img src="assets/images/client/cultural-forum/cultural-forum-hero-1200.jpg" alt="Traditional Indian cultural festival and heritage gatherings at Shree Bhatiawadi"
+              class="initiative-card__img" loading="lazy" decoding="async" width="700" height="400">
+          </picture>
           <div class="initiative-card__overlay" aria-hidden="true"></div>
           <div class="initiative-card__content">
             <h3 class="initiative-card__title">Cultural Programs</h3>

@@ -210,8 +210,12 @@
     <section class="hero" id="hero" data-section="hero">
       <!-- Full background image wrapper with multi-layer overlays -->
       <div class="hero__bg-wrapper">
-        <img src="assets/hero/hero_image.png" alt="Shree Bhatiawadi Heritage Palace Grounds and Gardens"
-          class="hero__bg-image" width="1920" height="1080" fetchpriority="high">
+        <picture>
+          <source type="image/avif" srcset="assets/images/client/home/home-hero-640.avif 640w, assets/images/client/home/home-hero-1200.avif 1200w, assets/images/client/home/home-hero-1920.avif 1920w" sizes="100vw">
+          <source type="image/webp" srcset="assets/images/client/home/home-hero-640.webp 640w, assets/images/client/home/home-hero-1200.webp 1200w, assets/images/client/home/home-hero-1920.webp 1920w" sizes="100vw">
+          <img src="assets/images/client/home/home-hero-1920.jpg" srcset="assets/images/client/home/home-hero-640.jpg 640w, assets/images/client/home/home-hero-1200.jpg 1200w, assets/images/client/home/home-hero-1920.jpg 1920w" sizes="100vw" alt="Shree Bhatiawadi Grand Heritage Entrance Portico"
+            class="hero__bg-image" width="1920" height="1080" fetchpriority="high" loading="eager" decoding="async">
+        </picture>
         <!-- Layer 1: Left Dark Gradient (rgba(15,12,9,.88) -> transparent) -->
         <div class="hero__overlay-gradient" aria-hidden="true"></div>
         <!-- Layer 2: Top Navbar Soft Overlay -->
@@ -497,9 +501,13 @@
 
             <div class="mission-card__image-wrap">
               <div class="mission-card__image-clip">
-                <img src="assets/images/mission_culture.png"
-                  alt="Cultural Heritage - Traditional Garba dancers in colorful attire" class="mission-card__img"
-                  loading="lazy" width="420" height="280">
+                <picture>
+                  <source type="image/avif" srcset="assets/images/client/cultural-forum/cultural-forum-hero-640.avif 640w, assets/images/client/cultural-forum/cultural-forum-hero-1200.avif 1200w" sizes="(max-width: 768px) 100vw, 33vw">
+                  <source type="image/webp" srcset="assets/images/client/cultural-forum/cultural-forum-hero-640.webp 640w, assets/images/client/cultural-forum/cultural-forum-hero-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 33vw">
+                  <img src="assets/images/client/cultural-forum/cultural-forum-hero-1200.jpg"
+                    alt="Cultural Heritage - Traditional Sacred Walkway and Shrinathji Shrine" class="mission-card__img"
+                    loading="lazy" decoding="async" width="420" height="280">
+                </picture>
               </div>
             </div>
 
@@ -556,9 +564,13 @@
 
             <div class="mission-card__image-wrap">
               <div class="mission-card__image-clip">
-                <img src="assets/images/mission_space.png"
-                  alt="Community Space - Heritage trust building courtyard and banquet architecture"
-                  class="mission-card__img" loading="lazy" width="420" height="280">
+                <picture>
+                  <source type="image/avif" srcset="assets/images/client/banquet/basil/basil-hero-640.avif 640w, assets/images/client/banquet/basil/basil-hero-1200.avif 1200w" sizes="(max-width: 768px) 100vw, 33vw">
+                  <source type="image/webp" srcset="assets/images/client/banquet/basil/basil-hero-640.webp 640w, assets/images/client/banquet/basil/basil-hero-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 33vw">
+                  <img src="assets/images/client/banquet/basil/basil-hero-1200.jpg"
+                    alt="Community Space - Heritage trust auditorium and banquet architecture"
+                    class="mission-card__img" loading="lazy" decoding="async" width="420" height="280">
+                </picture>
               </div>
             </div>
 
@@ -916,8 +928,8 @@
           <!-- Right Column: Large Featured Image & Floating Glass Info Card (65%) -->
           <div class="banquet__right-col">
             <div class="banquet__featured-wrapper">
-              <img src="assets/banquets/hall1.png" alt="Shree Bhatiawadi Basil Hall" class="banquet__featured-img"
-                id="banquet-featured-img" width="850" height="560">
+              <img src="assets/images/client/banquet/basil/basil-hero.webp" alt="Shree Bhatiawadi Basil Hall" class="banquet__featured-img"
+                id="banquet-featured-img" width="850" height="560" loading="lazy" decoding="async">
 
               <!-- Floating Glass Information Card (Bottom Left Overlapping Image) -->
               <div class="banquet__info-card" id="banquet-info-overlay">
@@ -985,8 +997,8 @@
           <div class="banquet-card-outer banquet-card-outer--selected" data-hall-id="basil-hall" role="tab"
             aria-selected="true" tabindex="0" aria-label="Select Basil Hall">
             <div class="banquet-selector-card">
-              <img src="assets/banquets/hall1.png" alt="Basil Hall Thumbnail" class="banquet-selector-card__media"
-                loading="lazy">
+              <img src="assets/images/client/banquet/basil/basil-hero-640.webp" alt="Basil Hall Thumbnail" class="banquet-selector-card__media"
+                loading="lazy" decoding="async" width="300" height="200">
               <div class="banquet-selector-card__overlay">
                 <h4 class="banquet-selector-card__title">Basil Hall</h4>
                 <div class="banquet-selector-card__capacity">400+ Guests</div>
@@ -1011,8 +1023,8 @@
           <div class="banquet-card-outer" data-hall-id="thyme-hall" role="tab" aria-selected="false" tabindex="0"
             aria-label="Select Thyme Hall">
             <div class="banquet-selector-card">
-              <img src="assets/banquets/hall3.png" alt="Thyme Hall Thumbnail" class="banquet-selector-card__media"
-                loading="lazy">
+              <img src="assets/images/client/banquet/thyme/thyme-hero-640.webp" alt="Thyme Hall Thumbnail" class="banquet-selector-card__media"
+                loading="lazy" decoding="async" width="300" height="200">
               <div class="banquet-selector-card__overlay">
                 <h4 class="banquet-selector-card__title">Thyme Hall</h4>
                 <div class="banquet-selector-card__capacity">200+ Guests</div>

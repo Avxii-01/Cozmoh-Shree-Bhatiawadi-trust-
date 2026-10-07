@@ -58,8 +58,11 @@ img:hover {
   filter: contrast(1.08) saturate(1.12) brightness(1);
 }
 
+picture {
+  display: contents;
+}
+
 img,
-picture,
 video,
 canvas,
 svg {

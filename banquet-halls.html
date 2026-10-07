@@ -140,7 +140,11 @@
     <!-- Multi-Layer Background Infrastructure -->
     <div class="banquet-hero__bg-wrapper" aria-hidden="true">
       <!-- Heritage Banquet Interior Image Layer -->
-      <img src="assets/banquets/hall1.png" alt="Royal Indian Heritage Banquet Interior" class="banquet-hero__bg-img">
+      <picture>
+        <source type="image/avif" srcset="assets/images/client/banquet/basil/basil-hero-640.avif 640w, assets/images/client/banquet/basil/basil-hero-1200.avif 1200w, assets/images/client/banquet/basil/basil-hero-1920.avif 1920w" sizes="100vw">
+        <source type="image/webp" srcset="assets/images/client/banquet/basil/basil-hero-640.webp 640w, assets/images/client/banquet/basil/basil-hero-1200.webp 1200w, assets/images/client/banquet/basil/basil-hero-1920.webp 1920w" sizes="100vw">
+        <img src="assets/images/client/banquet/basil/basil-hero-1920.jpg" srcset="assets/images/client/banquet/basil/basil-hero-640.jpg 640w, assets/images/client/banquet/basil/basil-hero-1200.jpg 1200w, assets/images/client/banquet/basil/basil-hero-1920.jpg 1920w" sizes="100vw" alt="Royal Indian Heritage Banquet Interior - Shree Bhatiawadi Basil Hall" class="banquet-hero__bg-img" width="1920" height="1080" fetchpriority="high" loading="eager" decoding="async">
+      </picture>
       <!-- Layer 1: Dark Vignette Masking Image to Edges -->
       <div class="banquet-hero__overlay-radial"></div>
       <!-- Layer 2: Central Warm Radial Lighting Halo -->
