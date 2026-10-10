@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  
+    <defs>
+      <!-- Gradients -->
+      <linearGradient id="init-edu-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#18120B" />
+        <stop offset="45%" stop-color="#241B12" />
+        <stop offset="100%" stop-color="#0E0A07" />
+      </linearGradient>
+      <linearGradient id="init-edu-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#E8C782" />
+        <stop offset="35%" stop-color="#C89A4A" />
+        <stop offset="70%" stop-color="#E3BD76" />
+        <stop offset="100%" stop-color="#9E7332" />
+      </linearGradient>
+      <linearGradient id="init-edu-gold-soft" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#C89A4A" stop-opacity="0.8" />
+        <stop offset="100%" stop-color="#C89A4A" stop-opacity="0.2" />
+      </linearGradient>
+      <radialGradient id="init-edu-glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.28" />
+        <stop offset="50%" stop-color="#C89A4A" stop-opacity="0.10" />
+        <stop offset="100%" stop-color="#140F0A" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="init-edu-vignette" cx="50%" cy="50%" r="70%">
+        <stop offset="40%" stop-color="#000000" stop-opacity="0" />
+        <stop offset="100%" stop-color="#070503" stop-opacity="0.75" />
+      </radialGradient>
+      <filter id="init-edu-blur" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="30" />
+      </filter>
+    </defs>
+    
+  <!-- Background Surface -->
+  <rect width="800" height="500" fill="url(#init-edu-bg)" />
+  <circle cx="400" cy="240" r="280" fill="url(#init-edu-glow)" />
+
+  <!-- Architectural Background Lattice (Jaali) Pattern -->
+  <g stroke="url(#init-edu-gold)" stroke-width="0.5" opacity="0.12" fill="none">
+    <pattern id="init-edu-jaali" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M20 0 L40 20 L20 40 L0 20 Z" />
+      <circle cx="20" cy="20" r="6" />
+      <circle cx="20" cy="20" r="14" stroke-dasharray="2 2" />
+    </pattern>
+    <rect x="30" y="30" width="740" height="440" fill="url(#init-edu-jaali)" />
+  </g>
+
+  <!-- Ornate Outer Heritage Border -->
+  <rect x="25" y="25" width="750" height="450" rx="8" fill="none" stroke="url(#init-edu-gold)" stroke-width="1.2" opacity="0.45" />
+  <rect x="33" y="33" width="734" height="434" rx="4" fill="none" stroke="url(#init-edu-gold)" stroke-width="0.6" stroke-dasharray="6 3" opacity="0.3" />
+
+  <!-- Corner Flourishes -->
+  <g stroke="url(#init-edu-gold)" stroke-width="1.2" fill="none" opacity="0.6">
+    <path d="M25 45 Q45 45 45 25" />
+    <path d="M775 45 Q755 45 755 25" />
+    <path d="M25 455 Q45 455 45 475" />
+    <path d="M775 455 Q755 455 755 475" />
+    <circle cx="48" cy="48" r="2.5" fill="#C89A4A" />
+    <circle cx="752" cy="48" r="2.5" fill="#C89A4A" />
+    <circle cx="48" cy="452" r="2.5" fill="#C89A4A" />
+    <circle cx="752" cy="452" r="2.5" fill="#C89A4A" />
+  </g>
+
+  <!-- Central Architectural Mihrab / Jharokha Arch -->
+  <g transform="translate(400, 230)">
+    <!-- Arch Outline -->
+    <path d="M-150 140 L-150 -10 C-150 -90, -70 -140, 0 -170 C70 -140, 150 -90, 150 -10 L150 140" fill="none" stroke="url(#init-edu-gold)" stroke-width="1.4" opacity="0.6" />
+    <path d="M-138 140 L-138 -8 C-138 -82, -64 -128, 0 -156 C64 -128, 138 -82, 138 -8 L138 140" fill="none" stroke="url(#init-edu-gold)" stroke-width="0.7" stroke-dasharray="4 2" opacity="0.35" />
+
+    <!-- Open Manuscript of Knowledge (Grantha / Pothi) Motif -->
+    <g transform="translate(0, 15)" stroke="url(#init-edu-gold)" fill="none" stroke-width="1.4">
+      <!-- Left Page Curve -->
+      <path d="M0 25 C-30 25, -60 20, -75 10 C-75 -35, -55 -40, 0 -35 Z" fill="#1C140D" fill-opacity="0.85" />
+      <path d="M-15 15 C-35 15, -55 12, -65 5" opacity="0.5" stroke-width="1" />
+      <path d="M-15 0 C-35 0, -55 -3, -65 -10" opacity="0.5" stroke-width="1" />
+      <path d="M-15 -15 C-35 -15, -55 -18, -65 -25" opacity="0.5" stroke-width="1" />
+      <!-- Right Page Curve -->
+      <path d="M0 25 C30 25, 60 20, 75 10 C75 -35, 55 -40, 0 -35 Z" fill="#1C140D" fill-opacity="0.85" />
+      <path d="M15 15 C35 15, 55 12, 65 5" opacity="0.5" stroke-width="1" />
+      <path d="M15 0 C35 0, 55 -3, 65 -10" opacity="0.5" stroke-width="1" />
+      <path d="M15 -15 C35 -15, 55 -18, 65 -25" opacity="0.5" stroke-width="1" />
+      <!-- Center Binding Spine & Bookmark -->
+      <line x1="0" y1="-38" x2="0" y2="30" stroke-width="1.8" />
+      <path d="M0 30 L4 42 L0 38 L-4 42 Z" fill="#C89A4A" />
+    </g>
+
+    <!-- Radiant Lotus of Saraswati above book -->
+    <g transform="translate(0, -65)" stroke="url(#init-edu-gold)" fill="none" stroke-width="1.2">
+      <path d="M0 -30 C12 -12, 18 0, 0 10 C-18 0, -12 -12, 0 -30 Z" fill="rgba(200, 154, 74, 0.15)" />
+      <path d="M0 10 C18 6, 28 -8, 20 -22 C14 -8, 5 4, 0 10 Z" opacity="0.7" />
+      <path d="M0 10 C-18 6, -28 -8, -20 -22 C-14 -8, -5 4, 0 10 Z" opacity="0.7" />
+      <circle cx="0" cy="-6" r="3" fill="#D4AF37" />
+    </g>
+
+    <!-- Radiating Rays of Wisdom -->
+    <g stroke="url(#init-edu-gold)" stroke-width="0.8" opacity="0.35">
+      <line x1="0" y1="-105" x2="0" y2="-125" />
+      <line x1="20" y1="-100" x2="35" y2="-118" />
+      <line x1="-20" y1="-100" x2="-35" y2="-118" />
+      <line x1="40" y1="-88" x2="65" y2="-102" />
+      <line x1="-40" y1="-88" x2="-65" y2="-102" />
+    </g>
+
+    <!-- Inscription Banner -->
+    <text y="88" text-anchor="middle" fill="#E8C782" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="12" letter-spacing="4" opacity="0.9">VIDYA • SEVA • GYAN</text>
+    <text y="106" text-anchor="middle" fill="#C89A4A" font-family="'Cinzel', Georgia, serif" font-size="9" letter-spacing="2.5" opacity="0.65">EMPOWERING FUTURE GENERATIONS</text>
+  </g>
+
+  <!-- Vignette -->
+  <rect width="800" height="500" fill="url(#init-edu-vignette)" pointer-events="none" />
+</svg>

@@ -153,9 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         num: "01 — NAVRATRI",
         title: "Navratri<br>Garba Night",
-        alt: "Navratri Garba Night",
-        img: "assets/images/garbanight1.jpg",
-        objectPosition: "center 30%",
+        alt: "Navratri Garba Night - Traditional Raas and Dandiya Celebration Heritage Emblem",
+        img: "assets/images/editorial/cover-navratri.svg",
+        objectPosition: "center center",
         desc: "Experience the vibrant spirit of Navratri with traditional Garba, devotional music, and joyful community participation.",
         date: "OCTOBER 05, 2024",
         time: "7:00 PM"
@@ -163,9 +163,9 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         num: "02 — CLASSICAL MUSIC",
         title: "Classical Music<br>Evening",
-        alt: "Classical Music Evening",
-        img: "assets/images/classical music.jpg",
-        objectPosition: "center 30%",
+        alt: "Classical Music Evening - Raga, Taal and Shastriya Sangeet Heritage Composition",
+        img: "assets/images/editorial/cover-classical-music.svg",
+        objectPosition: "center center",
         desc: "Immerse in soulful ragas and classical sitar & tabla recitals by renowned artists in an atmosphere of elegance and devotion.",
         date: "NOVEMBER 12, 2024",
         time: "6:30 PM"
