@@ -173,8 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         num: "03 — DIWALI",
         title: "Diwali Festival<br>Celebration",
-        alt: "Diwali Festival Celebration",
-        img: "assets/images/diwali.jpg",
+        alt: "Diwali Traditional Brass Deepam and Deepastambha Illumination at Shree Bhatiawadi",
+        img: "assets/images/client/cultural-forum/event-diwali-1200.jpg",
         objectPosition: "center 35%",
         desc: "Gather with families to celebrate the Festival of Lights through traditional illuminations, cultural programs, and community festivities.",
         date: "NOVEMBER 01, 2024",
