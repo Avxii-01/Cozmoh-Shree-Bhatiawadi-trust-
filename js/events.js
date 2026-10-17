@@ -153,9 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         num: "01 — NAVRATRI",
         title: "Navratri<br>Garba Night",
-        alt: "Festive traditional walkway decorated with sacred Sanskrit banners and floral pillars for cultural celebrations at Shree Bhatiawadi",
-        img: "assets/images/client/cultural-forum/event-navratri-1200.jpg",
-        objectPosition: "center 30%",
+        alt: "Vibrant Navratri Garba Night celebrations with women dancing in colorful traditional attire under the chandeliers at Shree Bhatiawadi",
+        img: "assets/events/navratri3.jpeg",
+        objectPosition: "center 40%",
         desc: "Experience the vibrant spirit of Navratri with traditional Garba, devotional music, and joyful community participation.",
         date: "OCTOBER 05, 2024",
         time: "7:00 PM"
