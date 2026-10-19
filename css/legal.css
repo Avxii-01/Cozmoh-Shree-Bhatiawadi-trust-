@@ -1,0 +1,255 @@
+/* ==========================================================================
+   SHREE BHATIAWADI TRUST — LEGAL PAGES STYLESHEET (css/legal.css)
+   Styles for Terms & Conditions and Privacy Policy pages
+   Ensures WCAG AAA contrast against Royal Heritage Dark Theme
+   ========================================================================== */
+
+.legal-page {
+  position: relative;
+  padding: clamp(140px, 18vh, 190px) 0 clamp(80px, 10vh, 120px);
+  background-color: var(--bg-dark, #15120F);
+  min-height: 80vh;
+  color: var(--text, #F5EFE5);
+  overflow: hidden;
+}
+
+/* Subtle ambient gold radial glow for heritage depth */
+.legal-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  height: 520px;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(200, 154, 74, 0.08), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.legal-container {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 40px);
+}
+
+/* Header Stack */
+.legal-header {
+  margin-bottom: clamp(36px, 5vw, 52px);
+  border-bottom: 1px solid rgba(200, 154, 74, 0.2);
+  padding-bottom: clamp(24px, 4vw, 36px);
+}
+
+.legal-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gold, #C89A4A);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin-bottom: 16px;
+}
+
+.legal-eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold, #C89A4A);
+  opacity: 0.7;
+}
+
+.legal-title {
+  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 600;
+  color: var(--text, #F5EFE5);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  margin: 0 0 16px;
+}
+
+.legal-meta {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.875rem;
+  color: var(--text-secondary, #C9B8A0);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.legal-meta-dot {
+  color: var(--gold, #C89A4A);
+  font-size: 0.75rem;
+}
+
+/* Lead callout box */
+.legal-lead {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--text, #F5EFE5);
+  margin-bottom: clamp(28px, 4vw, 40px);
+  padding: 20px 24px;
+  background: rgba(36, 27, 21, 0.65);
+  border-left: 3px solid var(--gold, #C89A4A);
+  border-radius: 0 6px 6px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Legal Content Body */
+.legal-content {
+  font-family: var(--font-body, 'Inter', sans-serif);
+}
+
+.legal-section {
+  margin-bottom: clamp(28px, 4vw, 40px);
+  padding-bottom: clamp(20px, 3vw, 28px);
+  border-bottom: 1px solid rgba(200, 154, 74, 0.12);
+}
+
+.legal-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.legal-section-title {
+  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 600;
+  color: var(--gold-light, #D9B56C);
+  margin: 0 0 14px;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.legal-section-num {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold, #C89A4A);
+  background: rgba(200, 154, 74, 0.12);
+  border: 1px solid rgba(200, 154, 74, 0.25);
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+}
+
+.legal-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-secondary, #C9B8A0);
+  margin: 0 0 16px;
+}
+
+.legal-content p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 20px;
+}
+
+.legal-content li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--text-secondary, #C9B8A0);
+  margin-bottom: 12px;
+}
+
+.legal-content li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--gold, #C89A4A);
+  font-size: 0.8rem;
+  line-height: 1.75;
+}
+
+.legal-content a {
+  color: var(--gold, #C89A4A);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  font-weight: 500;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.legal-content a:hover,
+.legal-content a:focus {
+  color: var(--gold-light, #D9B56C);
+  text-decoration-color: var(--gold-light, #D9B56C);
+}
+
+.legal-content strong {
+  color: var(--text, #F5EFE5);
+  font-weight: 600;
+}
+
+/* Callout Card for Office Contact */
+.legal-contact-card {
+  margin-top: 32px;
+  background: var(--card, #241B15);
+  border: 1px solid rgba(200, 154, 74, 0.22);
+  border-radius: 8px;
+  padding: clamp(20px, 3.5vw, 30px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.legal-contact-card__title {
+  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-size: 1.35rem;
+  color: var(--text, #F5EFE5);
+  margin: 0;
+}
+
+.legal-contact-card__text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary, #C9B8A0);
+  margin: 0;
+}
+
+.legal-contact-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.legal-contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(200, 154, 74, 0.1);
+  border: 1px solid rgba(200, 154, 74, 0.28);
+  border-radius: 20px;
+  color: var(--gold, #C89A4A) !important;
+  text-decoration: none !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.legal-contact-pill:hover {
+  background: rgba(200, 154, 74, 0.2);
+  border-color: var(--gold, #C89A4A);
+  color: var(--text, #F5EFE5) !important;
+}
