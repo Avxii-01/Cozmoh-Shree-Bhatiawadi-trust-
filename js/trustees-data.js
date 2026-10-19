@@ -29,6 +29,7 @@ const TRUSTEES_DATA = [
     name: "Haren Merchant",
     role: "TRUSTEE MEMBER",
     image: "assets/trustees/Haren Merchant Kurta 1.png",
+    webpImage: "assets/trustees/person3.webp",
     bio: "A dedicated member of the trust committed to supporting the organisation's mission, preserving its heritage, and serving the community with integrity.",
     appointed: "2005",
     service: "19 years"

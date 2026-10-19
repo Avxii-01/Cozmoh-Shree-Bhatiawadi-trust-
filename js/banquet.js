@@ -12,6 +12,18 @@ class VenueShowcaseRenderer {
     if (this.container && window.venueCollectionData) {
       this.render();
       this.initCarousels();
+      if (window.location.hash) {
+        setTimeout(() => {
+          try {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          } catch (e) {
+            // Safe fallback
+          }
+        }, 150);
+      }
     }
   }
 

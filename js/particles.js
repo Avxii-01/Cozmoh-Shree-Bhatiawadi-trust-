@@ -323,10 +323,27 @@ window.SBTParticles = (function SBTParticles() {
       }
     });
 
+    var resizeTimer = null;
     window.addEventListener('resize', function () {
+      if (resizeTimer) cancelAnimationFrame(resizeTimer);
+      resizeTimer = requestAnimationFrame(function () {
+        instances.forEach(function (inst) {
+          inst.resize();
+          inst.build();
+        });
+      });
+    }, { passive: true });
+
+    /* Pause particle loops when tab is hidden to conserve battery and CPU */
+    document.addEventListener('visibilitychange', function () {
+      var isHidden = document.hidden;
       instances.forEach(function (inst) {
-        inst.resize();
-        inst.build();
+        if (isHidden) {
+          inst.active = false;
+        } else if (inst.isVisible && !inst.active) {
+          inst.active = true;
+          inst.loop();
+        }
       });
     });
 

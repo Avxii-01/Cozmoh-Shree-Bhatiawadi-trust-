@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         num: "04 — COMMUNITY",
         title: "Women's Cultural<br>Gathering",
         alt: "Women's Cultural Gathering",
-        img: "assets/images/womencultural gathering.jpg",
+        img: "assets/images/womencultural-gathering.webp",
         objectPosition: "center 30%",
         desc: "A dignified, welcoming space for the women of our community to celebrate traditions, art, heritage performances, and togetherness.",
         date: "DECEMBER 18, 2024",
@@ -249,5 +249,20 @@ document.addEventListener('DOMContentLoaded', () => {
         selectEvent(idx);
       });
     });
+
+    // Handle deep-link anchor hashes from other pages
+    const currentHash = window.location.hash.toLowerCase();
+    const eventHashMap = {
+      '#navratri': 0,
+      '#classical': 1,
+      '#diwali': 2,
+      '#womens': 3,
+      '#community': 3
+    };
+    if (currentHash && eventHashMap[currentHash] !== undefined) {
+      setTimeout(() => {
+        selectEvent(eventHashMap[currentHash]);
+      }, 100);
+    }
   }
 });

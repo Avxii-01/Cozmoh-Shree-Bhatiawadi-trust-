@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://avxii-01.github.io/Cozmoh-Shree-Bhatiawadi-trust/sitemap.xml

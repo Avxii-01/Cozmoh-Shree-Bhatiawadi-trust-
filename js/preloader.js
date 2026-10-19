@@ -164,11 +164,30 @@
       }
     }
 
-    if (prefersReduced) {
-      setTimeout(function () { dismiss(preloader, true, stopParticles); }, REDUCED_HOLD);
-    } else {
-      setTimeout(function () { dismiss(preloader, false, stopParticles); }, HOLD_DURATION);
+    var dismissed = false;
+    function safeDismiss(instant) {
+      if (dismissed) return;
+      dismissed = true;
+      dismiss(preloader, instant, stopParticles);
     }
+
+    if (prefersReduced) {
+      setTimeout(function () { safeDismiss(true); }, REDUCED_HOLD);
+    } else {
+      setTimeout(function () { safeDismiss(false); }, HOLD_DURATION);
+    }
+
+    /* Guaranteed safety fallback: never leave page permanently hidden */
+    setTimeout(function () { safeDismiss(false); }, 6500);
+
+    /* Accessible click or key skip */
+    preloader.addEventListener('click', function () { safeDismiss(false); });
+    window.addEventListener('keydown', function onPreloaderKey(e) {
+      if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') {
+        window.removeEventListener('keydown', onPreloaderKey);
+        safeDismiss(false);
+      }
+    });
   }
 
   function dismiss(preloader, instant, stopParticles) {

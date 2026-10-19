@@ -39,10 +39,14 @@
    */
   function createPortraitColumn(trustee) {
     var altText = trustee.name + ' \u2014 ' + formatRole(trustee.role);
+    var webpSrc = trustee.webpImage || (trustee.image ? trustee.image.replace(/\.(jpg|jpeg|png)$/i, '.webp') : '');
     return [
       '<div class="trustee-entry__portrait-col">',
       '  <div class="trustee-portrait-frame" aria-label="Portrait of ' + trustee.name + '">',
-      '    <img src="' + trustee.image + '" alt="' + altText + '" class="trustee-portrait-img" loading="lazy">',
+      '    <picture>',
+      (webpSrc ? '      <source srcset="' + webpSrc + '" type="image/webp">' : ''),
+      '      <img src="' + trustee.image + '" alt="' + altText + '" class="trustee-portrait-img" loading="lazy" decoding="async" width="330" height="413">',
+      '    </picture>',
       '  </div>',
       '</div>'
     ].join('\n');
