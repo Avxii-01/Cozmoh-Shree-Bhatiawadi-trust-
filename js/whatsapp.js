@@ -12,7 +12,7 @@
   const WHATSAPP_CONFIG = {
     // Current primary contact number from website footer/contact page
     // Note: If a dedicated WhatsApp mobile number is provided later, update this single value.
-    phoneNumber: '7719011419',
+    phoneNumber: '917506433819',
 
     // Generic base enquiry message
     baseMessage: 'Hello Shree Bhatiawadi Trust, I am interested in enquiring about your banquet venues for an upcoming event. Please share the available venues, pricing, and booking details. Thank you.',

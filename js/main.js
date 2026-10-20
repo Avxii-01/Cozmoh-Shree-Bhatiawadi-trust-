@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const firstName = firstNameInput ? firstNameInput.value.trim() : 'Guest';
 
       statusEl.style.display = 'block';
-      statusEl.textContent = `Thank you, ${firstName}. Your event inquiry has been noted. Our trust administration will review your details. For immediate assistance or official hall bookings, please call 022-21028801 or message us directly on WhatsApp.`;
+      statusEl.textContent = `Thank you, ${firstName}. Your event inquiry has been noted. Our trust administration will review your details. For immediate assistance or official hall bookings, please call 022-21028801, WhatsApp +91 75064 33819, or email shrebhatiawaditrust@gmail.com.`;
 
       contactForm.reset();
     });
