@@ -1,0 +1,64 @@
+# ============================================================
+# SECRETS AND PRIVATE SMTP CONFIGURATION — NEVER COMMIT
+# ============================================================
+.env
+.env.*
+!.env.example
+config/mail.local.php
+config/mail.config.php
+mail.local.php
+mail.config.php
+mail.config.local.php
+*.pem
+*.key
+secrets/
+private/
+
+# ============================================================
+# LOCAL DEVELOPMENT TOOLS
+# ============================================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# LOGS AND RUNTIME DATA
+# ============================================================
+*.log
+error_log
+storage/rate_limits/*
+!storage/rate_limits/.gitkeep
+storage/*.log
+
+# ============================================================
+# GENERATED DEPLOYMENT ARCHIVES
+# Keep source files; do not commit large generated ZIP files.
+# ============================================================
+hostinger_deploy.zip
+*.bak
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# ============================================================
+# PYTHON CACHE
+# ============================================================
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ============================================================
+# NODE / TOOLING OUTPUT
+# ============================================================
+node_modules/
+.npm/
+
+# ============================================================
+# PRESERVE WEBSITE ASSETS AND REQUIRED DEPENDENCIES
+# Do NOT ignore assets/, css/, js/, fonts/, components/,
+# full website photos/, vendor/, composer.json, or composer.lock.
+# ============================================================

@@ -1,0 +1,95 @@
+/* ==========================================================================
+   SHREE BHATIAWADI TRUST — SECTION-BASED REUSABLE PARTICLE LAYERS
+   Per-section canvas overlay sitting above backgrounds and below content
+   ========================================================================== */
+
+/* ── Section Stacking Context Setup ─────────────────────────────────── */
+.hero,
+.about-hero,
+.about-purpose,
+.about-values,
+.history-hero,
+.history-story,
+.history-timeline,
+.history-stats,
+.banquet-hero,
+.banquet-section,
+.venue-collection,
+.shared-amenities,
+.cultural-hero,
+.cultural-mission-section,
+.upcoming-events-section,
+.heritage-gallery-section,
+.cultural-why-join-section,
+.trustees-hero,
+.trustees-register,
+.trustees-commitment,
+.legacy-section,
+.stats-section,
+.initiatives-section,
+.events-section,
+.cta-section,
+.footer {
+  position: relative;
+  /* Stacking context for section layers */
+}
+
+/* Ensure background pseudo-elements (::before, ::after) stay at z-index: 0 */
+.hero::before,
+.about-purpose::before,
+.history-story::before,
+.venue-collection::before,
+.legacy-section::before,
+.stats-section::before,
+.events-section::before,
+.cta-section::before {
+  z-index: 0;
+}
+
+/* ── Section Particle Canvas ─────────────────────────────────────────── */
+.section-particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Above section backgrounds (0), below container content (2+) */
+  pointer-events: none;
+  display: block;
+}
+
+/* ── Container Content Z-Index Lock ────────────────────────────────── */
+.hero__container,
+.about-hero__container,
+.about-purpose__container,
+.about-values__container,
+.history-hero__container,
+.history-story__container,
+.history-timeline__container,
+.history-stats__container,
+.banquet-hero__container,
+.banquet-section .container,
+.banquet__container,
+.venue-collection__container,
+.shared-amenities__container,
+.cultural-hero__container,
+.cultural-mission__container,
+.upcoming-events__container,
+.gallery-container,
+.why-join-container,
+.trustees-hero__container,
+.trustees-register__container,
+.trustees-commitment__container,
+.legacy__container,
+.stats-section .container,
+.initiatives-section .container,
+.initiatives__container,
+.events-section .container,
+.events-container,
+.cta-section .container,
+.cta-container,
+.footer .container,
+.footer__bottom {
+  position: relative;
+  z-index: 2; /* Ensures text, cards, buttons remain strictly ABOVE particles */
+}

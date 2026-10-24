@@ -35,7 +35,7 @@ window.venueCollectionData = [
       { name: 'High-Speed Wi-Fi', icon: '<path d="M5 12.55a11 11 0 0114 0M8.5 16a7 7 0 017 0M12 19h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' },
       { name: 'Valet Parking', icon: '<rect x="4" y="3" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M9 17V7h4a3 3 0 010 6H9" stroke="currentColor" stroke-width="1.5"/>' }
     ],
-    bookingUrl: 'contact.html#book-basil'
+    bookingUrl: '/contact#book-basil'
   },
   {
     id: 'bayleaf-hall',
@@ -64,7 +64,7 @@ window.venueCollectionData = [
       { name: 'High-Speed Wi-Fi', icon: '<path d="M5 12.55a11 11 0 0114 0M8.5 16a7 7 0 017 0M12 19h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' },
       { name: 'Valet Parking', icon: '<rect x="4" y="3" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M9 17V7h4a3 3 0 010 6H9" stroke="currentColor" stroke-width="1.5"/>' }
     ],
-    bookingUrl: 'contact.html#book-bayleaf'
+    bookingUrl: '/contact#book-bayleaf'
   },
   {
     id: 'thyme-hall',
@@ -92,7 +92,7 @@ window.venueCollectionData = [
       { name: 'High-Speed Wi-Fi', icon: '<path d="M5 12.55a11 11 0 0114 0M8.5 16a7 7 0 017 0M12 19h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' },
       { name: 'Valet Parking', icon: '<rect x="4" y="3" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M9 17V7h4a3 3 0 010 6H9" stroke="currentColor" stroke-width="1.5"/>' }
     ],
-    bookingUrl: 'contact.html#book-thyme'
+    bookingUrl: '/contact#book-thyme'
   },
   {
     id: 'mint-hall',
@@ -121,6 +121,6 @@ window.venueCollectionData = [
       { name: 'High-Speed Wi-Fi', icon: '<path d="M5 12.55a11 11 0 0114 0M8.5 16a7 7 0 017 0M12 19h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' },
       { name: 'Valet Parking', icon: '<rect x="4" y="3" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M9 17V7h4a3 3 0 010 6H9" stroke="currentColor" stroke-width="1.5"/>' }
     ],
-    bookingUrl: 'contact.html#book-mint'
+    bookingUrl: '/contact#book-mint'
   }
 ];

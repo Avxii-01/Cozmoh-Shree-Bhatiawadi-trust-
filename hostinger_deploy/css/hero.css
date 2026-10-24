@@ -1,0 +1,315 @@
+/* ==========================================================================
+   SHREE BHATIAWADI TRUST — LUXURY HERITAGE HERO SECTION (css/hero.css)
+   Full-width bleed background image, 3-layer dark gradient overlay, 
+   badge, editorial serif split title, 3-line max paragraph, primary gold (12px),
+   secondary outline, mouse scroll indicator, corner ornament, GPU animations.
+   ========================================================================== */
+
+/* ── Hero Main Wrapper ─────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  background-color: var(--bg-dark, #15120F);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* ── Full Bleed Background Image & Multi-layer Overlays ────────────────── */
+.hero__bg-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero__bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.05);
+  animation: heroBgZoomIn 1400ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)) forwards;
+  filter: contrast(1.06) saturate(1.08) brightness(0.94);
+  will-change: transform;
+}
+
+@keyframes heroBgZoomIn {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Layer 1: Left Dark Gradient (rgba(15,12,9,.88) -> transparent) */
+.hero__overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 12, 9, 0.92) 0%,
+    rgba(15, 12, 9, 0.85) 35%,
+    rgba(15, 12, 9, 0.50) 65%,
+    rgba(15, 12, 9, 0.15) 85%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Layer 2: Soft Top Overlay for Navbar Legibility */
+.hero__overlay-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 12, 9, 0.75) 0%,
+    transparent 100%
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Layer 3: Subtle Vignette */
+.hero__overlay-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 50%,
+    rgba(15, 12, 9, 0.45) 100%
+  );
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* Faint Architectural / Floral Line Pattern Overlay (< 5% Opacity) */
+.hero__pattern-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(200, 154, 74, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Particle Canvas Container */
+.section-particle-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* ── Hero Container ───────────────────────────────────────────────────── */
+.hero__container {
+  position: relative;
+  z-index: 10;
+  width: min(92vw, var(--container-max, 1600px));
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 2.5vw, 40px);
+  padding-right: clamp(16px, 2.5vw, 40px);
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* ── Left Content Column (Max Width 540px) ────────────────────────────── */
+.hero__content {
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+  z-index: 12;
+}
+
+/* ── Badge (SERVING SINCE GENERATIONS) ────────────────────────────────── */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12, 12px);
+  margin-bottom: var(--space-20, 20px);
+}
+
+.hero__badge-text {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gold, #C89A4A);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;           /* Large luxury tracking */
+}
+
+.hero__badge-divider {
+  display: inline-block;
+  width: 44px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold, #C89A4A), transparent);
+  opacity: 0.8;
+}
+
+/* ── Editorial Serif Title ────────────────────────────────────────────── */
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.625rem, 5vw, 5.25rem); /* Desktop: ~72-88px (4.5rem - 5.25rem) */
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: 0.01em;
+  margin-bottom: var(--space-24, 24px);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+}
+
+.hero__title-ivory {
+  color: var(--text, #F5EFE5);
+  display: block;
+}
+
+.hero__title-gold {
+  color: var(--gold, #C89A4A);
+  display: block;
+}
+
+/* ── Paragraph ────────────────────────────────────────────────────────── */
+.hero__paragraph {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.1vw, 1.125rem);
+  line-height: 1.7;
+  color: var(--text-secondary, #C9B8A0);
+  max-width: 520px;
+  margin-bottom: var(--space-40, 40px);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;             /* Maximum 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Hero Buttons ─────────────────────────────────────────────────────── */
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16, 16px);
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+/* Primary Gold Button (12px rounded, gradient hover glow) */
+.btn--hero-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8, 8px);
+  height: var(--button-height, 52px);
+  padding: 0 var(--space-32, 32px);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #15120F;
+  background-color: var(--gold, #C89A4A);
+  background-image: linear-gradient(135deg, var(--gold, #C89A4A) 0%, var(--gold-light, #D9B56C) 100%);
+  border: 1px solid var(--gold, #C89A4A);
+  border-radius: 12px;                /* Exactly 12px rounded as specified */
+  box-shadow: 0 6px 20px rgba(200, 154, 74, 0.28);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 350ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
+              box-shadow 350ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
+              background 350ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1));
+}
+
+.btn--hero-primary:hover {
+  transform: translateY(-3px);
+  background-image: linear-gradient(135deg, var(--gold-light, #D9B56C) 0%, #E6C885 100%);
+  box-shadow: 0 10px 30px rgba(200, 154, 74, 0.45), 0 0 15px rgba(217, 181, 108, 0.3);
+  color: #15120F;
+}
+
+/* Secondary Outlined Button */
+.btn--hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8, 8px);
+  height: var(--button-height, 52px);
+  padding: 0 var(--space-32, 32px);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold, #C89A4A);
+  background-color: transparent;
+  border: 1px solid var(--gold, #C89A4A);
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 350ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
+              background-color 350ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
+              border-color 350ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
+              box-shadow 350ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1));
+}
+
+.btn--hero-secondary:hover {
+  transform: translateY(-3px);
+  background-color: rgba(200, 154, 74, 0.14);
+  border-color: var(--gold-light, #D9B56C);
+  color: var(--gold-light, #D9B56C);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Mughal Corner Ornament (Bottom Right) ───────────────────────────── */
+.hero__ornament-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  pointer-events: none;
+  line-height: 0;
+}
+
+/* ── GPU Fade-up Animations ───────────────────────────────────────────── */
+.hero .reveal-fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 900ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1)),
+              transform 900ms var(--ease-heritage, cubic-bezier(0.25, 1, 0.35, 1));
+  will-change: opacity, transform;
+}
+
+.hero.hero--animated .reveal-fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation delays */
+.hero.hero--animated .hero__badge { transition-delay: 150ms; }
+.hero.hero--animated .hero__title { transition-delay: 300ms; }
+.hero.hero--animated .hero__paragraph { transition-delay: 450ms; }
+.hero.hero--animated .hero__actions { transition-delay: 600ms; }
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero__bg-image {
+    animation: none !important;
+    transform: scale(1) !important;
+  }
+  .hero .reveal-fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

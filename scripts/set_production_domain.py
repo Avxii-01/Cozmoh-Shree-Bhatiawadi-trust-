@@ -4,8 +4,7 @@ Usage:
     python scripts/set_production_domain.py [NEW_BASE_URL]
 
 Examples:
-    python scripts/set_production_domain.py https://avxii-01.github.io/Cozmoh-Shree-Bhatiawadi-trust-/
-    python scripts/set_production_domain.py https://www.shreebhatiawadi.org/
+    python scripts/set_production_domain.py https://shreebhatiawaditrust.org/
 """
 
 import sys
@@ -15,17 +14,17 @@ import re
 # Workspace root
 WORKSPACE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Default confirmed working GitHub Pages URL
-DEFAULT_BASE_URL = "https://avxii-01.github.io/Cozmoh-Shree-Bhatiawadi-trust-/"
+# Default confirmed production URL
+DEFAULT_BASE_URL = "https://shreebhatiawaditrust.org/"
 
 PUBLIC_PAGES = [
     ("index.html", "1.0", "weekly"),
-    ("banquet-halls.html", "0.9", "weekly"),
-    ("contact.html", "0.9", "monthly"),
     ("about.html", "0.8", "monthly"),
-    ("cultural-forum.html", "0.8", "weekly"),
     ("history.html", "0.8", "monthly"),
+    ("banquet-halls.html", "0.9", "weekly"),
+    ("cultural-forum.html", "0.8", "weekly"),
     ("trustees.html", "0.8", "monthly"),
+    ("contact.html", "0.9", "monthly"),
     ("privacy.html", "0.5", "yearly"),
     ("terms.html", "0.5", "yearly"),
 ]
@@ -51,7 +50,8 @@ def update_production_urls(base_url):
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
     ]
     for page, priority, changefreq in PUBLIC_PAGES:
-        page_url = f"{base_url}{page}"
+        clean_name = "" if page == "index.html" else page.replace(".html", "")
+        page_url = f"{base_url}{clean_name}"
         xml_lines.append("  <url>")
         xml_lines.append(f"    <loc>{page_url}</loc>")
         xml_lines.append(f"    <changefreq>{changefreq}</changefreq>")
@@ -79,7 +79,8 @@ def update_production_urls(base_url):
         with open(file_path, "r", encoding="utf-8") as f:
             content = f.read()
 
-        page_url = f"{base_url}{html_file}"
+        clean_slug = "" if html_file == "index.html" else html_file.replace(".html", "")
+        page_url = f"{base_url}{clean_slug}"
         new_canonical = f'<link rel="canonical" href="{page_url}"'
         new_og_url = f'<meta property="og:url" content="{page_url}"'
         new_og_img = f'<meta property="og:image" content="{logo_url}"'

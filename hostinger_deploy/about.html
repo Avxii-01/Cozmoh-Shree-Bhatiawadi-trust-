@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Shree Bhatiawadi Trust | Heritage & Cultural Service</title>
+  <meta name="description"
+    content="Shree Bhatiawadi Trust stands as a beacon of charitable service and cultural preservation, dedicated to uplifting our community through compassion and tradition.">
+  <link rel="canonical" href="https://shreebhatiawaditrust.org/about">
+
+  <!-- Favicon & Theme -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <meta name="theme-color" content="#15120F">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Shree Bhatiawadi Trust">
+  <meta property="og:title" content="About Us — Shree Bhatiawadi Trust | Heritage & Cultural Service">
+  <meta property="og:description" content="Shree Bhatiawadi Trust stands as a beacon of charitable service and cultural preservation, dedicated to uplifting our community through compassion and tradition.">
+  <meta property="og:url" content="https://shreebhatiawaditrust.org/about">
+  <meta property="og:image" content="https://shreebhatiawaditrust.org/assets/logo/sbt-logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us — Shree Bhatiawadi Trust | Heritage & Cultural Service">
+  <meta name="twitter:description" content="Shree Bhatiawadi Trust stands as a beacon of charitable service and cultural preservation, dedicated to uplifting our community through compassion and tradition.">
+  <meta name="twitter:image" content="https://shreebhatiawaditrust.org/assets/logo/sbt-logo.png">
+
+
+  <!-- Google Fonts: Cormorant Garamond & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Architecture Files -->
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/initiatives.css">
+  <link rel="stylesheet" href="css/cta.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/particles.css">
+
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       GLOBAL REUSABLE NAVIGATION COMPONENT (Identical to Approved Homepage)
+       ========================================================================== -->
+  <header class="navbar" id="main-navbar">
+    <div class="container navbar__container">
+
+      <!-- Left Section: Logo & Tagline -->
+      <a href="/" class="navbar__logo" aria-label="Shree Bhatiawadi Trust Home">
+        <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Emblem" class="navbar__logo-emblem" width="48" height="48" decoding="async">
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-title">SHREE BHATIAWADI TRUST</span>
+          <span class="navbar__logo-subtitle">SERVING WITH DEVOTION</span>
+        </div>
+      </a>
+
+      <!-- Center Section: Navigation Links -->
+      <nav class="navbar__nav" aria-label="Main Navigation">
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="/" class="navbar__link">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="/about" class="navbar__link navbar__link--active" aria-current="page">About Us</a>
+          </li>
+          <li class="navbar__item">
+            <a href="/history" class="navbar__link">History</a>
+          </li>
+          <li class="navbar__item">
+            <a href="/banquet-halls" class="navbar__link">Banquet Halls</a>
+          </li>
+          <li class="navbar__item">
+            <a href="/cultural-forum" class="navbar__link">Cultural Forum</a>
+          </li>
+          <li class="navbar__item">
+            <a href="/trustees" class="navbar__link">Trustees</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right Section: Actions & CTA Button -->
+      <div class="navbar__actions">
+        <a href="/contact" class="btn btn--primary navbar__cta">Contact Us</a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button class="navbar__toggle" aria-expanded="false" aria-controls="mobile-menu"
+          aria-label="Toggle Navigation Menu">
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Slide-Down Navigation Panel -->
+    <div class="navbar__mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="navbar__mobile-header">
+        <a href="/" class="navbar__logo" aria-label="Shree Bhatiawadi Trust Home">
+          <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Emblem" class="navbar__logo-emblem" width="48" height="48" decoding="async">
+          <div class="navbar__logo-text">
+            <span class="navbar__logo-title">SHREE BHATIAWADI TRUST</span>
+            <span class="navbar__logo-subtitle">SERVING WITH DEVOTION</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="navbar__mobile-body">
+        <ul class="navbar__mobile-links">
+          <li><a href="/" class="navbar__mobile-link">Home</a></li>
+          <li><a href="/about" class="navbar__mobile-link navbar__mobile-link--active">About Us</a></li>
+          <li><a href="/history" class="navbar__mobile-link">History</a></li>
+          <li><a href="/banquet-halls" class="navbar__mobile-link">Banquet Halls</a></li>
+          <li><a href="/cultural-forum" class="navbar__mobile-link">Cultural Forum</a></li>
+          <li><a href="/trustees" class="navbar__mobile-link">Trustees</a></li>
+        </ul>
+
+        <div class="navbar__mobile-actions">
+          <a href="/contact" class="btn btn--primary navbar__mobile-cta">Contact Us</a>
+
+          <div class="navbar__mobile-socials">
+            <a href="#" class="navbar__mobile-social-icon" aria-label="Facebook">f</a>
+            <a href="#" class="navbar__mobile-social-icon" aria-label="Instagram">📷</a>
+            <a href="#" class="navbar__mobile-social-icon" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==========================================================================
+       ABOUT US HERO SECTION (.about-hero)
+       70-80vh Desktop Height | Left-Aligned Content Stack | Justified Editorial Description
+       ========================================================================== -->
+  <section class="about-hero" id="about-hero">
+
+    <!-- Gold Ambient Particle Canvas Engine -->
+    <canvas class="section-particle-canvas" data-particle-section="hero" aria-hidden="true"></canvas>
+
+    <!-- Multi-Layer Background Infrastructure -->
+    <div class="about-hero__bg-wrapper" aria-hidden="true">
+      <!-- Full Bleed Cultural / Banquet Interior Image -->
+      <picture>
+        <source type="image/avif" srcset="assets/images/client/about/about-hero-640.avif 640w, assets/images/client/about/about-hero-1200.avif 1200w, assets/images/client/about/about-hero-1920.avif 1920w" sizes="100vw">
+        <source type="image/webp" srcset="assets/images/client/about/about-hero-640.webp 640w, assets/images/client/about/about-hero-1200.webp 1200w, assets/images/client/about/about-hero-1920.webp 1920w" sizes="100vw">
+        <img src="assets/images/client/about/about-hero-1920.jpg" srcset="assets/images/client/about/about-hero-640.jpg 640w, assets/images/client/about/about-hero-1200.jpg 1200w, assets/images/client/about/about-hero-1920.jpg 1920w" sizes="100vw" alt="Shree Bhatiawadi Grand Heritage Entrance Gateway" class="about-hero__bg-img" width="1920" height="1080" fetchpriority="high" loading="eager" decoding="async">
+      </picture>
+      <!-- Layer 1: Center Dark Radial Overlay for Readability -->
+      <div class="about-hero__overlay-center"></div>
+      <!-- Layer 2: Top Ambient Shadow for Navbar Readability -->
+      <div class="about-hero__overlay-top"></div>
+      <!-- Layer 3: Subtle Vignette -->
+      <div class="about-hero__overlay-vignette"></div>
+    </div>
+
+    <!-- Hero Content Outer Container -->
+    <div class="about-hero__container">
+
+      <!-- Centered Royal Editorial Content Stack -->
+      <div class="about-hero__content-stack">
+
+        <!-- 1. Symmetrical Centered Gold Eyebrow Label -->
+        <div class="about-hero__eyebrow about-hero__animate about-hero__animate--delay-1">
+          <span class="about-hero__eyebrow-line" aria-hidden="true"></span>
+          <span class="about-hero__eyebrow-text">ROOTED IN TRADITION, COMMITTED TO SERVICE</span>
+          <span class="about-hero__eyebrow-line" aria-hidden="true"></span>
+        </div>
+
+        <!-- 2. Main Editorial Heading -->
+        <h1 class="about-hero__heading about-hero__animate about-hero__animate--delay-2">
+          About <span class="about-hero__heading-gold">Our Trust</span>
+        </h1>
+
+        <!-- 3. Centered Subtle Royal Decorative Divider -->
+        <div class="about-hero__divider about-hero__animate about-hero__animate--delay-3" aria-hidden="true">
+          <span class="about-hero__divider-line"></span>
+          <svg width="24" height="16" viewBox="0 0 24 16" fill="none" stroke="#C89A4A" stroke-width="1.2">
+            <path d="M12 2C10 6 6 8 2 8c4 0 8 2 10 6 2-4 6-6 10-6-4 0-8-2-10-6z" fill="rgba(200, 154, 74, 0.15)"></path>
+            <circle cx="12" cy="8" r="1.5" fill="#C89A4A"></circle>
+          </svg>
+          <span class="about-hero__divider-line"></span>
+        </div>
+
+        <!-- 4. Centered Controlled Description Paragraph -->
+        <p class="about-hero__desc about-hero__animate about-hero__animate--delay-4">
+          Shree Bhatiawadi Trust stands as a beacon of charitable service and cultural preservation, dedicated to
+          uplifting our community through compassion and tradition.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==========================================================================
+       1. LIGHT SECTION: INTRO & MISSION + VISION (.about-purpose)
+       Warm Ivory Background | Clean Flat Serif Typography | Architectural Linework & Heritage Diamond
+       ========================================================================== -->
+  <section class="about-purpose" id="about-purpose">
+    <canvas class="section-particle-canvas" data-particle-section="mission" aria-hidden="true"></canvas>
+
+    <!-- Subtle Faint Symmetrical Architectural Edge Geometry (Left & Right) -->
+    <svg class="about-purpose__bg-arch about-purpose__bg-arch--left" viewBox="0 0 160 400" fill="none"
+      xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M-10 0 V400 M15 0 V400 M55 20 C95 80 135 160 135 200 C135 240 95 320 55 380" stroke="#C89A4A"
+        stroke-width="1" stroke-dasharray="3 3" opacity="0.05" />
+      <path d="M35 0 V400 M75 40 C105 100 125 160 125 200 C125 240 105 300 75 360" stroke="#8D6738" stroke-width="0.75"
+        opacity="0.04" />
+    </svg>
+    <svg class="about-purpose__bg-arch about-purpose__bg-arch--right" viewBox="0 0 160 400" fill="none"
+      xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M-10 0 V400 M15 0 V400 M55 20 C95 80 135 160 135 200 C135 240 95 320 55 380" stroke="#C89A4A"
+        stroke-width="1" stroke-dasharray="3 3" opacity="0.05" />
+      <path d="M35 0 V400 M75 40 C105 100 125 160 125 200 C125 240 105 300 75 360" stroke="#8D6738" stroke-width="0.75"
+        opacity="0.04" />
+    </svg>
+
+    <div class="about-purpose__container">
+
+      <!-- Section Intro Header -->
+      <div class="about-purpose__intro">
+        <div class="about-purpose__eyebrow">
+          <span class="about-purpose__eyebrow-line" aria-hidden="true"></span>
+          <span class="about-purpose__eyebrow-text">WHO WE ARE</span>
+          <span class="about-purpose__eyebrow-line" aria-hidden="true"></span>
+        </div>
+        <h2 class="about-purpose__title">
+          <span class="about-purpose__title-dark">Our Purpose.</span> <span class="about-purpose__title-gold">Our
+            Promise.</span>
+        </h2>
+        <p class="about-purpose__subtitle">
+          For generations, we have been dedicated to serving society through compassion, cultural preservation, and
+          community development.
+        </p>
+      </div>
+
+      <!-- Side-by-Side Mission & Vision Grid -->
+      <div class="about-purpose__grid">
+
+        <!-- Left: Mission Panel -->
+        <article class="about-purpose__panel">
+          <div class="about-purpose__panel-header">
+            <h3 class="about-purpose__panel-heading">
+              <span class="about-purpose__panel-heading-dark">Our</span> <span
+                class="about-purpose__panel-heading-gold">Mission</span>
+            </h3>
+            <div class="about-purpose__panel-divider" aria-hidden="true">
+              <span class="about-purpose__panel-line"></span>
+              <span class="about-purpose__panel-diamond"></span>
+              <span class="about-purpose__panel-line"></span>
+            </div>
+          </div>
+          <div class="about-purpose__panel-body">
+            <p>
+              To serve the community through charitable initiatives while preserving our cultural heritage and providing
+              exceptional facilities for celebrations and gatherings.
+            </p>
+            <p>
+              We are committed to creating positive impact through education, healthcare support, and community
+              development programs that uplift those in need.
+            </p>
+          </div>
+        </article>
+
+        <!-- Delicate Vertical Muted-Gold Divider with Center Heritage Diamond Motif -->
+        <div class="about-purpose__vertical-divider-wrapper" aria-hidden="true">
+          <span class="about-purpose__vertical-line about-purpose__vertical-line--top"></span>
+          <span class="about-purpose__vertical-diamond"></span>
+          <span class="about-purpose__vertical-line about-purpose__vertical-line--bottom"></span>
+        </div>
+
+        <!-- Mobile Horizontal Divider (Displays on smaller screens) -->
+        <div class="about-purpose__mobile-divider" aria-hidden="true">
+          <span class="about-purpose__mobile-line"></span>
+          <span class="about-purpose__mobile-diamond"></span>
+          <span class="about-purpose__mobile-line"></span>
+        </div>
+
+        <!-- Right: Vision Panel -->
+        <article class="about-purpose__panel">
+          <div class="about-purpose__panel-header">
+            <h3 class="about-purpose__panel-heading">
+              <span class="about-purpose__panel-heading-dark">Our</span> <span
+                class="about-purpose__panel-heading-gold">Vision</span>
+            </h3>
+            <div class="about-purpose__panel-divider" aria-hidden="true">
+              <span class="about-purpose__panel-line"></span>
+              <span class="about-purpose__panel-diamond"></span>
+              <span class="about-purpose__panel-line"></span>
+            </div>
+          </div>
+          <div class="about-purpose__panel-body">
+            <p>
+              To be a leading charitable organization that harmoniously blends tradition with modernity, creating
+              lasting positive change in our community.
+            </p>
+            <p>
+              We envision a future where our cultural values continue to thrive while embracing progress and innovation
+              in service delivery.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       2. DARK SECTION: CORE VALUES (.about-values)
+       Deep Dark Background | 4-Column Refined Heritage Cards
+       ========================================================================== -->
+  <section class="about-values" id="about-values">
+    <canvas class="section-particle-canvas" data-particle-section="legacy" aria-hidden="true"></canvas>
+
+    <!-- Ambient Radial Lighting Glow -->
+    <div class="about-values__glow" aria-hidden="true"></div>
+
+    <div class="about-values__container">
+
+      <!-- Section Header -->
+      <div class="about-values__header">
+        <div class="about-values__eyebrow">
+          <span class="about-values__eyebrow-line" aria-hidden="true"></span>
+          <span class="about-values__eyebrow-text">Our Values</span>
+          <span class="about-values__eyebrow-line" aria-hidden="true"></span>
+        </div>
+        <h2 class="about-values__title">The Principles That Guide Us</h2>
+        <p class="about-values__subtitle">
+          Guiding principles that shape our actions and define our commitment to the community
+        </p>
+      </div>
+
+      <!-- 4 Core Values Grid (Editorial Columns with Heritage SVGs) -->
+      <div class="about-values__grid">
+
+        <!-- Value 1: Compassion -->
+        <article class="about-values__column">
+          <div class="about-values__icon-wrapper">
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"
+              class="about-values__icon" aria-hidden="true">
+              <path d="M19 10 C16 6, 12 8, 12 12 C12 17, 19 22, 19 22 C19 22, 26 17, 26 12 C26 8, 22 6, 19 10 Z"
+                stroke="#C89A4A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M7 23 C11 26, 15 28, 19 28 C23 28, 27 26, 31 23" stroke="#C89A4A" stroke-width="1.2"
+                stroke-linecap="round" />
+              <path d="M10 28 C13 31, 16 33, 19 33 C22 33, 25 31, 28 28" stroke="#C89A4A" stroke-width="1" opacity="0.6"
+                stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="about-values__name">Compassion</h3>
+          <div class="about-values__divider" aria-hidden="true">
+            <span class="about-values__divider-line"></span>
+            <span class="about-values__divider-diamond"></span>
+            <span class="about-values__divider-line"></span>
+          </div>
+          <p class="about-values__desc">
+            Serving humanity with kindness and empathy in all our endeavors
+          </p>
+        </article>
+
+        <!-- Value 2: Community -->
+        <article class="about-values__column">
+          <div class="about-values__icon-wrapper">
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"
+              class="about-values__icon" aria-hidden="true">
+              <circle cx="19" cy="11" r="4.5" stroke="#C89A4A" stroke-width="1.3" />
+              <circle cx="9.5" cy="24" r="3.5" stroke="#C89A4A" stroke-width="1.2" />
+              <circle cx="28.5" cy="24" r="3.5" stroke="#C89A4A" stroke-width="1.2" />
+              <path d="M13 18 C15 15, 23 15, 25 18" stroke="#C89A4A" stroke-width="1.2" stroke-linecap="round" />
+              <path d="M6 31 C7.5 27.5, 11.5 26.5, 13.5 28" stroke="#C89A4A" stroke-width="1.2"
+                stroke-linecap="round" />
+              <path d="M32 31 C30.5 27.5, 26.5 26.5, 24.5 28" stroke="#C89A4A" stroke-width="1.2"
+                stroke-linecap="round" />
+              <path d="M19 16.5 V27 M14 22 H24" stroke="#C89A4A" stroke-width="0.8" opacity="0.5"
+                stroke-dasharray="2 2" />
+            </svg>
+          </div>
+          <h3 class="about-values__name">Community</h3>
+          <div class="about-values__divider" aria-hidden="true">
+            <span class="about-values__divider-line"></span>
+            <span class="about-values__divider-diamond"></span>
+            <span class="about-values__divider-line"></span>
+          </div>
+          <p class="about-values__desc">
+            Building strong bonds and fostering unity among all members
+          </p>
+        </article>
+
+        <!-- Value 3: Excellence -->
+        <article class="about-values__column">
+          <div class="about-values__icon-wrapper">
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"
+              class="about-values__icon" aria-hidden="true">
+              <path d="M19 5 L22.5 13.5 L31 14 L24.5 20 L27 28.5 L19 23.5 L11 28.5 L13.5 20 L7 14 L15.5 13.5 Z"
+                stroke="#C89A4A" stroke-width="1.2" stroke-linejoin="round" />
+              <circle cx="19" cy="18.5" r="3.5" stroke="#C89A4A" stroke-width="1" />
+              <path d="M19 32 V35" stroke="#C89A4A" stroke-width="1.2" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="about-values__name">Excellence</h3>
+          <div class="about-values__divider" aria-hidden="true">
+            <span class="about-values__divider-line"></span>
+            <span class="about-values__divider-diamond"></span>
+            <span class="about-values__divider-line"></span>
+          </div>
+          <p class="about-values__desc">
+            Maintaining the highest standards in service and facilities
+          </p>
+        </article>
+
+        <!-- Value 4: Heritage -->
+        <article class="about-values__column">
+          <div class="about-values__icon-wrapper">
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"
+              class="about-values__icon" aria-hidden="true">
+              <path d="M19 5 C19 5, 20 8, 22 9 C20 10, 19 11, 19 11 C19 11, 18 10, 16 9 C18 8, 19 5, 19 5 Z"
+                stroke="#C89A4A" stroke-width="1.1" fill="none" />
+              <path d="M9 33 V20 C9 14, 13.5 11, 19 11 C24.5 11, 29 14, 29 20 V33" stroke="#C89A4A" stroke-width="1.3"
+                stroke-linecap="round" />
+              <path d="M13 33 V21 C13 17, 15.5 15, 19 15 C22.5 15, 25 17, 25 21 V33" stroke="#C89A4A" stroke-width="1"
+                opacity="0.6" />
+              <line x1="6" y1="33" x2="32" y2="33" stroke="#C89A4A" stroke-width="1.3" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="about-values__name">Heritage</h3>
+          <div class="about-values__divider" aria-hidden="true">
+            <span class="about-values__divider-line"></span>
+            <span class="about-values__divider-diamond"></span>
+            <span class="about-values__divider-line"></span>
+          </div>
+          <p class="about-values__desc">
+            Preserving and celebrating our rich cultural traditions
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PHASE 6 — LUXURY EDITORIAL INITIATIVES GALLERY SECTION -->
+  <section class="section initiatives-section" id="initiatives" data-section="initiatives">
+    <canvas class="section-particle-canvas" data-particle-section="initiatives" aria-hidden="true"></canvas>
+    <div class="initiatives__container">
+
+      <!-- Section Header Block -->
+      <div class="initiatives-header">
+        <div class="initiatives-label">
+          <span class="initiatives-label__icon">❖</span>
+          <span class="initiatives-label__text">OUR INITIATIVES</span>
+          <span class="initiatives-label__icon">❖</span>
+        </div>
+
+        <h2 id="initiatives-heading" class="initiatives-title">
+          <span class="initiatives-title__charcoal">Empowering Lives.</span>
+          <span class="initiatives-title__gold">Enriching Society.</span>
+        </h2>
+
+        <p class="initiatives-desc">
+          Through dedicated charitable service, cultural preservation, and social welfare programs, Shree Bhatiawadi
+          Trust strives to create a meaningful impact across generations.
+        </p>
+      </div>
+
+      <!-- Editorial Photography Gallery (Architectural Grid with 24px Gutters) -->
+      <div class="initiatives-masonry">
+
+        <!-- Initiative Card 1: Education Support (Large Landscape Feature) -->
+        <a href="#initiatives" class="initiative-card initiative-card--feature"
+          aria-label="Explore Education Support">
+          <picture>
+            <source type="image/avif" srcset="assets/images/client/about/about-initiative-education-640.avif 640w, assets/images/client/about/about-initiative-education-1200.avif 1200w" sizes="(max-width: 768px) 100vw, 60vw">
+            <source type="image/webp" srcset="assets/images/client/about/about-initiative-education-640.webp 640w, assets/images/client/about/about-initiative-education-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 60vw">
+            <img src="assets/images/client/about/about-initiative-education-1200.jpg" alt="Education Support - Grand assembly hall at Shree Bhatiawadi configured for educational seminars, lectures, and youth conferences"
+              class="initiative-card__img" loading="lazy" decoding="async" width="800" height="500">
+          </picture>
+          <div class="initiative-card__overlay" aria-hidden="true"></div>
+          <div class="initiative-card__content">
+            <h3 class="initiative-card__title">Education Support</h3>
+            <p class="initiative-card__desc">Empowering youth through scholarships, learning materials, and modern
+              educational infrastructure.</p>
+            <span class="initiative-card__link">LEARN MORE →</span>
+          </div>
+        </a>
+
+        <!-- Initiative Card 2: Healthcare Support (Tall Portrait Feature) -->
+        <a href="#initiatives" class="initiative-card initiative-card--tall"
+          aria-label="Explore Healthcare Support">
+          <picture>
+            <source type="image/avif" srcset="assets/images/client/about/about-initiative-healthcare-640.avif 640w, assets/images/client/about/about-initiative-healthcare-1200.avif 1200w" sizes="(max-width: 768px) 100vw, 40vw">
+            <source type="image/webp" srcset="assets/images/client/about/about-initiative-healthcare-640.webp 640w, assets/images/client/about/about-initiative-healthcare-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 40vw">
+            <img src="assets/images/client/about/about-initiative-healthcare-1200.jpg" alt="Healthcare Support - Aesthetic heritage brass elephant urn with white tuberoses and medicinal greenery symbolizing wellness and healing at Shree Bhatiawadi"
+              class="initiative-card__img" loading="lazy" decoding="async" width="600" height="800">
+          </picture>
+          <div class="initiative-card__overlay" aria-hidden="true"></div>
+          <div class="initiative-card__content">
+            <h3 class="initiative-card__title">Healthcare Support</h3>
+            <p class="initiative-card__desc">Providing accessible medical camps, health checkups, and medicine
+              distribution for families in need.</p>
+            <span class="initiative-card__link">LEARN MORE →</span>
+          </div>
+        </a>
+
+        <!-- Initiative Card 3: Food Distribution (Medium Landscape) -->
+        <a href="#initiatives" class="initiative-card initiative-card--medium-left"
+          aria-label="Explore Food Distribution">
+          <picture>
+            <source type="image/avif" srcset="assets/images/client/about/about-initiative-food-640.avif 640w, assets/images/client/about/about-initiative-food-1200.avif 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+            <source type="image/webp" srcset="assets/images/client/about/about-initiative-food-640.webp 640w, assets/images/client/about/about-initiative-food-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+            <img src="assets/images/client/about/about-initiative-food-1200.jpg" alt="Food Distribution - Elegant banquet hall seating arranged with embroidered gold organza for community dining and hospitality at Shree Bhatiawadi"
+              class="initiative-card__img" loading="lazy" decoding="async" width="600" height="400">
+          </picture>
+          <div class="initiative-card__overlay" aria-hidden="true"></div>
+          <div class="initiative-card__content">
+            <h3 class="initiative-card__title">Food Distribution</h3>
+            <p class="initiative-card__desc">Serving nutritious meals and essential ration kits to underprivileged
+              communities with dignity.</p>
+            <span class="initiative-card__link">LEARN MORE →</span>
+          </div>
+        </a>
+
+
+        <!-- Initiative Card 5: Cultural Programs (Supporting Card) -->
+        <a href="/cultural-forum" class="initiative-card initiative-card--supporting-left"
+          aria-label="Explore Cultural Programs">
+          <picture>
+            <source type="image/avif" srcset="assets/images/client/cultural-forum/cultural-forum-hero-640.avif 640w, assets/images/client/cultural-forum/cultural-forum-hero-1200.avif 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+            <source type="image/webp" srcset="assets/images/client/cultural-forum/cultural-forum-hero-640.webp 640w, assets/images/client/cultural-forum/cultural-forum-hero-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw">
+            <img src="assets/images/client/cultural-forum/cultural-forum-hero-1200.jpg" alt="Traditional Indian cultural festival and heritage gatherings at Shree Bhatiawadi"
+              class="initiative-card__img" loading="lazy" decoding="async" width="700" height="400">
+          </picture>
+          <div class="initiative-card__overlay" aria-hidden="true"></div>
+          <div class="initiative-card__content">
+            <h3 class="initiative-card__title">Cultural Programs</h3>
+            <p class="initiative-card__desc">Preserving Indian traditions, arts, and heritage festivals for future
+              generations to celebrate.</p>
+            <span class="initiative-card__link">LEARN MORE →</span>
+          </div>
+        </a>
+
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PHASE 8 — FOOTER -->
+  <!-- Rhythm: CTA Dark Brown → Footer Parchment → Copyright Dark Strip -->
+  <footer class="footer">
+    <canvas class="section-particle-canvas" data-particle-section="footer" aria-hidden="true"></canvas>
+
+    <!-- Parchment Body inside container -->
+    <div class="container">
+      <div class="footer__grid reveal-fade-up">
+
+        <!-- Column 1: Brand -->
+        <div class="footer__brand">
+          <img src="assets/logo/sbt-logo.png" alt="Shree Bhatiawadi Trust Heritage Logo" class="footer__logo"
+            width="100" height="auto" loading="lazy" height="96" decoding="async">
+          <span class="footer__tagline">Serving with Devotion</span>
+          <p class="footer__description">
+            A legacy of charitable service and cultural preservation, dedicated to uplifting our community.
+          </p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">QUICK LINKS</h4>
+          <ul class="footer__links">
+            <li><a href="/about" class="footer__link">About Us</a></li>
+            <li><a href="/history" class="footer__link">History</a></li>
+            <li><a href="/banquet-halls" class="footer__link">Banquet Halls</a></li>
+            <li><a href="/cultural-forum" class="footer__link">Cultural Forum</a></li>
+            <li><a href="/contact" class="footer__link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Support -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">SUPPORT</h4>
+          <ul class="footer__links">
+            <li><a href="/contact" class="footer__link">Donate</a></li>
+            <li><a href="/contact" class="footer__link">Volunteer</a></li>
+            <li><a href="/trustees" class="footer__link">Trustee Information</a></li>
+            <li><a href="/contact" class="footer__link">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">CONTACT US</h4>
+          <ul class="footer__contact-list">
+            <li>
+              <a href="#" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Bhatiawadi, Mumbai,<br>Maharashtra, India</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:02221028801" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+                <span>022-21028801</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/917506433819" target="_blank" rel="noopener noreferrer" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <span>+91 75064 33819</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:shreebhatiawaditrust@gmail.com" class="footer__contact-item">
+                <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>shreebhatiawaditrust@gmail.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div><!-- /.container -->
+
+    <!-- Full-width Dark Brown Copyright Strip — sits OUTSIDE .container -->
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner">
+        <span class="footer__copyright">&copy; 2024 Shree Bhatiawadi Trust. All rights reserved.</span>
+        <ul class="footer__legal-links">
+          <li><a href="/privacy" class="footer__legal-link">Privacy Policy</a></li>
+          <li><a href="/terms" class="footer__legal-link">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Core JavaScript Controllers -->
+  <script src="js/navbar.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/whatsapp.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

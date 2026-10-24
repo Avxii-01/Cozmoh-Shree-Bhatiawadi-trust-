@@ -122,11 +122,17 @@ class GlobalNavbarController {
    * 4. Highlight Active Page automatically based on current URL path
    */
   setActivePageHighlight() {
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const rawPath = window.location.pathname.replace(/\/+$/, '');
+    const cleanSegment = rawPath.split('/').pop().replace(/\.html$/, '');
+    const isHome = cleanSegment === '' || cleanSegment === 'index';
 
     this.navLinks.forEach(link => {
       const href = link.getAttribute('href');
-      if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+      if (!href) return;
+      const cleanHref = href.split('?')[0].split('#')[0].replace(/^\/+/, '').replace(/\/+$/, '').replace(/\.html$/, '');
+      const linkIsHome = cleanHref === '' || cleanHref === 'index';
+
+      if ((isHome && linkIsHome) || (!isHome && cleanHref === cleanSegment)) {
         link.classList.add('navbar__link--active', 'navbar__mobile-link--active');
         link.setAttribute('aria-current', 'page');
       } else {

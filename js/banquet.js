@@ -317,7 +317,7 @@ class HallSelectorController {
 
     // Update CTA link to target specific hall on detailed page
     if (this.primaryCta) {
-      this.primaryCta.href = `banquet-halls.html#venue-${venueData.id}`;
+      this.primaryCta.href = `/banquet-halls#venue-${venueData.id}`;
     }
   }
 }

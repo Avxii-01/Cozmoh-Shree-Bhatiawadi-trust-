@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  
+    <defs>
+      <!-- Gradients -->
+      <linearGradient id="init-health-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#18120B" />
+        <stop offset="45%" stop-color="#241B12" />
+        <stop offset="100%" stop-color="#0E0A07" />
+      </linearGradient>
+      <linearGradient id="init-health-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#E8C782" />
+        <stop offset="35%" stop-color="#C89A4A" />
+        <stop offset="70%" stop-color="#E3BD76" />
+        <stop offset="100%" stop-color="#9E7332" />
+      </linearGradient>
+      <linearGradient id="init-health-gold-soft" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#C89A4A" stop-opacity="0.8" />
+        <stop offset="100%" stop-color="#C89A4A" stop-opacity="0.2" />
+      </linearGradient>
+      <radialGradient id="init-health-glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.28" />
+        <stop offset="50%" stop-color="#C89A4A" stop-opacity="0.10" />
+        <stop offset="100%" stop-color="#140F0A" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="init-health-vignette" cx="50%" cy="50%" r="70%">
+        <stop offset="40%" stop-color="#000000" stop-opacity="0" />
+        <stop offset="100%" stop-color="#070503" stop-opacity="0.75" />
+      </radialGradient>
+      <filter id="init-health-blur" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="30" />
+      </filter>
+    </defs>
+    
+  <rect width="600" height="800" fill="url(#init-health-bg)" />
+  <circle cx="300" cy="380" r="300" fill="url(#init-health-glow)" />
+
+  <!-- Background Mandir Lattice -->
+  <g stroke="url(#init-health-gold)" stroke-width="0.5" opacity="0.10" fill="none">
+    <pattern id="init-health-pat" width="48" height="48" patternUnits="userSpaceOnUse">
+      <circle cx="24" cy="24" r="18" />
+      <path d="M0 24 L48 24 M24 0 L24 48" />
+      <circle cx="24" cy="24" r="4" fill="#C89A4A" opacity="0.3" />
+    </pattern>
+    <rect x="25" y="25" width="550" height="750" fill="url(#init-health-pat)" />
+  </g>
+
+  <!-- Dual Outer Filigree Borders -->
+  <rect x="24" y="24" width="552" height="752" rx="8" fill="none" stroke="url(#init-health-gold)" stroke-width="1.2" opacity="0.45" />
+  <rect x="32" y="32" width="536" height="736" rx="4" fill="none" stroke="url(#init-health-gold)" stroke-width="0.6" stroke-dasharray="6 3" opacity="0.3" />
+
+  <!-- Corner Lotus Flourishes -->
+  <g stroke="url(#init-health-gold)" stroke-width="1.2" fill="none" opacity="0.6">
+    <circle cx="45" cy="45" r="3" fill="#C89A4A" />
+    <circle cx="555" cy="45" r="3" fill="#C89A4A" />
+    <circle cx="45" cy="755" r="3" fill="#C89A4A" />
+    <circle cx="555" cy="755" r="3" fill="#C89A4A" />
+  </g>
+
+  <!-- Central Healing & Well-being Emblem (Dhanvantari Lotus & Sacred Hands) -->
+  <g transform="translate(300, 370)">
+    <!-- Concentric Aureole of Health -->
+    <circle cx="0" cy="0" r="170" fill="none" stroke="url(#init-health-gold)" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.3" />
+    <circle cx="0" cy="0" r="140" fill="none" stroke="url(#init-health-gold)" stroke-width="1.2" opacity="0.4" />
+    <circle cx="0" cy="0" r="110" fill="none" stroke="url(#init-health-gold)" stroke-width="0.6" stroke-dasharray="2 4" opacity="0.3" />
+
+    <!-- Sacred Protective Cupping Hands (Karuna & Seva) -->
+    <g stroke="url(#init-health-gold)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Left Hand -->
+      <path d="M-80 60 C-65 75, -35 85, 0 85 C-25 70, -45 50, -55 25 C-65 40, -75 50, -80 60 Z" fill="#1C140D" fill-opacity="0.8" />
+      <path d="M-60 40 C-40 55, -20 65, 0 68" opacity="0.4" stroke-width="1" />
+      <!-- Right Hand -->
+      <path d="M80 60 C65 75, 35 85, 0 85 C25 70, 45 50, 55 25 C65 40, 75 50, 80 60 Z" fill="#1C140D" fill-opacity="0.8" />
+      <path d="M60 40 C40 55, 20 65, 0 68" opacity="0.4" stroke-width="1" />
+    </g>
+
+    <!-- Dhanvantari Sacred Lotus of Healing -->
+    <g transform="translate(0, -10)" stroke="url(#init-health-gold)" fill="none" stroke-width="1.4">
+      <!-- Central Petal -->
+      <path d="M0 -75 C20 -40, 25 -10, 0 15 C-25 -10, -20 -40, 0 -75 Z" fill="rgba(200, 154, 74, 0.2)" />
+      <!-- Left Flanking Petals -->
+      <path d="M0 15 C-25 10, -50 -15, -45 -50 C-30 -25, -10 0, 0 15 Z" fill="rgba(200, 154, 74, 0.12)" />
+      <path d="M0 15 C-35 5, -68 -5, -70 -30 C-50 -12, -20 5, 0 15 Z" opacity="0.6" />
+      <!-- Right Flanking Petals -->
+      <path d="M0 15 C25 10, 50 -15, 45 -50 C30 -25, 10 0, 0 15 Z" fill="rgba(200, 154, 74, 0.12)" />
+      <path d="M0 15 C35 5, 68 -5, 70 -30 C50 -12, 20 5, 0 15 Z" opacity="0.6" />
+
+      <!-- Center Divine Flame of Life -->
+      <circle cx="0" cy="-28" r="5" fill="#D4AF37" />
+      <path d="M0 -42 C4 -36, 4 -32, 0 -26 C-4 -32, -4 -36, 0 -42 Z" fill="#E8C782" />
+    </g>
+
+    <!-- Eightfold Path Nodes on Aureole -->
+    <g fill="#D4AF37">
+      <circle cx="0" cy="-140" r="3" />
+      <circle cx="99" cy="-99" r="3" />
+      <circle cx="140" cy="0" r="3" />
+      <circle cx="99" cy="99" r="3" />
+      <circle cx="0" cy="140" r="3" />
+      <circle cx="-99" cy="99" r="3" />
+      <circle cx="-140" cy="0" r="3" />
+      <circle cx="-99" cy="-99" r="3" />
+    </g>
+
+    <!-- Typography Inscription -->
+    <text y="145" text-anchor="middle" fill="#E8C782" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="13" letter-spacing="4" opacity="0.9">AROGYAM • PARAMAM • BHAGYAM</text>
+    <text y="168" text-anchor="middle" fill="#C89A4A" font-family="'Cinzel', Georgia, serif" font-size="9.5" letter-spacing="3" opacity="0.65">HEALING • COMPASSION • CARE</text>
+  </g>
+
+  <!-- Vignette -->
+  <rect width="600" height="800" fill="url(#init-health-vignette)" pointer-events="none" />
+</svg>

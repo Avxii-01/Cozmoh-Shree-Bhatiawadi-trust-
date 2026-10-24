@@ -1,0 +1,251 @@
+/* ==========================================================================
+   SHREE BHATIAWADI — BUTTON SYSTEM  (v2 Heritage Luxury)
+   ========================================================================== */
+
+/* ── Base ─────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  height: var(--button-height);
+  padding: 0 var(--space-32);        /* wider horizontal padding for luxury feel */
+  font-family: var(--font-body);
+  font-size: 0.8125rem;              /* slightly tighter than body — refined */
+  font-weight: 700;
+  letter-spacing: 0.12em;           /* spaced-out uppercase luxury tracking  */
+  text-transform: uppercase;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: var(--radius-btn);
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-fast),
+              background-color var(--transition-fast),
+              border-color var(--transition-fast),
+              color var(--transition-fast);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  overflow: hidden;                  /* contains shimmer pseudo-element      */
+  cursor: pointer;
+}
+
+/* Subtle shimmer sweep on all buttons (activated on hover) */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    var(--color-gold-shimmer) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 600ms var(--ease-heritage);
+  pointer-events: none;
+}
+
+.btn:hover::after {
+  transform: translateX(100%);
+}
+
+/* Hover lift */
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ── Primary Gold Button ──────────────────────────────────────────────── */
+.btn--primary {
+  background-color: var(--color-primary-gold);
+  color: #15120F;
+  font-weight: 700;
+  border-color: var(--color-primary-gold);
+  box-shadow: 0 6px 20px rgba(200, 154, 74, 0.25);
+  border-radius: 8px;
+}
+
+.btn--primary:hover {
+  background-color: var(--color-gold-light);
+  border-color: var(--color-gold-light);
+  box-shadow: 0 10px 30px rgba(200, 154, 74, 0.40);
+  color: #15120F;
+  transform: translateY(-3px);
+}
+
+/* ── Secondary Outlined Button ───────────────────────────────────────── */
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-primary-gold);
+  border: 1px solid var(--color-primary-gold);
+  box-shadow: none;
+  border-radius: 8px;
+}
+
+.btn--secondary:hover {
+  border-color: var(--color-gold-light);
+  color: var(--color-primary-gold);
+  background-color: rgba(200, 154, 74, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+/* ── Ghost Button ────────────────────────────────────────────────────── */
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-heading);
+  border-color: transparent;
+}
+
+.btn--ghost:hover {
+  background-color: var(--color-gold-light);
+  color: var(--color-primary-gold);
+}
+
+/* ── Text / Link Button ──────────────────────────────────────────────── */
+.btn--text {
+  height: auto;
+  padding: var(--space-4) 0;
+  background-color: transparent;
+  color: var(--color-primary-gold);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: 700;
+  overflow: visible;               /* no shimmer clip on text button */
+}
+
+.btn--text::after { display: none; }
+
+.btn--text:hover {
+  transform: translateX(4px);
+  color: var(--color-gold-hover);
+}
+
+/* ── Dark Accent Button ───────────────────────────────────────────────── */
+.btn--dark {
+  background-color: var(--color-dark-cta);
+  color: #FFFFFF;
+  border-color: var(--color-dark-cta);
+}
+
+.btn--dark:hover {
+  background-color: var(--color-dark-section);
+  border-color: var(--color-dark-section);
+  color: #FFFFFF;
+}
+
+/* ── White-On-Dark variant (for dark section CTAs) ───────────────────── */
+.btn--white {
+  background-color: #FFFFFF;
+  color: var(--color-dark-cta);
+  border-color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+}
+
+.btn--white:hover {
+  background-color: var(--color-parchment);
+  color: var(--color-heading);
+}
+
+/* ── Outline-on-Dark variant ─────────────────────────────────────────── */
+.btn--outline-dark {
+  background-color: transparent;
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: none;
+}
+
+.btn--outline-dark:hover {
+  border-color: rgba(255, 255, 255, 0.80);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+/* ── Button Icon ─────────────────────────────────────────────────────── */
+.btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover .btn__icon--arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   FLOATING WHATSAPP BUTTON (Global Reusable Enquiry Component)
+   ========================================================================== */
+.whatsapp-floating-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(37, 211, 102, 0.3);
+  z-index: 999;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 300ms cubic-bezier(0.25, 1, 0.35, 1),
+              box-shadow 300ms cubic-bezier(0.25, 1, 0.35, 1),
+              background-color 300ms ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.whatsapp-floating-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 4px 14px rgba(37, 211, 102, 0.4);
+  background-color: #22bf5b;
+  color: #FFFFFF;
+}
+
+.whatsapp-floating-btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.whatsapp-floating-btn:focus-visible {
+  outline: 3px solid var(--gold, #C89A4A);
+  outline-offset: 3px;
+}
+
+.whatsapp-floating-btn__icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  fill: currentColor;
+  transition: transform 300ms cubic-bezier(0.25, 1, 0.35, 1);
+}
+
+.whatsapp-floating-btn:hover .whatsapp-floating-btn__icon {
+  transform: scale(1.04);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .whatsapp-floating-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(37, 211, 102, 0.25);
+  }
+
+  .whatsapp-floating-btn__icon {
+    width: 24px;
+    height: 24px;
+  }
+}

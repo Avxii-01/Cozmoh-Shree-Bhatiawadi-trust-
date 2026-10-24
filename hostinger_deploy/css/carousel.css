@@ -1,0 +1,88 @@
+/* ==========================================================================
+   SHREE BHATIAWADI - CAROUSEL COMPONENT SYSTEM
+   ========================================================================== */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel__track-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-card);
+}
+
+.carousel__track {
+  display: flex;
+  transition: transform var(--transition-slow);
+  will-change: transform;
+}
+
+.carousel__slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Circular Gold Navigation Arrow Buttons */
+.carousel__nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-primary-gold);
+  color: #15120F;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  box-shadow: 0 6px 20px rgba(200, 154, 74, 0.3);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.carousel__nav-btn:hover {
+  background-color: var(--color-gold-light);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 8px 25px rgba(200, 154, 74, 0.45);
+}
+
+.carousel__nav-btn--prev {
+  left: var(--space-16);
+}
+
+.carousel__nav-btn--next {
+  right: var(--space-16);
+}
+
+/* Pagination Dots */
+.carousel__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  margin-top: var(--space-24);
+}
+
+.carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(200, 154, 74, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.carousel__dot--active {
+  width: 28px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary-gold);
+  box-shadow: 0 0 10px rgba(200, 154, 74, 0.4);
+}

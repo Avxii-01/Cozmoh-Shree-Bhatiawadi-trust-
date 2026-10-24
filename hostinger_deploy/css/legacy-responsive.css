@@ -1,0 +1,173 @@
+/* ==========================================================================
+   SHREE BHATIAWADI TRUST — LEGACY SECTION RESPONSIVE (css/legacy-responsive.css)
+   Breakpoints: Desktop (1280px+), Tablet (1023px & below), Mobile (768px & below)
+   ========================================================================== */
+
+/* ── Laptop / Small Desktop (1024px to 1279px) ───────────────────────── */
+@media (max-width: 1279px) {
+  .legacy-section {
+    padding: 90px 0;
+  }
+
+  .legacy__grid {
+    grid-template-columns: 44% 56%;
+    gap: 32px;
+  }
+
+  .legacy__story-panel {
+    min-height: 460px;
+    padding: 36px 28px;
+  }
+
+  .legacy-stat__val {
+    font-size: 3rem;
+  }
+}
+
+/* ── Tablet (769px to 1023px) ────────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .legacy-section {
+    padding: 72px 0;
+  }
+
+  .legacy__container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* Main Grid Stack: Hero Story Panel first, then right content block & timeline */
+  .legacy__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-bottom: 36px;
+  }
+
+  .legacy__story-panel {
+    min-height: 400px;
+  }
+
+  .legacy-timeline__milestone {
+    max-width: 100%;
+    font-size: 0.75rem;
+  }
+
+  /* Statistics panel becomes 2x2 grid on tablet */
+  .legacy-impact-panel {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 32px 24px;
+  }
+
+  .legacy-stat-col:not(:last-child)::after {
+    display: none;                       /* Hide flourishes on tablet grid */
+  }
+
+  .legacy-stat-col {
+    border-bottom: 1px solid rgba(200, 154, 74, 0.15);
+    padding-bottom: 16px;
+  }
+
+  .legacy-stat-col:nth-child(2) {
+    border-bottom: 1px solid rgba(200, 154, 74, 0.15);
+  }
+
+  .legacy-stat-col:nth-child(3),
+  .legacy-stat-col:nth-child(4) {
+    border-bottom: none;
+    padding-top: 8px;
+  }
+}
+
+/* ── Mobile (768px & below) ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .legacy-section {
+    padding: 56px 0;
+  }
+
+  .legacy__container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .legacy__story-panel {
+    min-height: 360px;
+    padding: 28px 20px;
+    border-radius: 14px;
+  }
+
+  .legacy-header-block {
+    margin-bottom: 24px;
+  }
+
+  .legacy-header-block__heading {
+    font-size: 1.85rem;
+  }
+
+  /* Vertical Timeline Transformation on Mobile */
+  .legacy-timeline__track {
+    top: 31px;
+    bottom: 31px;
+    left: 31px;
+    right: auto;
+    width: 1px;
+    height: calc(100% - 62px);
+  }
+
+  .legacy-timeline__line-progress {
+    width: 100% !important;
+    height: 0%;
+    transition: height 1200ms var(--ease-heritage);
+  }
+
+  .legacy-timeline__nodes-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-left: 4px;
+  }
+
+  .legacy-timeline__node {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 16px;
+  }
+
+  .legacy-timeline__icon-wrap {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .legacy-timeline__year {
+    font-size: 1.35rem;
+    margin-bottom: 2px;
+  }
+
+  .legacy-timeline__milestone {
+    font-size: 0.8125rem;
+  }
+
+  /* Statistics panel stacked vertically inside single panel on mobile */
+  .legacy-impact-panel {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 24px 16px;
+  }
+
+  .legacy-stat-col:not(:last-child)::after {
+    display: none;
+  }
+
+  .legacy-stat-col {
+    border-bottom: 1px solid rgba(200, 154, 74, 0.15);
+    padding-bottom: 16px;
+  }
+
+  .legacy-stat-col:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .legacy-stat__val {
+    font-size: 2.75rem;
+  }
+}

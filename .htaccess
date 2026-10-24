@@ -1,0 +1,214 @@
+# ==============================================================================
+# SHREE BHATIAWADI TRUST — PRODUCTION HOSTINGER APACHE CONFIGURATION (.htaccess)
+# Canonical Production Domain: https://shreebhatiawaditrust.org/
+# Server Architecture: Apache 2.4 / LiteSpeed Enterprise (Hostinger Shared / Cloud)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. SECURITY: DIRECTORY BROWSING & SENSITIVE FILE ACCESS RESTRICTIONS
+# ------------------------------------------------------------------------------
+
+# Disable directory browsing / index listings
+Options -Indexes
+
+# Protect hidden files and directories (dotfiles, e.g. .git, .env)
+# EXCEPTION: Allow /.well-known/ so Hostinger AutoSSL / Let's Encrypt renewal succeeds
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} !^/\.well-known/ [NC]
+    RewriteRule (^\.|/\.) - [F,L]
+</IfModule>
+
+# Block access to backup, source-control, scripts, and sensitive configuration files
+# Protect internal directories (config, storage, vendor) from direct web access
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_URI} ^/(config|storage|vendor) [NC]
+    RewriteRule ^ - [F,L]
+</IfModule>
+
+<FilesMatch "(^#.*#|\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|sw[op]|py|md|git.*))$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# ------------------------------------------------------------------------------
+# 2. SECURITY HEADERS
+# ------------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    # Prevent browsers from MIME-sniffing away from the declared content-type
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Strict Referrer Policy: Send full URL on same-origin, origin only on cross-origin HTTPS
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Clickjacking protection: Permit framing on same-origin only
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Feature & Hardware API restrictions (camera, mic, geolocation disabled by default)
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+    # --------------------------------------------------------------------------
+    # Content Security Policy (CSP) Recommendation:
+    # A strict CSP header should NOT be enforced blindly without verifying
+    # third-party domains (Google Maps iframe, Google Fonts, inline particle engine).
+    # Once verified in production, you may uncomment the directive below:
+    #
+    # Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; frame-src 'self' https://www.google.com; connect-src 'self'; object-src 'none';"
+    # --------------------------------------------------------------------------
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 3. CANONICAL HOSTNAME, HTTPS & CLEAN URL CONFIGURATION
+# ------------------------------------------------------------------------------
+# ACTIVATION PREREQUISITE:
+# 1. Activate the free SSL certificate for shreebhatiawaditrust.org in Hostinger hPanel.
+# 2. Ensure DNS records (A record for @ and CNAME/A for www) point to Hostinger.
+# 3. Once SSL is active, the rewrite rules below enforce HTTPS and non-www canonical host.
+# ------------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 3.1 Redirect HTTP to HTTPS (checks standard HTTPS and reverse-proxy protocol header)
+    # Exclude ACME challenge directory so Hostinger AutoSSL issuance / renewal succeeds
+    RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge [NC]
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^(.*)$ https://shreebhatiawaditrust.org/$1 [R=301,L]
+
+    # 3.2 Redirect www.shreebhatiawaditrust.org to canonical non-www hostname
+    RewriteCond %{HTTP_HOST} ^www\.shreebhatiawaditrust\.org$ [NC]
+    RewriteRule ^(.*)$ https://shreebhatiawaditrust.org/$1 [R=301,L]
+
+    # 3.3 Redirect /index.html directly to canonical homepage / (301 Permanent Redirect)
+    RewriteCond %{THE_REQUEST} \s/index(?:\.html)?[\s?] [NC]
+    RewriteRule ^index(?:\.html)?$ https://shreebhatiawaditrust.org/ [R=301,L]
+
+    # 3.4 Redirect direct client requests for .html pages to clean URLs (301 Permanent Redirect)
+    # Uses %{THE_REQUEST} to prevent redirect loops with internal rewrite rule 3.5
+    # Excludes 404.html so error handling subrequests are unaffected
+    RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+    RewriteCond %{REQUEST_URI} !^/404\.html$ [NC]
+    RewriteRule ^(.+)\.html$ https://shreebhatiawaditrust.org/$1 [R=301,L]
+
+    # 3.5 Internally rewrite clean URLs to corresponding .html files
+    # Serves the static .html file under the hood without changing the browser address bar
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.+?)/?$ $1.html [L]
+
+    # 3.6 Internally rewrite /send-inquiry clean URL to send-inquiry.php
+    RewriteRule ^send-inquiry/?$ send-inquiry.php [L]
+
+    # 3.7 Internally rewrite /api/contact clean URL to api/contact.php
+    RewriteRule ^api/contact/?$ api/contact.php [L]
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 4. GZIP COMPRESSION (mod_deflate)
+# ------------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    # Compress HTML, CSS, JavaScript, Text, XML, JSON, and web fonts
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/woff
+    AddOutputFilterByType DEFLATE font/woff2
+    AddOutputFilterByType DEFLATE application/font-woff
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+
+    # Do not compress already compressed image formats (JPEG, PNG, WebP) or archives
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 5. BROWSER CACHING (mod_expires & mod_headers)
+# ------------------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML documents: Short caching with must-revalidate so updates reflect promptly
+    ExpiresByType text/html "access plus 1 hour"
+
+    # SEO verification files: Modest caching (1 day)
+    ExpiresByType text/plain "access plus 1 day"
+    ExpiresByType text/xml "access plus 1 day"
+    ExpiresByType application/xml "access plus 1 day"
+
+    # Stylesheets and JavaScript: 7 days (non-fingerprinted assets)
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType text/javascript "access plus 7 days"
+
+    # Images and Favicons: 1 month
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 month"
+    ExpiresByType image/vnd.microsoft.icon "access plus 1 month"
+
+    # Web Fonts: 1 year
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    # HTML Cache-Control: Revalidate to pick up changes promptly
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=3600, must-revalidate"
+    </FilesMatch>
+
+    # Static assets cache headers (CSS, JS, Fonts, Images)
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "max-age=604800, public"
+    </FilesMatch>
+
+    <FilesMatch "\.(ico|png|jpe?g|gif|svg|webp|woff|woff2|ttf|otf|eot)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+
+    <FilesMatch "^(robots\.txt|sitemap\.xml)$">
+        Header set Cache-Control "max-age=86400, public"
+    </FilesMatch>
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 6. ERROR HANDLING: BRANDED 404 NOT FOUND PAGE
+# ------------------------------------------------------------------------------
+# Custom 404 Error page preserving the HTTP 404 status code
+ErrorDocument 404 /404.html
+
+# ------------------------------------------------------------------------------
+# 7. MIME TYPES (Ensure modern web formats are correctly served)
+# ------------------------------------------------------------------------------
+<IfModule mod_mime.c>
+    AddType image/svg+xml .svg .svgz
+    AddType image/webp .webp
+    AddType font/woff .woff
+    AddType font/woff2 .woff2
+    AddType font/ttf .ttf
+    AddType font/otf .otf
+</IfModule>
