@@ -270,7 +270,7 @@ $mailConfig = require $configPath;
 if (empty($mailConfig['password'])) {
     // Credentials have not been configured on the host yet
     error_log('[Shree Bhatiawadi Form] SMTP password is not configured on the server.');
-    sendJsonResponse(500, 'error', 'Mail delivery service is temporarily unconfigured. For hall bookings and immediate assistance, please call 022-21028801, WhatsApp +91 75064 33819, or email shreebhatiawaditrust@gmail.com.');
+    sendJsonResponse(500, 'error', 'Mail delivery service is temporarily unconfigured. For hall bookings and immediate assistance, please call 022-21028801, WhatsApp +91 70393 27737 / +91 96532 56680, or email shreebhatiawaditrust@gmail.com.');
 }
 
 // ------------------------------------------------------------------------------
@@ -443,7 +443,7 @@ $htmlBody = <<<HTML
           <tr>
             <td style="background-color: #1F1914; padding: 20px 30px; text-align: center; border-top: 1px solid #332B23;">
               <p style="margin: 0 0 6px 0; font-size: 12px; color: #D4AF37; font-weight: 500;">Shree Bhatiawadi Trust &bull; Ghatkopar East, Mumbai</p>
-              <p style="margin: 0; font-size: 11px; color: #8F8477;">Telephone: 022-21028801 &bull; WhatsApp: +91 75064 33819 &bull; https://shreebhatiawaditrust.org</p>
+              <p style="margin: 0; font-size: 11px; color: #8F8477;">Telephone: 022-21028801 &bull; WhatsApp: +91 70393 27737 / +91 96532 56680 &bull; https://shreebhatiawaditrust.org</p>
             </td>
           </tr>
 
@@ -480,7 +480,7 @@ Event Type:      {$eventType}
 ------------------------------------------------------------
 Reply directly to this email to respond to {$fullName} at {$email}.
 Shree Bhatiawadi Trust | Serving with Devotion
-Phone: 022-21028801 | WhatsApp: +91 75064 33819
+Phone: 022-21028801 | WhatsApp: +91 70393 27737 / +91 96532 56680
 Website: https://shreebhatiawaditrust.org
 TEXT;
 
@@ -534,7 +534,7 @@ try {
     sendJsonResponse(
         500,
         'error',
-        'We were unable to deliver your message right now due to a temporary mail server issue. For immediate assistance or hall bookings, please call 022-21028801 or WhatsApp +91 75064 33819 directly.'
+        'We were unable to deliver your message right now due to a temporary mail server issue. For immediate assistance or hall bookings, please call 022-21028801 or WhatsApp +91 70393 27737 / +91 96532 56680 directly.'
     );
 } catch (\Throwable $t) {
     error_log('[Shree Bhatiawadi Form] Unexpected Error: ' . $t->getMessage());

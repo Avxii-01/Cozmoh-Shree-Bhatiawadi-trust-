@@ -42,6 +42,7 @@ hostinger_deploy.zip
 *.temp
 *.swp
 *.swo
+hostinger_deploy v1.2.zip
 
 # ============================================================
 # PYTHON CACHE

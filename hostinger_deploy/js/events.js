@@ -147,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const eventTitle = document.getElementById('event-showcase-title');
     const eventDesc = document.getElementById('event-showcase-desc');
     const eventDate = document.getElementById('event-showcase-date');
+    const eventDot = document.getElementById('event-showcase-dot');
     const eventTime = document.getElementById('event-showcase-time');
 
     const CULTURAL_EVENTS_DATA = [
@@ -157,8 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
         img: "assets/events/navratri3.jpeg",
         objectPosition: "center 40%",
         desc: "Experience the vibrant spirit of Navratri with traditional Garba, devotional music, and joyful community participation.",
-        date: "OCTOBER 05, 2024",
-        time: "7:00 PM"
+        date: "OCTOBER 11–19, 2026",
+        time: ""
       },
       {
         num: "02 — CLASSICAL MUSIC",
@@ -167,8 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
         img: "assets/images/client/cultural-forum/event-classical-1200.jpg",
         objectPosition: "center 30%",
         desc: "Immerse in soulful ragas and classical sitar & tabla recitals by renowned artists in an atmosphere of elegance and devotion.",
-        date: "NOVEMBER 12, 2024",
-        time: "6:30 PM"
+        date: "COMING SOON",
+        time: ""
       },
       {
         num: "03 — DIWALI",
@@ -177,8 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
         img: "assets/images/client/cultural-forum/event-diwali-1200.jpg",
         objectPosition: "center 35%",
         desc: "Gather with families to celebrate the Festival of Lights through traditional illuminations, cultural programs, and community festivities.",
-        date: "NOVEMBER 01, 2024",
-        time: "6:00 PM"
+        date: "NOVEMBER 08, 2026",
+        time: "COMING SOON"
       },
       {
         num: "04 — COMMUNITY",
@@ -187,8 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
         img: "assets/images/womencultural-gathering.webp",
         objectPosition: "center 30%",
         desc: "A dignified, welcoming space for the women of our community to celebrate traditions, art, heritage performances, and togetherness.",
-        date: "DECEMBER 18, 2024",
-        time: "5:00 PM"
+        date: "COMING SOON",
+        time: ""
       }
     ];
 
@@ -234,7 +235,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (eventTitle) eventTitle.innerHTML = data.title;
         if (eventDesc) eventDesc.textContent = data.desc;
         if (eventDate) eventDate.textContent = data.date;
-        if (eventTime) eventTime.textContent = data.time;
+        if (eventTime) {
+          if (data.time) {
+            eventTime.textContent = data.time;
+            eventTime.style.display = 'inline';
+            if (eventDot) eventDot.style.display = 'inline';
+          } else {
+            eventTime.textContent = '';
+            eventTime.style.display = 'none';
+            if (eventDot) eventDot.style.display = 'none';
+          }
+        }
 
         activeIndex = targetIndex;
 
